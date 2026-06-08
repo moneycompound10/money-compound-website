@@ -213,10 +213,6 @@ function StorysetHero() {
           {/* bag tie / rope wave */}
           <path d="M 130 282 Q 148 270 162 286 Q 178 270 195 286 Q 212 270 228 286 Q 244 270 260 282"
                 fill="none" stroke="#0B1A3A" strokeWidth="2.6" strokeLinecap="round" />
-          {/* $ medallion on bag */}
-          <circle cx="195" cy="410" r="54" fill="#FFFFFF" stroke="#0B1A3A" strokeWidth="3" />
-          <text x="195" y="430" textAnchor="middle"
-                fontFamily="Manrope, Inter, sans-serif" fontWeight="800" fontSize="58" fill="#0B1A3A">$</text>
         </g>
 
         {/* ─── DOLLAR BILLS tucked in the bag ─── */}

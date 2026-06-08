@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retirement Readiness Checklist — Money Compound</title>
+<style>
+  :root{
+    --navy:#0B2545;--gold:#C9A227;--teal:#2E9E8F;--slate:#3A4A5C;
+    --soft:#F4F1EA;--border:#D0D5DD;--ink:#1d2733;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:"Calibri","Segoe UI",Helvetica,Arial,sans-serif;color:var(--slate);background:#e9eaed;line-height:1.55;font-size:15.5px;}
+  .page{background:#fff;width:8.5in;min-height:11in;margin:24px auto;padding:1.0in 0.9in 0.85in;box-shadow:0 6px 26px rgba(0,0,0,.16);position:relative;}
+  .cover{background:linear-gradient(160deg,#0B2545 0%,#143a6b 100%);color:#fff;display:flex;flex-direction:column;padding:0.85in 0.9in 0.9in;}
+  .cover .brandmark{font-size:27px;font-weight:800;letter-spacing:.14em;color:#fff;align-self:center;text-align:center;}
+  .cover .brandtag{font-size:12.5px;font-style:italic;color:var(--gold);align-self:center;letter-spacing:.04em;margin-top:4px;}
+  .cover .spacer{flex:1;}
+  .cover .badge{align-self:flex-start;background:var(--gold);color:var(--navy);font-weight:800;font-size:12px;letter-spacing:.12em;padding:5px 12px;border-radius:3px;text-transform:uppercase;}
+  .cover h1{font-size:50px;line-height:1.05;margin:14px 0 0;font-weight:800;color:#fff;letter-spacing:-.01em;}
+  .cover .sub{font-size:16.5px;color:var(--gold);margin-top:18px;border-left:3px solid var(--gold);padding-left:14px;line-height:1.5;}
+  .cover .hr{height:2px;background:var(--gold);width:90px;margin:22px 0;}
+  .cover .compliance{font-size:12px;color:#aebbcd;margin-top:16px;font-style:italic;line-height:1.45;}
+  .cover .foot{margin-top:auto;}
+  .cover .edition{font-size:16px;color:#fff;font-weight:600;}
+  .cover .url{font-size:12.5px;color:#aebbcd;margin-top:4px;letter-spacing:.03em;}
+  h1.sec{font-size:24px;color:var(--navy);font-weight:800;margin:0 0 4px;line-height:1.18;}
+  .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+  .titlerule{height:3px;width:60px;background:var(--gold);margin:9px 0 16px;}
+  h2.area{font-size:18px;color:#fff;font-weight:700;margin:0;padding:9px 14px;background:var(--navy);border-radius:5px 5px 0 0;display:flex;align-items:center;gap:10px;}
+  h2.area .n{background:var(--gold);color:var(--navy);width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;}
+  .areawrap{margin:18px 0 6px;border:1px solid var(--border);border-radius:5px;overflow:hidden;}
+  .areadesc{font-size:13px;color:var(--slate);padding:8px 14px;background:var(--soft);border-bottom:1px solid var(--border);font-style:italic;}
+  .item{display:flex;gap:11px;padding:9px 14px;border-bottom:1px solid #eef0f2;align-items:flex-start;}
+  .item:last-child{border-bottom:none;}
+  .box{flex:none;width:17px;height:17px;border:2px solid var(--teal);border-radius:3px;margin-top:2px;}
+  .itext{font-size:14px;color:var(--ink);}
+  .itext b{color:var(--navy);}
+  .inum{flex:none;font-weight:800;color:var(--gold);width:20px;font-size:13.5px;margin-top:1px;}
+  p{margin:8px 0;text-align:justify;}
+  .lead{font-size:16px;color:var(--ink);}
+  .note{background:#fbf8ef;border:1px solid #e6dcc0;border-left:4px solid var(--gold);padding:10px 14px;margin:14px 0;font-size:13px;color:#5f5733;border-radius:4px;}
+  .note b{color:var(--navy);}
+  .tealbox{background:#eef7f5;border:1px solid #cce6e1;border-left:4px solid var(--teal);padding:10px 14px;margin:14px 0;font-size:13px;color:#28524b;border-radius:4px;}
+  .tealbox b{color:var(--navy);}
+  .score{display:flex;gap:12px;margin:16px 0;flex-wrap:wrap;}
+  .scard{flex:1;min-width:2in;border:1px solid var(--border);border-top:4px solid var(--teal);border-radius:5px;padding:12px 14px;background:#fafbfc;}
+  .scard .rng{font-size:20px;font-weight:800;color:var(--navy);}
+  .scard .lbl{font-size:13px;font-weight:700;color:var(--teal);margin:2px 0 4px;}
+  .scard .txt{font-size:12.5px;color:var(--slate);}
+  .disclaimer{font-size:11.5px;color:#5b6773;line-height:1.5;margin:6px 0;}
+  .runfoot{position:absolute;bottom:0.4in;left:0.9in;right:0.9in;text-align:center;font-size:9.5px;color:#7a8694;border-top:1px solid #e3e6ea;padding-top:5px;}
+  .runfoot b{color:var(--navy);}
+  .runhead{position:absolute;top:0.5in;left:0.9in;right:0.9in;font-size:10px;color:var(--slate);text-align:right;}
+  .runhead b{color:var(--navy);letter-spacing:.1em;}
+  .headrule{position:absolute;top:0.82in;left:0.9in;right:0.9in;height:1px;background:var(--gold);}
+  @media print{
+    body{background:#fff;}
+    .page{box-shadow:none;margin:0;width:auto;min-height:auto;padding:0.7in 0.7in 0.65in;page-break-after:always;}
+    .page:last-child{page-break-after:auto;}
+    .no-print{display:none;}
+    @page{size:Letter;margin:0;}
+  }
+  .no-print{max-width:8.5in;margin:18px auto 0;padding:14px 18px;background:#fff7e0;border:1px solid var(--gold);border-radius:8px;font-size:13.5px;color:#5a4a16;}
+  .no-print b{color:var(--navy);}
+</style>
+</head>
+<body>
+
+<div class="no-print">
+  <b>How to save this as a PDF:</b> Press <b>Ctrl/Cmd + P</b> &rarr; Destination <b>&ldquo;Save as PDF&rdquo;</b> &rarr; Margins <b>None</b>, enable <b>Background graphics</b>. Print or tick the boxes by hand.
+</div>
+
+<!-- COVER -->
+<div class="page cover">
+  <div class="brandmark">MONEY COMPOUND</div>
+  <div class="brandtag">Grow Financially Strong</div>
+  <div class="spacer"></div>
+  <div class="badge">Free Guide</div>
+  <h1>Retirement<br>Readiness<br>Checklist</h1>
+  <div class="hr"></div>
+  <div class="sub">A 27-point self-audit to see whether your retirement plan is actually on track &mdash; across income, corpus, healthcare and estate.</div>
+  <div class="compliance">Educational and awareness purposes only. This checklist is not investment, tax or legal advice, contains no recommendations and suggests no allocation.</div>
+  <div class="spacer"></div>
+  <div class="foot">
+    <div class="edition">2026 Edition</div>
+    <div class="url">www.moneycompound.com &nbsp;&bull;&nbsp; support@moneycompound.com &nbsp;&bull;&nbsp; @moneycompoundwealth</div>
+    <div class="url">AMFI-registered Mutual Fund Distributor &nbsp;&bull;&nbsp; ARN: 140318</div>
+  </div>
+</div>
+
+<!-- INTRO + AREA A & B -->
+<div class="page">
+  <div class="runhead"><b>MONEY COMPOUND</b> &middot; Retirement Readiness Checklist</div>
+  <div class="headrule"></div>
+  <span class="kicker">How to use this</span>
+  <h1 class="sec">Audit your retirement in 27 questions</h1>
+  <div class="titlerule"></div>
+  <p class="lead">Most people discover gaps in their retirement plan far too late to fix them comfortably. This checklist helps you find those gaps early. Work through each point honestly and tick the box only if you can confidently say &ldquo;yes, that&rsquo;s handled.&rdquo; Then count your ticks and read the score guide on the last page.</p>
+  <p>It is organised around the four pillars of a retirement plan: the <b>income</b> you will live on, the <b>corpus</b> that funds it, the <b>healthcare</b> that protects it, and the <b>estate</b> arrangements that pass it on. This is an awareness tool &mdash; it tells you <i>where to look</i>, not what to buy.</p>
+
+  <div class="areawrap">
+    <h2 class="area"><span class="n">A</span> Retirement Income</h2>
+    <div class="areadesc">Will money keep coming in once your salary stops? These points test the income side of your plan.</div>
+    <div class="item"><span class="inum">1</span><span class="box"></span><span class="itext">I have <b>estimated my monthly expenses in retirement</b> (in today&rsquo;s terms), separating essentials from lifestyle spends.</span></div>
+    <div class="item"><span class="inum">2</span><span class="box"></span><span class="itext">I have <b>identified every income source</b> I expect in retirement &mdash; pension, rent, interest, dividends, annuities, business income and so on.</span></div>
+    <div class="item"><span class="inum">3</span><span class="box"></span><span class="itext">I have checked that my expected income will cover at least my <b>essential expenses</b>, not only the discretionary ones.</span></div>
+    <div class="item"><span class="inum">4</span><span class="box"></span><span class="itext">I have planned for a <b>long retirement</b> &mdash; potentially 25&ndash;30 years or more &mdash; so my money does not run out too soon (longevity).</span></div>
+    <div class="item"><span class="inum">5</span><span class="box"></span><span class="itext">I have thought about <b>how I will draw an income</b> from my savings once the salary stops (a withdrawal approach).</span></div>
+    <div class="item"><span class="inum">6</span><span class="box"></span><span class="itext">I have factored in <b>inflation</b> &mdash; recognising that my cost of living will keep rising right through retirement.</span></div>
+    <div class="item"><span class="inum">7</span><span class="box"></span><span class="itext">I have considered how a <b>non-earning spouse or dependant</b> would be supported if I were no longer around.</span></div>
+  </div>
+
+  <div class="areawrap">
+    <h2 class="area"><span class="n">B</span> Retirement Corpus</h2>
+    <div class="areadesc">Is the pot of money behind that income big enough, and growing on schedule?</div>
+    <div class="item"><span class="inum">8</span><span class="box"></span><span class="itext">I have a <b>target corpus figure</b> &mdash; an estimate of how much I need accumulated by my retirement date.</span></div>
+    <div class="item"><span class="inum">9</span><span class="box"></span><span class="itext">I am <b>tracking my progress</b> &mdash; I know roughly whether my current savings and investments are on pace toward that target.</span></div>
+    <div class="item"><span class="inum">10</span><span class="box"></span><span class="itext">I invest <b>regularly and specifically for retirement</b>, rather than relying only on whatever is left over.</span></div>
+    <div class="item"><span class="inum">11</span><span class="box"></span><span class="itext">My retirement money is <b>kept separate</b> from short-term goals, so it does not get disturbed for other needs.</span></div>
+    <div class="item"><span class="inum">12</span><span class="box"></span><span class="itext">I <b>step up my contributions</b> as my income grows, rather than leaving them fixed for years.</span></div>
+    <div class="item"><span class="inum">13</span><span class="box"></span><span class="itext">I understand the <b>risk profile</b> of my retirement investments and am satisfied it suits my time horizon.</span></div>
+    <div class="item"><span class="inum">14</span><span class="box"></span><span class="itext">I hold an <b>emergency fund</b>, so a sudden expense will not force me to break my retirement investments early.</span></div>
+  </div>
+
+  <div class="runfoot"><b>www.moneycompound.com</b> &nbsp;&bull;&nbsp; Educational information only &mdash; not investment advice &nbsp;&bull;&nbsp; ARN: 140318</div>
+</div>
+
+<!-- AREA C & D + SCORE -->
+<div class="page">
+  <div class="runhead"><b>MONEY COMPOUND</b> &middot; Retirement Readiness Checklist</div>
+  <div class="headrule"></div>
+
+  <div class="areawrap" style="margin-top:6px;">
+    <h2 class="area"><span class="n">C</span> Healthcare</h2>
+    <div class="areadesc">Medical costs are the most common reason retirement plans get derailed. These points stress-test your protection.</div>
+    <div class="item"><span class="inum">15</span><span class="box"></span><span class="itext">I have <b>adequate health insurance</b> that will continue to cover me into and through retirement.</span></div>
+    <div class="item"><span class="inum">16</span><span class="box"></span><span class="itext">I know whether my <b>employer health cover ends at retirement</b>, and I have a plan to replace it if it does.</span></div>
+    <div class="item"><span class="inum">17</span><span class="box"></span><span class="itext">My cover amount reflects <b>realistic future medical costs</b> &mdash; which tend to rise faster than general inflation.</span></div>
+    <div class="item"><span class="inum">18</span><span class="box"></span><span class="itext">I have considered cover for <b>critical illness and long-term / elder-care</b> needs, not just hospitalisation.</span></div>
+    <div class="item"><span class="inum">19</span><span class="box"></span><span class="itext">I have set aside a <b>medical buffer</b> for out-of-pocket costs that insurance may not fully cover.</span></div>
+    <div class="item"><span class="inum">20</span><span class="box"></span><span class="itext">My <b>spouse and dependants</b> are also adequately covered for health.</span></div>
+  </div>
+
+  <div class="areawrap">
+    <h2 class="area"><span class="n">D</span> Estate &amp; Succession</h2>
+    <div class="areadesc">Will what you have built reach the people you intend, smoothly and without dispute?</div>
+    <div class="item"><span class="inum">21</span><span class="box"></span><span class="itext">I have a <b>valid, up-to-date Will</b>.</span></div>
+    <div class="item"><span class="inum">22</span><span class="box"></span><span class="itext">I have recorded <b>nominations</b> on all bank accounts, investments, insurance policies and my demat account.</span></div>
+    <div class="item"><span class="inum">23</span><span class="box"></span><span class="itext">My nominations and my Will are <b>consistent</b> with each other, with no conflicts.</span></div>
+    <div class="item"><span class="inum">24</span><span class="box"></span><span class="itext">My family <b>knows where my records, documents and access details</b> are kept.</span></div>
+    <div class="item"><span class="inum">25</span><span class="box"></span><span class="itext">I maintain a <b>consolidated list</b> of all my assets, liabilities, accounts and policies in one place.</span></div>
+    <div class="item"><span class="inum">26</span><span class="box"></span><span class="itext">I have thought about how assets will <b>pass to my heirs smoothly</b> (joint holding, succession arrangements).</span></div>
+    <div class="item"><span class="inum">27</span><span class="box"></span><span class="itext">I <b>review the whole plan after major life events</b> &mdash; marriage, children, a property purchase, or a change in residency / NRI status.</span></div>
+  </div>
+
+  <span class="kicker" style="margin-top:8px;">Your result</span>
+  <h1 class="sec" style="font-size:21px;">Count your ticks</h1>
+  <div class="titlerule"></div>
+  <div class="score">
+    <div class="scard"><div class="rng">22&ndash;27</div><div class="lbl">On track</div><div class="txt">A strong, well-rounded plan. Keep reviewing it once a year and after big life changes.</div></div>
+    <div class="scard"><div class="rng">14&ndash;21</div><div class="lbl">Getting there</div><div class="txt">A solid base with a few real gaps. Note the unticked points and address them one by one.</div></div>
+    <div class="scard"><div class="rng">0&ndash;13</div><div class="lbl">Needs attention</div><div class="txt">Several important areas are open. Tackling them early gives you far more options later.</div></div>
+  </div>
+  <div class="tealbox"><b>What next?</b> Each unticked box is simply an area to learn more about. This audit highlights <i>where</i> to focus &mdash; the specific steps that suit you depend on your goals, time horizon and risk profile, and are best worked through with a qualified professional.</div>
+
+  <div class="runfoot"><b>www.moneycompound.com</b> &nbsp;&bull;&nbsp; Educational information only &mdash; not investment advice &nbsp;&bull;&nbsp; ARN: 140318</div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="page">
+  <div class="runhead"><b>MONEY COMPOUND</b> &middot; Retirement Readiness Checklist</div>
+  <div class="headrule"></div>
+  <span class="kicker">Important Information</span>
+  <h1 class="sec" style="font-size:21px;">Disclaimer</h1>
+  <div class="titlerule"></div>
+  <p class="disclaimer"><b>Educational purpose only.</b> This checklist is provided by Money Compound for general educational and awareness purposes only. It does not constitute investment advice, financial planning advice, tax advice, legal advice or a recommendation of any kind, and does not suggest any asset allocation or any specific product, scheme or strategy.</p>
+  <p class="disclaimer"><b>No solicitation.</b> Nothing here is an offer or solicitation to buy or sell any security, scheme or financial product. The scoring bands are a simple self-reflection aid, not an assessment of your financial situation.</p>
+  <p class="disclaimer"><b>Suitability.</b> Retirement needs differ from person to person. What is appropriate for one individual may be unsuitable for another. Before acting on any point, please consult a qualified and appropriately registered professional and, where relevant, read all scheme related documents carefully.</p>
+  <p class="disclaimer"><b>Market risk.</b> Mutual Fund investments are subject to market risks. Read all scheme related documents carefully before investing. The value of investments can go down as well as up.</p>
+  <p class="disclaimer"><b>No assured returns.</b> No assured, guaranteed or indicative returns are promised or implied. Past performance is not indicative of future results.</p>
+  <p class="disclaimer"><b>Regulatory status.</b> Money Compound is an AMFI-registered Mutual Fund Distributor (ARN: 140318) and provides educational information and distribution services; it does not provide investment advisory services unless separately and explicitly agreed in writing under the applicable regulatory framework.</p>
+  <p class="disclaimer" style="text-align:center;margin-top:16px;"><b>Money Compound</b> &nbsp;&bull;&nbsp; Grow Financially Strong<br>www.moneycompound.com &nbsp;&bull;&nbsp; support@moneycompound.com &nbsp;&bull;&nbsp; @moneycompoundwealth<br>AMFI-registered Mutual Fund Distributor &nbsp;&bull;&nbsp; ARN: 140318</p>
+  <div class="runfoot"><b>www.moneycompound.com</b> &nbsp;&bull;&nbsp; Educational information only &mdash; not investment advice &nbsp;&bull;&nbsp; ARN: 140318</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax-Saving Ready Reckoner & Planning Calendar — Money Compound</title>
+<style>
+  :root{--navy:#0B2545;--gold:#C9A227;--teal:#2E9E8F;--slate:#3A4A5C;--soft:#F4F1EA;--border:#D0D5DD;--ink:#1d2733;}
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:"Calibri","Segoe UI",Helvetica,Arial,sans-serif;color:var(--slate);background:#e9eaed;line-height:1.55;font-size:15.5px;}
+  .page{background:#fff;width:8.5in;min-height:11in;margin:24px auto;padding:1.0in 0.9in 0.85in;box-shadow:0 6px 26px rgba(0,0,0,.16);position:relative;}
+  .cover{background:linear-gradient(160deg,#0B2545 0%,#143a6b 100%);color:#fff;display:flex;flex-direction:column;padding:0.85in 0.9in 0.9in;}
+  .cover .brandmark{font-size:27px;font-weight:800;letter-spacing:.14em;align-self:center;text-align:center;}
+  .cover .brandtag{font-size:12.5px;font-style:italic;color:var(--gold);align-self:center;margin-top:4px;}
+  .cover .spacer{flex:1;}
+  .cover .badge{align-self:flex-start;background:var(--gold);color:var(--navy);font-weight:800;font-size:12px;letter-spacing:.12em;padding:5px 12px;border-radius:3px;text-transform:uppercase;}
+  .cover h1{font-size:44px;line-height:1.06;margin:14px 0 0;font-weight:800;letter-spacing:-.01em;}
+  .cover .sub{font-size:16px;color:var(--gold);margin-top:18px;border-left:3px solid var(--gold);padding-left:14px;line-height:1.5;}
+  .cover .hr{height:2px;background:var(--gold);width:90px;margin:22px 0;}
+  .cover .compliance{font-size:12px;color:#aebbcd;margin-top:16px;font-style:italic;line-height:1.45;}
+  .cover .foot{margin-top:auto;}
+  .cover .edition{font-size:16px;font-weight:600;}
+  .cover .url{font-size:12.5px;color:#aebbcd;margin-top:4px;}
+  h1.sec{font-size:23px;color:var(--navy);font-weight:800;margin:0 0 4px;line-height:1.18;}
+  .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+  .titlerule{height:3px;width:60px;background:var(--gold);margin:9px 0 16px;}
+  h2{font-size:18px;color:var(--navy);font-weight:700;margin:20px 0 6px;}
+  h3{font-size:15px;color:var(--teal);font-weight:700;margin:14px 0 4px;}
+  p{margin:8px 0;text-align:justify;}
+  .lead{font-size:15.5px;color:var(--ink);}
+  table{width:100%;border-collapse:collapse;margin:11px 0;font-size:12.8px;}
+  th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;font-weight:700;}
+  td{border:1px solid var(--border);padding:7px 10px;color:var(--slate);vertical-align:top;}
+  tr:nth-child(even) td{background:var(--soft);}
+  .twocol{display:flex;gap:16px;}
+  .twocol .c{flex:1;border:1px solid var(--border);border-radius:6px;padding:12px 14px;background:#fafbfc;}
+  .twocol .c h3{margin-top:0;}
+  .note{background:#fbf8ef;border:1px solid #e6dcc0;border-left:4px solid var(--gold);padding:9px 14px;margin:14px 0;font-size:12.5px;color:#5f5733;border-radius:4px;}
+  .note b{color:var(--navy);}
+  .tealbox{background:#eef7f5;border:1px solid #cce6e1;border-left:4px solid var(--teal);padding:9px 14px;margin:14px 0;font-size:12.5px;color:#28524b;border-radius:4px;}
+  .tealbox b{color:var(--navy);}
+  .disclaimer{font-size:11.5px;color:#5b6773;line-height:1.5;margin:6px 0;}
+  .cal{display:flex;align-items:flex-start;gap:11px;padding:9px 0;border-bottom:1px solid #eef0f2;}
+  .cal:last-child{border-bottom:none;}
+  .cal .m{flex:none;width:74px;font-weight:800;color:#fff;background:var(--teal);border-radius:5px;text-align:center;padding:5px 4px;font-size:12.5px;}
+  .cal .t{font-size:13.3px;color:var(--ink);}
+  .cal .t b{color:var(--navy);}
+  .runhead{position:absolute;top:0.5in;left:0.9in;right:0.9in;font-size:10px;color:var(--slate);text-align:right;}
+  .runhead b{color:var(--navy);letter-spacing:.1em;}
+  .headrule{position:absolute;top:0.82in;left:0.9in;right:0.9in;height:1px;background:var(--gold);}
+  .runfoot{position:absolute;bottom:0.4in;left:0.9in;right:0.9in;text-align:center;font-size:9.5px;color:#7a8694;border-top:1px solid #e3e6ea;padding-top:5px;}
+  .runfoot b{color:var(--navy);}
+  @media print{
+    body{background:#fff;}
+    .page{box-shadow:none;margin:0;width:auto;min-height:auto;padding:0.7in 0.7in 0.65in;page-break-after:always;}
+    .page:last-child{page-break-after:auto;}
+    .no-print{display:none;}
+    @page{size:Letter;margin:0;}
+  }
+  .no-print{max-width:8.5in;margin:18px auto 0;padding:14px 18px;background:#fff7e0;border:1px solid var(--gold);border-radius:8px;font-size:13.5px;color:#5a4a16;}
+  .no-print b{color:var(--navy);}
+</style>
+</head>
+<body>
+
+<div class="no-print">
+  <b>How to save this as a PDF:</b> Press <b>Ctrl/Cmd + P</b> &rarr; Destination <b>&ldquo;Save as PDF&rdquo;</b> &rarr; Margins <b>None</b>, enable <b>Background graphics</b>.
+</div>
+
+<!-- COVER -->
+<div class="page cover">
+  <div class="brandmark">MONEY COMPOUND</div>
+  <div class="brandtag">Grow Financially Strong</div>
+  <div class="spacer"></div>
+  <div class="badge">Free Guide</div>
+  <h1>Tax-Saving<br>Ready Reckoner</h1>
+  <div class="hr"></div>
+  <div class="sub">An educational guide to the old vs new regime, common deductions, and a month-by-month financial planning calendar for the year.</div>
+  <div class="compliance">Educational and awareness purposes only. Not tax, investment or legal advice. Tax laws change frequently &mdash; always verify the current rules and limits, and consult a qualified tax professional.</div>
+  <div class="spacer"></div>
+  <div class="foot">
+    <div class="edition">2026 Edition</div>
+    <div class="url">www.moneycompound.com &nbsp;&bull;&nbsp; support@moneycompound.com &nbsp;&bull;&nbsp; @moneycompoundwealth</div>
+    <div class="url">AMFI-registered Mutual Fund Distributor &nbsp;&bull;&nbsp; ARN: 140318</div>
+  </div>
+</div>
+
+<!-- PAGE 1: REGIMES -->
+<div class="page">
+  <div class="runhead"><b>MONEY COMPOUND</b> &middot; Tax-Saving Ready Reckoner</div>
+  <div class="headrule"></div>
+  <span class="kicker">Start here</span>
+  <h1 class="sec">Old regime or new regime?</h1>
+  <div class="titlerule"></div>
+  <p class="lead">India lets most taxpayers choose between two tax regimes each year. Neither is universally "better" &mdash; the right one depends on your income and the deductions you actually use. Understanding the trade-off is the first step to being tax-smart.</p>
+
+  <div class="twocol">
+    <div class="c">
+      <h3>The Old Regime</h3>
+      <p style="font-size:13px;">Generally has higher slab rates but allows a wide range of <b>deductions and exemptions</b> (such as 80C, 80D, HRA, home-loan interest and more). It tends to suit those who actively use several deductions.</p>
+    </div>
+    <div class="c">
+      <h3>The New Regime</h3>
+      <p style="font-size:13px;">Generally offers <b>lower slab rates</b> but removes most deductions and exemptions. It tends to suit those who claim few deductions and prefer simplicity.</p>
+    </div>
+  </div>
+
+  <h2>How to decide</h2>
+  <p>The practical method is simple: estimate your tax under <i>both</i> regimes for the year, including the deductions you would genuinely claim, and compare. The regime that leaves more in your pocket, for your actual situation, is the one to choose. Because slab rates, rebates and rules are revised from time to time (often in the annual Budget), this is a calculation worth redoing each year with current figures.</p>
+
+  <div class="note"><b>Important.</b> This guide deliberately does not state specific slab rates, rebate thresholds or limits, because they change and any figure here could become outdated. Always check the <b>current</b> rates and limits for the relevant assessment year, and run the comparison with a qualified tax professional.</div>
+
+  <div class="tealbox"><b>The key principle.</b> Choose investments that suit your goals and risk profile <i>first</i>, then structure them tax-efficiently. A product bought only to save tax, but which does not suit you, is rarely a good outcome &mdash; don't let the tax tail wag the investment dog.</div>
+
+  <div class="runfoot"><b>www.moneycompound.com</b> &nbsp;&bull;&nbsp; Educational information only &mdash; not tax or investment advice &nbsp;&bull;&nbsp; ARN: 140318</div>
+</div>
+
+<!-- PAGE 2: DEDUCTIONS -->
+<div class="page">
+  <div class="runhead"><b>MONEY COMPOUND</b> &middot; Tax-Saving Ready Reckoner</div>
+  <div class="headrule"></div>
+  <span class="kicker">Common deductions (Old Regime)</span>
+  <h1 class="sec">The deduction toolbox</h1>
+  <div class="titlerule"></div>
+  <p>These are commonly used deductions <b>available under the old regime</b> (most are not available under the new regime). They are listed for awareness &mdash; this is not a recommendation to use any of them, and eligibility, conditions and limits must be verified against current law.</p>
+
+  <h3>The Section 80C basket</h3>
+  <p style="margin-top:2px;">A single overall annual limit (commonly <b>&#8377;1.5 lakh</b> &mdash; verify the current cap) covers a basket of options. Each has a different character, lock-in and risk profile:</p>
+  <table>
+    <tr><th>Option</th><th>Nature</th><th>Note</th></tr>
+    <tr><td>Public Provident Fund (PPF)</td><td>Government-backed savings</td><td>Long lock-in; stability-oriented</td></tr>
+    <tr><td>Employees' Provident Fund (EPF)</td><td>Salary-linked retirement</td><td>Employee contribution counts</td></tr>
+    <tr><td>ELSS (tax-saving equity funds)</td><td>Equity mutual fund</td><td>Statutory lock-in; equity-market risk</td></tr>
+    <tr><td>Life insurance premium</td><td>Protection</td><td>Premium on eligible policies</td></tr>
+    <tr><td>5-year tax-saving bank FD</td><td>Fixed deposit</td><td>Locked for the tenure</td></tr>
+    <tr><td>NSC / Sukanya Samriddhi</td><td>Small savings</td><td>Specific eligibility &amp; tenure</td></tr>
+    <tr><td>Home loan principal repayment</td><td>Loan repayment</td><td>Conditions apply</td></tr>
+    <tr><td>Children's tuition fees</td><td>Education</td><td>Conditions apply</td></tr>
+  </table>
+
+  <h3>Other commonly used deductions</h3>
+  <table>
+    <tr><th>Section</th><th>Broadly for</th></tr>
+    <tr><td>80D</td><td>Health insurance premiums (self, family, parents) &mdash; separate from 80C</td></tr>
+    <tr><td>80CCD(1B)</td><td>Additional deduction for NPS contributions, over and above 80C</td></tr>
+    <tr><td>24(b)</td><td>Interest paid on a home loan (conditions apply)</td></tr>
+    <tr><td>80TTA / 80TTB</td><td>Interest from savings / deposits (80TTB for senior citizens)</td></tr>
+    <tr><td>HRA / Standard Deduction</td><td>Salaried allowances and the standard deduction, as applicable</td></tr>
+  </table>
+
+  <div class="note"><b>Verify everything.</b> Sections, eligibility, conditions and limits change and depend on your facts. Treat this as a map of where to look, not as advice. Confirm the current position with a qualified tax professional before acting.</div>
+
+  <div class="runfoot"><b>www.moneycompound.com</b> &nbsp;&bull;&nbsp; Educational information only &mdash; not tax or investment advice &nbsp;&bull;&nbsp; ARN: 140318</div>
+</div>
+
+<!-- PAGE 3: CALENDAR -->
+<div class="page">
+  <div class="runhead"><b>MONEY COMPOUND</b> &middot; Tax-Saving Ready Reckoner</div>
+  <div class="headrule"></div>
+  <span class="kicker">Stay on track all year</span>
+  <h1 class="sec">Annual Financial Planning Calendar</h1>
+  <div class="titlerule"></div>
+  <p style="margin-bottom:6px;">A simple month-by-month rhythm for the Indian financial year (April&ndash;March). Dates for filings and statements vary year to year &mdash; treat these as <i>reminders to check</i>, not exact deadlines.</p>
+
+  <div class="cal"><div class="m">APR</div><div class="t"><b>New year reset.</b> Choose your tax regime for the year; restart/step up SIPs early so compounding gets the full year; set this year's goals.</div></div>
+  <div class="cal"><div class="m">MAY&ndash;JUN</div><div class="t"><b>Document gather.</b> Collect Form 16, interest certificates and capital-gains statements; reconcile your AIS / Form 26AS.</div></div>
+  <div class="cal"><div class="m">JUL</div><div class="t"><b>Income-tax return.</b> File your ITR within the applicable due date (verify the current date); don't wait for the last week.</div></div>
+  <div class="cal"><div class="m">AUG&ndash;SEP</div><div class="t"><b>Mid-year review.</b> Check progress against goals; review your emergency fund and insurance cover for any gaps.</div></div>
+  <div class="cal"><div class="m">OCT</div><div class="t"><b>Portfolio check.</b> Review your overall asset mix; consider whether it has drifted from your intended allocation.</div></div>
+  <div class="cal"><div class="m">NOV&ndash;DEC</div><div class="t"><b>Tax planning, not panic.</b> Estimate your annual tax early; plan any eligible deductions calmly rather than rushing in March.</div></div>
+  <div class="cal"><div class="m">JAN</div><div class="t"><b>Proof submission.</b> Submit investment / deduction proofs to your employer if salaried; verify what's been recorded.</div></div>
+  <div class="cal"><div class="m">FEB</div><div class="t"><b>Budget watch.</b> Note any changes announced in the Union Budget that may affect your plan for the next year.</div></div>
+  <div class="cal"><div class="m">MAR</div><div class="t"><b>Year-end close.</b> Complete any remaining eligible actions before 31 March; record the year's transactions for filing.</div></div>
+
+  <div class="tealbox"><b>The habit that matters.</b> Spreading these tasks across the year &mdash; instead of cramming them into March &mdash; leads to calmer, better decisions and avoids last-minute mistakes.</div>
+
+  <div class="runfoot"><b>www.moneycompound.com</b> &nbsp;&bull;&nbsp; Educational information only &mdash; not tax or investment advice &nbsp;&bull;&nbsp; ARN: 140318</div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="page">
+  <div class="runhead"><b>MONEY COMPOUND</b> &middot; Tax-Saving Ready Reckoner</div>
+  <div class="headrule"></div>
+  <span class="kicker">Important Information</span>
+  <h1 class="sec" style="font-size:21px;">Disclaimer</h1>
+  <div class="titlerule"></div>
+  <p class="disclaimer"><b>Educational purpose only.</b> This reckoner is provided by Money Compound for general educational and awareness purposes only. It does not constitute tax advice, investment advice, legal advice or a recommendation of any kind, and does not suggest any asset allocation or any specific product, scheme or strategy.</p>
+  <p class="disclaimer"><b>Tax laws change.</b> Tax provisions, sections, rates, rebates, eligibility and limits are revised frequently and depend on your individual facts and the relevant assessment year. No specific figures here should be relied upon without verifying the current law. Please consult a qualified tax professional for advice specific to you.</p>
+  <p class="disclaimer"><b>No solicitation.</b> Nothing here is an offer or solicitation to buy or sell any security, scheme or financial product. Products are listed only to explain where deductions may apply.</p>
+  <p class="disclaimer"><b>Market risk.</b> Mutual Fund investments (including ELSS) are subject to market risks. Read all scheme related documents carefully before investing. The value of investments can go down as well as up.</p>
+  <p class="disclaimer"><b>No assured returns.</b> No assured, guaranteed or indicative returns are promised or implied. Past performance is not indicative of future results.</p>
+  <p class="disclaimer"><b>Regulatory status.</b> Money Compound is an AMFI-registered Mutual Fund Distributor (ARN: 140318) and provides educational information and distribution services; it does not provide investment advisory or tax advisory services unless separately and explicitly agreed in writing under the applicable regulatory framework.</p>
+  <p class="disclaimer" style="text-align:center;margin-top:16px;"><b>Money Compound</b> &nbsp;&bull;&nbsp; Grow Financially Strong<br>www.moneycompound.com &nbsp;&bull;&nbsp; support@moneycompound.com &nbsp;&bull;&nbsp; @moneycompoundwealth<br>AMFI-registered Mutual Fund Distributor &nbsp;&bull;&nbsp; ARN: 140318</p>
+  <div class="runfoot"><b>www.moneycompound.com</b> &nbsp;&bull;&nbsp; Educational information only &mdash; not tax or investment advice &nbsp;&bull;&nbsp; ARN: 140318</div>
+</div>
+
+</body>
+</html>

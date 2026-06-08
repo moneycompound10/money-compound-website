@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script nonce="undefined" src="https://cdn.zingchart.com/zingchart.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+     <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+    <style>
+.container1 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 40px 44px;
+        box-sizing: border-box;
+    }
+ .leftpanel-registrationform {
+         width: 100%;
+         max-width: 980px;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        background: #ffffff;
+        border-radius: 22px;
+        box-shadow: 0 18px 40px rgba(100,116,139,0.28), 0 6px 14px rgba(100,116,139,0.22), 0 2px 4px rgba(100,116,139,0.18);
+        overflow: hidden;
+    }
+        .left-panel {
+            background: radial-gradient(130% 90% at 50% 16%, #16294a 0%, #0A1A2F 48%, #050a14 100%);
+            width:44%;
+            position: relative;
+            overflow: hidden;
+            min-height: 520px;
+        }
+        .fc-hero {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            padding: 34px 26px 30px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+        .fc-eyebrow {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+        .fc-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            line-height: 1.12;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(95deg, #5eead4 0%, #6ee7b7 22%, #a7d3fb 62%, #5b95f5 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        .fc-title span {
+            color: inherit;
+        }
+        .fc-media {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 16px 0;
+            min-height: 0;
+        }
+        .fc-media img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 14px;
+            box-shadow: 0 18px 50px rgba(0,0,0,0.5);
+        }
+        .fc-badge {
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #cfe9df;
+            border: 1px solid rgba(83,192,155,0.4);
+            border-radius: 999px;
+            padding: 8px 16px;
+            background: rgba(83,192,155,0.08);
+        }
+   .left-panel p{
+        font-family: Roboto;
+        font-size: 24px;
+        font-weight: 400;
+        margin: 20px 0 0 0;
+        line-height: 40px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #407BD5;
+
+    }
+    .left-panel h4{
+        font-family: Roboto;
+        font-size: 36px;
+        line-height: 40px;
+        font-weight: 800;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #53C09B;
+    }
+            #image img {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        #registration-form {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            width: 56%;
+            margin: 0;
+height: fit-content;
+        }
+
+        .regis-form {
+            width: 100%;
+            padding: 40px 44px;
+        }
+
+    .regis-form h2{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+             font-style: normal;
+            font-size: 32px;
+           color: #2C2C2C;
+line-height: 40px;
+margin: 0;
+            margin-bottom: 5px;
+    }
+  .regis-form h2 span{
+font-weight: 400;
+}
+#phone-error{
+    color: red;
+}
+#email-error{
+    color: red;
+}
+    .regis-form p{
+        text-align: left;
+        font-family: 'Roboto', sans-serif;
+ font-size: 18px;
+            font-weight: 400;
+line-height: 30px;
+color: #6F6C90;
+
+    }
+      .field {
+        display: flex;
+        gap: 20px;
+    }
+
+    .field label{
+        display: block;
+        margin-bottom: 5px;
+font-family: "DM Sans", sans-serif;
+font-size: 14px;
+            font-weight: 500;
+line-height: 20px;
+color: #170F49;
+    }
+    .col{
+    display: flex;
+    flex-direction: column;
+}
+.col-3{
+    display: flex;
+    gap: 20px;
+}
+    .col-3 label{
+        display: block;
+        margin-bottom: 5px;
+font-family: "DM Sans", sans-serif;
+font-size: 14px;
+            font-weight: 500;
+line-height: 20px;
+color: #170F49;
+    }
+
+        .field1 {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field2 {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field1-input {
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .field2-input {
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+.input-with-icon{
+    width: 100%;
+    position: relative;
+   border: 1px solid #d7dbe3;
+    border-radius: 10px;
+    display: flex;
+    background: #fff;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+.input-with-icon:focus-within{
+   border-color: #53C09B;
+   box-shadow: 0 0 0 3px rgba(83,192,155,0.15);
+}
+.input-with{
+ width: 100%;
+    position: relative;
+   border: 1px solid #d7dbe3;
+    border-radius: 10px;
+    background: #fff;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+.input-with:focus-within{
+   border-color: #53C09B;
+   box-shadow: 0 0 0 3px rgba(83,192,155,0.15);
+}
+
+.input-with-icon .icon{
+color: #A0A3BD;
+font-weight: 400;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    font-size: 25px;
+line-height: 20px;
+font-family: "DM Sans", sans-serif;
+}
+
+     .form-input {
+        padding: 15px;
+        width: 100%;
+border: none;
+outline: none;
+font-family: "DM Sans", sans-serif;
+font-size: 14px;
+            font-weight: 400;
+line-height: 20px;
+color: #000;
+border-radius: 9px;
+    }
+ .form-input::placeholder {
+font-family: "DM Sans", sans-serif;
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+color: #6F6C90;
+
+}
+
+.form-input:focus,
+.form-input:hover,
+.form-input:active,
+.form-input:focus-visible,
+.form-input:valid{
+background-color: transparent;
+}
+
+
+
+        select {
+width: 100%;
+padding: 15px;
+font-family: DM Sans;
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+color: #6F6C90;
+border: none;
+outline: none;
+border-radius: 9px;
+
+  }
+   .form-group{
+            display: flex;
+    justify-content: end;
+    margin: 5px 0 0 0;
+}
+
+    .form-group p{
+        display:flex;
+        align-content:start;
+        color:grey;
+        font-weight:500;
+        margin-bottom:0px;
+        margin-left: 20px;
+    }
+        #next-button {
+            padding: 12px 28px;
+            background: linear-gradient(95deg, #0d9488 0%, #1d4ed8 100%);
+            color: #fff;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            display: flex;
+
+            box-shadow: 0 8px 20px -6px rgba(29,78,216,0.45);
+            justify-content: space-around;
+            align-items: center;
+font-size: 15px;
+font-family: Roboto;
+line-height: 26px;
+letter-spacing: 0.46px;
+font-weight: 600;
+transition: filter .2s ease, transform .2s ease, box-shadow .2s ease;
+ }
+#next-button:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px -6px rgba(29,78,216,0.55);
+}
+#next-button .btn{
+line-height: 18px;
+font-size: 12px;
+
+}
+#next-button .btn:hover{
+color: #fff;
+}
+
+         #myhart {
+        height: 46vh;
+        width: 100%;
+        min-height: 150px;
+        display: flex;
+        justify-content: center;
+
+    }
+ .EXIT{
+        text-align: center;
+display: flex;
+    justify-content: center;
+    align-items: center;
+position: relative;
+    top: 0px;
+margin-bottom: 30px;
+    }
+
+
+    .last-btn{
+        padding: 10px 30px;
+        background-color: #53C09B;
+        border: 1px solid #53C09B;
+        color: #ffff;
+        text-align: center;
+        border-radius: 5px;
+font-family: Roboto;
+font-size: 15px;
+font-weight: 500;
+line-height: 26px;
+letter-spacing: 0.46px;
+cursor: pointer;
+    }
+.last-btn:hover{
+    background: #41ab87;
+    color: #fff;
+}
+    .exit-btn{
+        padding: 10px 60px;
+        border: 1px solid #53C09B;
+        color: #53C09B;
+        background-color: #fff;
+        border-radius: 5px;
+        margin-left: 15px;
+font-family: Roboto;
+font-size: 15px;
+font-weight: 500;
+line-height: 26px;
+letter-spacing: 0.46000000834465027px;
+text-align: center;
+
+cursor: pointer;
+    }
+    .zc-ref {
+        display: none;
+    }
+
+        a title {
+            display: none !important;
+        }
+
+        .bredcrumb2 {
+            display: none;
+        }
+
+        .row {
+            margin-right: -20px;
+            margin-left: -20px;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        #con-mydesign8 {
+            padding-bottom: 0px;
+            padding-top: 0px;
+        }
+
+        #he-mydesign4 {
+            padding-top: 10px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: transparent;
+        }
+
+
+
+        h1 {
+            font-weight: 800;
+            color: #fff;
+            font-size: 40px;
+        }
+
+
+        .quiz-container {
+            display: none;
+            padding-right: 20px;
+            padding-left: 20px;
+            width: 60%;
+            margin: 0 auto;
+
+        }
+
+        .question-txt {
+            display: none;
+        }
+
+        .option-inputimg img {
+            border-radius: 10px;
+            height: 120px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+
+        .option-rowimg {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+
+        }
+
+.drop{
+    position: relative;
+    background: #463c3c1f;
+    border-radius: 9px 0 0 9px;
+}
+.drop select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  border-radius: 9px 0 0 9px;
+  width: 80px;
+    height: 100%;
+    padding-left: 8px;
+}
+.drop .icon {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 12px;
+  color: #170F49;
+}
+
+
+
+
+        .question-p {
+            padding-left:0px;
+            width:100%;
+            margin-bottom: 5px;
+font-family: Roboto;
+font-size: 18px;
+font-weight: 400;
+line-height: px;
+letter-spacing: 0em;
+text-align: left;
+color: #000000;
+        }
+
+        .btnOK {
+    margin-left:10px;
+    margin-top: 20px;
+    width: 110px;
+    height: 44px;
+    background-color: #53C09B;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+font-family: Roboto;
+font-size: 15px;
+font-weight: 500;
+line-height: 26px;
+letter-spacing: 0.46000000834465027px;
+text-align: center;
+color: #FFFFFF;
+}
+.btnOK .next {
+margin-left: 5px;
+font-size: 12px;
+color: #fff;
+}
+.btnOK .next:hover {
+color: #fff;
+}
+            .btnOK:hover {
+                background-color: #53C09B;
+            }
+
+        .btnpre {
+    margin-top: 20px;
+    width: 140px;
+    height: 44px;
+    background-color: #fff;
+   border: 1px solid #53C09B;
+    border-radius: 5px;
+    color: #53C09B;
+    cursor: pointer;
+    margin-right: 10px;
+font-family: Roboto;
+font-size: 15px;
+font-weight: 500;
+line-height: 26px;
+letter-spacing: 0.46000000834465027px;
+text-align: center;
+
+}
+
+
+
+          .btnpre2 {
+                    background-color: #C5C5C5;
+                    color: #979797;
+                    border: solid #AEAEAE;
+                    width: 80px;
+                    height: 40px;
+                    margin-top: 20px;
+                    border-radius: 10px;
+                    border: none;
+                    margin-right: 10px;
+                   }
+
+        .buttons {
+                 display: flex;
+                 justify-content: end;
+        }
+
+
+
+
+
+        .option-input {
+            padding: 5px 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: 2px solid #EFF0F6;
+background-color: #fff;
+        }
+ .option-input span{
+font-family: DM Sans;
+font-size: 16px;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+color: #170F49;
+}
+
+            .option-input:hover {
+                background-color: #c6efe1;
+            }
+
+        .option-inputimg {
+             padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #BEBEBE;
+            width: 30%;
+            margin: 0px;
+           background-color: #ffffff;
+        }
+
+            .option-inputimg:hover {
+                background-color: #c6efe1;
+            }
+
+
+
+        input[type=radio] {
+            cursor: pointer;
+            margin-top: 1px\9;
+            line-height: normal;
+            margin-right: 10px;
+
+        }
+
+        input img {
+            margin-left: 10px;
+        }
+
+        .gauge {
+            display: block;
+        }
+
+    .main-div{
+        display: flex;
+        justify-content: space-between;
+margin-bottom: 20px;
+    }
+    .main-div .step{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        border: 1px solid #D9D9D9;
+        border-radius: 50%;
+        position: relative;
+        min-width: 30px;
+        min-height: 30px;
+    }
+    .main-div .step::after{
+        content: "";
+        position: absolute;
+        right: -19px;
+        display: inline;
+        transform: rotate(90deg);
+        border: 1px dashed #D9D9D9;
+        height: 25px;
+        top: 3px;
+    }
+    .main-div .step:last-child::after {
+        border: none;
+    }
+
+    .main-div .step p{
+        line-height: 29px;
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+        text-align: center;
+        color: #000;
+    }
+
+ .option-input.active {
+        border: 2px solid #53C09B;
+    }
+
+ .step.active {
+    background-color: #ccc;
+}
+   #currentQuestionMessage{
+        display: none;
+    }
+    .active #currentQuestionMessage{
+        display: block;
+font-family: Roboto;
+font-size: 15px;
+font-weight: 400;
+letter-spacing: 0em;
+text-align: left;
+color: #ffffff;
+    }
+.active .que{
+    display: none;
+}
+.step p .que{
+font-family: Roboto;
+font-size: 11px;
+font-weight: 400;
+line-height: 14px;
+letter-spacing: 0em;
+text-align: left;
+color: #000000CC;
+}
+.step.active {
+    border-radius: 7px;
+    background-color: #4dc19a;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.input [type="date"]{
+    text-transform: uppercase;
+}
+h2{
+font-family: Roboto;
+font-size: 32px;
+font-weight: 600;
+line-height: 40px;
+letter-spacing: 0em;
+text-align: left;
+}
+.showChart{
+box-shadow: 0px 5px 16px 16px #080F340F;
+margin: auto;
+border-radius: 10px;
+}
+.showChart h2{
+font-family: Roboto;
+font-size: 32px;
+font-weight: 600;
+line-height: 40px;
+letter-spacing: 0em;
+text-align: center;
+color: #2C2C2C;
+margin-top: 25px;
+margin-bottom: 20px;
+}
+.required{
+    color: red;
+}
+
+#myChart {
+        margin: 0 auto;
+    }
+
+    .error {
+        border: 2px solid red;
+    }
+
+    #message{
+            display: inline;
+    color: red;
+    position: relative;
+    top: -35px;
+    }
+.showChart span{
+position: relative;
+    left: 160px;
+    top: 35px;
+    z-index: 1;
+    font-size: 18px;
+}
+@media (max-width: 768px) {
+        .container1 {
+            padding: 16px 12px;
+        }
+        .left-panel {
+            width:100%;
+            min-height: 380px;
+            height: auto;
+border-radius: 0;
+        }
+        .fc-hero {
+            position: relative;
+            padding: 26px 22px 24px;
+        }
+        .fc-title {
+            font-size: 23px;
+        }
+.showChart{
+width: 100%;
+}
+.showChart span{
+position: relative;
+    left: 160px;
+ top: -15px;
+    z-index: 1;
+    font-size: 18px;
+}
+.EXIT{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    margin-top: -120px;
+}
+#myChart-wraper{
+    white-space: nowrap;
+    width: 852px;
+    height: 400px;
+    position: absolute;
+    overflow: hidden;
+    left: -259px;
+}
+.step-hide {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    justify-content: center;
+}
+.step {
+    flex: 0 0 auto;
+}
+.main-div .step{
+min-width: 25%;
+margin: 0 0 0 20px;
+border-radius: 10px;
+}
+.active #currentQuestionMessage{
+font-size: 12px;
+}
+.row{
+margin-right: -15px;
+    margin-left: -17px;
+}
+.col-md-12{
+padding: 0;
+}
+.step-hide{
+    overflow-x: scroll;
+}
+.main-div .step::after{
+height: 15px;
+top: 8px;
+right: -12px;
+}
+#message{
+    position: relative;
+top: -70px;
+}
+.col-3{
+    flex-wrap: wrap;
+    margin: 10px 0 0 0;
+}
+.buttons{
+justify-content: start;
+    margin: 0px 0 0 5px;
+}
+.exit-btn{
+font-size: 12px;
+margin-left: -20px;
+}
+.last-btn{
+
+}
+        #registration-form {
+            padding: 0px;
+            width:100%;
+            height: fit-content;
+        }
+
+        h2 {
+            margin-top: 10px;
+            font-family: 'Roboto', sans-serif;
+            color: #5C5CFF;
+            font-size: 25px;
+            text-align: center;
+            font-weight: 800;
+            height: fit-content;
+            padding: 0px;
+        }
+.sim-row{
+padding: 0 1px;
+}
+
+        .form-group {
+            margin: 5px 0 0 5px !important;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        #next-button{
+            margin-top: 0px;
+padding: 10px 10px 10px 10px;
+    font-size: 12px;
+        }
+.btnpre{
+font-size: 12px;
+    width: 120px;
+}
+.btnOK{
+width: 90px;
+font-size: 12px;
+}
+
+        .field {
+            width: 100%;
+            flex-direction: column;
+            margin: 0px;
+gap: 15px;
+        }
+
+        .field1,
+        .field2 {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .field1-input {
+            flex-direction: column;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .field2-input {
+            flex-direction: column;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .field1-input label b br {
+            display: none;
+        }
+
+        #name, #email, #birthday, #annualincome, #description, #Mobnum, #yearearning {
+            margin-top: 2px;
+            width: 100%;
+        }
+
+        .regis-form {
+            width: 100%;
+           padding: 22px 18px;
+        }
+
+        .leftpanel-registrationform {
+            height:100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+width: 100%;
+    padding: 0;
+        }
+
+        #image ig{
+            margin:0px;
+            height:50%;
+            width:85%;
+        }
+         .option-rowimg {
+            flex-direction: column;
+        }
+
+        .option-inputimg img {
+            width: 100%;
+            height: 100%;
+        }
+
+      .option-rowimg {
+            flex-direction: row;
+        }
+
+        .option-inputimg img {
+            width: 100%;
+            height: 200px;
+        }
+
+        .quiz-container {
+            display: none;
+            padding-top: 50px;
+            width: 100%;
+        }
+
+      .option-inputimg{
+             width:100%;
+       }
+
+     .question-p{
+         width:100%;
+         margin-top:20px;
+         padding-left:0px;
+         font-size: 15px;
+         margin-bottom:10px;
+         text-align: start;
+     }
+
+   .quiz-container{
+        padding:10px;
+   }
+
+   #myChart {
+            width: 110%;
+            height: 460px;
+        }
+        .zingchart {
+
+        margin-top: 20px;
+        }
+}
+
+@media only screen and (min-width: 769px) {
+
+        #myChart {
+            width: 700px;
+            height: 400px;
+        }
+    }
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+
+    <div class="container1">
+      <div class="leftpanel-registrationform">
+        <div class="left-panel">
+            <div class="fc-hero">
+                <div class="fc-head">
+                    <div class="fc-eyebrow">Know about your</div>
+                    <h3 class="fc-title">The <span>FinHealth</span> Score</h3>
+                </div>
+                <div class="fc-media">
+                    <img src="/images/finhealth_dashboard.png" alt="FinHealth Score dashboard">
+                </div>
+            </div>
+        </div>
+        <form id="registration-form">
+            <div class="regis-form">
+                <h2>Measure what matters</h2>
+                <p>Please fill in this form to attend the next step.</p>
+
+                <div class="col">
+
+                <div class="field">
+                    <div class="field1">
+                        <div class="field1-input">
+                            <label for="name">Name <span class="required">*</span> </label>
+<div class="input-with-icon">
+                            <input type="text" id="name" placeholder="Name" name="name" class="form-input" value="">
+                        </div>
+</div>
+
+<div class="field1-input">
+
+                            <label for="Number">Phone Number <span class="required">*</span></label>
+
+<div class="input-with-icon">
+    <div class="drop">
+        <select name="countries" id="countries"><option value="+91">IN (+91)</option></select>
+        <span class="icon">&#9660;</span>
+
+</div>
+                            <input type="tel" id="Mobnum" placeholder="0000000000" name="number" required="required" maxlength="15" class="form-input" value="">
+</div>
+
+                        </div>
+
+                        <div id="phone-error"></div>
+
+
+                    </div>
+                    <div class="field2">
+                        <div class="field2-input">
+                            <label for="email">Email <span class="required">*</span> </label>
+<div class="input-with-icon">
+                            <input type="email" id="email" placeholder="Email address" name="email" class="form-input" value="">
+</div>
+                        </div>
+                        <div id="email-error"></div>
+
+
+<div class="field2-input">
+                            <label for="birthday">Date of Birth <span class="required">*</span> </label>
+<div class="input-with-icon">
+                            <input type="date" id="birthday" name="birthday" placeholder="Enter Date of Birth" class="form-input" value="" min="1950-01-01" max="2014-12-31">
+</div>
+                        </div>
+<div id="birthday-error" style="color: red;"></div>
+
+                    </div>
+                </div>
+
+                <div class="col-3">
+
+                <div class="field1">
+                    <div class="field1-input">
+                        <label for="Description">Job Description</label>
+                       <div class="input-with">
+         <select id="description" name="description" class="">
+                            <option value="Business">Business</option>
+                            <option value="Salary"> Salaried</option>
+                            <option value="Professional">Professional</option>
+            <option value="Others">Others</option>
+                        </select>
+</div>
+                    </div>
+                    </div>
+                    <div class="field1">
+                    <div class="field1-input">
+                        <label for="yearearning">Number of year earning</label>
+                    <div class="input-with">
+                        <select id="yearearning" name="yearearning" class="yearearning">
+                            <option value="0-5 Years">0-5 Years</option>
+                            <option value="5-10 Years">5-10 Years</option>
+                            <option value="10-20 Years">10-20 Years</option>
+                            <option value="&gt;20 Years">&gt; 20 Years</option>
+                        </select>
+</div>
+                    </div>
+                    </div>
+                    <div class="field1">
+                    <div class="field1-input">
+                        <label for="annualincome">Annual Income</label>
+<div class="input-with">
+                        <select id="annualincome" name="annualincome" class="annualincome">
+                            <option value="0-5 Lacs">0-5 Lacs</option>
+                            <option value="5-20 Lacs">5-20 Lacs</option>
+                            <option value="20-50 Lacs">20-50 Lacs</option>
+                             <option value="&gt;50 Lacs">&gt; 50 Lacs</option>
+                        </select>
+</div>
+                    </div>
+                    </div>
+
+
+</div>
+            </div>
+
+                <div class="form-group">
+                    <button type="button" id="next-button">Lets Start <i class="btn fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </form>
+
+
+        <div class="quiz-container" id="quiz-form" style="display: none;">
+
+            <div class="step-hide">
+                <div class="main-div">
+                   <div class="step active">
+                    <p><span id="currentQuestionMessage">Question 1</span><span class="que">1</span></p>
+                   </div>
+                   <div class="step">
+                  <p><span id="currentQuestionMessage">Question 2</span><span class="que">2</span></p>
+                   </div>
+                   <div class="step">
+                   <p><span id="currentQuestionMessage">Question 3</span><span class="que">3</span></p>
+                   </div>
+                   <div class="step">
+                  <p><span id="currentQuestionMessage">Question 4</span><span class="que">4</span></p>
+                   </div>
+                   <div class="step">
+                  <p><span id="currentQuestionMessage">Question 5</span><span class="que">5</span></p>
+                   </div>
+                   <div class="step">
+                   <p><span id="currentQuestionMessage">Question 6</span><span class="que">6</span></p>
+                   </div>
+                   <div class="step">
+                  <p><span id="currentQuestionMessage">Question 7</span><span class="que">7</span></p>
+                   </div>
+                   <div class="step">
+                   <p><span id="currentQuestionMessage">Question 8</span><span class="que">8</span></p>
+                   </div>
+                   <div class="step">
+                   <p><span id="currentQuestionMessage">Question 9</span><span class="que">9</span></p>
+                   </div>
+                   <div class="step">
+                   <p><span id="currentQuestionMessage">Question 10</span><span class="que">10</span></p>
+                   </div>
+                </div>
+<div id="currentQuestionMessage">Question 1</div>
+            </div>
+            <div class="question" id="question1">
+                <p class="question-p"><b><span class="addName"></span></b>, How much % of your monthly income you invest for long term goals?</p>
+                <div class="option-rowimg">
+                    <div class="option-inputimg option-input">
+                        <img src=" https://www.moneycompound.com/Content/moneycompound.com/UploadedImage/RealImage/963No Investment.jpg" alt="Image"><br><input type="radio" name="q1" value="0"> <span>No Investment</span> <br>
+                    </div>
+                    <div class="option-inputimg option-input">
+                        <img src=" https://www.moneycompound.com/Content/moneycompound.com/UploadedImage/RealImage/982of Monthly Income1.jpg" alt="Image"><br><input type="radio" name="q1" value="2.5"><span> 0 - 20% of monthly income</span><br>
+                    </div>
+
+<div class="option-inputimg option-input">
+                        <img src="https://www.moneycompound.com/Content/moneycompound.com/UploadedImage/RealImage/388of Monthly Income2.jpg" alt="Image"><br> <input type="radio" name="q1" value="5"><span> 21 -40% of monthly income</span>  <br>
+                    </div>
+                    <div class="option-inputimg option-input">
+                        <img src=" https://www.moneycompound.com/Content/moneycompound.com/UploadedImage/RealImage/325of Monthly Income3.jpg" alt="Image"> <br><input type="radio" name="q1" value="7.5"> <span>41 - 60% of monthly income</span><br>
+                    </div>
+ <div class="option-inputimg option-input">
+                        <img src=" https://www.moneycompound.com/Content/moneycompound.com/UploadedImage/RealImage/450of Monthly Income4.jpg" alt="Image"> <br><input type="radio" name="q1" value="10"><span>&gt; 60% of monthly income</span> <br>
+                    </div>
+
+
+
+
+                </div>
+
+
+                <div class="buttons">
+                    <button class="btnpre prevQuestion" data-status="1">BACK</button>
+                <button class="btnOK nextQuestion" id="1">Next <i class="next fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+
+            <div class="question question-txt" id="question2">
+                <p class="question-p"><b><span class="addName"></span></b>, What is your monthly EMI ?</p>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q2" value="10"> <span> No loans</span> <br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q2" value="8"> <span> 0 - 20% of monthly income</span><br>
+                    </div>
+                </div>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q2" value="5"> <span> 21 - 40% of monthly income</span><br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q2" value="2"><span> 41 - 60% of monthly income</span><br>
+                    </div>
+                </div>
+                <div class="option-input">
+                    <input type="radio" name="q2" value="0"><span> &gt; 60% of monthly income</span><br>
+                </div>
+
+                <div class="buttons">
+                    <button class="btnpre prevQuestion" data-status="2">BACK</button>
+                    <button onclick="nextQue(2)" class="btnOK nextQuestion" id="2">Next <i class="next fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="question question-txt" id="question3">
+                <p class="question-p"><b><span class="addName"></span></b>, What is the balance lying in your emergency fund ? </p>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q3" value="10"><span> 6 months or more</span> <br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q3" value="8"><span> 3 - 5 months</span><br>
+                    </div>
+                </div>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q3" value="6"> <span> 1 - 2 months</span><br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q3" value="2"> <span> 1 - 4 weeks</span><br>
+                    </div>
+                </div>
+                <div class="option-input">
+                    <input type="radio" name="q3" value="0"><span> No emergency fund balance</span><br>
+                </div>
+
+                <div class="buttons">
+                    <button class="btnpre prevQuestion" data-status="3">BACK</button>
+
+                    <button class="btnOK nextQuestion" id="3">Next <i class="next fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="question question-txt" id="question4">
+                <p class="question-p"><b><span class="addName"></span></b>, How many family members are dependent on you ? </p>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q4" value="10"><span> No one </span> <br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q4" value="6"> <span> 1 - 2</span><br>
+                    </div>
+                </div>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q4" value="4"><span> 3 - 5</span> <br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q4" value="0"><span> More than 5</span> <br>
+                    </div>
+                </div>
+
+                <div class="buttons">
+
+                    <button class="btnpre prevQuestion" data-status="4">BACK</button>
+                <button class="btnOK nextQuestion" id="4">Next <i class="next fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="question question-txt" id="question5">
+                <p class="question-p"><b><span class="addName"></span></b>, How much health insurance cover you have taken for your family.</p>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q5" value="0"><span> No health insurance</span><br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q5" value="2"><span> 0 - 5 lacs</span> <br>
+                    </div>
+                </div>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q5" value="5"><span> 5 - 10 lacs</span><br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q5" value="8"><span> 10 - 20 lacs</span><br>
+                    </div>
+                </div>
+                <div class="option-input">
+                    <input type="radio" name="q5" value="10"><span> &gt; 20 Lacs</span> <br>
+                </div>
+
+                <div class="buttons">
+                    <button class="btnpre prevQuestion" data-status="5">BACK</button>
+
+                    <button class="btnOK nextQuestion" id="5">Next <i class="next fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="question question-txt" id="question6">
+                <p class="question-p"><b><span class="addName"></span></b>, How much is your life Insurance coverage ?</p>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q6" value="0"> <span> No life insurance</span><br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q6" value="2"> <span> 0 - 25 lacs</span><br>
+                    </div>
+                </div>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q6" value="5"> <span> 25 - 50 lacs</span><br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q6" value="8"><span> 50 lacs - 1 crore</span><br>
+                    </div>
+                </div>
+                <div class="option-input">
+                    <input type="radio" name="q6" value="10"><span> &gt; 1 crore</span><br>
+                </div>
+
+                <div class="buttons">
+                    <button class="btnpre prevQuestion" data-status="6">BACK</button>
+
+                    <button class="btnOK nextQuestion" id="6">Next <i class="next fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="question question-txt" id="question7">
+                <p class="question-p">
+                    <b>
+                        <span class="addName"></span></b>, How long have you been investing?</p>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q7" value="0"><span> No investments</span> <br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q7" value="2"><span> 1 -3 years</span> <br>
+                    </div>
+                </div>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q7" value="5"> <span> 3 - 5 years</span><br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q7" value="8"><span> 5 - 10 years</span> <br>
+                    </div>
+                </div>
+                <div class="option-input">
+                    <input type="radio" name="q7" value="10"> <span> &gt; 10 years</span><br>
+                </div>
+
+                <div class="buttons">
+                    <button class="btnpre prevQuestion" data-status="7">BACK</button>
+
+                    <button class="btnOK nextQuestion" id="7">Next <i class="next fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="question question-txt" id="question8">
+                <p class="question-p"><b><span class="addName"></span></b>, I am Financially secured</p>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q8" value="10"><span> Agree </span> <br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q8" value="8"> <span> Agree somewhat</span><br>
+                    </div>
+                </div>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q8" value="6"> <span> Neither agree nor disagree</span><br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q8" value="2"> <span> Disagree somewhat</span><br>
+                    </div>
+                </div>
+                <div class="option-input">
+                    <input type="radio" name="q8" value="0"> <span> Disagree strongly</span><br>
+                </div>
+
+                <div class="buttons">
+
+                    <button class="btnpre prevQuestion" data-status="8">BACK</button>
+
+                    <button class="btnOK nextQuestion" id="8">Next <i class="next fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+<div class="question question-txt" id="question9">
+    <p class="question-p"><b><span class="addName"></span></b>, Excluding your primary residence, in which category of financial instruments do you hold the most significant portion of your wealth?</p>
+    <div class="option-row">
+        <div class="option-input">
+            <input type="radio" name="q9" value="0"><span> I have no other savings</span> <br>
+        </div>
+        <div class="option-input">
+            <input type="radio" name="q9" value="2"><span> Gold/Silver</span><br>
+        </div>
+    </div>
+    <div class="option-row">
+        <div class="option-input">
+            <input type="radio" name="q9" value="4"><span> Cash in Bank / Fixed Deposits / PPF/ Bonds</span><br>
+        </div>
+        <div class="option-input">
+            <input type="radio" name="q9" value="8"><span> Real Estate ( Other than own House / Office)</span> <br>
+        </div>
+    </div>
+    <div class="option-input">
+        <input type="radio" name="q9" value="10"><span> Equity Mutual Funds / Stocks / PMS / AIF</span> <br>
+    </div>
+
+    <div class="buttons">
+
+        <button class="btnpre prevQuestion" data-status="9">BACK</button>
+
+        <button class="btnOK nextQuestion" id="9">Next <i class="next fa-solid fa-chevron-right"></i></button>
+    </div>
+</div>
+
+
+
+            <div class="question question-txt" id="question10">
+                <p class="question-p"><b><span class="addName"></span></b>, How well do your family members understand and actively participate in managing your complete financial affairs?</p>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q10" value="11"><span> My family has complete idea </span> <br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q10" value="8"><span> My family has good enough idea of everything</span> <br>
+                    </div>
+                </div>
+                <div class="option-row">
+                    <div class="option-input">
+                        <input type="radio" name="q10" value="5"> <span> My family has very limited information</span><br>
+                    </div>
+                    <div class="option-input">
+                        <input type="radio" name="q10" value="0"> <span> My family has no idea</span><br>
+                    </div>
+                </div>
+
+
+
+                <div class="buttons">
+
+ <button class="btnpre prevQuestion" data-status="10">BACK </button>
+ <button onclick="submitResultbtn()" class="btnOK btnfinish" id="showC">NEXT <i class="next fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+<div id="message"></div>
+
+
+
+
+</div>
+
+            <div class="showChart" style="display: none;">
+                <h2>Test Result</h2>
+
+            <div id="myChart">
+
+                <a class="zc-ref" href="https://www.zingchart.com/"></a></div>
+
+   <div class="EXIT">
+           <a class="last-btn" href="https://vipulkhandelwal-moneycompound1.zohobookings.in/#/moneycompound2">Do you want to improve your score</a>
+            <button class="exit-btn">EXIT</button>
+        </div>
+
+</div>
+
+
+
+
+
+        <div id="results" style="display:none;">
+            <h2>Quiz Results</h2>
+            <p id="result-text"></p>
+        </div>
+</div>
+
+
+
+   <script>
+        $(document).ready(function () {
+            $("#quiz-form").hide();
+            $(".showChart").hide();
+
+            $("#Mobnum").on("input", function () {
+        var inputValue = $(this).val();
+        var numericValue = inputValue.replace(/\D/g, '');
+        $(this).val(numericValue);
+    });
+
+            $("#next-button").click(function () {
+                console.log("thiss lest start")
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var birthday = $("#birthday").val();
+            var Mobnum = $("#Mobnum").val();
+            var description = $("#description").val();
+            var yearearning = $("#yearearning").val();
+            var annualincome = $("#annualincome").val();
+            if (name === '') {
+            } else if (email === '') {
+            } else if (birthday === '') {
+            } else if (Mobnum === '') {
+            } else if (description === '') {
+            } else if (yearearning === '') {
+            } else if (annualincome === '') {
+            } else {
+
+                var emailRegex = /\S+@\S+\.\S+/;
+            if (!emailRegex.test(email)) {
+                $("#email-error").text("Please enter a @ valid email address.");
+                return false;
+            } else {
+                $("#email-error").text("");
+            }
+            var selectedDate = new Date(birthday);
+            var minDate = new Date(1950, 0, 1);
+            var maxDate = new Date(2014, 12, 1);
+
+            if (selectedDate < minDate || selectedDate > maxDate) {
+                $("#birthday-error").text("Date range should be 01/01/1950 to 31/12/2014");
+                return false;
+            } else {
+                $("#birthday-error").text("");
+            }
+
+                let phoneDigits = Mobnum.replace(/\D/g,'').length;
+                let firstDigit = Mobnum.charAt(0);
+                if (phoneDigits > 15){
+
+                    $("#phone-error").text("Phone numbers with a maximum of 15 digits are allowed.");
+                    return false;
+                } else {
+                    var selectedCountryCode = $("#countries").val();
+            var MobnumWithCountryCode = selectedCountryCode + Mobnum;
+                    $("#phone-error").text("");
+                    $("#Mobnum").val(MobnumWithCountryCode);
+                    $(".left-panel, #registration-form, #quiz-form").toggle();
+                }
+
+            }
+});
+
+ const nextButton = document.getElementById("next-button");
+        nextButton.addEventListener("click", function (event) {
+            console.log("tissn")
+            const formInputs = document.querySelectorAll('.field1-input input, .field2-input input');
+
+
+            formInputs.forEach(input => {
+            if (input.value === "") {
+
+                input.closest('.input-with-icon').classList.add("error");
+
+            } else {
+
+               input.closest('.input-with-icon').classList.remove("error");
+            }
+            });
+            const emptyFields = document.querySelectorAll('.error');
+  });
+});
+
+
+            var currentQuestion = 1;
+            const totalQuestions = 10;
+            $(".nextQuestion").click(function(){
+               console.log(`${currentQuestion} ${totalQuestions}`);
+               questionNumber=$(this).attr("id");
+               const currentQuestionDiv =
+               document.getElementById(`question${questionNumber}`);
+                 if ($(`input[name='q${currentQuestion}']:checked`).length === 0) {
+                     document.getElementById("message").innerHTML="Please select an option before proceeding.";
+            return;
+        }else{
+document.getElementById("message").innerHTML="";
+}
+
+                currentQuestionDiv.style.display = "none";
+                currentQuestion++;
+
+  $(".step").removeClass("active");
+            if (currentQuestion <= totalQuestions) {
+               const nextQuestionDiv = document.getElementById(`question${currentQuestion}`);
+                nextQuestionDiv.style.display = "block";
+
+$(`.step:nth-child(${currentQuestion})`).addClass("active");
+
+            $("#currentQuestionMessage").text(`Question ${currentQuestion}`);
+
+if (currentQuestion === totalQuestions) {
+
+       $("EXIT").show();
+       $("step-hide").show();
+
+        }
+
+             }
+
+            });
+
+
+
+          $(".prevQuestion").click(function () {
+          console.log(`${currentQuestion} ${totalQuestions}`);
+          questionNumber = $(this).attr("data-status");
+           if (questionNumber == 1) {
+
+            $(".left-panel, #registration-form, #quiz-form").toggle();
+        } else {
+            $("#question"+questionNumber).hide();
+          $(".step.active").removeClass("active");
+            questionNumber--;
+            if (questionNumber == 0) {
+                alert("oops, No previous question... ");
+return;
+            }
+            if (questionNumber <= totalQuestions) {
+                $("#question"+questionNumber).show();
+$(`.step:nth-child(${questionNumber})`).addClass("active");
+                currentQuestion--;
+$("#currentQuestionMessage").text(`Question ${currentQuestion}`);
+            }
+        }
+        });
+
+
+
+
+
+    </script>
+
+    <script type="text/javascript">
+function sendEmail(quizformdata, totalMarks, selectedTable) {
+
+    console.log("this s data formdata", quizformdata);
+
+    // Convert HTML string to a temporary DOM
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = quizformdata;
+
+    // Extract email (from the Email : row)
+    let userEmail = "";
+
+    const rows = tempDiv.querySelectorAll("tr");
+    rows.forEach(row => {
+        const cells = row.querySelectorAll("td");
+        if (cells.length === 2) {
+            const label = cells[0].innerText.trim().toLowerCase();
+            if (label.includes("email")) {
+                userEmail = cells[1].innerText.trim();
+            }
+        }
+    });
+
+    // Fallback if email not found
+    if (!userEmail) {
+        alert("Email not found in form data");
+        return;
+    }
+
+    // EMAIL HTML BODY
+    let htmlContent = `
+        <div style="font-family: Arial, sans-serif; font-size:14px; color:#333;">
+
+            <p>Hello,</p>
+
+            <p>
+                Your <b>Health Wealth Assessment</b> successfully completed.
+            </p>
+
+            <hr>
+
+            <p>
+                <b>Total Score:</b> ${totalMarks}
+            </p>
+
+            <h4>Form Details</h4>
+            <div>
+                ${quizformdata}
+            </div>
+
+            <h4>Score Table</h4>
+            <div>
+                ${selectedTable}
+            </div>
+
+            <p style="margin-top:20px;">
+                Regards,<br>
+                <b>Health Wealth Team</b>
+            </p>
+
+        </div>
+    `;
+
+    // API CALL (userEmail dynamically set)
+    fetch("https://rating-form-zoho.vercel.app/healthCard_data", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            to: userEmail,                   // dynamic email
+            subject: "Health Wealth Score",
+            html: htmlContent,
+            from: "care@zohfin.com",
+            cc:"care@zohfin.com",
+            fromname: "Health Wealth Team",
+            smtpuser: "care@zohfin.com",
+            totalMarks,
+            quizformdata,
+            selectedTable
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log("Email API response:", data);
+
+        if (data.status === "success") {
+            alert("Email sent successfully to " + userEmail);
+        } else {
+            alert("Email sending failed");
+        }
+    })
+    .catch(err => {
+        console.error("API Error:", err);
+        alert("Server error");
+    });
+}
+
+
+        function showResults() {
+            let score = 0;
+            for (let i = 1; i <= totalQuestions; i++) {
+                const radioButtons = document.getElementsByName(`q${i}`);
+                for (const radioButton of radioButtons) {
+                    if (radioButton.checked && radioButton.value === "c") {
+                        score++;
+                    }
+                    radioButton.disabled = true;
+                }
+            }
+
+            const resultText = document.getElementById("result-text");
+            resultText.textContent = `You got ${score} out of ${totalQuestions} questions correct!`;
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.style.display = "block";
+        }
+
+
+        let totalMarks = 0;
+        function submitResultbtn() {
+            var flagRdo = 0;
+            var selectedTable = '<table>';
+            const questions = document.querySelectorAll(".question");
+            questions.forEach((question) => {
+
+                const selectedOption = question.querySelector("input:checked");
+
+                if (selectedOption) {
+                    selectedTable += '<tr><td style="border:solid grey;">' + question.querySelector(".question-p").innerHTML + '</td>';
+                    selectedTable += '<td style="width:250px; margin-left:25px; border:solid grey;">' + selectedOption.parentElement.innerText.replaceAll('\n', '') + '</td></tr>';
+
+                    totalMarks += parseFloat(selectedOption.value);
+                }
+                else {
+                    flagRdo++;
+                }
+
+            });
+
+            var quizformdata = '<table style="margin-bottom:50px; width:100%;">';
+            quizformdata += '<tr style="margin-right:px;"> <td> <b>Name :</b> </td><td>' + $("#name").val() + '</td></tr>';
+            quizformdata += '<tr style="margin-right:;"> <td> <b>Email :</b> </td><td>' +  $("#email").val() + '</td></tr>';
+            quizformdata += '<tr style="margin-right:;"> <td> <b>Birthday :</b> </td><td>' +  $("#birthday").val() + '</td></tr>';
+            quizformdata += '<tr style="margin-right:;"> <td> <b>Phone Number :</b> </td><td>' +  $("#Mobnum").val() + '</td></tr>';
+            quizformdata += '<tr style="margin-right:;"> <td> <b>Job Description :</b> </td><td>' +  $("#description").val() + '</td></tr>';
+            quizformdata += '<tr style="margin-right:;"> <td> <b>Annual Income :</b> </td><td>' +  $("#annualincome").val() + '</td></tr>';
+            quizformdata += '<tr style="margin-right:"> <td> <b>Year Earning :</b> </td><td>' +  $("#yearearning").val() + '</td></tr>';
+            quizformdata += '</table>';
+
+
+            selectedTable += '</table>';
+            if (flagRdo > 0) {
+                 document.getElementById("message").innerHTML="Please select an option before proceeding.";
+                 return;
+            }
+            showChart(totalMarks);
+            sendEmail(quizformdata, totalMarks, selectedTable);
+            const currentQuestionDiv =
+            document.getElementById(`question${currentQuestion}`);
+            currentQuestionDiv.style.display = "none";
+
+        }
+
+
+
+
+       function showChart(totalMarks) {
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+        window.feed = function (callback) {
+            var tick = {};
+            tick.plot0 = Math.ceil(350 + (Math.random() * 500));
+            callback(JSON.stringify(tick));
+        };
+
+        var myConfig = {
+            type: "gauge",
+            globals: {
+                fontSize: 15
+            },
+            plotarea: {
+                marginTop: 170
+            },
+             plot: {
+                size: '100%',
+                height: '100',
+                valueBox: {
+                    placement: 'center',
+                    text: '%v',
+                    fontSize: 16,
+                    offsetY: -270,
+                    overflow: 'visible',
+
+                    rules: [{
+                        rule: '%v >= 81 && %v <= 100',
+                        text: 'Your Score = %v/100 <span style="font-size: 18px; ">(EXCELLENT)</span><br><br>Keep excelling: Book a free consultation<br> to review your Existing Investments to Optimise.<br> '
+
+                    },
+                    {
+                        rule: '%v >= 61 && %v <= 80',
+                        text: 'Your Score = %v/100 <span style="font-size: 18px; ">(Good)</span><br><br>Maintain your success: Book a free consultation<br> for advanced financial planning.<br> '
+                    },
+                    {
+                        rule: '%v >= 41 && %v <= 60',
+                        text: 'Your Score = %v/100 <span style="font-size: 18px; ">(Average)</span><br><br>Ready to optimize? Book a free consultation<br> and fine-tune your finances<br> '
+
+                    },
+                    {
+                        rule: '%v >= 21 && %v <= 40',
+                        text: 'Your Score = %v/100 <span style="font-size: 18px; ">(Bad)</span><br><br>Dont wait: Book a free consultation<br> to enhance your financial health.<br> '
+
+                    },
+                    {
+                        rule: '%v <= 20',
+                         text: 'Your Score = %v/100 <span style="font-size: 18px; ">(Worst)</span><br><br>Urgent: Book a free consultation now <br>to improve your financial situation.<br> '
+
+                    }
+                    ]
+                }
+            },
+            tooltip: {
+                borderRadius: 5
+            },
+            scaleR: {
+                aperture: 170,
+                minValue: 0,
+                maxValue: 100,
+                step: 20,
+                center: {
+                    visible: false
+                },
+                tick: {
+                    visible: false
+                },
+                item: {
+                    offsetR: 20,
+                    rules: [{
+                        rule: '%i == 9',
+                        offsetX: 25
+                    }]
+                },
+                labels: ['0', 'WORST:<br> 0-20', 'BAD: <br>21-40', 'AVERAGE:<br> 41-60', 'GOOD:<br> 61-80', 'Excellent:<br> 81-100'],
+                ring: {
+                    size: 30,
+                    rules: [{
+                        rule: '%v < 20',
+                        backgroundColor: '#E53935'
+                    },
+                    {
+                        rule: '%v >= 20 && %v < 40',
+                        backgroundColor: '#FAB733'
+                    },
+                    {
+                        rule: '%v >= 40 && %v < 60',
+                        backgroundColor: '#ACB334'
+                    },
+                    {
+                        rule: '%v >= 60 && %v < 80',
+                        backgroundColor: '#69B34C'
+                    },
+                     {
+                        rule: '%v >= 80 && %v < 100',
+                        backgroundColor: '#548F3D'
+                    }
+                    ]
+                }
+            },
+
+            series: [{
+                values: [totalMarks],
+                backgroundColor: 'black',
+                indicator: [],
+                animation: {
+                    effect: 2,
+                    method: 1,
+                    sequence: 5,
+                    speed: 900
+                },
+            }]
+        };
+
+        zingchart.render({
+            id: 'myChart',
+            data: myConfig,
+        });
+    }
+
+ const optionInputs = document.querySelectorAll(".option-input");
+
+
+    optionInputs.forEach(optionInput => {
+        optionInput.addEventListener("click", () => {
+
+            const radioInput = optionInput.querySelector("input[type='radio']");
+            radioInput.checked = true;
+
+document.querySelectorAll('.option-input').forEach(option => {
+            option.classList.remove('active');
+        });
+
+if (radioInput.checked) {
+            optionInput.classList.add('active');
+        }
+
+        });
+    });
+
+    </script>
+<script>
+$(document).ready(function() {
+
+    function updateQuestionText() {
+        name = $("#name").val();
+
+        $('.addName').text(name);
+    }
+
+    updateQuestionText();
+
+
+    $("#name").on("input", function() {
+        updateQuestionText();
+    });
+});
+$(document).ready(function() {
+    $(".btnfinish").click(function() {
+        $(".showChart, mychart").show();
+       $("#quiz-form").hide();
+        $(".main-div").hide();
+
+    });
+});
+$(document).ready(function() {
+    $(".exit-btn").click(function() {
+        $(".leftpanel-registrationform, .left-panel, #registration-form").show();
+        $(" #quiz-form").hide();
+        $(".main-div").hide();
+          location.reload();
+
+    });
+});
+
+function scrollToActiveStep() {
+    var activeStep = document.querySelector('.step.active');
+    if (activeStep) {
+        var stepHide = document.querySelector('.step-hide');
+        var scrollLeft = activeStep.offsetLeft - (stepHide.offsetWidth - activeStep.offsetWidth) / 2;
+        stepHide.scrollLeft = scrollLeft;
+    }
+}
+
+
+$(".step").on('click', function() {
+    scrollToActiveStep();
+});
+
+
+$(".nextQuestion, .prevQuestion").on('click', function() {
+    scrollToActiveStep();
+});
+
+$(document).ready(function () {
+
+
+    $('.form-input').on('input', function() {
+
+        $(this).closest('.input-with-icon').removeClass('error');
+    });
+
+
+});
+
+
+</script>
+
+<script>
+
+
+const selectDrop = document.querySelector('#countries');
+
+    const arr = [
+    {
+"name": "India",
+"dial_code": "+91",
+"code": "IN"
+},
+{
+"name": "United States",
+"dial_code": "+1",
+"code": "US"
+},
+{
+"name": "Canada",
+"dial_code": "+1",
+"code": "CA"
+},
+{
+"name": "United Arab Emirates",
+"dial_code": "+971",
+"code": "AE"
+},
+{
+"name": "United Kingdom",
+"dial_code": "+44",
+"code": "GB"
+},
+{
+"name": "Singapore",
+"dial_code": "+65",
+"code": "SG"
+},
+{
+"name": "Afghanistan",
+"dial_code": "+93",
+"code": "AF"
+},
+{
+"name": "Albania",
+"dial_code": "+355",
+"code": "AL"
+},
+{
+"name": "Australia",
+"dial_code": "+61",
+"code": "AU"
+},
+{
+"name": "Bahrain",
+"dial_code": "+973",
+"code": "BH"
+},
+{
+"name": "Bangladesh",
+"dial_code": "+880",
+"code": "BD"
+},
+{
+"name": "Canada",
+"dial_code": "+1",
+"code": "CA"
+},
+{
+"name": "China",
+"dial_code": "+86",
+"code": "CN"
+},
+{
+"name": "France",
+"dial_code": "+33",
+"code": "FR"
+},
+{
+"name": "Germany",
+"dial_code": "+49",
+"code": "DE"
+},
+{
+"name": "Hong Kong",
+"dial_code": "+852",
+"code": "HK"
+},
+{
+"name": "Indonesia",
+"dial_code": "+62",
+"code": "ID"
+},
+{
+"name": "Italy",
+"dial_code": "+39",
+"code": "IT"
+},
+{
+"name": "Japan",
+"dial_code": "+81",
+"code": "JP"
+},
+{
+"name": "Kuwait",
+"dial_code": "+965",
+"code": "KW"
+},
+{
+"name": "Malaysia",
+"dial_code": "+60",
+"code": "MY"
+},
+{
+"name": "Nepal",
+"dial_code": "+977",
+"code": "NP"
+},
+{
+"name": "Netherlands",
+"dial_code": "+31",
+"code": "NL"
+},
+{
+"name": "New Zealand",
+"dial_code": "+64",
+"code": "NZ"
+},
+{
+"name": "Oman",
+"dial_code": "+968",
+"code": "OM"
+},
+{
+"name": "Pakistan",
+"dial_code": "+92",
+"code": "PK"
+},
+{
+"name": "Philippines",
+"dial_code": "+63",
+"code": "PH"
+},
+{
+"name": "Qatar",
+"dial_code": "+974",
+"code": "QA"
+},
+{
+"name": "Russia",
+"dial_code": "+7",
+"code": "RU"
+},
+{
+"name": "Saudi Arabia",
+"dial_code": "+966",
+"code": "SA"
+},
+{
+"name": "Singapore",
+"dial_code": "+65",
+"code": "SG"
+},
+{
+"name": "South Africa",
+"dial_code": "+27",
+"code": "ZA"
+},
+{
+"name": "Spain",
+"dial_code": "+34",
+"code": "ES"
+},
+{
+"name": "Sri Lanka",
+"dial_code": "+94",
+"code": "LK"
+},
+{
+"name": "Sweden",
+"dial_code": "+46",
+"code": "SE"
+},
+{
+"name": "Switzerland",
+"dial_code": "+41",
+"code": "CH"
+},
+{
+"name": "Thailand",
+"dial_code": "+66",
+"code": "TH"
+},
+{
+"name": "United Arab Emirates",
+"dial_code": "+971",
+"code": "AE"
+},
+{
+"name": "United Kingdom",
+"dial_code": "+44",
+"code": "GB"
+},
+{
+"name": "United States",
+"dial_code": "+1",
+"code": "US"
+}
+]
+    let output = "";
+    arr.forEach(country => {
+     output += `<option value="${country.dial_code}">${`${country.code} (${country.dial_code})`}</option>`;
+ })
+ selectDrop.innerHTML = output;
+
+
+
+
+
+
+
+</script>
+
+<script>
+// Report content height to the parent page so the iframe can fit exactly (no empty box space).
+(function () {
+    function postHeight() {
+        var card = document.querySelector('.leftpanel-registrationform');
+        var h;
+        if (card) {
+            var rect = card.getBoundingClientRect();
+            var scrollTop = window.scrollY || window.pageYOffset || 0;
+            // End the iframe just past the card's bottom so its 3D shadow isn't clipped.
+            h = Math.ceil(rect.bottom + scrollTop + 44);
+        } else {
+            h = document.body.scrollHeight;
+        }
+        if (window.parent) {
+            window.parent.postMessage({ type: 'fincheckup-height', height: h }, '*');
+        }
+    }
+    window.addEventListener('load', postHeight);
+    window.addEventListener('resize', postHeight);
+    document.addEventListener('click', function () { setTimeout(postHeight, 80); });
+    document.addEventListener('change', function () { setTimeout(postHeight, 80); });
+    if (window.ResizeObserver) {
+        try { new ResizeObserver(postHeight).observe(document.body); } catch (e) {}
+    }
+    setInterval(postHeight, 1000);
+})();
+</script>
+
+</body>
+</html>

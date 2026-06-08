@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.moneycompound.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.moneycompound.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.moneycompound.com/contact-us</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.moneycompound.com/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.moneycompound.com/calculators</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.moneycompound.com/gallery</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.moneycompound.com/resources</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <url><loc>https://www.moneycompound.com/services/individuals</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.moneycompound.com/services/nri</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.moneycompound.com/services/hni</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.moneycompound.com/services/retiree</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.moneycompound.com/services/goal</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.moneycompound.com/services/corporate</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.moneycompound.com/services/tax</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://www.moneycompound.com/products/mutual-funds</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.moneycompound.com/products/stock-market</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.moneycompound.com/products/health-insurance</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.moneycompound.com/products/life-insurance</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.moneycompound.com/products/general-insurance</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.moneycompound.com/products/travel-insurance</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.moneycompound.com/products/housing-loan</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.moneycompound.com/products/bonds-fds</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.moneycompound.com/products/corporate-fd</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.moneycompound.com/products/capital-gain-bond</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.moneycompound.com/products/nps</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.moneycompound.com/products/p2p-lending</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.moneycompound.com/products/pms</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.moneycompound.com/products/aif</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.moneycompound.com/products/sifs</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.moneycompound.com/products/unlisted-shares</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+
+  <url><loc>https://www.moneycompound.com/grievance-redressal</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.moneycompound.com/privacy-policy</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.moneycompound.com/kyc-aml</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.moneycompound.com/fatca</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.moneycompound.com/cost-of-investing</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+</urlset>

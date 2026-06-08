@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* ============================================================
+   APPLE-STYLE TOKENS (MacBook Neo design language)
+   SF Pro is Apple-licensed; Inter is the documented substitute.
+   Legacy brand-* tokens are REMAPPED to Apple equivalents so
+   existing JSX classes (text-brand-navy, bg-brand-gold, …)
+   automatically pick up the new palette.
+   ============================================================ */
+@theme {
+  /* Apple palette */
+  --color-ink: #1d1d1f;
+  --color-graphite: #707070;
+  --color-slate: #474747;
+  --color-ash: #333333;
+  --color-fog: #f5f5f7;
+  --color-snow: #ffffff;
+  --color-obsidian: #000000;
+  --color-silver-mist: #e8e8ed;
+  --color-azure: #0071e3;
+  --color-cobalt-link: #0066cc;
+  --color-caution: #b64400;
+
+  /* Brand variables remapped → Apple equivalents
+     (kept under same names so existing utility classes still resolve) */
+  --color-brand-navy: #1d1d1f;
+  --color-brand-blue: #0071e3;
+  --color-brand-gold: #0071e3;
+  --color-brand-teal: #0066cc;
+
+  --color-slate-50: #f5f5f7;
+  --color-slate-100: #f5f5f7;
+  --color-slate-900: #1d1d1f;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+
+  --shadow-premium: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-gold: 0 1px 2px rgba(0, 113, 227, 0.10), 0 8px 24px rgba(0, 113, 227, 0.12);
+}
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f7;
+  --text-primary: #1d1d1f;
+  --text-secondary: #707070;
+  --accent-gold: #0071e3;
+  --accent-teal: #0066cc;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-blur: 20px;
+  --border-subtle: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='dark'] {
+  --bg-primary: #000000;
+  --bg-secondary: #1d1d1f;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1a6;
+  --accent-gold: #2997ff;
+  --accent-teal: #0066cc;
+  --glass-bg: rgba(29, 29, 31, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.003em;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  color: #1d1d1f;
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  line-height: 1.07;
+}
+h1 { letter-spacing: -0.022em; }
+h2 { letter-spacing: -0.020em; }
+h3 { letter-spacing: -0.016em; line-height: 1.14; }
+h4 { letter-spacing: -0.014em; line-height: 1.20; }
+
+h1.text-white, h2.text-white, h3.text-white, h4.text-white,
+.text-white h1, .text-white h2, .text-white h3, .text-white h4 {
+  color: #ffffff !important;
+}
+h1[class*="text-white/"], h2[class*="text-white/"], h3[class*="text-white/"], h4[class*="text-white/"] {
+  color: inherit !important;
+}
+.no-gradient-heading h1,
+.no-gradient-heading h2,
+.no-gradient-heading h3,
+.no-gradient-heading h4,
+.text-white h1,
+.text-white h2,
+.text-white h3 {
+  background: none;
+  -webkit-text-fill-color: inherit;
+  color: inherit;
+}
+
+p, li, span, div { font-weight: 400; }
+
+/* ============================================================
+   Premium Utilities — neutralized to Apple aesthetic
+   ============================================================ */
+
+.glass-panel {
+  background: #ffffff;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+.gold-gradient,
+.accent-gradient {
+  color: #1d1d1f;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+
+.premium-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 28px;
+  transition: background-color 0.344s ease, border-color 0.344s ease;
+  box-shadow: var(--shadow-premium);
+}
+.premium-card:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.cta-button {
+  position: relative;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: background-color 0.344s ease, color 0.344s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: -0.003em;
+}
+.cta-primary { background: #0071e3; color: #ffffff; }
+.cta-primary:hover { background: #0077ED; color: #ffffff; transform: none; box-shadow: none; }
+.cta-secondary { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); color: #1d1d1f; }
+.cta-secondary:hover { background: #f5f5f7; border-color: rgba(0,0,0,0.12); }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal { opacity: 0; }
+.reveal.active { animation: fadeInUp 0.344s ease forwards; }
+
+.bg-grid,
+.bg-grid-fade,
+.bg-radial-light {
+  background-image: none !important;
+  background: transparent !important;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.section-padding { padding: 96px 0; }
+@media (max-width: 768px) { .section-padding { padding: 72px 0; } }
+
+.light-sweep,
+.glow-blob,
+.glow-node,
+.glow-float-a,
+.glow-float-b,
+.animate-float,
+.draw-on-mount { display: none !important; }
+
+@keyframes sweep { from { left: -100%; } to { left: 200%; } }
+@keyframes glow-float-a { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(0,0); } }
+@keyframes glow-float-b { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(0,0); } }
+@keyframes float { 0%,100% { transform: none; } }
+@keyframes draw-line { 0%,100% { stroke-dashoffset: 0; opacity: 1; } }
+@keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.shadow-soft { box-shadow: var(--shadow-premium); }
+
+.font-display { font-family: var(--font-serif); letter-spacing: -0.022em; }
+
+.trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px 5px 10px;
+  border-radius: 9999px;
+  background: rgba(0, 113, 227, 0.06);
+  border: 1px solid rgba(0, 113, 227, 0.18);
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #1d1d1f;
+}
+.trust-chip .dot { width: 5px; height: 5px; border-radius: 9999px; background: #22c55e; box-shadow: none; }
+
+.stat-pill .num { font-size: 28px; font-weight: 700; color: #1d1d1f; line-height: 1; letter-spacing: -0.020em; }
+.stat-pill .suf { font-size: 14px; font-weight: 600; color: #0071e3; margin-left: 2px; }
+
+.glass-card {
+  background: #ffffff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 28px;
+  box-shadow: var(--shadow-premium);
+}
+
+.vertical-text { writing-mode: vertical-rl; text-orientation: mixed; }
+
+/* ─────────── Apple helpers (canvases + pills + display type) ─────────── */
+.apple-canvas { background: #f5f5f7; }
+.apple-snow   { background: #ffffff; }
+.apple-stage  { background: #000000; color: #ffffff; }
+
+.apple-display {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(40px, 7vw, 80px);
+  line-height: 1.05;
+  letter-spacing: -0.022em;
+  color: #1d1d1f;
+}
+.apple-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  color: #1d1d1f;
+}
+.apple-lead {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  line-height: 1.40;
+  letter-spacing: -0.010em;
+  color: #1d1d1f;
+  font-weight: 400;
+}
+.apple-link { color: #0066cc; text-decoration: none; }
+.apple-link:hover { text-decoration: underline; }
+
+.apple-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: #0071e3;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.003em;
+  transition: background-color 0.344s ease;
+}
+.apple-pill:hover { background: #0077ED; color: #ffffff; }
+
+.apple-pill-dark { background: #000000; color: #ffffff; }
+.apple-pill-dark:hover { background: #1d1d1f; }
+
+.apple-pill-ghost { background: transparent; color: #0066cc; padding: 12px 22px; }
+.apple-pill-ghost:hover { text-decoration: underline; }
+
+/* ─────────── Apple product-finish gradient backdrops ───────────
+   Full-bleed theatrical section backdrops (MacBook Neo finishes).
+   Use sparingly — these are dramatic stage moments, not chrome. */
+.apple-gradient-indigo {
+  background: linear-gradient(184deg, rgb(29,29,31) 12%, rgb(168,211,251) 38%, rgb(0,18,249) 76%, rgb(37,53,224) 95%);
+  color: #ffffff;
+}
+.apple-gradient-blush {
+  background: linear-gradient(184deg, rgb(29,29,31) 12%, rgb(243,196,246) 38%, rgb(245,0,180) 76%, rgb(204,41,188) 95%);
+  color: #ffffff;
+}
+.apple-gradient-citrus {
+  background: linear-gradient(184deg, rgb(29,29,31) 0%, rgb(223,231,79) 28%, rgb(94,156,42) 62%, rgb(10,134,26) 95%);
+  color: #ffffff;
+}
+
+/* Apple hero atmosphere — directional radial bloom on fog.
+   Adds depth + warmth without abandoning the gallery aesthetic. */
+.apple-hero-light {
+  background:
+    radial-gradient(ellipse 65% 55% at 18% -10%, rgba(168, 211, 251, 0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 110% 25%, rgba(243, 196, 246, 0.40) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 45% at 50% 100%, rgba(94, 156, 42, 0.10) 0%, transparent 70%),
+    #f5f5f7;
+}
+
+/* Premium subtle warm/cool fog tints — break up pale repetition. */
+.apple-fog-warm { background: #fbf6f0; }
+.apple-fog-cool { background: #eef2f7; }
+.apple-fog-deep { background: #ebebed; }
+
+/* Dark stage variants with subtle product-tinted edge glow */
+.apple-stage-indigo {
+  background:
+    radial-gradient(ellipse 55% 70% at 100% 50%, rgba(0,113,227,0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 0% 50%, rgba(37,53,224,0.30) 0%, transparent 65%),
+    #0a0a0c;
+  color: #ffffff;
+}
+.apple-stage-blush {
+  background:
+    radial-gradient(ellipse 55% 70% at 100% 50%, rgba(245,0,180,0.40) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 0% 50%, rgba(204,41,188,0.30) 0%, transparent 65%),
+    #0a0a0c;
+  color: #ffffff;
+}
+.apple-stage-warm {
+  background:
+    radial-gradient(ellipse 55% 70% at 100% 50%, rgba(255,159,67,0.30) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 0% 50%, rgba(255,99,72,0.22) 0%, transparent 65%),
+    #0a0a0c;
+  color: #ffffff;
+}
+
+/* Dark-navy → light-blue diagonal stage — used on PremiumTestimonials.
+   Matches the site's azure brand palette. */
+.apple-stage-deepblue {
+  background:
+    radial-gradient(ellipse 60% 75% at 100% 100%, rgba(96, 165, 250, 0.45) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 60% at 0% 0%, rgba(37, 99, 235, 0.30) 0%, transparent 60%),
+    linear-gradient(135deg, #0a1733 0%, #1e3a8a 45%, #2563eb 80%, #60a5fa 100%);
+  color: #ffffff;
+}
+
+/* ─────────── Subtle light section gradients — professional, text-safe ───────────
+   Each gradient has a unique tint so back-to-back sections feel distinct,
+   while staying light enough that ink (#1d1d1f) text remains highly readable. */
+
+/* Hero — warm sunrise: cyan top-left + blush top-right bloom over fog */
+.bg-hero-sunrise {
+  background:
+    radial-gradient(ellipse 70% 60% at 15% -10%, rgba(99, 179, 237, 0.45) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 50% at 105% 20%, rgba(251, 182, 206, 0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 50% at 50% 110%, rgba(170, 220, 175, 0.18) 0%, transparent 70%),
+    linear-gradient(180deg, #ffffff 0%, #f7f8fb 100%);
+}
+
+/* WhyMoneyCompound — clean snow → fog mist, vertical */
+.bg-snow-mist {
+  background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+}
+
+/* InvestmentFlow — cool sky: white → ice blue at bottom */
+.bg-cool-sky {
+  background: linear-gradient(180deg, #ffffff 0%, #eaf2fb 100%);
+}
+
+/* IdentitySection — warm sand: white → soft cream */
+.bg-warm-sand {
+  background: linear-gradient(180deg, #ffffff 0%, #fbf6ee 100%);
+}
+
+/* ServicesGrid — stone: dove gray gradient with subtle gold blush */
+.bg-stone-gold {
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255, 215, 130, 0.18) 0%, transparent 70%),
+    linear-gradient(180deg, #f7f7f9 0%, #ececef 100%);
+}
+
+/* AppShowcase — mint: subtle white → soft green */
+.bg-mint-soft {
+  background: linear-gradient(180deg, #ffffff 0%, #ecf6ef 100%);
+}
+
+/* VideoTestimonials — peach mist: white → light peach */
+.bg-peach-mist {
+  background: linear-gradient(180deg, #ffffff 0%, #fdf2ec 100%);
+}
+
+/* VideoSection — sky blue gradient */
+.bg-sky-soft {
+  background: linear-gradient(180deg, #f0f6fc 0%, #ffffff 100%);
+}
+
+/* PremiumBlog — lavender mist */
+.bg-lavender-mist {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f1fa 100%);
+}
+
+/* ResourcesSection — gold cream: warm radial bloom on fog */
+.bg-gold-cream {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(252, 211, 77, 0.18) 0%, transparent 70%),
+    linear-gradient(180deg, #ffffff 0%, #fbf3e0 100%);
+}
+
+/* IdentitySection — Jagoinvestor-style: dove-grey stage for a floating white card */
+.bg-stage-dove {
+  background: linear-gradient(180deg, #ececef 0%, #e3e3e6 100%);
+}
+
+/* Hero — cursor-following cinematic spotlight (driven by --mx / --my CSS vars
+   set in onMouseMove handler). Soft, minimal, ignores pointer events. */
+.cursor-light { position: relative; }
+.cursor-light::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(
+    circle 380px at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(180, 220, 255, 0.20) 35%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  mix-blend-mode: soft-light;
+}
+.cursor-light:hover::after { opacity: 1; }
+
+/* Hero light square-grid background — subtle slate lines with a soft radial fade so
+   center stays cleaner. Re-introduces the original grid look in a light tone. */
+.bg-hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(10, 23, 51, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 23, 51, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 85% 65% at 50% 35%, black 40%, transparent 95%);
+  mask-image: radial-gradient(ellipse 85% 65% at 50% 35%, black 40%, transparent 95%);
+}
+
+/* ─────────── Accessibility & mobile-perf safeguards ───────────
+   Honor user's OS-level "reduce motion" preference and remove
+   continuous heavy animations on small screens for smoother scroll. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Smoother native scroll on mobile (avoids Locomotive Scroll jank for small viewports) */
+@media (max-width: 768px) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Hide super-large blurred decoration on very small phones — keeps mobile crisp */
+@media (max-width: 480px) {
+  .glow-blob, .layer { display: none !important; }
+}

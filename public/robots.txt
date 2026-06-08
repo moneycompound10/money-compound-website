@@ -1,0 +1,75 @@
+User-agent: *
+Allow: /
+
+# Disallow admin/internal routes
+Disallow: /api/
+Disallow: /_next/
+
+# ─────────────────────────────────────────────────────────────
+#  GEO — Generative Engine Optimization
+#  Explicitly allow AI crawlers so we appear in ChatGPT,
+#  Gemini, Claude, Perplexity & Google AI Overviews answers.
+# ─────────────────────────────────────────────────────────────
+
+# OpenAI (ChatGPT / SearchGPT)
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google AI (Gemini, AI Overviews, Bard)
+User-agent: Google-Extended
+Allow: /
+User-agent: GoogleOther
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Microsoft Bing / Copilot
+User-agent: bingbot
+Allow: /
+User-agent: msnbot
+Allow: /
+
+# Meta / Common Crawl (used by most LLM training pipelines)
+User-agent: FacebookBot
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: CCBot
+Allow: /
+
+# Apple AI
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Other major AI / search engines
+User-agent: Amazonbot
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
+User-agent: YouBot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: Bytespider
+Allow: /
+
+# Sitemap + LLMs.txt for AI discovery
+Sitemap: https://www.moneycompound.com/sitemap.xml

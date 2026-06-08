@@ -687,7 +687,7 @@ const AboutPage = () => {
                 <p className="font-display font-extrabold text-[24px] lg:text-[30px] leading-[1.15] tracking-[-0.02em]">
                   <span className="accent-gradient">AMFI-Registered</span>
                   <br />
-                  <span className="text-slate-950">Mutual Fund Distributor.</span>
+                  <span className="text-slate-950">Mutual Fund Distributor</span>
                 </p>
               </motion.div>
 

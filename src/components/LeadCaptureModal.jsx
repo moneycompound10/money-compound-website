@@ -43,14 +43,22 @@ export default function LeadCaptureModal({ open, onClose, asset }) {
   }, [open])
 
   // ── Validation ────────────────────────────────────────────────
+  // All fields are mandatory — for both ebook downloads and newsletter
+  // signups. The PDF/download is only released after a valid submission,
+  // so a visitor cannot download without giving full details.
   const validate = () => {
     const e = {}
+    if (!formData.firstName.trim()) e.firstName = 'First name is required'
     if (!formData.lastName.trim()) e.lastName = 'Last name is required'
-    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      e.email = 'Enter a valid email'
-    }
-    if (formData.phone && !/^[\d\s+\-()]{6,15}$/.test(formData.phone)) {
+    if (!formData.phone.trim()) {
+      e.phone = 'Phone number is required'
+    } else if (!/^[\d\s+\-()]{6,15}$/.test(formData.phone)) {
       e.phone = 'Enter a valid phone number'
+    }
+    if (!formData.email.trim()) {
+      e.email = 'Email is required'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      e.email = 'Enter a valid email'
     }
     setErrors(e)
     return Object.keys(e).length === 0
@@ -249,10 +257,10 @@ export default function LeadCaptureModal({ open, onClose, asset }) {
               ) : (
                 /* ── Form state ───────────────────────────── */
                 <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-2.5">
-                  {/* First Name */}
+                  {/* First Name * */}
                   <div>
                     <label className="block text-[11px] font-semibold text-slate-600 mb-1 uppercase tracking-wider">
-                      First Name
+                      First Name <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
@@ -261,9 +269,15 @@ export default function LeadCaptureModal({ open, onClose, asset }) {
                         value={formData.firstName}
                         onChange={handleChange('firstName')}
                         placeholder="John"
-                        className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/40 focus:border-brand-gold transition-all"
+                        required
+                        className={`w-full pl-10 pr-4 py-2 bg-slate-50 border rounded-lg text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/40 focus:border-brand-gold transition-all ${
+                          errors.firstName ? 'border-red-400 bg-red-50/50' : 'border-slate-200'
+                        }`}
                       />
                     </div>
+                    {errors.firstName && (
+                      <p className="text-[11px] text-red-500 mt-1">{errors.firstName}</p>
+                    )}
                   </div>
 
                   {/* Last Name * */}
@@ -289,10 +303,10 @@ export default function LeadCaptureModal({ open, onClose, asset }) {
                     )}
                   </div>
 
-                  {/* Phone */}
+                  {/* Phone * */}
                   <div>
                     <label className="block text-[11px] font-semibold text-slate-600 mb-1 uppercase tracking-wider">
-                      Phone
+                      Phone <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
@@ -301,6 +315,7 @@ export default function LeadCaptureModal({ open, onClose, asset }) {
                         value={formData.phone}
                         onChange={handleChange('phone')}
                         placeholder="+91 98765 43210"
+                        required
                         className={`w-full pl-10 pr-4 py-2 bg-slate-50 border rounded-lg text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/40 focus:border-brand-gold transition-all ${
                           errors.phone ? 'border-red-400 bg-red-50/50' : 'border-slate-200'
                         }`}
@@ -311,10 +326,10 @@ export default function LeadCaptureModal({ open, onClose, asset }) {
                     )}
                   </div>
 
-                  {/* Email */}
+                  {/* Email * */}
                   <div>
                     <label className="block text-[11px] font-semibold text-slate-600 mb-1 uppercase tracking-wider">
-                      Email
+                      Email <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
@@ -323,6 +338,7 @@ export default function LeadCaptureModal({ open, onClose, asset }) {
                         value={formData.email}
                         onChange={handleChange('email')}
                         placeholder="john@example.com"
+                        required
                         className={`w-full pl-10 pr-4 py-2 bg-slate-50 border rounded-lg text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold/40 focus:border-brand-gold transition-all ${
                           errors.email ? 'border-red-400 bg-red-50/50' : 'border-slate-200'
                         }`}

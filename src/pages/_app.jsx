@@ -108,11 +108,11 @@ export default function MyApp({ Component, pageProps }) {
         <meta property="og:title" content="Money Compound — AMFI Registered Mutual Fund Distributor | Need-Based Selection for Individuals, NRIs & HNIs" />
         <meta property="og:description" content="Noida-based AMFI-registered MFD serving 1000+ families & NRIs across 25+ countries. Mutual funds, SIPs, NRI investing, insurance distribution (IRDAI POSP) & retirement planning. 18+ years experience, ₹180 Cr+ AUA, zero hidden fees." />
         <meta property="og:url" content="https://moneycompound.com" />
-        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
-        <meta property="og:image:secure_url" content="https://moneycompound.com/og-cover.jpg" />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image" content="https://moneycompound.com/images/new_logo.png" />
+        <meta property="og:image:secure_url" content="https://moneycompound.com/images/new_logo.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1536" />
+        <meta property="og:image:height" content="1024" />
         <meta property="og:image:alt" content="Money Compound — Grow Financially Strong" />
         <meta property="og:locale" content="en_IN" />
 
@@ -122,7 +122,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="twitter:creator" content="@compound_money" />
         <meta name="twitter:title" content="Money Compound — AMFI Registered Mutual Fund Distributor" />
         <meta name="twitter:description" content="Need-based mutual fund selection, NRI investing, insurance distribution (IRDAI POSP) & retirement planning. 1000+ families served, ₹180 Cr+ AUA, 18+ years of experience." />
-        <meta name="twitter:image" content="https://moneycompound.com/og-cover.jpg" />
+        <meta name="twitter:image" content="https://moneycompound.com/images/new_logo.png" />
         <meta name="twitter:image:alt" content="Money Compound — Grow Financially Strong" />
 
         {/* ───── Favicon + Apple touch ───── */}

@@ -6,9 +6,9 @@ import Link from 'next/link'
 import LeadCaptureModal from './LeadCaptureModal'
 
 const headings = [
-  { line1: 'Objective-Aligned', line2: 'Mutual Fund',       line3: 'Solutions.' },
-  { line1: 'Mutual Fund',    line2: 'Distribution',       line3: 'for Every Stage.' },
-  { line1: 'Institutional',  line2: 'Due Diligence-Led',  line3: 'Process.' }
+  { line1: 'Objective-Aligned', line2: 'Mutual Fund',       line3: 'Solutions' },
+  { line1: 'Mutual Fund',    line2: 'Distribution',       line3: 'for Every Stage' },
+  { line1: 'Institutional',  line2: 'Due Diligence-Led',  line3: 'Process' }
 ]
 
 // 4 hero images — cinematic mosaic with cycling highlight

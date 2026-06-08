@@ -674,7 +674,7 @@ const AboutPage = () => {
                   MONEY
                 </span>
                 <span className="block accent-gradient will-change-transform about-bounce-text-2">
-                  COMPOUND.
+                  COMPOUND
                 </span>
               </h1>
 

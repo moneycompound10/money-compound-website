@@ -233,8 +233,6 @@ function StorysetHero() {
         <g className="illu-bill" transform="rotate(-14 220 252)">
           <rect x="170" y="240" width="104" height="52" rx="4" fill="#86EFAC" stroke="#15803D" strokeWidth="2" />
           <circle cx="222" cy="266" r="13" fill="#15803D" />
-          <text x="222" y="273" textAnchor="middle"
-                fontFamily="Manrope, Inter, sans-serif" fontWeight="800" fontSize="14" fill="#FFFFFF">$</text>
           <text x="185" y="254" fontFamily="Manrope, Inter, sans-serif" fontSize="7" fill="#15803D" fontWeight="700">100</text>
           <text x="252" y="288" fontFamily="Manrope, Inter, sans-serif" fontSize="7" fill="#15803D" fontWeight="700">100</text>
         </g>
@@ -271,22 +269,16 @@ function StorysetHero() {
           <ellipse cx="494" cy="441" rx="38" ry="9" fill="url(#coin-g)" stroke="#92400E" strokeWidth="1.2" />
           <ellipse cx="494" cy="427" rx="38" ry="9" fill="url(#coin-g)" stroke="#92400E" strokeWidth="1.2" />
           <ellipse cx="494" cy="413" rx="38" ry="9" fill="url(#coin-g)" stroke="#92400E" strokeWidth="1.2" />
-          {/* top coin with $ */}
+          {/* top coin */}
           <ellipse cx="494" cy="399" rx="38" ry="9" fill="url(#coin-g)" stroke="#92400E" strokeWidth="1.5" />
-          <text x="494" y="406" textAnchor="middle"
-                fontFamily="Manrope, Inter, sans-serif" fontWeight="800" fontSize="14" fill="#0B1A3A">$</text>
         </g>
 
         {/* ─── Floating accent coins ─── */}
         <g className="illu-coin">
           <circle cx="90" cy="180" r="18" fill="url(#coin-g)" stroke="#92400E" strokeWidth="2" />
-          <text x="90" y="187" textAnchor="middle"
-                fontFamily="Manrope, Inter, sans-serif" fontWeight="800" fontSize="14" fill="#0B1A3A">₹</text>
         </g>
         <g className="illu-coin">
           <circle cx="540" cy="80" r="14" fill="url(#coin-g)" stroke="#92400E" strokeWidth="1.8" />
-          <text x="540" y="86" textAnchor="middle"
-                fontFamily="Manrope, Inter, sans-serif" fontWeight="800" fontSize="11" fill="#0B1A3A">$</text>
         </g>
         <g className="illu-coin">
           <circle cx="60" cy="380" r="12" fill="url(#coin-g)" stroke="#92400E" strokeWidth="1.5" />

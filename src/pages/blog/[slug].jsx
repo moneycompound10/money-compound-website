@@ -26,7 +26,7 @@ export default function BlogPostPage({ post, related }) {
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-zinc-50 pt-32 pb-20">
+    <div ref={containerRef} className="min-h-screen bg-zinc-50 pt-32 pb-20 overflow-x-hidden">
       <Head>
         <title>{post.title} | Money Compound</title>
         <meta name="description" content={post.title} />
@@ -119,6 +119,8 @@ export default function BlogPostPage({ post, related }) {
           font-size: 17px;
           line-height: 1.85;
           font-family: 'Inter', system-ui, sans-serif;
+          overflow-wrap: break-word;
+          word-break: break-word;
         }
         .blog-prose > * + * { margin-top: 1.1em; }
         .blog-prose h1, .blog-prose h2, .blog-prose h3, .blog-prose h4 {
@@ -163,8 +165,9 @@ export default function BlogPostPage({ post, related }) {
           color: #334155;
         }
         .blog-prose img {
-          max-width: 100%;
-          height: auto;
+          display: block;
+          max-width: 100% !important;
+          height: auto !important;
           margin: 1.5em auto;
           border-radius: 1rem;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -178,6 +181,10 @@ export default function BlogPostPage({ post, related }) {
           width: 100%;
           border-collapse: collapse;
           margin: 1.5em 0;
+          display: block;
+          max-width: 100%;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
         }
         .blog-prose th, .blog-prose td {
           border: 1px solid #e2e8f0;
@@ -185,6 +192,16 @@ export default function BlogPostPage({ post, related }) {
           text-align: left;
         }
         .blog-prose th { background: #f1f5f9; font-weight: 700; color: #0B1A3A; }
+
+        /* ── Mobile / phone tuning ── */
+        @media (max-width: 640px) {
+          .blog-prose { font-size: 16px; line-height: 1.75; }
+          .blog-prose h1 { font-size: 1.6rem; }
+          .blog-prose h2 { font-size: 1.35rem; }
+          .blog-prose h3 { font-size: 1.18rem; }
+          .blog-prose h4 { font-size: 1.05rem; }
+          .blog-prose th, .blog-prose td { padding: 0.45rem 0.6rem; font-size: 14px; }
+        }
       `}</style>
     </div>
   );

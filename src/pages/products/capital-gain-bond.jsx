@@ -124,7 +124,7 @@ export default function CapitalGainBondPage() {
 
             <h1 className="text-5xl lg:text-6xl font-black italic text-slate-950 mb-10 tracking-tighter leading-[1.1] font-['Playfair_Display']">
               <SplitTextCharacters text="Capital Gain" className="block" />
-              <SplitTextCharacters text="Bond (54EC)." className="text-brand-gold block" />
+              <SplitTextCharacters text="Bond (54EC)" className="text-brand-gold block" />
             </h1>
 
             <p className="animate-up text-slate-600 text-lg lg:text-xl leading-relaxed max-w-2xl font-medium font-['Inter'] mb-12">

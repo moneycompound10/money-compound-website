@@ -213,6 +213,20 @@ function StorysetHero() {
           {/* bag tie / rope wave */}
           <path d="M 130 282 Q 148 270 162 286 Q 178 270 195 286 Q 212 270 228 286 Q 244 270 260 282"
                 fill="none" stroke="#0B1A3A" strokeWidth="2.6" strokeLinecap="round" />
+          {/* growing-sprout medallion on bag (replaces the old $ sign) */}
+          <circle cx="195" cy="410" r="54" fill="#FFFFFF" stroke="#0B1A3A" strokeWidth="3" />
+          <g transform="translate(145 354)" strokeLinejoin="round">
+            {/* stem */}
+            <path d="M50 94 Q49 72 50 50" stroke="#15803D" strokeWidth="3" fill="none" strokeLinecap="round" />
+            {/* lower leaves */}
+            <path d="M50 80 Q33 74 28 60 Q40 64 50 74 Z" fill="#22C55E" stroke="#15803D" strokeWidth="1.5" />
+            <path d="M50 68 Q67 62 72 48 Q60 52 50 62 Z" fill="#4ADE80" stroke="#15803D" strokeWidth="1.5" />
+            {/* upper leaves */}
+            <path d="M50 58 Q38 50 34 36 Q47 41 50 53 Z" fill="#22C55E" stroke="#15803D" strokeWidth="1.5" />
+            <path d="M50 50 Q62 43 66 30 Q54 35 50 47 Z" fill="#4ADE80" stroke="#15803D" strokeWidth="1.5" />
+            {/* bud */}
+            <circle cx="50" cy="40" r="4" fill="#86EFAC" stroke="#15803D" strokeWidth="1.5" />
+          </g>
         </g>
 
         {/* ─── DOLLAR BILLS tucked in the bag ─── */}

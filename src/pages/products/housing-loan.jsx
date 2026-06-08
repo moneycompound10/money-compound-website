@@ -114,10 +114,10 @@ export default function HousingLoanPage() {
       <Head>
         <title>Loan Facilitation — Home, LAP, Education & NRI Loans | Money Compound</title>
         <meta name="description" content="Home, LAP, Education and NRI loan facilitation through partner banks and NBFCs. Sanction terms, interest rate and processing are governed by the underlying lender. Money Compound is a referral / DSA facilitator." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/housing-loan" />
+        <link rel="canonical" href="https://moneycompound.com/products/housing-loan" />
         <meta property="og:title" content="Loan Facilitation — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/products/housing-loan" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/products/housing-loan" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

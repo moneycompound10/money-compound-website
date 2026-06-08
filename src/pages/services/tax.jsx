@@ -130,10 +130,10 @@ export default function TaxationPlanningPage() {
       <Head>
         <title>Tax-Smart Investing — ELSS, 80C, NRI / DTAA Support | Money Compound</title>
         <meta name="description" content="Tax-smart mutual fund investing — ELSS for Section 80C, capital-gains planning under the FY24-25 LTCG (₹1.25 lakh exemption) rules, NRI / DTAA support, and old-vs-new regime walkthroughs. Money Compound is an AMFI-registered MFD; tax filing is via partner CAs." />
-        <link rel="canonical" href="https://www.moneycompound.com/services/tax" />
+        <link rel="canonical" href="https://moneycompound.com/services/tax" />
         <meta property="og:title" content="Tax-Smart Investing — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/services/tax" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/services/tax" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

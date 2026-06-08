@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
         <title>Privacy Policy | Money Compound</title>
         <meta name="description" content="How Money Compound collects, uses, stores and protects your personal data, including DPDP Act 2023 compliance, cookie use and data principal rights." />
         <meta name="robots" content="index,follow" />
-        <link rel="canonical" href="https://www.moneycompound.com/privacy-policy" />
+        <link rel="canonical" href="https://moneycompound.com/privacy-policy" />
       </Head>
 
       <section className="pt-32 pb-20 bg-white">

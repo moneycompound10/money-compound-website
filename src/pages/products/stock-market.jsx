@@ -107,7 +107,7 @@ export default function StockMarketPage() {
       <Head>
         <title>Stock Market Access — Demat Onboarding & Equity Investing | Money Compound</title>
         <meta name="description" content="Open a demat account via our SEBI-registered stock broker partner, get diversified equity exposure through AMFI-registered mutual funds and ETFs, and learn how markets work. Money Compound does not give stock tips, model portfolios or IPO calls." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/stock-market" />
+        <link rel="canonical" href="https://moneycompound.com/products/stock-market" />
       </Head>
 
       {/* Hero Section */}

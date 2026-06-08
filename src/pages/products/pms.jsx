@@ -70,7 +70,7 @@ export default function PMSPage() {
       <Head>
         <title>Portfolio Management Services (PMS) — Educational Overview | Money Compound</title>
         <meta name="description" content="An educational overview of SEBI-regulated Portfolio Management Services (PMS). Money Compound does not distribute or advise on PMS and is not registered with APMI; we may refer interested HNI clients to SEBI-registered Portfolio Managers." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/pms" />
+        <link rel="canonical" href="https://moneycompound.com/products/pms" />
       </Head>
 
       {/* Hero Section */}

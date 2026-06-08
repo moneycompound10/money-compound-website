@@ -9,7 +9,7 @@ export default function BrokerageDeclaration() {
         <title>Brokerage Declaration | Money Compound</title>
         <meta name="description" content="Indicative trail brokerage / commission ranges earned by Money Compound from AMCs across mutual fund scheme categories, disclosed for transparency." />
         <meta name="robots" content="index,follow" />
-        <link rel="canonical" href="https://www.moneycompound.com/brokerage-declaration" />
+        <link rel="canonical" href="https://moneycompound.com/brokerage-declaration" />
       </Head>
 
       <section className="pt-32 pb-20 bg-white">

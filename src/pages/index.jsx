@@ -13,7 +13,7 @@ import PremiumBlog from '../components/PremiumBlog'
 import ResourcesSection from '../components/ResourcesSection'
 import FinalCTA from '../components/FinalCTA'
 
-const SITE_URL = 'https://www.moneycompound.com'
+const SITE_URL = 'https://moneycompound.com'
 
 const jsonLd = {
   '@context': 'https://schema.org',

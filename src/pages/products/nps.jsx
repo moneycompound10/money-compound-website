@@ -103,10 +103,10 @@ export default function NPSPage() {
       <Head>
         <title>National Pension Scheme (NPS) — Information & Onboarding Help | Money Compound</title>
         <meta name="description" content="An overview of the National Pension Scheme (NPS) — Tier I and Tier II accounts, employer / employee contribution, Section 80CCD(1B) ₹50,000 deduction. Onboarding is facilitated via the regulated NPS partner; Money Compound is not a CRA / PoP." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/nps" />
+        <link rel="canonical" href="https://moneycompound.com/products/nps" />
         <meta property="og:title" content="NPS — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/products/nps" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/products/nps" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

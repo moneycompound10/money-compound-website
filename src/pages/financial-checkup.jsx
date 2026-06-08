@@ -73,9 +73,9 @@ export default function FinancialCheckupPage() {
       <Head>
         <title>Financial Check up — Health–Wealth Assessment | Money Compound</title>
         <meta name="description" content="Take Money Compound's free Financial Check up — answer 10 quick questions and get your financial health score instantly, with personalised next steps." />
-        <link rel="canonical" href="https://www.moneycompound.com/financial-checkup" />
+        <link rel="canonical" href="https://moneycompound.com/financial-checkup" />
         <meta property="og:title" content="Financial Check up — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/financial-checkup" />
+        <meta property="og:url" content="https://moneycompound.com/financial-checkup" />
       </Head>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12">

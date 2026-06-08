@@ -113,7 +113,7 @@ export default function BondsPage() {
       <Head>
         <title>Bonds, FDs & Fixed Income — for the Lower-Risk Part of Your Portfolio | Money Compound</title>
         <meta name="description" content="Government bonds (G-Sec), tax-free bonds, AAA-rated corporate FDs, RBI Floating Rate Bonds, SCSS and Sovereign Gold Bonds — fixed-income options for the relatively lower-risk part of your portfolio. Returns are not guaranteed; credit risk applies for non-sovereign instruments." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/bonds-fds" />
+        <link rel="canonical" href="https://moneycompound.com/products/bonds-fds" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

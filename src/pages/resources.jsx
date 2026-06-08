@@ -149,10 +149,10 @@ export default function ResourcesPage({ videos = [] }) {
       <Head>
         <title>Free Ebooks, Resources & Newsletter | Money Compound</title>
         <meta name="description" content="Free downloadable ebooks and resources from Money Compound — Smart Investor's Handbook, NRI Investment Guide, Retirement Checklist, NRI Starter Pack and Tax Reckoner. Newsletter signup available." />
-        <link rel="canonical" href="https://www.moneycompound.com/resources" />
+        <link rel="canonical" href="https://moneycompound.com/resources" />
         <meta property="og:title" content="Free Ebooks & Resources — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/resources" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/resources" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
         <meta name="description" content="Free, downloadable guides created by our research team to help you plan, invest and protect your portfolio." />
       </Head>
 

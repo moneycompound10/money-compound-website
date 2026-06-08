@@ -129,10 +129,10 @@ export default function CorporateWorkshopsPage() {
       <Head>
         <title>Corporate Financial Wellness Workshops | Money Compound</title>
         <meta name="description" content="Live and virtual financial literacy workshops for corporate employees, led by CA, CS, CFP-qualified professionals. Improve retention, reduce financial stress and educate employees on need-aligned mutual fund investing." />
-        <link rel="canonical" href="https://www.moneycompound.com/services/corporate" />
+        <link rel="canonical" href="https://moneycompound.com/services/corporate" />
         <meta property="og:title" content="Corporate Financial Wellness Workshops — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/services/corporate" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/services/corporate" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

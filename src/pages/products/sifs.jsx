@@ -113,10 +113,10 @@ export default function SIFPage() {
       <Head>
         <title>Specialised Investment Funds (SIF) Distribution | Money Compound</title>
         <meta name="description" content="Specialised Investment Funds (SIF) distribution under SEBI's Feb 2025 circular. Money Compound is registered to distribute SIF schemes under ARN-140318. SIF investments are subject to market risk; please read scheme documents carefully." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/sifs" />
+        <link rel="canonical" href="https://moneycompound.com/products/sifs" />
         <meta property="og:title" content="SIF Distribution — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/products/sifs" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/products/sifs" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

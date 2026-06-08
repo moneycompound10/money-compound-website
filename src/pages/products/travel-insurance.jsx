@@ -78,10 +78,10 @@ export default function TravelInsurancePage() {
       <Head>
         <title>Travel Insurance Distribution | Money Compound (IRDAI POSP)</title>
         <meta name="description" content="Travel insurance distribution under IRDAI POSP registration 408483. Compare and complete the application for international and student travel insurance with IRDAI-licensed insurers." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/travel-insurance" />
+        <link rel="canonical" href="https://moneycompound.com/products/travel-insurance" />
         <meta property="og:title" content="Travel Insurance — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/products/travel-insurance" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/products/travel-insurance" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

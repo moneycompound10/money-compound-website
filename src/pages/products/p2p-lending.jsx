@@ -103,10 +103,10 @@ export default function P2PLendingPage() {
       <Head>
         <title>P2P Lending — Information Page | Money Compound</title>
         <meta name="description" content="Information on RBI-regulated peer-to-peer (P2P) lending platforms in India. P2P investments are unsecured, illiquid and carry default risk; returns are not guaranteed. Money Compound facilitates introduction to RBI-registered P2P platforms only." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/p2p-lending" />
+        <link rel="canonical" href="https://moneycompound.com/products/p2p-lending" />
         <meta property="og:title" content="P2P Lending — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/products/p2p-lending" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/products/p2p-lending" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

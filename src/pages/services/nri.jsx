@@ -130,10 +130,10 @@ export default function NRIInvestmentsPage() {
       <Head>
         <title>NRI Mutual Fund Investing in India — Gulf, UAE, MEA | Money Compound</title>
         <meta name="description" content="Money Compound helps NRIs in the UAE, Gulf and wider MEA invest in Indian mutual funds — NRE / NRO / FCNR account setup support, video KYC, DTAA / TRC guidance, repatriation and FATCA / CRS compliance. AMFI ARN-140318." />
-        <link rel="canonical" href="https://www.moneycompound.com/services/nri" />
+        <link rel="canonical" href="https://moneycompound.com/services/nri" />
         <meta property="og:title" content="NRI Mutual Fund Investing in India — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/services/nri" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/services/nri" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

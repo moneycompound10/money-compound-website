@@ -111,7 +111,7 @@ export default function GeneralInsurancePage() {
       <Head>
         <title>General Insurance Distribution — Motor, Home, Travel | Money Compound (IRDAI POSP)</title>
         <meta name="description" content="General insurance distribution (motor, home, travel, fire, marine, personal accident) under IRDAI POSP registration 408483. Compare IRDAI-licensed insurers and complete the application with Money Compound." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/general-insurance" />
+        <link rel="canonical" href="https://moneycompound.com/products/general-insurance" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

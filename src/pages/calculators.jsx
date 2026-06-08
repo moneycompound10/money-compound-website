@@ -901,10 +901,10 @@ export default function CalculatorsPage() {
       <Head>
         <title>Free Financial Calculators — SIP, EMI, PPF, Retirement | Money Compound</title>
         <meta name="description" content="Free financial calculators for SIP, Lumpsum, EMI, PPF, Retirement, Goal Planning, Life Insurance HLV and more. Outputs are illustrative — actual returns depend on market conditions and are not guaranteed." />
-        <link rel="canonical" href="https://www.moneycompound.com/calculators" />
+        <link rel="canonical" href="https://moneycompound.com/calculators" />
         <meta property="og:title" content="Free Financial Calculators — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/calculators" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/calculators" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12">

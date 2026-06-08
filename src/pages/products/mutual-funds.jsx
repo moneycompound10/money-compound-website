@@ -115,10 +115,10 @@ export default function MutualFundsPage() {
       <Head>
         <title>Mutual Fund Distribution for Individuals, NRIs, HNIs & Retirees | Money Compound</title>
         <meta name="description" content="AMFI-registered mutual fund distribution across 40+ AMCs — equity, hybrid and debt schemes, SIPs, ELSS, NRI / NRO / FCNR onboarding. ARN-140318. Objective-aligned suggestions; final decisions are yours." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/mutual-funds" />
+        <link rel="canonical" href="https://moneycompound.com/products/mutual-funds" />
         <meta property="og:title" content="Mutual Fund Distribution — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/products/mutual-funds" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/products/mutual-funds" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

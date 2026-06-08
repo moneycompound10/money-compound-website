@@ -9,7 +9,7 @@ export default function Fatca() {
         <title>FATCA &amp; CRS Disclosure | Money Compound</title>
         <meta name="description" content="FATCA and CRS disclosure framework for NRI and resident clients onboarding with Money Compound for mutual fund and other investment products." />
         <meta name="robots" content="index,follow" />
-        <link rel="canonical" href="https://www.moneycompound.com/fatca" />
+        <link rel="canonical" href="https://moneycompound.com/fatca" />
       </Head>
 
       <section className="pt-32 pb-20 bg-white">

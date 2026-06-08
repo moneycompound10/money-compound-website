@@ -70,7 +70,7 @@ export default function AIFPage() {
       <Head>
         <title>Alternative Investment Funds (AIF) — Educational Overview | Money Compound</title>
         <meta name="description" content="An educational overview of SEBI-regulated Alternative Investment Funds (AIF). Money Compound does not distribute or advise on AIF products and is not registered with APMI; we may refer interested HNI clients to SEBI-registered AIF managers." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/aif" />
+        <link rel="canonical" href="https://moneycompound.com/products/aif" />
       </Head>
 
       {/* Hero Section */}

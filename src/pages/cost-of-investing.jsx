@@ -8,7 +8,7 @@ export default function CostOfInvesting() {
         <title>Cost of Investing — Regular vs Direct Plans | Money Compound</title>
         <meta name="description" content="How Money Compound earns from mutual fund distribution, the difference between Regular and Direct plans, and a transparent view of the cost you pay." />
         <meta name="robots" content="index,follow" />
-        <link rel="canonical" href="https://www.moneycompound.com/cost-of-investing" />
+        <link rel="canonical" href="https://moneycompound.com/cost-of-investing" />
       </Head>
 
       <section className="pt-32 pb-20 bg-white">

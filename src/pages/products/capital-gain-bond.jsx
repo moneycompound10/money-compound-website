@@ -104,10 +104,10 @@ export default function CapitalGainBondPage() {
       <Head>
         <title>Capital Gain Bonds (Section 54EC) | Money Compound</title>
         <meta name="description" content="Section 54EC capital gain bonds (NHAI, REC, PFC, IRFC) — up to ₹50 lakh per year, 5-year lock-in, sovereign-rated. Useful when planning long-term capital gain reinvestment from property sale. Confirm current 54EC limits and yields with your CA." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/capital-gain-bond" />
+        <link rel="canonical" href="https://moneycompound.com/products/capital-gain-bond" />
         <meta property="og:title" content="Capital Gain Bonds (54EC) — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/products/capital-gain-bond" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/products/capital-gain-bond" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

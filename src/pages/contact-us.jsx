@@ -70,10 +70,10 @@ export default function ContactPage() {
       <Head>
         <title>Contact Money Compound — Free 30-min Goal Review | Noida</title>
         <meta name="description" content="Book a free 30-minute goal review with Money Compound — AMFI-registered Mutual Fund Distributor and IRDAI POSP based in Noida. WhatsApp +91-8447496480 or helpdesk@moneycompound.com." />
-        <link rel="canonical" href="https://www.moneycompound.com/contact-us" />
+        <link rel="canonical" href="https://moneycompound.com/contact-us" />
         <meta property="og:title" content="Contact Money Compound — Free 30-min Goal Review" />
-        <meta property="og:url" content="https://www.moneycompound.com/contact-us" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/contact-us" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Institutional Hero Header */}

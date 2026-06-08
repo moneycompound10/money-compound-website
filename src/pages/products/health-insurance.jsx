@@ -113,7 +113,7 @@ export default function HealthInsurancePage() {
       <Head>
         <title>Health Insurance / Mediclaim Distribution | Money Compound (IRDAI POSP)</title>
         <meta name="description" content="Health insurance distribution under IRDAI POSP registration 408483. Money Compound helps you compare mediclaim, family floater and super top-up policies from IRDAI-licensed insurers, and complete the application." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/health-insurance" />
+        <link rel="canonical" href="https://moneycompound.com/products/health-insurance" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

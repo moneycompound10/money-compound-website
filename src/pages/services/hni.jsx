@@ -126,7 +126,7 @@ export default function HNIInvestmentsPage() {
       <Head>
         <title>HNI Investment Services | Money Compound</title>
         <meta name="description" content="HNI Investment Services from Money Compound — larger-ticket mutual fund distribution, Specialised Investment Funds (SIF), insurance distribution under IRDAI POSP, and coordination with your CA and lawyer. For PMS/AIF, we refer to SEBI-registered managers." />
-        <link rel="canonical" href="https://www.moneycompound.com/services/hni" />
+        <link rel="canonical" href="https://moneycompound.com/services/hni" />
       </Head>
 
       {/* Hero Section */}

@@ -131,10 +131,10 @@ export default function IndividualsPage() {
       <Head>
         <title>Mutual Fund Investing for Individuals & Families | Money Compound</title>
         <meta name="description" content="Need-aligned mutual fund investing for salaried individuals and families — SIP planning, tax-saving ELSS, insurance distribution under IRDAI POSP and retirement preparation. Led by CA, CS, CFP-qualified professionals." />
-        <link rel="canonical" href="https://www.moneycompound.com/services/individuals" />
+        <link rel="canonical" href="https://moneycompound.com/services/individuals" />
         <meta property="og:title" content="Mutual Fund Investing for Individuals — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/services/individuals" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/services/individuals" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

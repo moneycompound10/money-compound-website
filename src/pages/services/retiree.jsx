@@ -130,10 +130,10 @@ export default function RetireesInvestmentsPage() {
       <Head>
         <title>Retirement Planning for Senior Investors | Money Compound</title>
         <meta name="description" content="Retirement-stage planning — tax-efficient SWPs from mutual funds, SCSS, RBI Floating Rate Bonds, tax-free bonds, senior health cover and estate coordination. Reviewed with you periodically; changes only on your written approval." />
-        <link rel="canonical" href="https://www.moneycompound.com/services/retiree" />
+        <link rel="canonical" href="https://moneycompound.com/services/retiree" />
         <meta property="og:title" content="Retirement Planning — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/services/retiree" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/services/retiree" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

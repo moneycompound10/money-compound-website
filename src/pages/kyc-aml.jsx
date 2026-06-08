@@ -8,7 +8,7 @@ export default function KycAml() {
         <title>KYC & AML Policy | Money Compound</title>
         <meta name="description" content="Money Compound's KYC, anti-money-laundering (AML) and PMLA-aligned policy framework for mutual fund distribution and related investment products." />
         <meta name="robots" content="index,follow" />
-        <link rel="canonical" href="https://www.moneycompound.com/kyc-aml" />
+        <link rel="canonical" href="https://moneycompound.com/kyc-aml" />
       </Head>
 
       <section className="pt-32 pb-20 bg-white">

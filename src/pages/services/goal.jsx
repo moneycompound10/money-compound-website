@@ -130,10 +130,10 @@ export default function NeedBasedSelectionPage() {
       <Head>
         <title>Need-Based Mutual Fund Selection — SIP Strategy | Money Compound</title>
         <meta name="description" content="Need-based mutual fund selection from Money Compound. Map each time horizon — emergency fund, home, child's education, retirement — to its own AMFI-registered scheme bucket, with a written plan, periodic reviews and zero hidden fees." />
-        <link rel="canonical" href="https://www.moneycompound.com/services/goal" />
+        <link rel="canonical" href="https://moneycompound.com/services/goal" />
         <meta property="og:title" content="Need-Based Mutual Fund Selection — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/services/goal" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/services/goal" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

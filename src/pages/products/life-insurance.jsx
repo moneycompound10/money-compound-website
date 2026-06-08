@@ -111,7 +111,7 @@ export default function LifeInsurancePage() {
       <Head>
         <title>Life Insurance — Protection First | Money Compound (IRDAI POSP)</title>
         <meta name="description" content="Life insurance distribution under IRDAI POSP registration 408483. Money Compound helps you compare term insurance, traditional and ULIP plans from IRDAI-licensed insurers and complete the application — with protection-first guidance, not product push." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/life-insurance" />
+        <link rel="canonical" href="https://moneycompound.com/products/life-insurance" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

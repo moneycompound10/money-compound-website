@@ -620,11 +620,11 @@ const AboutPage = () => {
       <Head>
         <title>About Money Compound — AMFI MFD & IRDAI POSP in Noida</title>
         <meta name="description" content="Money Compound is led by CA, CS, CFP-qualified professionals, backed by multiple NISM certifications. Founded by Vipul Khandelwal in Noida — an AMFI-registered Mutual Fund Distributor (ARN-140318) and IRDAI POSP (408483) serving 1,000+ families across 25+ countries." />
-        <link rel="canonical" href="https://www.moneycompound.com/about" />
+        <link rel="canonical" href="https://moneycompound.com/about" />
         <meta property="og:title" content="About Money Compound — AMFI MFD & IRDAI POSP in Noida" />
         <meta property="og:description" content="Money Compound is led by CA, CS, CFP-qualified professionals, backed by multiple NISM certifications. Founded by Vipul Khandelwal in Noida." />
-        <meta property="og:url" content="https://www.moneycompound.com/about" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/about" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* ═══════════════════════════ HERO ═══════════════════════════ */}

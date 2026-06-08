@@ -93,17 +93,23 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="author" content="Money Compound" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
-        <link rel="canonical" href="https://www.moneycompound.com" />
+        <link rel="canonical" href="https://moneycompound.com" />
         <meta name="theme-color" content="#0A1A2F" />
+
+        {/* ───── Geo / Local SEO (Noida One, Sector 62, Noida) ───── */}
+        <meta name="geo.region" content="IN-UP" />
+        <meta name="geo.placename" content="Noida, Uttar Pradesh" />
+        <meta name="geo.position" content="28.6276;77.3719" />
+        <meta name="ICBM" content="28.6276, 77.3719" />
 
         {/* ───── Open Graph (WhatsApp / Facebook / LinkedIn preview) ───── */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Money Compound" />
         <meta property="og:title" content="Money Compound — AMFI Registered Mutual Fund Distributor | Need-Based Selection for Individuals, NRIs & HNIs" />
         <meta property="og:description" content="Noida-based AMFI-registered MFD serving 1000+ families & NRIs across 25+ countries. Mutual funds, SIPs, NRI investing, insurance distribution (IRDAI POSP) & retirement planning. 18+ years experience, ₹180 Cr+ AUA, zero hidden fees." />
-        <meta property="og:url" content="https://www.moneycompound.com" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
-        <meta property="og:image:secure_url" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
+        <meta property="og:image:secure_url" content="https://moneycompound.com/og-cover.jpg" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -116,7 +122,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="twitter:creator" content="@compound_money" />
         <meta name="twitter:title" content="Money Compound — AMFI Registered Mutual Fund Distributor" />
         <meta name="twitter:description" content="Need-based mutual fund selection, NRI investing, insurance distribution (IRDAI POSP) & retirement planning. 1000+ families served, ₹180 Cr+ AUA, 18+ years of experience." />
-        <meta name="twitter:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta name="twitter:image" content="https://moneycompound.com/og-cover.jpg" />
         <meta name="twitter:image:alt" content="Money Compound — Grow Financially Strong" />
 
         {/* ───── Favicon + Apple touch ───── */}
@@ -130,13 +136,13 @@ export default function MyApp({ Component, pageProps }) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'FinancialService',
-              '@id': 'https://www.moneycompound.com/#organization',
+              '@id': 'https://moneycompound.com/#organization',
               name: 'Money Compound',
               alternateName: 'Money Compound — AMFI Registered MFD',
               description: 'AMFI Registered Mutual Fund Distributor based in Noida, serving 1000+ families and NRIs across 25+ countries with need-based mutual fund selection, SIPs, NRI investing, insurance distribution (IRDAI POSP) and retirement planning.',
-              url: 'https://www.moneycompound.com',
-              logo: 'https://www.moneycompound.com/images/new_logo.png',
-              image: 'https://www.moneycompound.com/og-cover.jpg',
+              url: 'https://moneycompound.com',
+              logo: 'https://moneycompound.com/images/new_logo.png',
+              image: 'https://moneycompound.com/og-cover.jpg',
               telephone: '+91-8447496480',
               email: 'helpdesk@moneycompound.com',
               priceRange: '₹₹',
@@ -150,6 +156,12 @@ export default function MyApp({ Component, pageProps }) {
                 postalCode: '201301',
                 addressCountry: 'IN'
               },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 28.6276,
+                longitude: 77.3719
+              },
+              hasMap: 'https://maps.google.com/?q=Noida+One+Sector+62+Noida',
               areaServed: [
                 { '@type': 'Country', name: 'India' },
                 { '@type': 'Place', name: 'NRI Investors — UAE, Gulf & MEA' }
@@ -189,10 +201,10 @@ export default function MyApp({ Component, pageProps }) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
-              '@id': 'https://www.moneycompound.com/#website',
-              url: 'https://www.moneycompound.com',
+              '@id': 'https://moneycompound.com/#website',
+              url: 'https://moneycompound.com',
               name: 'Money Compound',
-              publisher: { '@id': 'https://www.moneycompound.com/#organization' },
+              publisher: { '@id': 'https://moneycompound.com/#organization' },
               inLanguage: 'en-IN'
             })
           }}
@@ -205,10 +217,10 @@ export default function MyApp({ Component, pageProps }) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Person',
-              '@id': 'https://www.moneycompound.com/#vipul-khandelwal',
+              '@id': 'https://moneycompound.com/#vipul-khandelwal',
               name: 'Vipul Khandelwal',
               jobTitle: 'Founder & CEO',
-              worksFor: { '@id': 'https://www.moneycompound.com/#organization' },
+              worksFor: { '@id': 'https://moneycompound.com/#organization' },
               description: 'CA, CS and CFP-qualified financial professional with 18+ years of experience. Founder of Money Compound (Noida). Specialises in need-based mutual fund selection, NRI investing and HNI advisory.',
               hasCredential: [
                 { '@type': 'EducationalOccupationalCredential', name: 'Chartered Accountant (CA)' },
@@ -218,7 +230,7 @@ export default function MyApp({ Component, pageProps }) {
                 { '@type': 'EducationalOccupationalCredential', name: 'NISM Series XVII — Retirement Adviser' }
               ],
               knowsAbout: ['Mutual Fund Distribution', 'NRI Investing', 'Need-Based Mutual Fund Selection', 'Retirement Planning', 'Insurance Distribution (IRDAI POSP)'],
-              url: 'https://www.moneycompound.com/about',
+              url: 'https://moneycompound.com/about',
               sameAs: [
                 'https://www.linkedin.com/company/moneycompound'
               ]
@@ -279,7 +291,7 @@ export default function MyApp({ Component, pageProps }) {
                   name: 'How do I contact Money Compound?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Phone / WhatsApp: +91-8447496480. Email: helpdesk@moneycompound.com. Website: https://www.moneycompound.com. Office: C-107, Noida One, Sector 62, Noida 201309, Uttar Pradesh, India. Free 30-minute goal review available — no fees, no obligation.'
+                    text: 'Phone / WhatsApp: +91-8447496480. Email: helpdesk@moneycompound.com. Website: https://moneycompound.com. Office: C-107, Noida One, Sector 62, Noida 201309, Uttar Pradesh, India. Free 30-minute goal review available — no fees, no obligation.'
                   }
                 }
               ]

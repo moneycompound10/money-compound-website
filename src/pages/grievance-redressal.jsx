@@ -8,7 +8,7 @@ export default function GrievanceRedressal() {
         <title>Grievance Redressal | Money Compound</title>
         <meta name="description" content="How to register, escalate and track complaints with Money Compound. SCORES and Smart ODR portal references for SEBI-regulated investor grievances." />
         <meta name="robots" content="index,follow" />
-        <link rel="canonical" href="https://www.moneycompound.com/grievance-redressal" />
+        <link rel="canonical" href="https://moneycompound.com/grievance-redressal" />
       </Head>
 
       <section className="pt-32 pb-20 bg-white">

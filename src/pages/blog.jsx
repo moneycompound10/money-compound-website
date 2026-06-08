@@ -14,10 +14,10 @@ const BLOG_HEAD = (
   <Head>
     <title>Mutual Fund Investing Blog — SIP, NRI, Tax, Retirement | Money Compound</title>
     <meta name="description" content="The Money Compound blog — educational articles on mutual fund SIPs, NRI investing, taxation, retirement, insurance and personal finance. Written for Indian investors, in plain English." />
-    <link rel="canonical" href="https://www.moneycompound.com/blog" />
+    <link rel="canonical" href="https://moneycompound.com/blog" />
     <meta property="og:title" content="Money Compound Blog" />
-    <meta property="og:url" content="https://www.moneycompound.com/blog" />
-    <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+    <meta property="og:url" content="https://moneycompound.com/blog" />
+    <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
   </Head>
 );
 

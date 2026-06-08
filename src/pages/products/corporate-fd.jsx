@@ -104,10 +104,10 @@ export default function CorporateFDPage() {
       <Head>
         <title>Corporate Fixed Deposits — Highly-Rated Issuers | Money Compound</title>
         <meta name="description" content="Corporate fixed deposits from highly-rated issuers, distributed by Money Compound. Corporate FDs are not covered by DICGC; credit risk applies. Compare current rates with bank FDs before investing." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/corporate-fd" />
+        <link rel="canonical" href="https://moneycompound.com/products/corporate-fd" />
         <meta property="og:title" content="Corporate Fixed Deposits — Money Compound" />
-        <meta property="og:url" content="https://www.moneycompound.com/products/corporate-fd" />
-        <meta property="og:image" content="https://www.moneycompound.com/og-cover.jpg" />
+        <meta property="og:url" content="https://moneycompound.com/products/corporate-fd" />
+        <meta property="og:image" content="https://moneycompound.com/og-cover.jpg" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

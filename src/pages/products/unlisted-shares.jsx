@@ -114,7 +114,7 @@ export default function UnlistedSharesPage() {
       <Head>
         <title>Unlisted Shares — Informational Page | Money Compound</title>
         <meta name="description" content="An informational page on unlisted shares (Pre-IPO, legacy unlisted, ESOP liquidity). Unlisted shares are illiquid, high-risk, and unsuitable for most retail investors. Money Compound facilitates the connect on a transaction basis only; settlement is handled by the executing SEBI-registered intermediary." />
-        <link rel="canonical" href="https://www.moneycompound.com/products/unlisted-shares" />
+        <link rel="canonical" href="https://moneycompound.com/products/unlisted-shares" />
       </Head>
 
       {/* Hero Section - Pinterest Premium Style */}

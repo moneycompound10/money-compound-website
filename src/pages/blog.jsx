@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import gsap from 'gsap';
+import gsap, { ScrollTrigger } from '../lib/gsap';
 import { Calendar, ChevronRight, ChevronLeft, ChevronsLeft, ChevronsRight } from 'lucide-react';
 import { getAllBlogs } from '../lib/contentDb';
 
@@ -33,25 +33,37 @@ export default function BlogPage({ allBlogs = [] }) {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.5 } });
-
+      // Heading reveals on load (it sits above the fold)
       gsap.set('.animate-text-reveal', { y: 60, opacity: 0 });
-      gsap.set('.animate-blog-card', { y: 80, opacity: 0 });
-
-      tl.to('.animate-text-reveal', {
+      gsap.to('.animate-text-reveal', {
         y: 0,
         opacity: 1,
         stagger: 0.15,
-        duration: 1.2
-      })
-        .to('.animate-blog-card', {
-          y: 0,
-          opacity: 1,
-          stagger: 0.1,
-          duration: 1.5,
-          ease: 'back.out(1.2)'
-        }, "-=0.8");
+        duration: 1.2,
+        ease: 'power4.out',
+      });
 
+      // Each blog card reveals as it scrolls into view — and re-animates
+      // when scrolling back up/down (toggleActions: play/reverse both ways).
+      gsap.utils.toArray('.animate-blog-card').forEach((card) => {
+        gsap.fromTo(
+          card,
+          { y: 80, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              toggleActions: 'play reverse play reverse',
+            },
+          }
+        );
+      });
+
+      ScrollTrigger.refresh();
     }, containerRef);
     return () => ctx.revert();
   }, [currentPage]);

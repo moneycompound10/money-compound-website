@@ -108,22 +108,22 @@ export default function MyApp({ Component, pageProps }) {
         <meta property="og:title" content="Money Compound — AMFI Registered Mutual Fund Distributor | Need-Based Selection for Individuals, NRIs & HNIs" />
         <meta property="og:description" content="Noida-based AMFI-registered MFD serving 1000+ families & NRIs across 25+ countries. Mutual funds, SIPs, NRI investing, insurance distribution (IRDAI POSP) & retirement planning. 18+ years experience, ₹180 Cr+ AUA, zero hidden fees." />
         <meta property="og:url" content="https://moneycompound.com" />
-        <meta property="og:image" content="https://moneycompound.com/og-card.jpg" />
-        <meta property="og:image:secure_url" content="https://moneycompound.com/og-card.jpg" />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Money Compound — Grow Financially Strong" />
-        <meta property="og:locale" content="en_IN" />
+        <meta property="og:image" content="https://moneycompound.com/og-card.jpg" key="og:image" />
+        <meta property="og:image:secure_url" content="https://moneycompound.com/og-card.jpg" key="og:image:secure_url" />
+        <meta property="og:image:type" content="image/jpeg" key="og:image:type" />
+        <meta property="og:image:width" content="1200" key="og:image:width" />
+        <meta property="og:image:height" content="630" key="og:image:height" />
+        <meta property="og:image:alt" content="Money Compound — Grow Financially Strong" key="og:image:alt" />
+        <meta property="og:locale" content="en_IN" key="og:locale" />
 
         {/* ───── Twitter Card ───── */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@compound_money" />
-        <meta name="twitter:creator" content="@compound_money" />
-        <meta name="twitter:title" content="Money Compound — AMFI Registered Mutual Fund Distributor" />
-        <meta name="twitter:description" content="Need-based mutual fund selection, NRI investing, insurance distribution (IRDAI POSP) & retirement planning. 1000+ families served, ₹180 Cr+ AUA, 18+ years of experience." />
-        <meta name="twitter:image" content="https://moneycompound.com/og-card.jpg" />
-        <meta name="twitter:image:alt" content="Money Compound — Grow Financially Strong" />
+        <meta name="twitter:card" content="summary_large_image" key="twitter:card" />
+        <meta name="twitter:site" content="@compound_money" key="twitter:site" />
+        <meta name="twitter:creator" content="@compound_money" key="twitter:creator" />
+        <meta name="twitter:title" content="Money Compound — AMFI Registered Mutual Fund Distributor" key="twitter:title" />
+        <meta name="twitter:description" content="Need-based mutual fund selection, NRI investing, insurance distribution (IRDAI POSP) & retirement planning. 1000+ families served, ₹180 Cr+ AUA, 18+ years of experience." key="twitter:description" />
+        <meta name="twitter:image" content="https://moneycompound.com/og-card.jpg" key="twitter:image" />
+        <meta name="twitter:image:alt" content="Money Compound — Grow Financially Strong" key="twitter:image:alt" />
 
         {/* ───── Favicon + Apple touch ───── */}
         <link rel="icon" href="/images/logo.png" />

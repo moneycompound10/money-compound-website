@@ -91,21 +91,21 @@ export default function Home() {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={SITE_URL} />
-        <meta property="og:image" content={`${SITE_URL}/og-card.jpg`} />
-        <meta property="og:image:secure_url" content={`${SITE_URL}/og-card.jpg`} />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Money Compound — AMFI Registered Mutual Fund Distributor" />
-        <meta property="og:locale" content="en_IN" />
+        <meta property="og:image" content={`${SITE_URL}/og-card.jpg`} key="og:image" />
+        <meta property="og:image:secure_url" content={`${SITE_URL}/og-card.jpg`} key="og:image:secure_url" />
+        <meta property="og:image:type" content="image/jpeg" key="og:image:type" />
+        <meta property="og:image:width" content="1200" key="og:image:width" />
+        <meta property="og:image:height" content="630" key="og:image:height" />
+        <meta property="og:image:alt" content="Money Compound — AMFI Registered Mutual Fund Distributor" key="og:image:alt" />
+        <meta property="og:locale" content="en_IN" key="og:locale" />
 
         {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@compound_money" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`${SITE_URL}/og-card.jpg`} />
-        <meta name="twitter:image:alt" content="Money Compound — AMFI Registered Mutual Fund Distributor" />
+        <meta name="twitter:card" content="summary_large_image" key="twitter:card" />
+        <meta name="twitter:site" content="@compound_money" key="twitter:site" />
+        <meta name="twitter:title" content={title} key="twitter:title" />
+        <meta name="twitter:description" content={description} key="twitter:description" />
+        <meta name="twitter:image" content={`${SITE_URL}/og-card.jpg`} key="twitter:image" />
+        <meta name="twitter:image:alt" content="Money Compound — AMFI Registered Mutual Fund Distributor" key="twitter:image:alt" />
 
         <script
           type="application/ld+json"

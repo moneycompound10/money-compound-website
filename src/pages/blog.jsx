@@ -111,12 +111,12 @@ export default function BlogPage({ allBlogs = [] }) {
               href={blog.url}
               className="animate-blog-card group flex flex-col bg-transparent"
             >
-              <div className="relative h-64 mb-6 overflow-hidden rounded-[24px] shadow-xl border border-white/20">
+              <div className="relative aspect-[19/10] mb-6 overflow-hidden rounded-[24px] shadow-xl border border-white/20 bg-white">
                 <img
                   src={blog.image}
                   alt={blog.title}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute bottom-4 left-4 bg-black/40 backdrop-blur-md px-4 py-2 rounded-xl flex items-center gap-2 text-white/90 text-[11px] font-bold tracking-wider uppercase">
                   <Calendar size={14} className="text-brand-gold" />

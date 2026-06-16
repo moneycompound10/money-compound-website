@@ -143,7 +143,7 @@ export default function HNIInvestmentsPage() {
 
             <h1 className="text-4xl lg:text-5xl font-black italic text-slate-950 mb-10 tracking-tighter leading-[1.1] font-['Playfair_Display']">
               <SplitTextCharacters text="HNI Investment" className="block" />
-              <SplitTextCharacters text="Services." className="text-brand-gold block" />
+              <SplitTextCharacters text="Services" className="text-brand-gold block" />
             </h1>
 
             <p className="animate-up text-slate-600 text-lg lg:text-xl leading-relaxed max-w-xl font-medium font-['Inter'] mb-12">
@@ -222,7 +222,7 @@ export default function HNIInvestmentsPage() {
       <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 mb-40">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
           <div className="animate-up">
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 font-['Playfair_Display']">A Disciplined Approach.</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 font-['Playfair_Display']">A Disciplined Approach</h2>
             <div className="w-20 h-1.5 bg-brand-gold rounded-full mb-12" />
             <div className="space-y-12">
               <div className="animate-up">
@@ -313,7 +313,7 @@ export default function HNIInvestmentsPage() {
             <div className="bg-slate-950 rounded-[60px] p-16 text-center shadow-premium relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/20 to-transparent pointer-events-none" />
               <Sparkles className="text-brand-gold mx-auto mb-8 w-12 h-12" />
-              <h2 className="text-3xl font-black text-white mb-8 font-['Playfair_Display']">A Confidential Review.</h2>
+              <h2 className="text-3xl font-black text-white mb-8 font-['Playfair_Display']">A Confidential Review</h2>
               <p className="text-white text-base mb-12 font-medium">
                 Speak with our team to review your existing mutual fund portfolio and discuss your goals. No fees, no obligation.
               </p>

@@ -54,8 +54,8 @@ export default function BlogPostPage({ post, related }) {
         </h1>
 
         {post.image && (
-          <div className="bp-hero-img relative w-full aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl mb-14 bg-slate-100">
-            <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+          <div className="bp-hero-img relative w-full aspect-[19/10] rounded-3xl overflow-hidden shadow-2xl mb-14 bg-white">
+            <img src={post.image} alt={post.title} className="w-full h-full object-contain" />
           </div>
         )}
 
@@ -91,12 +91,12 @@ export default function BlogPostPage({ post, related }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {related.map((r) => (
               <Link key={r.slug} href={`/blog/${r.slug}`} className="bp-fade group flex flex-col">
-                <div className="relative h-48 mb-5 overflow-hidden rounded-2xl shadow-lg">
+                <div className="relative aspect-[19/10] mb-5 overflow-hidden rounded-2xl shadow-lg bg-white">
                   <img
                     src={r.image}
                     alt={r.title}
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute bottom-3 left-3 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-1.5 text-white/90 text-[10px] font-bold tracking-wider uppercase">
                     <Calendar size={11} className="text-brand-gold" />

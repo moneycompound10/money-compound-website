@@ -8,7 +8,7 @@ import {
 const contactInfo = [
   { icon: MapPin, label: 'Office', value: 'C-107, 1st Floor, Noida One, Sector 62, Noida, UP-201309' },
   { icon: Phone, label: 'Phone', value: '+91 84474 96480' },
-  { icon: Mail, label: 'Email', value: 'helpdesk@moneycompound.com' },
+  { icon: Mail, label: 'Email', value: 'support@moneycompound.com' },
   { icon: Clock, label: 'Hours', value: 'Mon–Sat : 9:30 AM – 7:00 PM IST' },
 ];
 
@@ -69,7 +69,7 @@ export default function ContactPage() {
     <div ref={mainRef} className="min-h-screen bg-[#ECF1EE] font-sans overflow-x-hidden pt-44">
       <Head>
         <title>Contact Money Compound — Free 30-min Goal Review | Noida</title>
-        <meta name="description" content="Book a free 30-minute goal review with Money Compound — AMFI-registered Mutual Fund Distributor and IRDAI POSP based in Noida. WhatsApp +91-8447496480 or helpdesk@moneycompound.com." />
+        <meta name="description" content="Book a free 30-minute goal review with Money Compound — AMFI-registered Mutual Fund Distributor and IRDAI POSP based in Noida. WhatsApp +91-8447496480 or support@moneycompound.com." />
         <link rel="canonical" href="https://moneycompound.com/contact-us" />
         <meta property="og:title" content="Contact Money Compound — Free 30-min Goal Review" />
         <meta property="og:url" content="https://moneycompound.com/contact-us" />

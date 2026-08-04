@@ -71,7 +71,7 @@ export default function CostOfInvesting() {
 
             <section>
               <h2 className="text-xl font-bold text-brand-navy mb-3">5. Commission disclosure</h2>
-              <p>On request, we will share an annual statement of commission earned on your folios. Please write to <a href="mailto:helpdesk@moneycompound.com" className="text-brand-gold underline">helpdesk@moneycompound.com</a>.</p>
+              <p>On request, we will share an annual statement of commission earned on your folios. Please write to <a href="mailto:support@moneycompound.com" className="text-brand-gold underline">support@moneycompound.com</a>.</p>
             </section>
 
             <section>

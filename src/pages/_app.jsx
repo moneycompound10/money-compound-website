@@ -144,7 +144,7 @@ export default function MyApp({ Component, pageProps }) {
               logo: 'https://moneycompound.com/images/new_logo.png',
               image: 'https://moneycompound.com/og-cover.jpg',
               telephone: '+91-8447496480',
-              email: 'helpdesk@moneycompound.com',
+              email: 'support@moneycompound.com',
               priceRange: '₹₹',
               foundingDate: '2018',
               founder: { '@type': 'Person', name: 'Vipul Khandelwal' },
@@ -291,7 +291,7 @@ export default function MyApp({ Component, pageProps }) {
                   name: 'How do I contact Money Compound?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'Phone / WhatsApp: +91-8447496480. Email: helpdesk@moneycompound.com. Website: https://moneycompound.com. Office: C-107, Noida One, Sector 62, Noida 201309, Uttar Pradesh, India. Free 30-minute goal review available — no fees, no obligation.'
+                    text: 'Phone / WhatsApp: +91-8447496480. Email: support@moneycompound.com. Website: https://moneycompound.com. Office: C-107, Noida One, Sector 62, Noida 201309, Uttar Pradesh, India. Free 30-minute goal review available — no fees, no obligation.'
                   }
                 }
               ]

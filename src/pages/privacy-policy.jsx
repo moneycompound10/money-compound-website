@@ -71,7 +71,7 @@ export default function PrivacyPolicy() {
                 <li>Right to grievance redressal and nomination.</li>
                 <li>Right to withdraw consent at any time, without affecting prior processing.</li>
               </ul>
-              <p className="mt-3">To exercise these rights, write to <a href="mailto:helpdesk@moneycompound.com" className="text-brand-gold underline">helpdesk@moneycompound.com</a>.</p>
+              <p className="mt-3">To exercise these rights, write to <a href="mailto:support@moneycompound.com" className="text-brand-gold underline">support@moneycompound.com</a>.</p>
             </section>
 
             <section>

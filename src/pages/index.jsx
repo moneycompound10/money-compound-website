@@ -26,7 +26,7 @@ const jsonLd = {
       logo: `${SITE_URL}/images/new_logo.png`,
       description: 'AMFI-registered Mutual Fund Distributor (ARN-140318) and IRDAI POSP (408483) serving Individuals, NRIs, HNIs and retirees with need-aligned mutual fund distribution, insurance distribution and retirement planning. PMS/AIF interest is handled on a referral-only basis to SEBI-registered managers.',
       telephone: '+91-84474-96480',
-      email: 'helpdesk@moneycompound.com',
+      email: 'support@moneycompound.com',
       areaServed: ['IN', 'US', 'GB', 'AE', 'SG', 'CA', 'AU'],
       address: {
         '@type': 'PostalAddress',

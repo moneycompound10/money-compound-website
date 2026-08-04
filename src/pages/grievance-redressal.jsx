@@ -29,7 +29,7 @@ export default function GrievanceRedressal() {
             <ul className="space-y-3 text-[14px] text-slate-800">
               <li className="flex gap-3"><span className="font-bold w-28 flex-shrink-0">Name:</span><span>Vipul Khandelwal</span></li>
               <li className="flex gap-3"><span className="font-bold w-28 flex-shrink-0">Designation:</span><span>Grievance Officer, Money Compound</span></li>
-              <li className="flex gap-3"><Mail className="w-4 h-4 text-brand-gold mt-1" /><a href="mailto:helpdesk@moneycompound.com" className="text-brand-navy underline">helpdesk@moneycompound.com</a></li>
+              <li className="flex gap-3"><Mail className="w-4 h-4 text-brand-gold mt-1" /><a href="mailto:support@moneycompound.com" className="text-brand-navy underline">support@moneycompound.com</a></li>
               <li className="flex gap-3"><Phone className="w-4 h-4 text-brand-gold mt-1" /><span>+91 84474 96480 (Mon–Sat, 10:00–19:00 IST)</span></li>
               <li className="flex gap-3"><MapPin className="w-4 h-4 text-brand-gold mt-1" /><span>C-107, 1st Floor, Noida One, Sector 62, Noida, UP-201309</span></li>
             </ul>

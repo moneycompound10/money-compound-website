@@ -13,6 +13,10 @@ export default function FinancialCheckupPage() {
   // reports its height here and asks this window to do any scrolling for it.
   useEffect(() => {
     const onMessage = (event) => {
+      // The scorecard is served from this same origin, so anything arriving from
+      // elsewhere is not it and has no business resizing or scrolling the page.
+      if (event.origin !== window.location.origin) return;
+
       const data = event?.data;
       if (!data) return;
 

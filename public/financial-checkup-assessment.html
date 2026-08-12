@@ -1485,9 +1485,12 @@ var MCFHS_STEPS = [
       makePDF(S, lead); showGuide();
       return;
     }
+    /* Promise only what actually happened here. The PDF is generated in this
+       browser, so that part is certain; the email is sent further down the
+       chain and claiming it lands before it has is worse than saying nothing. */
     function done(){
       btn.innerHTML = '✓ Sent';
-      msg('Done — your detailed report is on its way to ' + lead.email + '. Check spam if it has not arrived in a few minutes.', true);
+      msg('Done — your report is downloading now, and we have your details. Our team will be in touch shortly.', true);
       makePDF(S, lead);
       showGuide();
     }

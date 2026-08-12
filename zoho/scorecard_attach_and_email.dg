@@ -1,0 +1,106 @@
+/* =====================================================================
+   Financial Health Scorecard — attach the report and email it
+   =====================================================================
+
+   Zoho CRM > Setup > Developer Space > Functions > New Function
+     Category   : Standalone
+     Return type: String
+
+   Arguments (all String except score, in this order):
+     leadId       String
+     pdfUrl       String
+     pdfName      String
+     clientName   String
+     clientEmail  String
+     score        String
+     grade        String
+
+   Then in Zoho Flow, after the "Create/Update Lead" step, add
+   Zoho CRM > Execute Function and map:
+     leadId      <- the lead id returned by the create step
+     pdfUrl      <- pdf_url
+     pdfName     <- pdf_name
+     clientName  <- first_name   (falls back to last_name if empty)
+     clientEmail <- email
+     score       <- total_score
+     grade       <- grade
+
+   Why the URL and not the base64: the scorecard does produce the PDF in
+   the browser, but Deluge cannot rebuild a binary file from a base64
+   string without corrupting it. /api/scorecard stores the report and
+   passes a signed link, which invokeurl below fetches as a real file.
+   The link is signed and expires, so it is safe to hold in the CRM.
+   ===================================================================== */
+
+string scorecard.attachAndEmail(string leadId, string pdfUrl, string pdfName, string clientName, string clientEmail, string score, string grade)
+{
+    result = "";
+
+    // Nothing to do if the submission came through without a report.
+    if(pdfUrl == null || pdfUrl.trim() == "")
+    {
+        return "skipped: no report url";
+    }
+
+    fileName = pdfName;
+    if(fileName == null || fileName.trim() == "")
+    {
+        fileName = "Financial-Health-Scorecard.pdf";
+    }
+
+    greeting = clientName;
+    if(greeting == null || greeting.trim() == "")
+    {
+        greeting = "there";
+    }
+
+    /* invokeurl on a binary URL returns a file object, which is what both
+       attachFile and sendmail need. */
+    reportFile = invokeurl
+    [
+        url : pdfUrl
+        type : GET
+    ];
+
+    if(reportFile == null)
+    {
+        return "failed: could not download the report";
+    }
+
+    /* ---------- 1. Attach it to the lead ---------- */
+    if(leadId != null && leadId.trim() != "")
+    {
+        attachResp = zoho.crm.attachFile("Leads", leadId.toLong(), reportFile);
+        result = result + "attach:" + attachResp.toString() + " ";
+    }
+
+    /* ---------- 2. Email it to the client ---------- */
+    if(clientEmail != null && clientEmail.contains("@"))
+    {
+        body = "<p>Hi " + greeting + ",</p>";
+        body = body + "<p>Thank you for completing the Money Compound Financial Health Scorecard.</p>";
+        body = body + "<p>Your score is <b>" + score + " out of 100</b>";
+        if(grade != null && grade.trim() != "")
+        {
+            body = body + " — <b>" + grade + "</b>";
+        }
+        body = body + ".</p>";
+        body = body + "<p>Your full report is attached. It sets out every ratio we measured, the benchmark each one should meet, and the actions that would move your score the most, in priority order.</p>";
+        body = body + "<p>If you would like to walk through it with us, a 30-minute review is free and carries no obligation — just reply to this email or WhatsApp us on +91 84474 96480.</p>";
+        body = body + "<p>Warm regards,<br/>Money Compound<br/>AMFI-registered Mutual Fund Distributor</p>";
+        body = body + "<hr/><p style=\"font-size:11px;color:#777\">This scorecard is an educational self-assessment based on the figures you entered. It is not investment, insurance, tax or legal advice. Mutual fund investments are subject to market risks; read all scheme related documents carefully.</p>";
+
+        sendmail
+        [
+            from : zoho.adminuserid
+            to : clientEmail
+            subject : "Your Financial Health Score: " + score + "/100"
+            message : body
+            attachments : file:reportFile
+        ]
+        result = result + "emailed:" + clientEmail;
+    }
+
+    info result;
+    return result;
+}

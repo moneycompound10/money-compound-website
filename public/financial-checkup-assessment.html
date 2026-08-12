@@ -385,10 +385,10 @@
    CONFIG — change these two lines and nothing else
    ===================================================================== */
 const MCFHS_CONFIG = {
-  // Where the submission is POSTed. Zoho Flow webhook URL, or your own endpoint.
-  // STILL UNSET — until this is a real URL the page posts nowhere, so no lead and no
-  // scorecard record ever reaches Zoho. Everything else below is live.
-  ENDPOINT_URL : "REPLACE_WITH_YOUR_WEBHOOK_URL",
+  // Posts to our own API route, which forwards to the Zoho Flow webhook. The
+  // webhook URL carries a zapikey and this file is served from public/, so the
+  // URL itself must never appear here — it lives in ZOHO_FLOW_WEBHOOK_URL.
+  ENDPOINT_URL : "/api/scorecard",
   BOOKING_URL  : "https://vipulkhandelwal-moneycompound1.zohobookings.in/#/moneycompound2",
   WHATSAPP_URL : "https://wa.me/918447496480?text=Hi%2C%20I%20just%20completed%20the%20Financial%20Health%20Scorecard",
   SITE_URL     : "https://www.moneycompound.com",

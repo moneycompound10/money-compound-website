@@ -40,6 +40,12 @@
   --mc-font:'Plus Jakarta Sans','Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 }
 
+/* Browsers put 8px of margin on the body by default, which inset the whole
+   scorecard — the hero included — and read as an uneven gap once the page's
+   scrollbar sat beside it. This page is embedded edge to edge, so clear it. */
+html,body{margin:0;padding:0;}
+body{background:var(--mc-bg);}
+
 .mcfhs *,.mcfhs *::before,.mcfhs *::after{box-sizing:border-box;}
 .mcfhs{
   font-family:var(--mc-font);

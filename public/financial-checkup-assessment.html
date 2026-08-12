@@ -398,8 +398,8 @@ const MCFHS_CONFIG = {
 
   // The lead magnet. Host the PDF on the site and put its URL here; until then the
   // download button stays hidden and the form still collects the lead and the consents.
-  GUIDE_TITLE  : "Your First 10 Moves Towards Financial Health",
-  GUIDE_URL    : "REPLACE_WITH_THE_GUIDE_PDF_URL",
+  GUIDE_TITLE  : "The Smart Investor's Handbook 2026",
+  GUIDE_URL    : "/ebooks/smart-investors-handbook-2026.pdf",
 
   // DPDP: BUMP THIS whenever the consent wording in the form changes. Consent is only
   // evidenceable if we can say which notice the person actually agreed to. Same rule as
@@ -1317,8 +1317,9 @@ var MCFHS_STEPS = [
     h += '<div class="mcfhs-sec mcfhs-gate" id="mcfhs-gate"><h3>Get your full report and the guide</h3>' +
          '<p class="mcfhs-secsub">Two things, both free. <b>Your detailed report</b> — every ratio, ' +
          'benchmark and recommended action, as a document you can keep. And <b>' +
-         esc(MCFHS_CONFIG.GUIDE_TITLE) + '</b>, our short guide to the ten moves that shift a ' +
-         'score like yours the fastest.</p>' +
+         esc(MCFHS_CONFIG.GUIDE_TITLE) + '</b>, our 20-chapter guide to building wealth in ' +
+         'India — compounding, asset classes, mutual funds and SIPs, fixed income and ' +
+         'tax-smart investing.</p>' +
          '<div class="mcfhs-gatebox"><div class="mcfhs-grid3">' +
          '<div><div class="mcfhs-qlabel">Full name</div><input type="text" id="g_name" placeholder="Your name"></div>' +
          '<div><div class="mcfhs-qlabel">Email</div><input type="email" id="g_email" placeholder="you@example.com"></div>' +
@@ -1433,10 +1434,14 @@ var MCFHS_STEPS = [
     var el = document.getElementById('mcfhs-guide');
     if (!el || !MCFHS_CONFIG.GUIDE_URL || MCFHS_CONFIG.GUIDE_URL.indexOf('REPLACE') === 0) return;
     el.hidden = false;
+    /* Only claim an emailed copy when there is an endpoint to send one. Until
+       ENDPOINT_URL is set nothing is delivered, and promising an inbox copy
+       that never arrives is worse than promising nothing. */
+    var emailed = MCFHS_CONFIG.ENDPOINT_URL && MCFHS_CONFIG.ENDPOINT_URL.indexOf('REPLACE') !== 0;
     el.innerHTML = '<a class="mcfhs-btn mcfhs-gold" href="' + MCFHS_CONFIG.GUIDE_URL +
                    '" target="_blank" rel="noopener" download>⬇ Download ' +
                    esc(MCFHS_CONFIG.GUIDE_TITLE) + '</a>' +
-                   '<p class="mcfhs-secsub" style="margin-top:9px">A copy is in your inbox too.</p>';
+                   (emailed ? '<p class="mcfhs-secsub" style="margin-top:9px">A copy is in your inbox too.</p>' : '');
   }
 
   function submit(S, btn){

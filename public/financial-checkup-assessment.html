@@ -1081,7 +1081,7 @@ var MCFHS_STEPS = [
 
     wire();
     var card = document.getElementById('mcfhs-card');
-    if (card && step > 0) card.scrollIntoView({ behavior:'smooth', block:'start' });
+    if (card && step > 0) scrollToEl(card, 'start');
   }
 
   function clearErr(id){
@@ -1124,7 +1124,7 @@ var MCFHS_STEPS = [
         if (!first) first = document.querySelector('[data-q="' + f.id + '"]');
       }
     });
-    if (first) first.scrollIntoView({ behavior:'smooth', block:'center' });
+    if (first) scrollToEl(first, 'center');
     return ok;
   }
 
@@ -1142,7 +1142,7 @@ var MCFHS_STEPS = [
     elResult.classList.remove('mcfhs-hidden');
     elResult.innerHTML = resultHTML(S);
     wireResult(S);
-    document.getElementById('mcfhs-card').scrollIntoView({ behavior:'smooth', block:'start' });
+    scrollToEl(document.getElementById('mcfhs-card'), 'start');
     setTimeout(function(){ animate(S); }, 120);
   }
 
@@ -1369,7 +1369,7 @@ var MCFHS_STEPS = [
       elResult.classList.add('mcfhs-hidden');
       elForm.classList.remove('mcfhs-hidden');
       render();
-      document.getElementById('mcfhs-card').scrollIntoView({ behavior:'smooth', block:'start' });
+      scrollToEl(document.getElementById('mcfhs-card'), 'start');
     });
     document.getElementById('mcfhs-send').addEventListener('click', function(){ submit(S, this); });
   }
@@ -1659,9 +1659,38 @@ var MCFHS_STEPS = [
     payload: function(lead){ return LAST ? payload(LAST, lead || { name:'', email:'', phone:'' }) : null; }
   };
 
+  /* The observer below fires on every animated style and every counter tick, and
+     each post costs the parent a re-render plus a height transition. Posting all
+     of them made scrolling stutter, so coalesce to one frame and only send real
+     changes. */
+  var lastHeight = 0, heightQueued = false;
   function postHeight(){
-    if (window.parent !== window) window.parent.postMessage({ mcfhsHeight: document.documentElement.scrollHeight }, '*');
+    if (window.parent === window || heightQueued) return;
+    heightQueued = true;
+    requestAnimationFrame(function(){
+      heightQueued = false;
+      var h = document.documentElement.scrollHeight;
+      if (Math.abs(h - lastHeight) < 2) return;
+      lastHeight = h;
+      window.parent.postMessage({ mcfhsHeight: h }, '*');
+    });
   }
+
+  /* This document is sized to its full content and never scrolls itself, so
+     scrollIntoView would be a no-op — the window that actually scrolls is the
+     parent. Hand it the offset and let it do the scrolling. */
+  function scrollToEl(el, block){
+    if (!el) return;
+    if (window.parent !== window){
+      window.parent.postMessage({
+        mcfhsScrollTo: el.getBoundingClientRect().top + window.pageYOffset,
+        mcfhsBlock: block || 'start'
+      }, '*');
+    } else {
+      el.scrollIntoView({ behavior:'smooth', block: block || 'start' });
+    }
+  }
+
   new MutationObserver(postHeight).observe(document.body, { childList:true, subtree:true, attributes:true });
   window.addEventListener('load', postHeight);
   setInterval(postHeight, 1200);

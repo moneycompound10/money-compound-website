@@ -1,17 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
+
+// Roughly the height of the fixed navbar, so a scrolled-to element does not end
+// up hidden behind it.
+const NAV_OFFSET = 110;
 
 export default function FinancialCheckupPage() {
   const [frameHeight, setFrameHeight] = useState(1400);
+  const frameRef = useRef(null);
 
-  // The embedded scorecard reports its own content height so the iframe can grow with it.
-  // The scorecard sends { mcfhsHeight }; the previous assessment sent
-  // { type: 'fincheckup-height', height }. Accept both so either asset works here.
+  // The scorecard is sized to its full content and never scrolls itself, so it
+  // reports its height here and asks this window to do any scrolling for it.
   useEffect(() => {
     const onMessage = (event) => {
       const data = event?.data;
       if (!data) return;
 
+      if (typeof data.mcfhsScrollTo === 'number') {
+        const frame = frameRef.current;
+        if (!frame) return;
+
+        const frameTop = frame.getBoundingClientRect().top + window.scrollY;
+        let top = frameTop + data.mcfhsScrollTo - NAV_OFFSET;
+        if (data.mcfhsBlock === 'center') {
+          top -= Math.max(0, window.innerHeight / 2 - NAV_OFFSET);
+        }
+
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        return;
+      }
+
+      // { mcfhsHeight } is the scorecard; { type: 'fincheckup-height' } was the
+      // previous assessment. Accept both so either asset works in this wrapper.
       let height = null;
       if (typeof data.mcfhsHeight === 'number') {
         height = data.mcfhsHeight;
@@ -40,11 +60,12 @@ export default function FinancialCheckupPage() {
       {/* The scorecard is a self-contained page with its own hero, disclaimer and
           PDF export, so it is embedded whole and simply reports its height back. */}
       <iframe
+        ref={frameRef}
         src="/financial-checkup-assessment.html"
         title="Financial Health Scorecard"
         scrolling="no"
         className="w-full block"
-        style={{ border: 'none', height: `${frameHeight}px`, transition: 'height 0.25s ease' }}
+        style={{ border: 'none', height: `${frameHeight}px` }}
       />
     </div>
   );

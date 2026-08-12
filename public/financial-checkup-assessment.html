@@ -2,2302 +2,1673 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Financial Health Scorecard | Money Compound</title>
+<meta name="theme-color" content="#0A1A2F">
+<meta name="description" content="Check your Financial Health Score in 3 minutes. Get your personal financial ratios, a 100-point score and a prioritised action plan from Money Compound.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-     <script nonce="undefined" src="https://cdn.zingchart.com/zingchart.min.js"></script>
-     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-     <script src="https://smtpjs.com/v3/smtp.js"></script>
-
-
-    <style>
-.container1 {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 40px 44px;
-        box-sizing: border-box;
-    }
- .leftpanel-registrationform {
-         width: 100%;
-         max-width: 980px;
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        background: #ffffff;
-        border-radius: 22px;
-        box-shadow: 0 18px 40px rgba(100,116,139,0.28), 0 6px 14px rgba(100,116,139,0.22), 0 2px 4px rgba(100,116,139,0.18);
-        overflow: hidden;
-    }
-        .left-panel {
-            background: radial-gradient(130% 90% at 50% 16%, #16294a 0%, #0A1A2F 48%, #050a14 100%);
-            width:44%;
-            position: relative;
-            overflow: hidden;
-            min-height: 520px;
-        }
-        .fc-hero {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            text-align: center;
-            padding: 34px 26px 30px;
-            box-sizing: border-box;
-            color: #fff;
-        }
-        .fc-eyebrow {
-            font-family: Georgia, 'Times New Roman', serif;
-            font-size: 24px;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 6px;
-        }
-        .fc-title {
-            font-family: 'Roboto', sans-serif;
-            font-size: 30px;
-            line-height: 1.12;
-            font-weight: 800;
-            margin: 0;
-            background: linear-gradient(95deg, #5eead4 0%, #6ee7b7 22%, #a7d3fb 62%, #5b95f5 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-        }
-        .fc-title span {
-            color: inherit;
-        }
-        .fc-media {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 16px 0;
-            min-height: 0;
-        }
-        .fc-media img {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border-radius: 14px;
-            box-shadow: 0 18px 50px rgba(0,0,0,0.5);
-        }
-        .fc-badge {
-            font-family: 'Roboto', sans-serif;
-            font-size: 11px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #cfe9df;
-            border: 1px solid rgba(83,192,155,0.4);
-            border-radius: 999px;
-            padding: 8px 16px;
-            background: rgba(83,192,155,0.08);
-        }
-   .left-panel p{
-        font-family: Roboto;
-        font-size: 24px;
-        font-weight: 400;
-        margin: 20px 0 0 0;
-        line-height: 40px;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #407BD5;
-
-    }
-    .left-panel h4{
-        font-family: Roboto;
-        font-size: 36px;
-        line-height: 40px;
-        font-weight: 800;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #53C09B;
-    }
-            #image img {
-                position: absolute;
-                inset: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-            }
-        #registration-form {
-            font-family: 'Roboto', sans-serif;
-            background-color: #fff;
-            display: flex;
-            justify-content: space-between;
-            width: 56%;
-            margin: 0;
-height: fit-content;
-        }
-
-        .regis-form {
-            width: 100%;
-            padding: 40px 44px;
-        }
-
-    .regis-form h2{
-            font-family: 'Roboto', sans-serif;
-            font-weight: 600;
-             font-style: normal;
-            font-size: 32px;
-           color: #2C2C2C;
-line-height: 40px;
-margin: 0;
-            margin-bottom: 5px;
-    }
-  .regis-form h2 span{
-font-weight: 400;
-}
-#phone-error{
-    color: red;
-}
-#email-error{
-    color: red;
-}
-    .regis-form p{
-        text-align: left;
-        font-family: 'Roboto', sans-serif;
- font-size: 18px;
-            font-weight: 400;
-line-height: 30px;
-color: #6F6C90;
-
-    }
-      .field {
-        display: flex;
-        gap: 20px;
-    }
-
-    .field label{
-        display: block;
-        margin-bottom: 5px;
-font-family: "DM Sans", sans-serif;
-font-size: 14px;
-            font-weight: 500;
-line-height: 20px;
-color: #170F49;
-    }
-    .col{
-    display: flex;
-    flex-direction: column;
-}
-.col-3{
-    display: flex;
-    gap: 20px;
-}
-    .col-3 label{
-        display: block;
-        margin-bottom: 5px;
-font-family: "DM Sans", sans-serif;
-font-size: 14px;
-            font-weight: 500;
-line-height: 20px;
-color: #170F49;
-    }
-
-        .field1 {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .field2 {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .field1-input {
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .field2-input {
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-.input-with-icon{
-    width: 100%;
-    position: relative;
-   border: 1px solid #d7dbe3;
-    border-radius: 10px;
-    display: flex;
-    background: #fff;
-    transition: border-color .2s ease, box-shadow .2s ease;
-}
-.input-with-icon:focus-within{
-   border-color: #53C09B;
-   box-shadow: 0 0 0 3px rgba(83,192,155,0.15);
-}
-.input-with{
- width: 100%;
-    position: relative;
-   border: 1px solid #d7dbe3;
-    border-radius: 10px;
-    background: #fff;
-    transition: border-color .2s ease, box-shadow .2s ease;
-}
-.input-with:focus-within{
-   border-color: #53C09B;
-   box-shadow: 0 0 0 3px rgba(83,192,155,0.15);
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =======================================================================
+   MONEY COMPOUND — FINANCIAL HEALTH SCORECARD
+   All styles are scoped under .mcfhs so this can be pasted into any page.
+   Brand tokens live in :root — change them in one place.
+   ======================================================================= */
+:root{
+  --mc-navy:#0A1A2F;
+  --mc-navy-700:#10233D;
+  --mc-navy-600:#17304F;
+  --mc-navy-500:#22436B;
+  --mc-accent:#C9A227;        /* brand gold - headline emphasis, primary CTA */
+  --mc-accent-soft:#F6EDD2;
+  --mc-green:#0E9F6E;
+  --mc-green-soft:#E3F5EE;
+  --mc-amber:#D98A00;
+  --mc-amber-soft:#FDF1DC;
+  --mc-red:#D64545;
+  --mc-red-soft:#FBE9E9;
+  --mc-ink:#122036;
+  --mc-body:#4A5A70;
+  --mc-muted:#7E8DA0;
+  --mc-line:#E4E9F0;
+  --mc-bg:#F5F7FA;
+  --mc-card:#FFFFFF;
+  --mc-radius:16px;
+  --mc-shadow:0 1px 2px rgba(10,26,47,.05), 0 12px 32px -12px rgba(10,26,47,.16);
+  --mc-shadow-sm:0 1px 2px rgba(10,26,47,.06), 0 4px 14px -8px rgba(10,26,47,.18);
+  --mc-font:'Plus Jakarta Sans','Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 }
 
-.input-with-icon .icon{
-color: #A0A3BD;
-font-weight: 400;
-    position: absolute;
-    right: 15px;
-    top: 20px;
-    font-size: 25px;
-line-height: 20px;
-font-family: "DM Sans", sans-serif;
+.mcfhs *,.mcfhs *::before,.mcfhs *::after{box-sizing:border-box;}
+.mcfhs{
+  font-family:var(--mc-font);
+  color:var(--mc-ink);
+  background:var(--mc-bg);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+  padding:0 0 56px;
+  min-height:100%;
+}
+.mcfhs button,.mcfhs input,.mcfhs select,.mcfhs textarea{font-family:inherit;font-size:inherit;}
+.mcfhs input,.mcfhs select,.mcfhs textarea{color:inherit;}
+.mcfhs p{margin:0 0 12px;}
+.mcfhs h1,.mcfhs h2,.mcfhs h3,.mcfhs h4{margin:0;font-weight:700;letter-spacing:-.02em;color:var(--mc-navy);}
+.mcfhs-shell{max-width:920px;margin:0 auto;padding:0 18px;}
+
+/* ---------- Masthead ---------- */
+.mcfhs-hero{
+  background:
+    radial-gradient(1000px 420px at 82% -30%, rgba(201,162,39,.20), transparent 60%),
+    radial-gradient(700px 380px at 5% 0%, rgba(14,159,110,.16), transparent 62%),
+    linear-gradient(160deg,var(--mc-navy) 0%,#0D2540 55%,#0A1A2F 100%);
+  color:#fff;padding:26px 0 84px;position:relative;overflow:hidden;
+}
+.mcfhs-hero::after{
+  content:"";position:absolute;inset:auto 0 -1px 0;height:70px;
+  background:linear-gradient(180deg,transparent,var(--mc-bg));opacity:.0;
+}
+.mcfhs-brandbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:30px;}
+.mcfhs-logo{
+  display:inline-flex;align-items:center;text-decoration:none;
+  background:#fff;border-radius:14px;padding:11px 18px;
+  box-shadow:0 10px 26px -14px rgba(0,0,0,.7);
+}
+.mcfhs-logo img{height:62px;width:auto;display:block;}
+.mcfhs-logo-fallback{font-weight:800;font-size:19px;color:#fff;letter-spacing:-.03em;}
+.mcfhs-regbadge{
+  font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.72);
+  border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 13px;white-space:nowrap;
+}
+.mcfhs-hero h1{color:#fff;font-size:clamp(27px,4.6vw,42px);line-height:1.14;max-width:16ch;}
+.mcfhs-hero h1 em{font-style:normal;color:var(--mc-accent);}
+.mcfhs-hero p{color:rgba(255,255,255,.80);max-width:56ch;margin-top:14px;font-size:16px;}
+.mcfhs-heropills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;}
+.mcfhs-heropills span{
+  font-size:12.5px;font-weight:600;color:rgba(255,255,255,.9);
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);
+  border-radius:999px;padding:7px 14px;
 }
 
-     .form-input {
-        padding: 15px;
-        width: 100%;
-border: none;
-outline: none;
-font-family: "DM Sans", sans-serif;
-font-size: 14px;
-            font-weight: 400;
-line-height: 20px;
-color: #000;
-border-radius: 9px;
-    }
- .form-input::placeholder {
-font-family: "DM Sans", sans-serif;
-font-size: 14px;
-font-weight: 400;
-line-height: 20px;
-letter-spacing: 0em;
-text-align: left;
-color: #6F6C90;
-
+/* ---------- Card ---------- */
+.mcfhs-card{
+  background:var(--mc-card);border-radius:22px;box-shadow:var(--mc-shadow);
+  margin-top:-58px;position:relative;z-index:2;overflow:hidden;border:1px solid rgba(228,233,240,.9);
 }
+.mcfhs-cardpad{padding:30px 30px 26px;}
 
-.form-input:focus,
-.form-input:hover,
-.form-input:active,
-.form-input:focus-visible,
-.form-input:valid{
-background-color: transparent;
+/* ---------- Progress ---------- */
+.mcfhs-prog{padding:20px 30px 0;}
+.mcfhs-progtop{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:12px;}
+.mcfhs-steplabel{font-size:13px;font-weight:700;color:var(--mc-navy);letter-spacing:.01em;}
+.mcfhs-stepcount{font-size:12.5px;color:var(--mc-muted);font-weight:600;font-variant-numeric:tabular-nums;}
+.mcfhs-bar{height:6px;border-radius:99px;background:#EDF1F6;overflow:hidden;}
+.mcfhs-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--mc-navy-500),var(--mc-green));transition:width .45s cubic-bezier(.4,0,.2,1);}
+
+/* ---------- Questions ---------- */
+.mcfhs-steptitle{font-size:20px;margin-bottom:4px;}
+.mcfhs-stepsub{color:var(--mc-body);font-size:14.5px;margin-bottom:22px;}
+.mcfhs-q{margin-bottom:22px;}
+.mcfhs-q:last-child{margin-bottom:6px;}
+.mcfhs-q > label,.mcfhs-qlabel{display:block;font-weight:650;font-size:14.5px;color:var(--mc-navy);margin-bottom:4px;}
+.mcfhs-hint{font-size:12.8px;color:var(--mc-muted);margin:0 0 9px;line-height:1.45;}
+.mcfhs-grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+
+.mcfhs-inputwrap{position:relative;display:flex;align-items:center;}
+.mcfhs-rupee{
+  position:absolute;left:14px;font-weight:700;color:var(--mc-muted);font-size:15px;pointer-events:none;
+}
+.mcfhs input[type=text],.mcfhs input[type=email],.mcfhs input[type=tel],.mcfhs input[type=number],.mcfhs select{
+  width:100%;padding:12px 14px;border:1.5px solid var(--mc-line);border-radius:11px;background:#fff;
+  font-size:15.5px;font-weight:600;color:var(--mc-ink);transition:border-color .15s,box-shadow .15s;
+  outline:none;-moz-appearance:textfield;
+}
+.mcfhs input.mcfhs-money{padding-left:34px;font-variant-numeric:tabular-nums;}
+.mcfhs input:focus,.mcfhs select:focus{border-color:var(--mc-navy-500);box-shadow:0 0 0 4px rgba(34,67,107,.10);}
+.mcfhs input.mcfhs-err,.mcfhs select.mcfhs-err{border-color:var(--mc-red);box-shadow:0 0 0 4px rgba(214,69,69,.10);}
+.mcfhs select{
+  appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%237E8DA0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;padding-right:40px;
+}
+.mcfhs-inwords{font-size:12.4px;color:var(--mc-green);font-weight:650;margin-top:6px;min-height:16px;}
+.mcfhs-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px;}
+.mcfhs-chip{
+  border:1.5px solid var(--mc-line);background:#fff;border-radius:999px;padding:5px 12px;
+  font-size:12.5px;font-weight:650;color:var(--mc-body);cursor:pointer;transition:.15s;
+}
+.mcfhs-chip:hover{border-color:var(--mc-navy-500);color:var(--mc-navy);background:#F7F9FC;}
+.mcfhs-errmsg{font-size:12.5px;color:var(--mc-red);font-weight:650;margin-top:6px;display:none;}
+.mcfhs-errmsg.on{display:block;}
+
+/* option cards */
+.mcfhs-opts{display:grid;gap:9px;}
+.mcfhs-opt{
+  display:flex;align-items:flex-start;gap:11px;border:1.5px solid var(--mc-line);border-radius:12px;
+  padding:12px 14px;cursor:pointer;transition:.15s;background:#fff;
+}
+.mcfhs-opt:hover{border-color:var(--mc-navy-500);background:#F8FAFC;}
+.mcfhs-opt input{position:absolute;opacity:0;pointer-events:none;}
+.mcfhs-dot{
+  flex:0 0 auto;width:19px;height:19px;border-radius:50%;border:2px solid #C6D0DC;margin-top:1px;
+  position:relative;transition:.15s;
+}
+.mcfhs-opt.sel{border-color:var(--mc-navy);background:#F4F7FB;box-shadow:inset 0 0 0 1px var(--mc-navy);}
+.mcfhs-opt.sel .mcfhs-dot{border-color:var(--mc-navy);}
+.mcfhs-opt.sel .mcfhs-dot::after{
+  content:"";position:absolute;inset:3px;border-radius:50%;background:var(--mc-navy);
+}
+.mcfhs-opttxt b{display:block;font-size:14.5px;font-weight:650;color:var(--mc-ink);}
+.mcfhs-opttxt span{display:block;font-size:12.6px;color:var(--mc-muted);margin-top:1px;}
+
+/* ---------- Buttons ---------- */
+.mcfhs-nav{display:flex;justify-content:space-between;gap:12px;padding:20px 30px 28px;border-top:1px solid var(--mc-line);margin-top:6px;}
+.mcfhs-btn{
+  border:none;border-radius:11px;padding:13px 24px;font-weight:700;font-size:15px;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:.16s;letter-spacing:-.01em;
+  text-decoration:none;
+}
+.mcfhs a.mcfhs-btn{text-decoration:none;}
+.mcfhs-btn:disabled{opacity:.5;cursor:not-allowed;}
+.mcfhs-primary{background:var(--mc-navy);color:#fff;box-shadow:0 8px 18px -10px rgba(10,26,47,.7);}
+.mcfhs-primary:hover:not(:disabled){background:var(--mc-navy-600);transform:translateY(-1px);}
+.mcfhs-ghost{background:#fff;color:var(--mc-body);border:1.5px solid var(--mc-line);}
+.mcfhs-ghost:hover:not(:disabled){border-color:var(--mc-navy-500);color:var(--mc-navy);}
+.mcfhs-gold{background:var(--mc-accent);color:#2A2100;box-shadow:0 8px 18px -10px rgba(201,162,39,.9);}
+.mcfhs-gold:hover:not(:disabled){filter:brightness(1.06);transform:translateY(-1px);}
+.mcfhs-green{background:var(--mc-green);color:#fff;box-shadow:0 8px 18px -10px rgba(14,159,110,.85);}
+.mcfhs-green:hover:not(:disabled){filter:brightness(1.05);transform:translateY(-1px);}
+.mcfhs-btn.wide{width:100%;}
+
+/* ---------- Results ---------- */
+.mcfhs-resulthead{
+  background:linear-gradient(160deg,var(--mc-navy) 0%,#0E2743 100%);
+  color:#fff;padding:32px 30px;display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center;
+}
+.mcfhs-gauge{position:relative;width:190px;height:190px;flex:0 0 auto;}
+.mcfhs-gauge svg{transform:rotate(-90deg);display:block;}
+.mcfhs-gauge-c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+.mcfhs-gauge-num{font-size:52px;font-weight:800;line-height:1;letter-spacing:-.04em;color:#fff;font-variant-numeric:tabular-nums;}
+.mcfhs-gauge-den{font-size:12.5px;color:rgba(255,255,255,.6);font-weight:650;margin-top:5px;letter-spacing:.08em;text-transform:uppercase;}
+.mcfhs-gradechip{
+  display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:7px 16px;
+  font-size:13px;font-weight:750;letter-spacing:.02em;margin-bottom:12px;
+}
+.mcfhs-resulthead h2{color:#fff;font-size:clamp(21px,3.2vw,28px);line-height:1.2;margin-bottom:9px;}
+.mcfhs-resulthead p{color:rgba(255,255,255,.78);font-size:14.6px;margin:0;max-width:48ch;}
+.mcfhs-benchmark{margin-top:16px;font-size:12.8px;color:rgba(255,255,255,.62);}
+
+.mcfhs-sec{padding:28px 30px;border-top:1px solid var(--mc-line);}
+.mcfhs-sec h3{font-size:17px;margin-bottom:3px;}
+.mcfhs-sec .mcfhs-secsub{font-size:13.4px;color:var(--mc-muted);margin-bottom:18px;}
+
+/* pillars */
+.mcfhs-pillar{display:grid;grid-template-columns:1fr;gap:6px;padding:13px 0;border-bottom:1px dashed var(--mc-line);}
+.mcfhs-pillar:last-child{border-bottom:none;}
+.mcfhs-prow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;}
+.mcfhs-pname{font-size:14.4px;font-weight:650;color:var(--mc-ink);}
+.mcfhs-pscore{font-size:13.4px;font-weight:750;font-variant-numeric:tabular-nums;color:var(--mc-navy);white-space:nowrap;}
+.mcfhs-ptrack{height:8px;background:#EDF1F6;border-radius:99px;overflow:hidden;}
+.mcfhs-ptrack i{display:block;height:100%;border-radius:99px;width:0;transition:width .9s cubic-bezier(.2,.7,.3,1);}
+.mcfhs-pnote{font-size:12.6px;color:var(--mc-muted);}
+
+/* ratios */
+.mcfhs-ratios{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;}
+.mcfhs-ratios th{
+  text-align:left;font-size:11.4px;letter-spacing:.07em;text-transform:uppercase;color:var(--mc-muted);
+  font-weight:750;padding:0 10px 9px;border-bottom:1.5px solid var(--mc-line);
+}
+.mcfhs-ratios th:nth-child(2),.mcfhs-ratios th:nth-child(3){text-align:right;}
+.mcfhs-ratios th:last-child{text-align:right;}
+.mcfhs-ratios td{padding:12px 10px;border-bottom:1px solid #F0F3F7;vertical-align:middle;}
+.mcfhs-ratios tr:last-child td{border-bottom:none;}
+.mcfhs-rname{font-weight:650;color:var(--mc-ink);}
+.mcfhs-rname small{display:block;font-weight:500;color:var(--mc-muted);font-size:12.2px;margin-top:1px;}
+.mcfhs-rval{text-align:right;font-weight:750;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.mcfhs-rbench{text-align:right;color:var(--mc-body);font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600;}
+.mcfhs-rstat{text-align:right;}
+.mcfhs-tag{display:inline-block;border-radius:999px;padding:4px 11px;font-size:11.8px;font-weight:750;white-space:nowrap;}
+.t-good{background:var(--mc-green-soft);color:#07714E;}
+.t-ok{background:var(--mc-amber-soft);color:#8A5A00;}
+.t-bad{background:var(--mc-red-soft);color:#9F2B2B;}
+.t-na{background:#EEF1F5;color:#6B7A8C;}
+
+/* actions */
+.mcfhs-action{
+  display:flex;gap:13px;padding:15px;border:1px solid var(--mc-line);border-radius:13px;margin-bottom:10px;background:#fff;
+}
+.mcfhs-action .n{
+  flex:0 0 auto;width:25px;height:25px;border-radius:8px;background:var(--mc-navy);color:#fff;
+  font-size:12.6px;font-weight:750;display:flex;align-items:center;justify-content:center;
+}
+.mcfhs-action b{display:block;font-size:14.4px;font-weight:700;color:var(--mc-ink);margin-bottom:2px;}
+.mcfhs-action span{font-size:13.2px;color:var(--mc-body);line-height:1.5;}
+.mcfhs-action.pri-1 .n{background:var(--mc-red);}
+.mcfhs-action.pri-2 .n{background:var(--mc-amber);}
+.mcfhs-action.pri-3 .n{background:var(--mc-green);}
+
+/* strengths */
+.mcfhs-str{display:flex;flex-wrap:wrap;gap:8px;}
+.mcfhs-str span{
+  background:var(--mc-green-soft);color:#07714E;border-radius:999px;padding:7px 14px;font-size:12.8px;font-weight:650;
 }
 
 
+/* confidence vs reality */
+.mcfhs-gapbox{border:1.5px solid var(--mc-line);border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;}
+.mcfhs-gapbox.good{border-color:#BFE6D6;background:linear-gradient(180deg,#F4FBF8,#fff);}
+.mcfhs-gapbox.ok{border-color:#CFDCEC;background:linear-gradient(180deg,#F7FAFD,#fff);}
+.mcfhs-gapbox.bad{border-color:#F3CFCF;background:linear-gradient(180deg,#FDF6F6,#fff);}
+.mcfhs-gapnums{display:flex;align-items:center;gap:14px;}
+.mcfhs-gapnums > div{text-align:center;min-width:76px;}
+.mcfhs-gapnums b{display:block;font-size:30px;font-weight:800;color:var(--mc-navy);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+.mcfhs-gapnums span{display:block;font-size:11px;color:var(--mc-muted);font-weight:650;margin-top:6px;line-height:1.3;}
+.mcfhs-gaparrow{font-size:20px;color:var(--mc-muted);}
+.mcfhs-gaptxt b{display:block;font-size:15px;font-weight:700;color:var(--mc-ink);margin-bottom:4px;}
+.mcfhs-gaptxt span{display:block;font-size:13.4px;color:var(--mc-body);line-height:1.55;}
 
-        select {
-width: 100%;
-padding: 15px;
-font-family: DM Sans;
-font-size: 14px;
-font-weight: 400;
-line-height: 20px;
-letter-spacing: 0em;
-text-align: left;
-color: #6F6C90;
-border: none;
-outline: none;
-border-radius: 9px;
-
-  }
-   .form-group{
-            display: flex;
-    justify-content: end;
-    margin: 5px 0 0 0;
+/* CTA */
+.mcfhs-cta{
+  background:linear-gradient(140deg,var(--mc-navy) 0%,#12304F 100%);color:#fff;padding:30px;text-align:center;
 }
+.mcfhs-cta h3{color:#fff;font-size:21px;margin-bottom:8px;}
+.mcfhs-cta p{color:rgba(255,255,255,.78);font-size:14.4px;max-width:52ch;margin:0 auto 20px;}
+.mcfhs-ctabtns{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;}
 
-    .form-group p{
-        display:flex;
-        align-content:start;
-        color:grey;
-        font-weight:500;
-        margin-bottom:0px;
-        margin-left: 20px;
-    }
-        #next-button {
-            padding: 12px 28px;
-            background: linear-gradient(95deg, #0d9488 0%, #1d4ed8 100%);
-            color: #fff;
-            border: none;
-            border-radius: 9px;
-            cursor: pointer;
-            display: flex;
+/* lead gate */
+.mcfhs-gate{background:linear-gradient(180deg,#FBFCFE,#F4F7FB);}
+.mcfhs-gatebox{border:1.5px dashed #C8D4E2;border-radius:16px;padding:22px;background:#fff;}
+.mcfhs-gatebox .mcfhs-grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.mcfhs-guide{margin-top:15px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);}
+.mcfhs-guide p{margin:0;}
+.mcfhs-consent{display:flex;gap:9px;align-items:flex-start;margin-top:14px;font-size:12.5px;color:var(--mc-body);line-height:1.5;}
+.mcfhs-consent input{margin-top:2px;width:16px;height:16px;accent-color:var(--mc-navy);flex:0 0 auto;}
+.mcfhs-gatemsg{margin-top:12px;font-size:13.4px;font-weight:650;display:none;}
+.mcfhs-gatemsg.on{display:block;}
+.mcfhs-gatemsg.ok{color:#07714E;}
+.mcfhs-gatemsg.bad{color:var(--mc-red);}
 
-            box-shadow: 0 8px 20px -6px rgba(29,78,216,0.45);
-            justify-content: space-around;
-            align-items: center;
-font-size: 15px;
-font-family: Roboto;
-line-height: 26px;
-letter-spacing: 0.46px;
-font-weight: 600;
-transition: filter .2s ease, transform .2s ease, box-shadow .2s ease;
- }
-#next-button:hover {
-    filter: brightness(1.08);
-    transform: translateY(-1px);
-    box-shadow: 0 12px 26px -6px rgba(29,78,216,0.55);
+/* misc */
+.mcfhs-disc{font-size:11.6px;color:var(--mc-muted);line-height:1.6;padding:22px 30px 4px;max-width:900px;}
+.mcfhs-foot{text-align:center;font-size:12.4px;color:var(--mc-muted);padding-top:20px;}
+.mcfhs-spin{
+  width:16px;height:16px;border:2.2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;
+  animation:mcfhs-spin .7s linear infinite;display:inline-block;
 }
-#next-button .btn{
-line-height: 18px;
-font-size: 12px;
-
+@keyframes mcfhs-spin{to{transform:rotate(360deg);}}
+.mcfhs-hidden{display:none !important;}
+@media (max-width:720px){
+  .mcfhs-cardpad,.mcfhs-sec,.mcfhs-resulthead,.mcfhs-cta,.mcfhs-nav,.mcfhs-prog,.mcfhs-disc{padding-left:18px;padding-right:18px;}
+  .mcfhs-grid2,.mcfhs-gatebox .mcfhs-grid3{grid-template-columns:1fr;gap:18px;}
+  .mcfhs-resulthead{grid-template-columns:1fr;justify-items:center;text-align:center;gap:20px;}
+  .mcfhs-gapbox{grid-template-columns:1fr;gap:16px;}
+  .mcfhs-gapnums{justify-content:center;}
+  .mcfhs-resulthead p{margin-left:auto;margin-right:auto;}
+  .mcfhs-gauge{width:168px;height:168px;}
+  .mcfhs-ratios th:nth-child(3),.mcfhs-ratios td:nth-child(3){display:none;}
+  .mcfhs-regbadge{display:none;}
+  .mcfhs-logo img{height:48px;}
+  .mcfhs-logo{padding:9px 13px;}
+  .mcfhs-nav .mcfhs-btn{flex:1;padding:13px 14px;}
 }
-#next-button .btn:hover{
-color: #fff;
+@media print{
+  .mcfhs-nav,.mcfhs-ctabtns,.mcfhs-gate{display:none !important;}
+  .mcfhs{background:#fff;}
+  .mcfhs-card{box-shadow:none;margin-top:0;}
 }
-
-         #myhart {
-        height: 46vh;
-        width: 100%;
-        min-height: 150px;
-        display: flex;
-        justify-content: center;
-
-    }
- .EXIT{
-        text-align: center;
-display: flex;
-    justify-content: center;
-    align-items: center;
-position: relative;
-    top: 0px;
-margin-bottom: 30px;
-    }
-
-
-    .last-btn{
-        padding: 10px 30px;
-        background-color: #53C09B;
-        border: 1px solid #53C09B;
-        color: #ffff;
-        text-align: center;
-        border-radius: 5px;
-font-family: Roboto;
-font-size: 15px;
-font-weight: 500;
-line-height: 26px;
-letter-spacing: 0.46px;
-cursor: pointer;
-    }
-.last-btn:hover{
-    background: #41ab87;
-    color: #fff;
-}
-    .exit-btn{
-        padding: 10px 60px;
-        border: 1px solid #53C09B;
-        color: #53C09B;
-        background-color: #fff;
-        border-radius: 5px;
-        margin-left: 15px;
-font-family: Roboto;
-font-size: 15px;
-font-weight: 500;
-line-height: 26px;
-letter-spacing: 0.46000000834465027px;
-text-align: center;
-
-cursor: pointer;
-    }
-    .zc-ref {
-        display: none;
-    }
-
-        a title {
-            display: none !important;
-        }
-
-        .bredcrumb2 {
-            display: none;
-        }
-
-        .row {
-            margin-right: -20px;
-            margin-left: -20px;
-        }
-
-        .container {
-            width: 100%;
-        }
-
-        #con-mydesign8 {
-            padding-bottom: 0px;
-            padding-top: 0px;
-        }
-
-        #he-mydesign4 {
-            padding-top: 10px;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: transparent;
-        }
-
-
-
-        h1 {
-            font-weight: 800;
-            color: #fff;
-            font-size: 40px;
-        }
-
-
-        .quiz-container {
-            display: none;
-            padding-right: 20px;
-            padding-left: 20px;
-            width: 60%;
-            margin: 0 auto;
-
-        }
-
-        .question-txt {
-            display: none;
-        }
-
-        .option-inputimg img {
-            border-radius: 10px;
-            height: 120px;
-            margin-bottom: 10px;
-            width: 100%;
-        }
-
-
-        .option-rowimg {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-
-        }
-
-.drop{
-    position: relative;
-    background: #463c3c1f;
-    border-radius: 9px 0 0 9px;
-}
-.drop select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: transparent;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  border-radius: 9px 0 0 9px;
-  width: 80px;
-    height: 100%;
-    padding-left: 8px;
-}
-.drop .icon {
-  position: absolute;
-  top: 50%;
-  right: 4px;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-size: 12px;
-  color: #170F49;
-}
-
-
-
-
-        .question-p {
-            padding-left:0px;
-            width:100%;
-            margin-bottom: 5px;
-font-family: Roboto;
-font-size: 18px;
-font-weight: 400;
-line-height: px;
-letter-spacing: 0em;
-text-align: left;
-color: #000000;
-        }
-
-        .btnOK {
-    margin-left:10px;
-    margin-top: 20px;
-    width: 110px;
-    height: 44px;
-    background-color: #53C09B;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-font-family: Roboto;
-font-size: 15px;
-font-weight: 500;
-line-height: 26px;
-letter-spacing: 0.46000000834465027px;
-text-align: center;
-color: #FFFFFF;
-}
-.btnOK .next {
-margin-left: 5px;
-font-size: 12px;
-color: #fff;
-}
-.btnOK .next:hover {
-color: #fff;
-}
-            .btnOK:hover {
-                background-color: #53C09B;
-            }
-
-        .btnpre {
-    margin-top: 20px;
-    width: 140px;
-    height: 44px;
-    background-color: #fff;
-   border: 1px solid #53C09B;
-    border-radius: 5px;
-    color: #53C09B;
-    cursor: pointer;
-    margin-right: 10px;
-font-family: Roboto;
-font-size: 15px;
-font-weight: 500;
-line-height: 26px;
-letter-spacing: 0.46000000834465027px;
-text-align: center;
-
-}
-
-
-
-          .btnpre2 {
-                    background-color: #C5C5C5;
-                    color: #979797;
-                    border: solid #AEAEAE;
-                    width: 80px;
-                    height: 40px;
-                    margin-top: 20px;
-                    border-radius: 10px;
-                    border: none;
-                    margin-right: 10px;
-                   }
-
-        .buttons {
-                 display: flex;
-                 justify-content: end;
-        }
-
-
-
-
-
-        .option-input {
-            padding: 5px 10px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            border: 2px solid #EFF0F6;
-background-color: #fff;
-        }
- .option-input span{
-font-family: DM Sans;
-font-size: 16px;
-font-weight: 500;
-line-height: 20px;
-letter-spacing: 0em;
-text-align: left;
-color: #170F49;
-}
-
-            .option-input:hover {
-                background-color: #c6efe1;
-            }
-
-        .option-inputimg {
-             padding: 15px;
-            border-radius: 10px;
-            border: 2px solid #BEBEBE;
-            width: 30%;
-            margin: 0px;
-           background-color: #ffffff;
-        }
-
-            .option-inputimg:hover {
-                background-color: #c6efe1;
-            }
-
-
-
-        input[type=radio] {
-            cursor: pointer;
-            margin-top: 1px\9;
-            line-height: normal;
-            margin-right: 10px;
-
-        }
-
-        input img {
-            margin-left: 10px;
-        }
-
-        .gauge {
-            display: block;
-        }
-
-    .main-div{
-        display: flex;
-        justify-content: space-between;
-margin-bottom: 20px;
-    }
-    .main-div .step{
-        display: flex;
-        justify-content: center;
-        align-self: center;
-        border: 1px solid #D9D9D9;
-        border-radius: 50%;
-        position: relative;
-        min-width: 30px;
-        min-height: 30px;
-    }
-    .main-div .step::after{
-        content: "";
-        position: absolute;
-        right: -19px;
-        display: inline;
-        transform: rotate(90deg);
-        border: 1px dashed #D9D9D9;
-        height: 25px;
-        top: 3px;
-    }
-    .main-div .step:last-child::after {
-        border: none;
-    }
-
-    .main-div .step p{
-        line-height: 29px;
-        margin: 0;
-        padding: 0;
-        font-size: 15px;
-        text-align: center;
-        color: #000;
-    }
-
- .option-input.active {
-        border: 2px solid #53C09B;
-    }
-
- .step.active {
-    background-color: #ccc;
-}
-   #currentQuestionMessage{
-        display: none;
-    }
-    .active #currentQuestionMessage{
-        display: block;
-font-family: Roboto;
-font-size: 15px;
-font-weight: 400;
-letter-spacing: 0em;
-text-align: left;
-color: #ffffff;
-    }
-.active .que{
-    display: none;
-}
-.step p .que{
-font-family: Roboto;
-font-size: 11px;
-font-weight: 400;
-line-height: 14px;
-letter-spacing: 0em;
-text-align: left;
-color: #000000CC;
-}
-.step.active {
-    border-radius: 7px;
-    background-color: #4dc19a;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-.input [type="date"]{
-    text-transform: uppercase;
-}
-h2{
-font-family: Roboto;
-font-size: 32px;
-font-weight: 600;
-line-height: 40px;
-letter-spacing: 0em;
-text-align: left;
-}
-.showChart{
-box-shadow: 0px 5px 16px 16px #080F340F;
-margin: auto;
-border-radius: 10px;
-}
-.showChart h2{
-font-family: Roboto;
-font-size: 32px;
-font-weight: 600;
-line-height: 40px;
-letter-spacing: 0em;
-text-align: center;
-color: #2C2C2C;
-margin-top: 25px;
-margin-bottom: 20px;
-}
-.required{
-    color: red;
-}
-
-#myChart {
-        margin: 0 auto;
-    }
-
-    .error {
-        border: 2px solid red;
-    }
-
-    #message{
-            display: inline;
-    color: red;
-    position: relative;
-    top: -35px;
-    }
-.showChart span{
-position: relative;
-    left: 160px;
-    top: 35px;
-    z-index: 1;
-    font-size: 18px;
-}
-@media (max-width: 768px) {
-        .container1 {
-            padding: 16px 12px;
-        }
-        .left-panel {
-            width:100%;
-            min-height: 380px;
-            height: auto;
-border-radius: 0;
-        }
-        .fc-hero {
-            position: relative;
-            padding: 26px 22px 24px;
-        }
-        .fc-title {
-            font-size: 23px;
-        }
-.showChart{
-width: 100%;
-}
-.showChart span{
-position: relative;
-    left: 160px;
- top: -15px;
-    z-index: 1;
-    font-size: 18px;
-}
-.EXIT{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
-    margin-top: -120px;
-}
-#myChart-wraper{
-    white-space: nowrap;
-    width: 852px;
-    height: 400px;
-    position: absolute;
-    overflow: hidden;
-    left: -259px;
-}
-.step-hide {
-    display: flex;
-    overflow-x: auto;
-    width: 100%;
-    justify-content: center;
-}
-.step {
-    flex: 0 0 auto;
-}
-.main-div .step{
-min-width: 25%;
-margin: 0 0 0 20px;
-border-radius: 10px;
-}
-.active #currentQuestionMessage{
-font-size: 12px;
-}
-.row{
-margin-right: -15px;
-    margin-left: -17px;
-}
-.col-md-12{
-padding: 0;
-}
-.step-hide{
-    overflow-x: scroll;
-}
-.main-div .step::after{
-height: 15px;
-top: 8px;
-right: -12px;
-}
-#message{
-    position: relative;
-top: -70px;
-}
-.col-3{
-    flex-wrap: wrap;
-    margin: 10px 0 0 0;
-}
-.buttons{
-justify-content: start;
-    margin: 0px 0 0 5px;
-}
-.exit-btn{
-font-size: 12px;
-margin-left: -20px;
-}
-.last-btn{
-
-}
-        #registration-form {
-            padding: 0px;
-            width:100%;
-            height: fit-content;
-        }
-
-        h2 {
-            margin-top: 10px;
-            font-family: 'Roboto', sans-serif;
-            color: #5C5CFF;
-            font-size: 25px;
-            text-align: center;
-            font-weight: 800;
-            height: fit-content;
-            padding: 0px;
-        }
-.sim-row{
-padding: 0 1px;
-}
-
-        .form-group {
-            margin: 5px 0 0 5px !important;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-        }
-
-        #next-button{
-            margin-top: 0px;
-padding: 10px 10px 10px 10px;
-    font-size: 12px;
-        }
-.btnpre{
-font-size: 12px;
-    width: 120px;
-}
-.btnOK{
-width: 90px;
-font-size: 12px;
-}
-
-        .field {
-            width: 100%;
-            flex-direction: column;
-            margin: 0px;
-gap: 15px;
-        }
-
-        .field1,
-        .field2 {
-            width: 100%;
-            flex-direction: column;
-        }
-
-        .field1-input {
-            flex-direction: column;
-            margin-bottom: 10px;
-            width: 100%;
-        }
-
-        .field2-input {
-            flex-direction: column;
-            margin-bottom: 10px;
-            width: 100%;
-        }
-
-        .field1-input label b br {
-            display: none;
-        }
-
-        #name, #email, #birthday, #annualincome, #description, #Mobnum, #yearearning {
-            margin-top: 2px;
-            width: 100%;
-        }
-
-        .regis-form {
-            width: 100%;
-           padding: 22px 18px;
-        }
-
-        .leftpanel-registrationform {
-            height:100%;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-width: 100%;
-    padding: 0;
-        }
-
-        #image ig{
-            margin:0px;
-            height:50%;
-            width:85%;
-        }
-         .option-rowimg {
-            flex-direction: column;
-        }
-
-        .option-inputimg img {
-            width: 100%;
-            height: 100%;
-        }
-
-      .option-rowimg {
-            flex-direction: row;
-        }
-
-        .option-inputimg img {
-            width: 100%;
-            height: 200px;
-        }
-
-        .quiz-container {
-            display: none;
-            padding-top: 50px;
-            width: 100%;
-        }
-
-      .option-inputimg{
-             width:100%;
-       }
-
-     .question-p{
-         width:100%;
-         margin-top:20px;
-         padding-left:0px;
-         font-size: 15px;
-         margin-bottom:10px;
-         text-align: start;
-     }
-
-   .quiz-container{
-        padding:10px;
-   }
-
-   #myChart {
-            width: 110%;
-            height: 460px;
-        }
-        .zingchart {
-
-        margin-top: 20px;
-        }
-}
-
-@media only screen and (min-width: 769px) {
-
-        #myChart {
-            width: 700px;
-            height: 400px;
-        }
-    }
-
-
-
-    </style>
+</style>
 </head>
 <body>
+<div class="mcfhs" id="mcfhs">
 
-
-
-
-    <div class="container1">
-      <div class="leftpanel-registrationform">
-        <div class="left-panel">
-            <div class="fc-hero">
-                <div class="fc-head">
-                    <div class="fc-eyebrow">Know about your</div>
-                    <h3 class="fc-title">The <span>FinHealth</span> Score</h3>
-                </div>
-                <div class="fc-media">
-                    <img src="/images/finhealth_dashboard.png" alt="FinHealth Score dashboard">
-                </div>
-            </div>
-        </div>
-        <form id="registration-form">
-            <div class="regis-form">
-                <h2>Measure what matters</h2>
-                <p>Please fill in this form to attend the next step.</p>
-
-                <div class="col">
-
-                <div class="field">
-                    <div class="field1">
-                        <div class="field1-input">
-                            <label for="name">Name <span class="required">*</span> </label>
-<div class="input-with-icon">
-                            <input type="text" id="name" placeholder="Name" name="name" class="form-input" value="">
-                        </div>
-</div>
-
-<div class="field1-input">
-
-                            <label for="Number">Phone Number <span class="required">*</span></label>
-
-<div class="input-with-icon">
-    <div class="drop">
-        <select name="countries" id="countries"><option value="+91">IN (+91)</option></select>
-        <span class="icon">&#9660;</span>
-
-</div>
-                            <input type="tel" id="Mobnum" placeholder="0000000000" name="number" required="required" maxlength="15" class="form-input" value="">
-</div>
-
-                        </div>
-
-                        <div id="phone-error"></div>
-
-
-                    </div>
-                    <div class="field2">
-                        <div class="field2-input">
-                            <label for="email">Email <span class="required">*</span> </label>
-<div class="input-with-icon">
-                            <input type="email" id="email" placeholder="Email address" name="email" class="form-input" value="">
-</div>
-                        </div>
-                        <div id="email-error"></div>
-
-
-<div class="field2-input">
-                            <label for="birthday">Date of Birth <span class="required">*</span> </label>
-<div class="input-with-icon">
-                            <input type="date" id="birthday" name="birthday" placeholder="Enter Date of Birth" class="form-input" value="" min="1950-01-01" max="2014-12-31">
-</div>
-                        </div>
-<div id="birthday-error" style="color: red;"></div>
-
-                    </div>
-                </div>
-
-                <div class="col-3">
-
-                <div class="field1">
-                    <div class="field1-input">
-                        <label for="Description">Job Description</label>
-                       <div class="input-with">
-         <select id="description" name="description" class="">
-                            <option value="Business">Business</option>
-                            <option value="Salary"> Salaried</option>
-                            <option value="Professional">Professional</option>
-            <option value="Others">Others</option>
-                        </select>
-</div>
-                    </div>
-                    </div>
-                    <div class="field1">
-                    <div class="field1-input">
-                        <label for="yearearning">Number of year earning</label>
-                    <div class="input-with">
-                        <select id="yearearning" name="yearearning" class="yearearning">
-                            <option value="0-5 Years">0-5 Years</option>
-                            <option value="5-10 Years">5-10 Years</option>
-                            <option value="10-20 Years">10-20 Years</option>
-                            <option value="&gt;20 Years">&gt; 20 Years</option>
-                        </select>
-</div>
-                    </div>
-                    </div>
-                    <div class="field1">
-                    <div class="field1-input">
-                        <label for="annualincome">Annual Income</label>
-<div class="input-with">
-                        <select id="annualincome" name="annualincome" class="annualincome">
-                            <option value="0-5 Lacs">0-5 Lacs</option>
-                            <option value="5-20 Lacs">5-20 Lacs</option>
-                            <option value="20-50 Lacs">20-50 Lacs</option>
-                             <option value="&gt;50 Lacs">&gt; 50 Lacs</option>
-                        </select>
-</div>
-                    </div>
-                    </div>
-
-
-</div>
-            </div>
-
-                <div class="form-group">
-                    <button type="button" id="next-button">Lets Start <i class="btn fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </form>
-
-
-        <div class="quiz-container" id="quiz-form" style="display: none;">
-
-            <div class="step-hide">
-                <div class="main-div">
-                   <div class="step active">
-                    <p><span id="currentQuestionMessage">Question 1</span><span class="que">1</span></p>
-                   </div>
-                   <div class="step">
-                  <p><span id="currentQuestionMessage">Question 2</span><span class="que">2</span></p>
-                   </div>
-                   <div class="step">
-                   <p><span id="currentQuestionMessage">Question 3</span><span class="que">3</span></p>
-                   </div>
-                   <div class="step">
-                  <p><span id="currentQuestionMessage">Question 4</span><span class="que">4</span></p>
-                   </div>
-                   <div class="step">
-                  <p><span id="currentQuestionMessage">Question 5</span><span class="que">5</span></p>
-                   </div>
-                   <div class="step">
-                   <p><span id="currentQuestionMessage">Question 6</span><span class="que">6</span></p>
-                   </div>
-                   <div class="step">
-                  <p><span id="currentQuestionMessage">Question 7</span><span class="que">7</span></p>
-                   </div>
-                   <div class="step">
-                   <p><span id="currentQuestionMessage">Question 8</span><span class="que">8</span></p>
-                   </div>
-                   <div class="step">
-                   <p><span id="currentQuestionMessage">Question 9</span><span class="que">9</span></p>
-                   </div>
-                   <div class="step">
-                   <p><span id="currentQuestionMessage">Question 10</span><span class="que">10</span></p>
-                   </div>
-                </div>
-<div id="currentQuestionMessage">Question 1</div>
-            </div>
-            <div class="question" id="question1">
-                <p class="question-p"><b><span class="addName"></span></b>, How much % of your monthly income you invest for long term goals?</p>
-                <div class="option-rowimg">
-                    <div class="option-inputimg option-input">
-                        <img src=" https://www.moneycompound.com/Content/moneycompound.com/UploadedImage/RealImage/963No Investment.jpg" alt="Image"><br><input type="radio" name="q1" value="0"> <span>No Investment</span> <br>
-                    </div>
-                    <div class="option-inputimg option-input">
-                        <img src=" https://www.moneycompound.com/Content/moneycompound.com/UploadedImage/RealImage/982of Monthly Income1.jpg" alt="Image"><br><input type="radio" name="q1" value="2.5"><span> 0 - 20% of monthly income</span><br>
-                    </div>
-
-<div class="option-inputimg option-input">
-                        <img src="https://www.moneycompound.com/Content/moneycompound.com/UploadedImage/RealImage/388of Monthly Income2.jpg" alt="Image"><br> <input type="radio" name="q1" value="5"><span> 21 -40% of monthly income</span>  <br>
-                    </div>
-                    <div class="option-inputimg option-input">
-                        <img src=" https://www.moneycompound.com/Content/moneycompound.com/UploadedImage/RealImage/325of Monthly Income3.jpg" alt="Image"> <br><input type="radio" name="q1" value="7.5"> <span>41 - 60% of monthly income</span><br>
-                    </div>
- <div class="option-inputimg option-input">
-                        <img src=" https://www.moneycompound.com/Content/moneycompound.com/UploadedImage/RealImage/450of Monthly Income4.jpg" alt="Image"> <br><input type="radio" name="q1" value="10"><span>&gt; 60% of monthly income</span> <br>
-                    </div>
-
-
-
-
-                </div>
-
-
-                <div class="buttons">
-                    <button class="btnpre prevQuestion" data-status="1">BACK</button>
-                <button class="btnOK nextQuestion" id="1">Next <i class="next fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-
-            <div class="question question-txt" id="question2">
-                <p class="question-p"><b><span class="addName"></span></b>, What is your monthly EMI ?</p>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q2" value="10"> <span> No loans</span> <br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q2" value="8"> <span> 0 - 20% of monthly income</span><br>
-                    </div>
-                </div>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q2" value="5"> <span> 21 - 40% of monthly income</span><br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q2" value="2"><span> 41 - 60% of monthly income</span><br>
-                    </div>
-                </div>
-                <div class="option-input">
-                    <input type="radio" name="q2" value="0"><span> &gt; 60% of monthly income</span><br>
-                </div>
-
-                <div class="buttons">
-                    <button class="btnpre prevQuestion" data-status="2">BACK</button>
-                    <button onclick="nextQue(2)" class="btnOK nextQuestion" id="2">Next <i class="next fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-            <div class="question question-txt" id="question3">
-                <p class="question-p"><b><span class="addName"></span></b>, What is the balance lying in your emergency fund ? </p>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q3" value="10"><span> 6 months or more</span> <br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q3" value="8"><span> 3 - 5 months</span><br>
-                    </div>
-                </div>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q3" value="6"> <span> 1 - 2 months</span><br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q3" value="2"> <span> 1 - 4 weeks</span><br>
-                    </div>
-                </div>
-                <div class="option-input">
-                    <input type="radio" name="q3" value="0"><span> No emergency fund balance</span><br>
-                </div>
-
-                <div class="buttons">
-                    <button class="btnpre prevQuestion" data-status="3">BACK</button>
-
-                    <button class="btnOK nextQuestion" id="3">Next <i class="next fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-            <div class="question question-txt" id="question4">
-                <p class="question-p"><b><span class="addName"></span></b>, How many family members are dependent on you ? </p>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q4" value="10"><span> No one </span> <br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q4" value="6"> <span> 1 - 2</span><br>
-                    </div>
-                </div>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q4" value="4"><span> 3 - 5</span> <br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q4" value="0"><span> More than 5</span> <br>
-                    </div>
-                </div>
-
-                <div class="buttons">
-
-                    <button class="btnpre prevQuestion" data-status="4">BACK</button>
-                <button class="btnOK nextQuestion" id="4">Next <i class="next fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-            <div class="question question-txt" id="question5">
-                <p class="question-p"><b><span class="addName"></span></b>, How much health insurance cover you have taken for your family.</p>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q5" value="0"><span> No health insurance</span><br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q5" value="2"><span> 0 - 5 lacs</span> <br>
-                    </div>
-                </div>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q5" value="5"><span> 5 - 10 lacs</span><br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q5" value="8"><span> 10 - 20 lacs</span><br>
-                    </div>
-                </div>
-                <div class="option-input">
-                    <input type="radio" name="q5" value="10"><span> &gt; 20 Lacs</span> <br>
-                </div>
-
-                <div class="buttons">
-                    <button class="btnpre prevQuestion" data-status="5">BACK</button>
-
-                    <button class="btnOK nextQuestion" id="5">Next <i class="next fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-            <div class="question question-txt" id="question6">
-                <p class="question-p"><b><span class="addName"></span></b>, How much is your life Insurance coverage ?</p>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q6" value="0"> <span> No life insurance</span><br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q6" value="2"> <span> 0 - 25 lacs</span><br>
-                    </div>
-                </div>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q6" value="5"> <span> 25 - 50 lacs</span><br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q6" value="8"><span> 50 lacs - 1 crore</span><br>
-                    </div>
-                </div>
-                <div class="option-input">
-                    <input type="radio" name="q6" value="10"><span> &gt; 1 crore</span><br>
-                </div>
-
-                <div class="buttons">
-                    <button class="btnpre prevQuestion" data-status="6">BACK</button>
-
-                    <button class="btnOK nextQuestion" id="6">Next <i class="next fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-            <div class="question question-txt" id="question7">
-                <p class="question-p">
-                    <b>
-                        <span class="addName"></span></b>, How long have you been investing?</p>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q7" value="0"><span> No investments</span> <br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q7" value="2"><span> 1 -3 years</span> <br>
-                    </div>
-                </div>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q7" value="5"> <span> 3 - 5 years</span><br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q7" value="8"><span> 5 - 10 years</span> <br>
-                    </div>
-                </div>
-                <div class="option-input">
-                    <input type="radio" name="q7" value="10"> <span> &gt; 10 years</span><br>
-                </div>
-
-                <div class="buttons">
-                    <button class="btnpre prevQuestion" data-status="7">BACK</button>
-
-                    <button class="btnOK nextQuestion" id="7">Next <i class="next fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-            <div class="question question-txt" id="question8">
-                <p class="question-p"><b><span class="addName"></span></b>, I am Financially secured</p>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q8" value="10"><span> Agree </span> <br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q8" value="8"> <span> Agree somewhat</span><br>
-                    </div>
-                </div>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q8" value="6"> <span> Neither agree nor disagree</span><br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q8" value="2"> <span> Disagree somewhat</span><br>
-                    </div>
-                </div>
-                <div class="option-input">
-                    <input type="radio" name="q8" value="0"> <span> Disagree strongly</span><br>
-                </div>
-
-                <div class="buttons">
-
-                    <button class="btnpre prevQuestion" data-status="8">BACK</button>
-
-                    <button class="btnOK nextQuestion" id="8">Next <i class="next fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-<div class="question question-txt" id="question9">
-    <p class="question-p"><b><span class="addName"></span></b>, Excluding your primary residence, in which category of financial instruments do you hold the most significant portion of your wealth?</p>
-    <div class="option-row">
-        <div class="option-input">
-            <input type="radio" name="q9" value="0"><span> I have no other savings</span> <br>
-        </div>
-        <div class="option-input">
-            <input type="radio" name="q9" value="2"><span> Gold/Silver</span><br>
-        </div>
+  <!-- ============================ HERO ============================ -->
+  <header class="mcfhs-hero">
+    <div class="mcfhs-shell">
+      <div class="mcfhs-brandbar">
+        <a class="mcfhs-logo" href="https://moneycompound.com" target="_blank" rel="noopener">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMcAAABhCAIAAADtIiJiAAA+6UlEQVR4nO29d5gc13Unes69VdXVeXKewQxyziBIACSYkyQqi5IVVt6V1pLTe7b32Z/9rb99u89+u37r1Vory5ZWlmxpTVGmIpWYSYAUASKRyHkGaXKejtVVde95f9yq6p6Z7pkBRVGQFueTwJ7uqls3nHvC75x7Cl1XwE26SW8psV92B27SryHd5Kqb9NbTrxtXkfcvBf/6XyIAEBH9kjr2vxX9unCVYhYGhJSXTsouTBTyyLzRMcZcIkuQIGCMAUMAkIrPfmk9/nUm7ZfdgTdJBABEgAgAeeFYjv1G/9Xu8ZFxK5eXouC6lm1/7qEPMkQloA735s6P2IbGDI5VJmtM6J3VhqGhBkRKjt2kt45+JbmKCADIItE/OXFmZODs+PCVyTGbpC0EASEiAKCUgJ4sIiDLoUlLIhAB9U/BueHCfg2b4lpbUl9cG4roTGNARDfZ6y2hXz2ukggF4VyaGH3x0rkzY0OW6wr0OAkYoM8YRBSIIYboXQDAEIlIALoO9Yw5Vyec1/vyW9sjG1vCUtzUh28N/cpwFQEgoE1iLJv556P7u1OTBekCAjJggIBKgCFBIG+Kmo3I+4QIqOSVuhpBAtoCOJIkIERXAgNieFMn/lz0q8RVtnSePHP0ld6etGMjAiICAkggBJKEgICkhBIRISKVMJYgzxIr9QKJgDPa3Bpe2RghIiHhe8cnVzebaxrDJCT7dfFk3n761eAqQhzLZ75y6JXu1LgAAl+hEQEiof+3Z70DKoHEihKnyEmISJ5mJARY1RDa3BrmRC7A8xfTw1kxdCEzlBZ3LI7oiHgTiHhTdKNzFSEi0dnRwS8e2pOTLqFvqytBhKXogMKokEgy/3v0fwggK3UvYyAlNMT5LR0RjTMi6J0odI/aAICIZ4cLk3nngRWJRIiTlG/zkH8N6IaW8oQgSZwY6f/8ay/kpKsEh9J9iMiQAWAJLICBbQ4A5H8AgGloqC+uIjq+Y2U8rDOQMlVwnzqTFiX8M5wWT55MTebFTQPrTdANzVVCynOjw1868nLBs8W97z1uQUIso6EQIKLpCc0oSjGEEEcNyeCg8CsiunNpLGIwRuAQHO2zJAXNKowUpizx4zOpjEvIGOBN7roOwhszZ4GIJNBgNv3/7Xsu5RYQkKbZRkq9oReV8awoCDG+qrZpR1tXXSRWHYklDFMZ54joSnIJMpbIFsS1lGs58u5lCUZECFcn7afOpB0JAH67CEQSADnD5oT28Mq4yaZ14CbNTTcoV0mE4Wzqc/tfGLFyyBAIFGQQLCyCYiZEIESMcW1n25JtrYua41UhpiEggZyBD5DCswAkIAExhiilQ/DTM6mrEw4gelg9+igFAgByhBUNxt1L4+ABYDdpfroRrXUEtNzCk2eOjRXyPj7u/3/6hQhkcm1lTeNH1mypjsY0wMCEmg05+ZINmLpIEgC6kiyXGKIgZft7Ikl5lZxh0sSojkSqwZtctSC6EWWVINpz+dy3zx0rSIGB0xf8TIAMgQgBIpr2wZVbdnYsYYhAbwa6RMZyjnjufLZvynEled8h6BziIb6jM9KS0HQGQAxABmLsJs1NN5ysIoCMW3im54wlXB9bms4uvhWV1EN/cOs9bYkakHKh/DSLLUjKsMYeWBE7PpA/dM2SRAyhPsJ3LY42xDTuKVpJIBFACroJjS6EbjiuAgbfO/X6qJUDACWhZnIMAQDVhsJ/vOuB+kiMis7bnIQIgOXjx0QmZ5tbwjrHnrHC1vbooiqDAEhKzxVAD6yQAIwh3ESw5qMbjKsQJ63c6fFhQmB+wsEMriGgpnDsj3fcV6NYaoFEYLkiWxC1cWM2WxBJBripJbyhOQyAReSTABkKSZfH7ZMD+XRBfnhjtcZu6sF56MbiKkR49uKZCStfDLUQIE4zkmOa/pG1W6vMyHUlrriS9l2cDGn89pheVtQgkpQKVJAAyriSOZeujFmv9GRdARJISugZLyytNdlNs31OuqG4CrO2/Vpvt4Diuiv3Xpk2CMAR7+xYtrqhBQHKIaBlW0UiujJmPXl0/H2b6+e6EMDDtxjLFcTBa7kLY44rSMiimj1wJddVE2J40x+ci24UrlKg5kB6ygbyYsZebLcU8aZ6M3bX4pX69YQEiKjg0o+OjdmCAIDm8+OQsZQlfngqlbKKCVdB1HrKEhlbVJnazcDzHHSjuDRKJB0ZuGpLCcXMAgA/NkwEHNlDy9ZUGeZ1tcwZ6xnOXxjKezbYfNxAUkZ0RgSy+Pzij0LCgSs5sXB77n9LulG4igCA5IG+S8K3lBGDvpESFSbyFbWNHPn1NIwIlMqrwPGCzDAE0DjuXhLl3vORSjgLEXtGCzlH3kx2n4MWylW/+L2Jo/lsxrG9x1HpISvPXN/Y0J40I9fTF3TIFUCSvGxQ9JNn5iEpmxNadViDIL0Gi8kRhDiRc28y1RxUYlchCkkg1QIQACBjIL2NyhgGBw2umxCllKSgSpyGFRTDxEhXpyaQcSBXPVwpQWVdEQFI+eDy1SGuAcyvxRRJkK9cPLe9c6kfgIaFR/IMztqr+FjOlQQEICUxXym7AgbTbkeVAYQB70+LfxMhY4wtuJ9SqXg/Ucdrz08KY8rOnBZdmMnTxYNC/tzOuMZPIlL/kkrd8FA4YlhmpyoXGxEYK2lIWaXFFCMqfllCRa4igKuj+Ymcj2h73hcqLmuvDdVG3qxpTyABT/Rl1J6XkhhDImJeOjBoHFa0RKbyOSkloD8tHlrlTU8sFI6FTCwbDyz/TDo+2Pu9c8c3tndKosA4W+BKk6SVDaETA4XAhBJS+jsCL48XNrWFHZe6h/JSbbzp+y0WYl2NkYWoaol4pj9TcP3tSwAqHoUIQAZnq1qjaUtcHclLP1cRAKS6gIgIGAIgBpwReKfMXzsCkEQAoHFWE9XbakKWLc72ZyWR9FI6SrjE3zycIQDVRPXO+jB6mZLkIz1epjYDlFICAyxJZoNpsopgPCdO92UvDuf6Ug4AA0BJUu3zVY3m797bZursTQgrl+jIpfSXXh4ENWNACuaOhbCrzmytClVF9TVtsZFchmajBf6ei2m6BjA7E2E2EZAEHEhPfu2NfS5IUAntBB5GvrBYHhHVRLQPbkgKScjQAzbIWzSdY4izjOVcHbeujVmn+rOWKC45ABgcfuOWht0rqonmA+KJeicK54dyF4bzGVv62fjUXm101prNCWNlSySVdy8M54dTds9oYSznqkEqnUwENRFt55KYoSkeRgIiIiVgiCBtib4J69xQXhACQFLHv/zQUiHkwJTdP1k4P5Qfzbp+VzBoFoDqo3xlU3RDe2xRnYcLFmz7uWee6b12FQiWLFmczeXvue9eAHzm6aff+cgjYbPoRZWKH9rYEd/QHrOF/NZrw690p6Sfy4sAF0cKF4by69ui867HrFnDvC2+uX9ISEJUjhUSyc6a0Gfvbq2P62okEmAiny0ujEp9QfSZCk1kOtcWdPiFsal85u8P7s0LhwEDX8l6x+QXJquUEK0Nc5XTjJ7Nrj4QApKQ1WHtwXW1BGA54ssv9Z8ezEtfxeYl/cuhkZaq0NLGCMzJWEh4z9rau9bUjGWcv3uh78qErXN6aE31uzbVcWQAxBE7aszWqhARuJIe2z/4ysU0+OsCCPEQf2hDvc4ZkERkJKXPmV53XaLecfsre/sGUm6BIJV3m5KhB9fWEKLtym8dGH75wiT5aB0CMIDGmP7vH1kU4shYUT2GdOPBhx+63NMzPj6+ZcuWL3z+81/9n/+zrr7u7JmzDz74IJRwVdFaRwCOpHEM6/xD2xvbkkZxfhFsSUcuZ+w3EQFjeHEolxUBToREFDbYJ29vbozrGoLGgCMgUcp1CEqsAg9pVB/JNIwFmkQFx/7i/j3DVkZ6dRVIEklJXprLwk1DCrSIj1YhAgJTYUGGQKQh6Ugxg/323a01Jkc/P54Aco78H8/1jmcdQjYHJyOShmQwaIjrH761IWpgmOMjm+oNjpyRxgAZIBBnoDEydfaxHc3NCa14xAgAETSGHMn7lyNnwBEYAw2BMwhx7Ko3//0jna0JHRGyBYkInIGGFNbYR29ruHdVlc6Lidqc4S1diWiI6xrjWAxgIEON67quIwDTdDMSqauvHxoaaWxqmjGoWT4gEQIZjLZ1xdWY/a/hjWuZsYxzvbm2eVs8e2pyVVPEw6EAAKGr1mxOGtNUMaIjgiRx9H8qHnfQ+fxWnYpFO0IESe6MIQIjAmSMILDZFkQSqGc4f+RK5sil9OHL6SOXUwe7U/suTO05O/H86cnhlBOYIwgQMdij2xt0zoKzhJIw49CXX+oruAuCIRhj7TUhg7EtXQldL/U5vRA7IiKQweHe1TW8mDuBCoKZ/YDSbxhQzNQ+e08rQ0hbTjH1Gslg+J7N9S1xg6vDuAhCwqFLKUeU8W0IkXHONQ2IGGPveve7P/VvP60bIZyey1F+qThnnfURxx1d1WT2jNmSEAByjnzmxNjHdzWzhWE1BMCQne5PjWed37y9+ei1nGIpBthVZzKfXfypI4MVj1rNPtBnu87cqoQYTuUyh3ovb23vIpqmSz1Ffp3oiEvwzMmJY71Z9aefJgqAFOLYXhNqTBhFqJawucowNFzRFL44bGULAhAkwLlh6/HXhj52W6OmALg5pJYUGsOGuNFZZ84RjELGFtWZnIHrpURD4ITMs2OkbKsxO2tC41khJQUGMiLEDf7J25v+6zO9OVtNHE1Y4kx/dkN7nKQodfyRqKa2NmyGGMOdu3Ylk1Uk5a7bd+mGUWqwlsGr1EwZBiOSW7uSweNdAWcH81ZBLjAAhwCWkIcupTtqQskw99UZAGA8xGc+mCBmhDA4M1MKD4EyzuxKaXmq0ZSVf/zE4deHemf4NQgz0/4WQgTgChrLuXlH5h2Zc2S2IHMFN2e7eVtYBZGMaNNYhKSpMYZwS1f8jmUJQ2OBKn/5wtSeMxO2lPN6CYioc4zolUE1RJAUN7mU5FsInu+zwGygD21v7B3Lu9NjAwTUWR/e0RXTuVekouDS/3p1cMpyEXkptyJCNBKra2gmwLXrNjBkXNPXrttg6Ebp6CqioAwBEVe1ROqimidXEMay7v6Lkx6OsYBBDE/ZZ/uzD62vVflvBOqUgeQIiDMPriRCJkAg8NHPrUL1lw3gUnlVgshywvnK4VfeGO5zgww+ooCz3gzIRuQKmsg44LdQ6n2bOouG+LQDGgCcARCEdPbuTXXL6030BC0KCd87OtY3XnDnZCoFtCIiZxW3rdoenCkMT876ab4xCdmYCK1sjs7OPWSS3r+toaPaUGpQEExY4qdHR13/SFJJPwH9sgMZW2QK7mx+KMNVahP4+Al8YGu9oTEAAIKCK398dNRyZ8Nw5enHb4wtb4621YTAF4GISAo/KGlANdcQifkCnYhISv8qIiCYsPKq5Mus+WCM0XdPHrk4OSpIqNEpIzvw94IiaQuXV4jYP1FIWaKImgEAeJBsS5WpFc1bj/+Z4gaiaIh/8vamuK4yxAgZZgvyc89e6x0vyOlH8mcRKQFUOXQ9y9CZ0xGY/UVIY9sXx/lsgIhB1GAfvbUhrHk/uZKePzNx6lqaqAz6TYyNpu3/58nLX3i2t+DMFMPlZZVypBUcsrIlajBQQAgiywm8MJgrB8bOGABO5d3L49bmRVFTuSxed7xDotPYH4AQq8NR9KLM3hRgkRWoIJ3Tw4NiOsJM3n/REq4ECUBFRiqZcMWf12WqI2On+rPkgdwYHCNkDBFhaaNpzFwYBALGvO7Xx/R/93BHVC8aL6mC/PrPBscyDrC5wFEpCTmrxCuqKwoY9oCFQNFP7w4ByrLbiCRAOa4lIqKuOvPBtdUcfSkL+Nj+4byAGbYHAZKkf/rZYMqWH9/VZOpsxtPLc5Xa2go+jIfYncuTGvMsnYIrv31wGMqe75zWMD59bCwe4uvaYipezJhn5avM3ZlrQtCWqAIpgs3sW+v+5CE+feFk3rHJ/1aifOnS2f2XLwgppfqWAj3rSVMfZ/KZcYF8hUhEwynHdWXAumr9pCSGtKwxXLrdS11Z3yyktirzk7uaFWysvrs0Zj1+YNhyxBznNhCBKhc8Il/uop/LGBS3mUESoHsoN5UX1+WzM2T3rK5e3hBWo5aShrLia3v6bUGlfSaAp4+PnxzIvXNdbWMiNJtHK9pVyHwUjeDedTVVEQ5+fG4w457pzZTkFMy6FzCVE/u6U/etqYoYytwjUuId1T4rLrR/CzXG4jHdRAIPjPF40B8HwEg+2z02DAwkQF968i9e/Ol3zr6RFyXmClJg6wMEBixK8mMTC1SDREjwqTub/+CBtsU1huZpNk9QhTVWF9PKt1PiaSLKjR2xd6yrYd68ASEe681+67Whcj6734BCc+ZmBZz5nxlZsUSQs8XjB0d6RvLzD3YaSVPHD2yrjxnFFXijN3N2IBvY9xLY0GThh8dGN7bF7l1bXdYIrMQZFPSUiOIhvqw+zP3NKgj2XEjN5akjnOzNEMGypmgJ8AKBdir6eqU3EW5rW8RLEmD8uzyB4YI8PHDNlWI8l/7CgT19+VRgafk1YlTj3g5WOgsBhJ/KuVB7EICANIS1zZE/frjjP723a2ldyOBepztqzOqYMWNXeNPl90J1iQO8Y2PtrqVJjXn72ZGwrzv1s3MTs08FqbwKBEDGKxkYCvkM7M2SaZpu1nB2ZdQaz7lvIg+MAXTUhN63uQ5BoQ8kCL+8Z2BgqkDIgDDviC+82M8RfvP2RoXPlW2kXO+Vk+Cn9zKGD22oiRie1SAlHbmSGZyyZXnOwoKQ3z44/K6NdQlTAy/lwIskSz93rowBiLi1uUPnHHwHp+gF+iRISgKXZM6xRQmUMqMx73sEZF7iA/qTP68LzhgjX1pyBqbGmhLaHz/c8Yf3ta1vjYQ0fGRzXcVwKJXIYCKGZHD2wa317VU692fUFvAvh4YvDOSQTcfcVR/Jb6YC+eLY593gXmSkXFXGsgXx9PFxW0iA60jtD0hH3Lk0ubTWDHqRtcXj+4dztrAlPfbq4GjG+eTOpoSpYwUEsYKsKgViCEiIxqSxrjUSjMeV9NzJ8bKRXkI4djXLNLZtcVwrNj8DICnjvJCklnhV2MfQyU9a8FmHfBUcSPwS3GD6hvVPESICoI+3BohD+SF7nWf9k4XH9g2OpB3hB6YZoqnh6rbYZ+5s/vQdzUvqzTI+VKW2SSYi/DN3tVSZXJ3NIQBL4Ff2Dlwbt8p3hQgrHTv0kmLUDHg7JVcQV0Zy/VPWYNo+P5x/+dzkV18eODdsqcMd1+H3BoRk6Pw372iuMnnAteeG88+fHD/QkzrWl9u9vGpzV2KOmZwra89PfEBEDDHcvjgR4sFPeORKJm/LWd4BSKLnT0+ubIpEShAdKvGoMZAkM8YCFDFCO9oWG5xjSSXPGe2rLpWMyEMNghZxhifhd2Le6ZWI41nnqy8PvnQu9Z9+eOVnF1OTlpCetCSQ0tTZtkVxU+dlUf5iD2b90JQ0fuvOlrgfoxKSxi3xjVcH0wVRPEUWZEZVrgpPKi1qOtqRtsR3D49889XBb746+MSh4e8cHn7jWsaWHlyHbybLBDjI+rjxwJrqICvJkfDM6clvHx5NmvyRTXUc5nLYKlvcCMrgDayEFU3hxfVhpZMIYSIvnjsx4ZbMLxFJgp5h68JA9v1barWSygQMixvZx63KPVTSvUtWJgwzMIkAguPLgS4klVkYxHyhRPOo56BKVaCZC13eXwIAAEGYLcgvv9h3fiTvEEzmxTf2D/3ljy6f68/kHSkk+OFuKl8nrdhsGYsJiFY0Rx5cVx3yN7+UcH7Y+tZrwzaRJH+6JQVxz7KkalSWPoQA6uP67z/Q8QcPdPz+/e1/cF/7Hz3Q0RQ3dI5EEuYyfuchjnD/uppFNWZQqzdrSyHp9+9vS3iRkopUkasCaNpfNmnq/L411VyllhAg4v6eVN4uqe+KKAmePzm+ti0aD3u2h7/T1aYJZFD5/UhAMcNcXdvAwbeF/PrEpNy3EsTcd3ZLGAqC1Q0suWlUXv4hSsCcLf7bU1fODlt+YRh0JAymxX97rv///dHl49cytiAJSHN4vr6KLf+zhPvW1O5entQ5gOdi477uqaeOjknwqtt4aAjjlWw/Urog0PwIAMAQNYacqWgPa68N/fm7Fy2tMxnDCpt3QcQQGOIDa6sDM4aAmpJ6XUybt/5g5YiNv1zB8jPExfVmwijeMpiyz/RnRYBaAuRt98jV7N2rq4NzmEEKrhJqpdxUNqONA7xz+fr6cFRhAWo0Ad8QFlvwWIogkGdeVpQHHwTmuSclfZk2kxBxIut+/tlrPeN2kNAcjMmRcHXS+dxzff/39y8duVTR8/VFTBnf1n8K6YiPbK7f0BoNBkHIfnx89ExfRnpWOHmB4kqEhAxKQxN+KpUKChMiIVFEZx/cWmdyoDm06byEiETtVUZxiISmxgxtLqtJ0Vw7D6EY8QEACTJu8vdsrg8mljH2xIGRtOUo7Nkh+P6Rsfq4tr49VhISR0/AFxUWMU8Klns6QX0kfn/XSu5B6/6QAICm5YqSOubgaWr0mSm4HINRAAARyNIUCNUXVUSPIBZirVUhdbuXD+IHb9UnxjBtuV1+rm2ZXhNBUYhWWEikeIg/ur2xPqYFSK9L+MUX+q6M5lUiJqlhVRQGiBCY6f40FCfII0nUUhXqqgt7d7w5IkKAaFgXwt+UWJzPuakCVympANPqGCAB52xTZ6w2VlSrE5Z7acRSGtGy5Yn+zANra2YfGPdSngFAVZaas2tEsKNjybaWRSUsPd2P9j8wzxad5gD4f3h9kDIQXf7OJUDGbCHPD+aGUzYAGBp79NbGdS2RQJ8WU1wkEYGh4b+5vaUmplfsOKI/yDmdeZL1Uf5HD7THDS8GBAh5SX//Yt9w2kYihgiMQWU9q6TZbBN8GkYBYBq8oyZE9GaQhWKbqI6AEKkdSb6dPS86U745GaDf0ysXShnR2fqWmHcZgSvxmRPjeZccCfsvTKay4pYlCUA2zcn37HNlQc/vkyGQwfUPrN5UpfHp6mCaCaUEf6nsCZ7opWepfFmGRT1O4AqazLvPnRr/k29f+utn+/77M70TWRsRTA0/e1drZ7WhcrOKqgMppOFHtzes74jNW14BYfrpwXLEGNYljH+9qyUITxOxkZx4bP9wxpa+Kq/UhJo/JBlsLSyZkqAfyEjev652TXusvOBUUYL5mEM9RsF+RfBmAR7AXDoSA4FbQhzhXZtrTQ0DQLF71DrTl53MOc+enHxoXU3E4EBy+mIHFjQpbSUlAVaMoQIAIFaFIn+484Fqw1SiODD9UQUIVQCmuDDBcL1e+3l/3k+I6Ep6+uT4f/np1f/4o6vfOjgynnfzthjKOP+8fzjvEEOMGuzTd7ZUm8XcLyLSEXcsTty2NFnRhA4uBt9Znc+Z14DWdcQeXlfDEFRhSiHhZH/uOweH/XSZSi0gAvPNqgCpgZn6kogAwhqL6jO2JQCABOwZzucdOe9BDQg8CF/FL1AJziFpAXz3bdoNDBMmX9caDSwWW8C+7tSxqxlbyluXJcv0rcT5UiKEAGjOUmZIxBhriSU/tWlnjREOtiP6ooj5/O4DH8GzKGBj8souetwnCfpSzrmh/FhWBOFSV8Kx3uz3Dw05kpCx1urQp25vMr1MNdI5rm2JPLq9wVCO+ltBylbTGHtkc922Dr/yGoJLcOhqZjTngj/twf9KZxKmc1xpksbsR5UVK5Yrv3tw2HLkvGEGP0g/mwvmoUqZMJ76LIeAS47s3tVVLDCUCI715n9yfLwxbjQmjBk1pYrrXTKEhfglSMSRraht+sSG7bVmmHkGkd+/QEPPdu6mTWbwCcELxBSDUepWW9CeC6n9F6YEERCs64h/4rYGU0Od4/J681O7myM6VgrMzegyqFBeJYve7w0BMJA6x4/uaGxN6oFsdCVk7TKbrZS3PPsNPMhOCf7r8PMQe4Zz/VM2BbpzrvGAf8ipom9blirYVURCEAIIMdNMQESGtKI5sqTe5L5uLrjCcuQn72jCcn0l8s0Un7MEwbxKXRHnfF1j229vuzOhGRoGEJhSHB5neK+J8CWZ96P3aAD/jKU3M6UK2ZeBBZe+dXj40kgeEIjotuVV79lY2xzTfuvOlnh4oWdrhR9OmS0DZttaBIBEyYj2mbta4ib3nGJfxpZtvyi9fBuRJBGR5ZIrylTXLd9JSc+emEDmJzZWJk+sAHliQu3dhcGqFbgK2ViqoGssUxDlmZTgnlXVGodAfrQkjYbZkXwAAPDCqBjYlTiaDRKX5iMiBOisqv3zu965qroB/WqKgThVDZYmoASedwCD+kllpbKthKsJADFn0988c20sbSvVev/amv/w3q7qiLbweo15R7qutBwxY7UqGt4ASNRSZf7OXS1RA301M1fimjqMnLElZ4ioZC/kCsKeK2VrWgP9k4XusQJTZ4/mzJFTtkrBFpoWWMC+XJxPNpbnKinlyb48IPRN2mVbQIItXXGTe+CJznDnskSoQihfAgylvMlWFnTPcE6I+U8hF4mgJhT9vZ33PrxsDWfoqeZAIAEEcIrHZYhBziQg+MnKJSaun0fhiXkCAsy49JW9A0Kqk5aoc7ZAzlccOpp2XYJzg/mCCADcee4nACC5vDnyrnXVms8l8wKXg5O2KwC8jE7MOfKFU+Nzo+gEQIxNWeJvX+jPFiSfmbxZ9h4CxIFJxwPvCBAgY8v8Ali4LFdhyhJnBrIk4fCltCQqA1cyMDg+vK5GnU5sqQ5tX5IsPxmI2YL43usjLAAqCfqm7MujFsxAJeceIxAjbK2q1ZBxwBDTkBTS7p9g8iPYyhssIhqqRCxMW2csAl0Q/EQEk3l3YMImT/YvSEopRWoL+sHrI7agY1ez/ZN2+bSjCrejhHvX1OxeUcWAiAgr3IwAyJiQ9NypcSGLsKsj6fkzk4d6phhns0O+XiIywyvDub/80eXhjEsAsVBp2n3ZXnku9p5zE47KqGEIAMMp53RfjjOYm7FK2AURkQnAS6P5//yjKxlbEtDlcevLL/UPTBUEwbR8ICIg2Lo4EdaRo9zWGYvqrHQZvKcyHEk7TxwcvjRqB3gHILgS/vb5vkOX05mCiyqfaQGEACClJKyLJv7DPe+8raUrqZtBNLCka77rh8pwRj9UrRhAeh30vlc9kjUR9u711f/xPZ2tNaEF8hMAImPI2FDG+drL/VcnHCLIOvKre/vPD+ULggCRLSASR0AM8H1b65fVm4zRjKQFNY8q62twyv7Si/1Xxu2gwpuCTSxBX9o7+A97+i+NWmlLECJjDDkTAFN5t3vE+se9g3/x42vDGSEkAZChzQF/ICIiY6NZ559eHjjWl/Oz/gEQLEFf2tt/6FLasl30ANsy7RRNUVfSvxwcPNuXtaS0JJm6Z82dG87/9+f7DKRdy5MPrK0LZpyA6mP60nrzypi1eVFshvvJGH7/9dE3LqezjrQcaXAg7i2z6iABPHZgWGfQENM/fFtTe1Vowe4rMYAoD31s020Fx9E17pXwV/E735D1w9h+yoOPvKDCyZR1QNLgrMrk795ct7EjFja4znDB3QCX4KdHR4/0pPOuyBaEoaFOiAgTlvvFl/p0xOYq/SPbGxsT+ryshQxMZL95e/Pnnr6q8ZklRgpCfn3vQO94wRKUd0TICGAk5sl7AgI6ci19ciBraEy63rvsJBFy5ggqOFLTUfMNgdqIpnOmvJuZk0u0rzv17MnJvOvkHDB1Fkyg2pmI8I39Q6aGSZP/Hw+0R8qZPUWuQoQ7V1TfuiSpmvZymPz9DgRVEc2zcn3Ngoj/amdTtiAak6EZ/SOAW7ti69qivuvnpTn4XfQ9CgDOsC6qB2VA5yd/kAZww9DU7D6ycv2aptaj/VekEFypEEmECAwQUZLylwAAGZKuAQdsrQ5t6Yx11pqtNWZE5zqD2dn0cxEiA9ixOLGmJaqmJfBAwfMxiDOsjc7PUuBhDVQXN/7kHYtMfTo2gagzeGh9jSNIvRZD+sJYxSlKQDvPKSm527de/IC5WtnqiKYFhVFmEMPVzdGmZEgW0ygI/JolgdFCRAzA1Coo6+CNI0QEjAdLW+wreLgqIc7OKPXqHZVNCgX0zF3fBJjOdz4jMSQp8ecrYo6AAsgWLgIxxg73Xh5ITaQcm4R8dMMtp3utI1fSusbjIS1uspqo3l5rJsOaqSHjjIR88/kiARzgjanokQQDvw5OVSasx59Fr9ZD4EriHEGL/t/FGcbpF8AMuad+VeZ3xQn3O01FIeIJK79KDxEBU/Vnyt1/A77H5s1RIFgRkBgAgRCCiDRNk35pa01lhwXnbX5hPXk76efYEb8o+vXhqjKEM1XJzyMOF0hvM0sputEYa37gWEjvXVNs4e5yKflrKfxS+DzIiFvAGis5jMUaoeVrk5bABkUbbmb7gdEzu4+zertwCtIMeCk6OyfNNH8wMMw8y45NN45mZuJPb4pKNG/Zazxszwfo5h7jTLAMEUpfi7ew+anIVURADG3h9k6OpQpWXTjaUlXNkXnREVXQbQGkeumCvDoxmrateMjsqK7T0CsRMw8QikhIOdthoGonYIhrSGUWDhlawnGFJCDOmME0Tb2wu0yT6JAQXsIfIoKGjDPuh0EWmpBEgIAkpRzKTE3ksxrXWhLVESOEBFg0b8qNCYAQXJJSlWsDIkkMUGNMZ5rqgAQqkADfuA5xDWUFdkUkoIIUCrnVGGclJU4IEBkUhCslEZHGWIjrszIciiQZ2K4I4ooIwJHpGvdalF4p4nmnqLwGlADdY0NPnT02lc9uaV/ckKgaz2TODfWFdH1be1dbVW19LDl/KAOZJHl6qPf5C6csx97avrgqEhvPpY9c6Y6Y5v3L162ob2Hz7W0J9OKFk89fODGcz5EQH9+8a/eyNdOqsQAg4EQh+5cvPDmWy5hc2921/J7l6+qjydkYtXrYueH+Pd2nDvddFpI2trQ3xZMpyxrKZlqTVbs6Vyyra6IKxWeCRgBxODO5p+fsG31XNrV0dNY1uUKcGbhydXJiR+eyHV3LE0ZYVtjTqg+D6clD17qfPne8IASRXFPf8tCqjSsb25QhnHKsV7vP/PTsMUe49y1be//KDYlQpFJ/rk2N7blw6meXzjtA65vaf3fX/ZqPWiOALd3nz514+uwxW4p7lq9955rNYabP6Flg4Gfs/M96zr108fRoIceRbW1dVBuJua47ls2MF/KN8aqt7V0bm9s5sLnl1UyuIiKH5Ot9lx8/9tqa+pZPbNnFucYACUhK99nzp17oOfupbbevaWybWxISgEvy20df23+te1Nzx0e37OTIkUCClEBfOfDSuZHBB1esv2/5WmPOqvwEIKTYd+XCN48fdKWoC0f+9K53JUOR0mczxr5++OV917odKVfUNvzhrgcY01mF/iGAAACQf/zTf5m0rH97y+2bWxcDUdq2/mrPj1MF6xObdt7SsbTSIRLFUudGB75yYE/MCP3RHQ+F9RAAIpEA2T0+/NWDe2J66NO33tWWrJWVNh4RIQoS3zl+cO+lCzpnf3THg+2JGh5kOxJJgJe6z/Smxh9dd0tI05FVGhBIINt1Hz+6/9Wr3YzhrvYlj27aEVI1QhCByBbip2ffSBWsRzfcGuJapX2MiCSlJDoycPnLB14Oadpnb71zZV2z8vJdKR57Y9/xgd7GWOJ3dtxTFYliZakyMxQjAc4M933z2AFXiEc33WrqIQ2RM9QQDW7sXrIywnilXTijnW++8erLVy82Jao+tPHWENdVOzrjBtP/9bbddZHoU+eO//TM0bmTxxCRI6uKRNc1thpcm7CsI31XZtwwnJm6PD5SG4kBQEjTdd2YQ/krq0VDVh+NM4YMmc64znhUN9c0tbkET50/IWmuohfjufQ/HNpruc6jG7ZHDVPzAHY0GF9W27i9bfGolfvKwb2pQq6iwENkABx5dTiiTldHDZOXJNACosZZS7JqeW29rutsTmuGA+qcb2nrXF5TjwSv9V56o/eSI4WClRCAM6iPJVqrqjXO51ANSttyziKGqXJFNa5pjOvIDMZDTPuNzTs3tXT0pib+656f5G17DlthGlcRwKSVffyN/Y5wH1yxIRGKeFmdfiZVWDM+tGm7X06nIiHgtcnRI/1XAWBHx9Kwbkz/lUzNuGXRUgnw6pWLKTs/V1CJCAAZYntVdV0kSkiHenss4QQ3IMPD13o+sOEWnfMF6XxvpDij9ihjWBWOAsJYLq2skDLjQnSk+/f7X5iyrKV1jV21DcwP/ajZ48juWb42ETIHM6nvHjs4X6kQCqxnmLXYKquRYUURFZB6mYrG2Zqmtnes3EBAjx3df2a4z/GRTwRABI3xeU3hwJxS+cdBLBUAOOdhpj28aoOGOF6wfnrm2Bx5MdO4ChGPD1xL2bbG+erGltmOh4ZsdWNrW1UtzF0WguELF08XhMsBVjY0M5g5NQxgS2uXwXnGsZ87f3pu51J5dBrj7127xeDa5cmxkwO9gdM3mc++3tvTEEswZFDpbaWzCBGDIhGKgYR0L40NA5GpG1gxpI9DmdRwPktAS2vqTV7GQEkY4aW1Da4UxwZ703Z+joVE8M5glT22V1rKa56xAABJIOSMPbBszS2tXS7JbxzZ1z064KUboeITnPccn6IixDo905IxVm1GN7R0CJJ7L53NuU6lTTyNq4QQ16bGbSk0roVV/dAZz0PQUZv/ZTJIJwevCaKqSDQWCpfJ4wMKG0YyHHGkODPcB5XdEgUpq34srWlsjiddKfdeOuNKV3155Nqlre1LDK7NyHSZl5Q4cqW0pZt1nXMjgz3jIzpjt7Z1caiQU4/Ql5p0hOCMVUVis3cqAWicNUTjiEwgjeUyc2ZLISmJ4MXyZoQeSmtJzEPo+f8U0kMfWL+tPVmdcQqPHz0wnJlUUlQljS3kdHwxFxxmoRVEGmO3dS6TUhakPD8yKBXqNItKy2uQK8WElUMABsChTHqxJ6rnlsmIrpBZu0BEhm6UxQ4QEAnCug4AE/lcpS057TGIYUPf2Nyhc34tNTGWzxKQQ/LQ1e47l67WGQ/UyEL4ivw05OODvc9fPP2Ph/c+fuw1RvSulRvft+4WLHLyjNtoKD0JCAzR0Mq/UoAADN1ARFdIy7HnSMLzI3MIgESzlgfRq/E2bwE630JRZ0ASRvj3dtzXGIsPZVNf2f9SzikUb1/A1FDxOj/UWEIa483xpHraWD5DFeJspbIKAZEjI0QCkFBOLi+MgiTM0ty62deo/syqZlz2YgWg4c5Fy6rNiOW6Xz/0igA6fLWnvabOKwTgs/yCukikIwOixdX1m1sWfXD9LX+y+x1/9c6PPLRyI59j3IiGphOBJKrk3wWHRBgypZQrDooIAGQQGp7VkBeYX5BOJ/D4EwEgYUY+te2OqG70Z1J//+rzjhSg0mUX4GbNUk/T/yIC9QIiJewrTAIrvcNgvC4SQyAhZd6xy1c+IZLlxFjpFYxhTTTOENP5TPmjKYiCZLpgMYDmeHXZg5k04w9ECZAwwpua2yVRX3bq2uTY3u7T969YpwH3I69+ucz5CJGpblWFw83xqsZIstqM6kwL6mtVGJrsSNZojAkhJ3PZ8tyHkCtYUhLnLDLdTSnXIAQidjZ5L0tZwIBQ1VQg8JZMUkd1wye27NQQe6bGv3P8oOe2LyQ44pf7qnSpK0kSMQa14VilikslbxxBBM6W1zXpyB3hnh7sK6sFCHA8lxZzm+uEd3St0JBbrrg2NVFGUxANTk1M5bM613YvXjmb82Y6RABSVRNlbEtbV5hrBVc8eeqNZCRWE455aevkjWJBGlBK9OVKMW103q1M0FZVYzBGAJcnxwquM2NgiFhwnP7MJACYyJriZZDY0kH5T8YyYI3KeEG2oF3ipYtRUYFJua6p4+Obd5AUr1y58ErP+YUexEFVnK284HBJHum7xJBxgjXNrViB96b7gJJWNbauqG9yhXju4smMbdF0u4AQC9L52v4Xkc2VoUqSdnYuS4QMW4gT/VfdWUzjAj138ZRL1JGoXt/cMTNeN3OcQESOlEqGtyRqNrUsEkJcGB/Z2bmMUdEGQixqoAWRDy0s8HICiIfCD6/cYGr89FDfQGZqpiAhGEhPnh0aiOj6b2zaYbC5wqyIGAuFEVESZgvWjN8A8MLoUHOimi/ErvL+LQZJlf2/qWXRu1dvQsJLk6OSaI5YzbSmEMkvJjLj17RtPXv+hMbw3as26VgRqphp1ISY9rFNt9WYYVuIJ0+97pJbnDjEgnBePH/y/tUbeOVCAACAQDHd/L92v6PaDO+7cuHC2KB3oEoR4unB3rPDA3XhyL+5ZbeO0xh0tq9OiFP53KXRITXGEOe3dSwJaVrSCK1tagMEBFYQbt5xACDvOJZjz4FbeT8hjOWyRNQ7NeG4zoJxLkCCO7pWbG3qIKDHX3815xb8g6yAiFm38MSx1wDhvqWr1zS2ztGOcis2t3eZiILEwavdlnQpOKVNcjSbPtZ7uTocmddQRAAC6puayLtugFSoX3Su3bNszfb2LiCSNH+RUGWfC6mqQlOmYPkFtQgY5oX9g5OHXILbO5ffuWzNXK9FmRmxAZBEmUJ+7+VzP+s511Fde0fXyraqGkC8OjH2+tXujW2daxrbDM7nDQwLKQbSU8+eP949OnRb1/JbO5ZqnFuOve/S+deuXlzf0nHvsrX1kUTpSfPZLCWArkyMfOvogQkrd+/S1bsWrwxzPWtbf/PyU+9Ys3lTSycA5GzreycPH+m/4pIwuX7f0jU7u5bHjPBsWxIBJIIlnFcunPnJhWOupLhhvn/dto0tHSHU5LwL6GGeUJDu632Xnj13IhYy7122tqO6FhkOpiafO38y59rvWLlheW1ziGtzN0cADKFvavyJE4f6pyZW1DXdvXR1dTTGGOsZHT7We+meFetaEtV87rNcAK6Uvenxrx18uSDcj2y8bXVjq66KkKtANZFN4h8P7l3Z1HpH1wpe5hWM05oazqUeP7q/e3yUI7Qlqh/deGttOFaQTvfoyKFr3XnXvn/5+uX1zeG5xXD56DKBBDmWy1wcHSq4DjKUUsb00LKGlqQZLp8BP3vWiADQlu5wNtWfmsgWChpnBccxjVBndX1jLKEzLYCyKg3VJnF+qC8vBADojFeHw4uqGyTRYGqiOhINa4YA6h4ZyLqOK6VCq3Xk8VBoaV3zbDdNAYtXJ0dGsxn1Lg0EMJjWmqxqiCYXEokKSJDMOIWLw4OTVhYBNY2RhPp4YlF1fZhrjJUpcDCbVPwk7zrXpsYGU5OO64YMXWfM1ENLahuiusHmi+MCUM61u0cGLSkBIMS1lmR1XTgKPiiPAJJkxilYjlMfiUPleCICpB3ryviIJYQE5XSTwRlTwXauVZmRukg8rOk4Hz4wX9aeF1JAKSUCLuRVomVaICAkhgwUYOEZlfPwE3haqXg0OUBRCKQ67uAVmEHvKQjFJKKiIz3jAcEhv6C+MUlJcL0Zzhj833u6n2tNxao3C2/Kf9OIH8GR3rIuuCu+dag4aWYHyL+wgqDy8Va/rqE3Foao3mHpGTAMvZdvz9ezX2Yu6HVN/Q35gF8vul5xUfmnBUCQvzBS+/LnX3oPgobp/3vLWaqS0A9OQAeuwLwtFZ2GN4kz/0KIrm8fznHt281VBOC/Bl5lTf4cVXYDYkw1S4hBYIAYyjdVw74sKb2gKpuW+V5FVziTQIQVoj3+9SocJNGvRvyLT6W/PnorGGuhBU/eGkIUQr74evfoeNbQMZUtRKLme29fHdL5QjG62U0COI772E9e75/Kru9oAIS+8fT2tYsu94/2jaU/9c7tIe0tEFuC6Hj34A9ePvVn/+ruEC82KAHG0/m/+c7+ezctXt1Z/+f/9NLH711/+7pFZYEhQhRSnugeOHlxyDRYz+DkB+5a19lcxf3C/D93N38JROXE89vKVUT0j0+/kbOcT79zi85ZwRFPvHQiX3BCJYcVg16S7yLNBbcCEADnfElXQ/fh7t23LImaRt52TnYPPXjbyqxlBzXHwC/o6AdivXZn/jnd1PXDmcAA1i1paqiJeu/QCiA8wHgkpGm6RKirilQnIqpg5ExpRSpbkAbG00+8dPJPP7Y7YmoXro1eG55c1FTd3T9WFQ/XJMIgKUgrCA7hBZ8Dt6S0TQhmyc+WfwuYc+5JX8DlM7mKlAegPqOflBPcp+x/pspMKMjNC3oELaiYCVOHhxkDKVR2rAQcS+V+tO/CN/7sPaauMyTO2Lt3rAyHNEmQsxwppe0IXecx03CkzFs2kdR1PR42JrMWAmicu0LqGuMMLVsYhmbqGgAhEOMcATlngGBofNPyZst2Dc6QgeUIV0hXCNcVnLNk1ERkmYLjuC4RxcyQxpnlugXL1XWezhWikVDE0BkD2xEFx3WEDOlaJKQ7tmPqmkQkKS3HzeXtkGnEwkYAXaJKBCQouCJr2RrDSEjL20JIGYuYaqLzBbdvPHOiZ2jT8qZVnY1L2kQmb/31E69+6h1bomEDGRRyLgCOp7LNtQmGaNlOvuCETd3UNcaY5YqC7TKAXMFJxsMhjQOQ7YpcwQWiY91Daxc31sZM5pUr8Vy5wCIMsmuoJBZP038l5c9KUF4xIvPqo/hFElEdTJmTsWZylSthcKqQc0RxKwR8M+2ArH+GNdjYxUP03hVSks5ZW40ZVsabpDOXRxKJcMjQVOUkhlCbiBKCBPrJ/rMHTvc+etfaJ18+9fsfvv27Lx7fvamLIz6x9/SH7lp3eWD8Zyeu/ruP7Pof392/cWnTXRsXf/7b+37vA7eaqiQ+ARFlLfvEhYFzveP3b19Wn4x87+Xj6Uzhs+/fPjaV+4tvvPS+HSurq6L/9MzRP/mN25tr43/33X0f3L3mm8+fuHvrklvXdpy5NPKF7+7/P99/a8Zynthz8q9/5yHHpceeObppaVPWsl88evnPPr77wOneH+4//1e/dd/pS8Nnrgwvb6t74uVTf/rRO0xTD8xcBCCGjuN+4ydH4hHj4w9tPnK2T7jyzq2LFaLSXp/40O41f/fkwaba+O3rOh66dflEKp+ynJGpnGW7qZz1nx975Y7VbRO5wl0bu/advLp5RWtNzHzqwPmoaTxy++qXDnf/5LXzn3p403i68Pwb3X/68d3pbOGxZ4+967YV33nl9LaVbX1j6bqEKogN4zkxmraLS4sY7P5iFQZQUryEPXwZqX7FYm1VQETOoDERiofmOmowk6sIQEr63sGBkYzjSVOfsxTTAIL3MiyvILFExqYnNamSJoiIRFJn8Jl7O8NJAwAkQEjXXCF9/mRXBseHJrM6slWL62uT0UjE3LC8edPK1ideOM51fcWiBkBY1VH/zKGLn3hw4w/2nbNd0VwTO3d19JaVbWs76qqi4dL50jhLxMI1iYgyl2vi4dGpPBBFTR0BVy9rro6FY5HQRDrf3pB8185VVckoAVzun7hldVvE1AXBko76cEj72ycPCkm9I6mhydyKzgZNYy31SY2zltp41nYkUVtTVXN9Yng8PZW187YbMQ0pZdGrA4hFQndtXfrF7x94311ONm3de9uKoPI+4/yeLYs3Lmt+5fjlJ189N5Wx3rljhcZwUWNVdcIUJLPZwrY1He1NVRevjR6+0P/Be9dXRc28437xBwfu3768rblGN/T1y1tHJ7Pf3n8uk7UHRtOTWau2OhqPhGJhfV1XY3Bk/WjP5ItnxoBxBJIEjKlKEoGGmalgiJBIenID1bvn/ACj8q6INAYfvq1lVVN0tpotFVfTZRURR/j03R2uIK8ElJcrRcUc6MASoWAaA5ANAFhpAprGMXgbPEdat6RBIzrVM7hpaYvGKR4zP/e9g5951xaNM8ZQ44wzFjI0yxE6Z5wxSVQdM/vH09Vxc8eqtr1HL21d0fqdvadOXxq+/7YVWJJjKolChtbeVLW8o04IKYkY8/I5mXobh8ZV2UJJkLPsI+f6mxLhSCSkXkiJCOoahiphkkYns5YjJJFp8K6WaqvgcOa9PTSVsV443L2stYYzFiTOeO959nKicHFrTSJsHO8erKuJGhrztiXB84cvblre0t6QeP/uNa4rLw9NQvC6WgIE0DgzQ7qpc0dIpl64CxCPmiSJJCERY8i50vVIQM11iRDnB45fjRna5mXFatuAuGtlzdal1WpZS0zEEn4oXUEPPvaVXGB1InhKUK0uYkirKKgCxpqZt84ZRAweN1nS1JJhrSqsJU2eNNUHLWnyZFhLhrWEqSWCb0z1QUuYWsJkSe8WnjR5VGcaK2pSU9d+9z3b/tezx0cmMznbEVKaOm9IRjhjQngvHJVEj+xadW1oYiKdyxecg2d7H7hlKRDcvXXxc4d7Ohqrtq9pP3J+IKTzEkeMXCEsx3VcFxEMnUuXHCEVt6kTlkJKkiSJXCHOXh45dWVk/crWkfGM7biOkGrPOK5wXKExdFy5urMhb9lHzvZNZQrP7DufsxzbcRlD4dJTr51LxsOtDUlHGV6uiwiulKpIH0kSQkQN/TPvveXLPzi4bFG9Z6sCIKIj5D8/ezSdsy3bHRxP37mhMxzSdISsZU+m88qAsR2XANZ2NUYNbWQik83bF66OblraFA5pjiM0zoQgIQQCCEkvHumORkORsLG8rW48kyf/WQQY4iwZ4smQWiCeMHmiZLGSppaM6P5Pmlo1/4O30Op6f021pKnFQ9zgc4EP3lq/ndg6IaKk0VSufyydyRSi0VBV3GyrSwDQvlO9qVxhY1dDc30SAUZSuZ7eMYbY3phsqU0of+F0d/+yzqZsvmAVnObauDcAgpztHjjTm7PdtrrEms56zjCds46cH3JcsXVFc99oun883dmQrE1GjlwYihp826q2A6euMsaXtFSfvjS0ZnHT4Fh6YCKzor0WAY5eGlnSmFzd1TiRzp25POIIsbazob4qcvj8wPBEdlV7XTJuHjp9ra2xSudseDLXUZ84dW00EQmt7azff6Y/ZurrlzQmIkbWcl460vPIzlWlNUvTucKVocnRiWw0bDRUxzoakwh4eWD8/LWxDcua8gX39NXRZNjYsb4DAVI5+8K1EStntzVXtdQlAeDI+YHxTH7zksbxtNU7lm6riQqCl17v2byiJWM539tz8r/89oM1YfN6UfL56Xph97eVq9QjAZRAJkSSwg9+lVbaVtcxAAApi1Eqv+4NehHPoEUE5W8qnScl8mJw13Mi/CN1/reEjJEUxcJiSIiM/KISJVoBfRXieb6I4JuVPlQxY9KlHEtlp7J2SOet9cnSX/ywqkrblMGXqpKNFwH0H1kKGfjGNgEy8G0MSfD1p17vaqm+e/Ni25X/8MPDn3hwYzQ08+TPW0YL5q1fAlfdeG29xeRK+cN9Z3M5+6P3b/rF1TMCAAAamsg9c/BCPBxiROuXN3W11PzCZ2YBvPUryFU3MD8pIiAhAYh0Pm8ey8//MBJSKnnM2EKqkL4d9CvFVTc8PwUUhAfetsfRnKfm32Z6e+OAPw/dKDO2IHqbO3ujhRF/mZkw10E30IzdpPnp/wfFF/CdkxSj/QAAAABJRU5ErkJggg==" alt="Money Compound">
+        </a>
+        <span class="mcfhs-regbadge">AMFI Registered Mutual Fund Distributor</span>
+      </div>
+      <h1>How healthy are your <em>finances</em>, really?</h1>
+      <p>Fifteen questions, every one a tap — no bank statements, no calculator. You get an objective
+         100-point Financial Health Score, your personal financial ratios benchmarked against what they
+         should be, and a prioritised action plan.</p>
+      <div class="mcfhs-heropills">
+        <span>⏱ About 2 minutes</span>
+        <span>🔒 Nothing is stored until you ask for the report</span>
+        <span>📊 14 personal finance ratios</span>
+      </div>
     </div>
-    <div class="option-row">
-        <div class="option-input">
-            <input type="radio" name="q9" value="4"><span> Cash in Bank / Fixed Deposits / PPF/ Bonds</span><br>
+  </header>
+
+  <div class="mcfhs-shell">
+    <div class="mcfhs-card" id="mcfhs-card">
+
+      <!-- ============================ FORM ============================ -->
+      <div id="mcfhs-form">
+        <div class="mcfhs-prog">
+          <div class="mcfhs-progtop">
+            <span class="mcfhs-steplabel" id="mcfhs-steplabel">About you</span>
+            <span class="mcfhs-stepcount" id="mcfhs-stepcount">Step 1 of 6</span>
+          </div>
+          <div class="mcfhs-bar"><i id="mcfhs-barfill" style="width:16.6667%"></i></div>
         </div>
-        <div class="option-input">
-            <input type="radio" name="q9" value="8"><span> Real Estate ( Other than own House / Office)</span> <br>
+
+        <div class="mcfhs-cardpad" id="mcfhs-steps"><!-- steps injected by JS --></div>
+
+        <div class="mcfhs-nav">
+          <button type="button" class="mcfhs-btn mcfhs-ghost" id="mcfhs-back">← Back</button>
+          <button type="button" class="mcfhs-btn mcfhs-primary" id="mcfhs-next">Continue →</button>
         </div>
-    </div>
-    <div class="option-input">
-        <input type="radio" name="q9" value="10"><span> Equity Mutual Funds / Stocks / PMS / AIF</span> <br>
+      </div>
+
+      <!-- ============================ RESULT ============================ -->
+      <div id="mcfhs-result" class="mcfhs-hidden"></div>
+
     </div>
 
-    <div class="buttons">
-
-        <button class="btnpre prevQuestion" data-status="9">BACK</button>
-
-        <button class="btnOK nextQuestion" id="9">Next <i class="next fa-solid fa-chevron-right"></i></button>
+    <div class="mcfhs-disc" id="mcfhs-disc">
+      <strong>Important:</strong> This Financial Health Scorecard is an educational self-assessment tool. It is
+      based only on the figures you enter and uses widely accepted personal-finance rules of thumb. It is not
+      investment, insurance, tax or legal advice, and it is not a substitute for a personalised financial plan.
+      Money Compound is an AMFI-registered Mutual Fund Distributor — we do not charge advisory fees and we earn
+      commission from asset management companies on mutual fund investments made through us.
+      Mutual fund investments are subject to market risks; read all scheme related documents carefully.
+      <div class="mcfhs-foot">© <span id="mcfhs-yr"></span> Money Compound · support@moneycompound.com · +91 84474 96480</div>
     </div>
+  </div>
 </div>
-
-
-
-            <div class="question question-txt" id="question10">
-                <p class="question-p"><b><span class="addName"></span></b>, How well do your family members understand and actively participate in managing your complete financial affairs?</p>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q10" value="11"><span> My family has complete idea </span> <br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q10" value="8"><span> My family has good enough idea of everything</span> <br>
-                    </div>
-                </div>
-                <div class="option-row">
-                    <div class="option-input">
-                        <input type="radio" name="q10" value="5"> <span> My family has very limited information</span><br>
-                    </div>
-                    <div class="option-input">
-                        <input type="radio" name="q10" value="0"> <span> My family has no idea</span><br>
-                    </div>
-                </div>
-
-
-
-                <div class="buttons">
-
- <button class="btnpre prevQuestion" data-status="10">BACK </button>
- <button onclick="submitResultbtn()" class="btnOK btnfinish" id="showC">NEXT <i class="next fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-<div id="message"></div>
-
-
-
-
-</div>
-
-            <div class="showChart" style="display: none;">
-                <h2>Test Result</h2>
-
-            <div id="myChart">
-
-                <a class="zc-ref" href="https://www.zingchart.com/"></a></div>
-
-   <div class="EXIT">
-           <a class="last-btn" href="https://vipulkhandelwal-moneycompound1.zohobookings.in/#/moneycompound2">Do you want to improve your score</a>
-            <button class="exit-btn">EXIT</button>
-        </div>
-
-</div>
-
-
-
-
-
-        <div id="results" style="display:none;">
-            <h2>Quiz Results</h2>
-            <p id="result-text"></p>
-        </div>
-</div>
-
-
-
-   <script>
-        $(document).ready(function () {
-            $("#quiz-form").hide();
-            $(".showChart").hide();
-
-            $("#Mobnum").on("input", function () {
-        var inputValue = $(this).val();
-        var numericValue = inputValue.replace(/\D/g, '');
-        $(this).val(numericValue);
-    });
-
-            $("#next-button").click(function () {
-                console.log("thiss lest start")
-            var name = $("#name").val();
-            var email = $("#email").val();
-            var birthday = $("#birthday").val();
-            var Mobnum = $("#Mobnum").val();
-            var description = $("#description").val();
-            var yearearning = $("#yearearning").val();
-            var annualincome = $("#annualincome").val();
-            if (name === '') {
-            } else if (email === '') {
-            } else if (birthday === '') {
-            } else if (Mobnum === '') {
-            } else if (description === '') {
-            } else if (yearearning === '') {
-            } else if (annualincome === '') {
-            } else {
-
-                var emailRegex = /\S+@\S+\.\S+/;
-            if (!emailRegex.test(email)) {
-                $("#email-error").text("Please enter a @ valid email address.");
-                return false;
-            } else {
-                $("#email-error").text("");
-            }
-            var selectedDate = new Date(birthday);
-            var minDate = new Date(1950, 0, 1);
-            var maxDate = new Date(2014, 12, 1);
-
-            if (selectedDate < minDate || selectedDate > maxDate) {
-                $("#birthday-error").text("Date range should be 01/01/1950 to 31/12/2014");
-                return false;
-            } else {
-                $("#birthday-error").text("");
-            }
-
-                let phoneDigits = Mobnum.replace(/\D/g,'').length;
-                let firstDigit = Mobnum.charAt(0);
-                if (phoneDigits > 15){
-
-                    $("#phone-error").text("Phone numbers with a maximum of 15 digits are allowed.");
-                    return false;
-                } else {
-                    var selectedCountryCode = $("#countries").val();
-            var MobnumWithCountryCode = selectedCountryCode + Mobnum;
-                    $("#phone-error").text("");
-                    $("#Mobnum").val(MobnumWithCountryCode);
-                    $(".left-panel, #registration-form, #quiz-form").toggle();
-                }
-
-            }
-});
-
- const nextButton = document.getElementById("next-button");
-        nextButton.addEventListener("click", function (event) {
-            console.log("tissn")
-            const formInputs = document.querySelectorAll('.field1-input input, .field2-input input');
-
-
-            formInputs.forEach(input => {
-            if (input.value === "") {
-
-                input.closest('.input-with-icon').classList.add("error");
-
-            } else {
-
-               input.closest('.input-with-icon').classList.remove("error");
-            }
-            });
-            const emptyFields = document.querySelectorAll('.error');
-  });
-});
-
-
-            var currentQuestion = 1;
-            const totalQuestions = 10;
-            $(".nextQuestion").click(function(){
-               console.log(`${currentQuestion} ${totalQuestions}`);
-               questionNumber=$(this).attr("id");
-               const currentQuestionDiv =
-               document.getElementById(`question${questionNumber}`);
-                 if ($(`input[name='q${currentQuestion}']:checked`).length === 0) {
-                     document.getElementById("message").innerHTML="Please select an option before proceeding.";
-            return;
-        }else{
-document.getElementById("message").innerHTML="";
-}
-
-                currentQuestionDiv.style.display = "none";
-                currentQuestion++;
-
-  $(".step").removeClass("active");
-            if (currentQuestion <= totalQuestions) {
-               const nextQuestionDiv = document.getElementById(`question${currentQuestion}`);
-                nextQuestionDiv.style.display = "block";
-
-$(`.step:nth-child(${currentQuestion})`).addClass("active");
-
-            $("#currentQuestionMessage").text(`Question ${currentQuestion}`);
-
-if (currentQuestion === totalQuestions) {
-
-       $("EXIT").show();
-       $("step-hide").show();
-
-        }
-
-             }
-
-            });
-
-
-
-          $(".prevQuestion").click(function () {
-          console.log(`${currentQuestion} ${totalQuestions}`);
-          questionNumber = $(this).attr("data-status");
-           if (questionNumber == 1) {
-
-            $(".left-panel, #registration-form, #quiz-form").toggle();
-        } else {
-            $("#question"+questionNumber).hide();
-          $(".step.active").removeClass("active");
-            questionNumber--;
-            if (questionNumber == 0) {
-                alert("oops, No previous question... ");
-return;
-            }
-            if (questionNumber <= totalQuestions) {
-                $("#question"+questionNumber).show();
-$(`.step:nth-child(${questionNumber})`).addClass("active");
-                currentQuestion--;
-$("#currentQuestionMessage").text(`Question ${currentQuestion}`);
-            }
-        }
-        });
-
-
-
-
-
-    </script>
-
-    <script type="text/javascript">
-function sendEmail(quizformdata, totalMarks, selectedTable) {
-
-    console.log("this s data formdata", quizformdata);
-
-    // Convert HTML string to a temporary DOM
-    const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = quizformdata;
-
-    // Extract email (from the Email : row)
-    let userEmail = "";
-
-    const rows = tempDiv.querySelectorAll("tr");
-    rows.forEach(row => {
-        const cells = row.querySelectorAll("td");
-        if (cells.length === 2) {
-            const label = cells[0].innerText.trim().toLowerCase();
-            if (label.includes("email")) {
-                userEmail = cells[1].innerText.trim();
-            }
-        }
-    });
-
-    // Fallback if email not found
-    if (!userEmail) {
-        alert("Email not found in form data");
-        return;
-    }
-
-    // EMAIL HTML BODY
-    let htmlContent = `
-        <div style="font-family: Arial, sans-serif; font-size:14px; color:#333;">
-
-            <p>Hello,</p>
-
-            <p>
-                Your <b>Health Wealth Assessment</b> successfully completed.
-            </p>
-
-            <hr>
-
-            <p>
-                <b>Total Score:</b> ${totalMarks}
-            </p>
-
-            <h4>Form Details</h4>
-            <div>
-                ${quizformdata}
-            </div>
-
-            <h4>Score Table</h4>
-            <div>
-                ${selectedTable}
-            </div>
-
-            <p style="margin-top:20px;">
-                Regards,<br>
-                <b>Health Wealth Team</b>
-            </p>
-
-        </div>
-    `;
-
-    // API CALL (userEmail dynamically set)
-    fetch("https://rating-form-zoho.vercel.app/healthCard_data", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            to: userEmail,                   // dynamic email
-            subject: "Health Wealth Score",
-            html: htmlContent,
-            from: "care@zohfin.com",
-            cc:"care@zohfin.com",
-            fromname: "Health Wealth Team",
-            smtpuser: "care@zohfin.com",
-            totalMarks,
-            quizformdata,
-            selectedTable
-        })
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log("Email API response:", data);
-
-        if (data.status === "success") {
-            alert("Email sent successfully to " + userEmail);
-        } else {
-            alert("Email sending failed");
-        }
-    })
-    .catch(err => {
-        console.error("API Error:", err);
-        alert("Server error");
-    });
-}
-
-
-        function showResults() {
-            let score = 0;
-            for (let i = 1; i <= totalQuestions; i++) {
-                const radioButtons = document.getElementsByName(`q${i}`);
-                for (const radioButton of radioButtons) {
-                    if (radioButton.checked && radioButton.value === "c") {
-                        score++;
-                    }
-                    radioButton.disabled = true;
-                }
-            }
-
-            const resultText = document.getElementById("result-text");
-            resultText.textContent = `You got ${score} out of ${totalQuestions} questions correct!`;
-            const resultsDiv = document.getElementById("results");
-            resultsDiv.style.display = "block";
-        }
-
-
-        let totalMarks = 0;
-        function submitResultbtn() {
-            var flagRdo = 0;
-            var selectedTable = '<table>';
-            const questions = document.querySelectorAll(".question");
-            questions.forEach((question) => {
-
-                const selectedOption = question.querySelector("input:checked");
-
-                if (selectedOption) {
-                    selectedTable += '<tr><td style="border:solid grey;">' + question.querySelector(".question-p").innerHTML + '</td>';
-                    selectedTable += '<td style="width:250px; margin-left:25px; border:solid grey;">' + selectedOption.parentElement.innerText.replaceAll('\n', '') + '</td></tr>';
-
-                    totalMarks += parseFloat(selectedOption.value);
-                }
-                else {
-                    flagRdo++;
-                }
-
-            });
-
-            var quizformdata = '<table style="margin-bottom:50px; width:100%;">';
-            quizformdata += '<tr style="margin-right:px;"> <td> <b>Name :</b> </td><td>' + $("#name").val() + '</td></tr>';
-            quizformdata += '<tr style="margin-right:;"> <td> <b>Email :</b> </td><td>' +  $("#email").val() + '</td></tr>';
-            quizformdata += '<tr style="margin-right:;"> <td> <b>Birthday :</b> </td><td>' +  $("#birthday").val() + '</td></tr>';
-            quizformdata += '<tr style="margin-right:;"> <td> <b>Phone Number :</b> </td><td>' +  $("#Mobnum").val() + '</td></tr>';
-            quizformdata += '<tr style="margin-right:;"> <td> <b>Job Description :</b> </td><td>' +  $("#description").val() + '</td></tr>';
-            quizformdata += '<tr style="margin-right:;"> <td> <b>Annual Income :</b> </td><td>' +  $("#annualincome").val() + '</td></tr>';
-            quizformdata += '<tr style="margin-right:"> <td> <b>Year Earning :</b> </td><td>' +  $("#yearearning").val() + '</td></tr>';
-            quizformdata += '</table>';
-
-
-            selectedTable += '</table>';
-            if (flagRdo > 0) {
-                 document.getElementById("message").innerHTML="Please select an option before proceeding.";
-                 return;
-            }
-            showChart(totalMarks);
-            sendEmail(quizformdata, totalMarks, selectedTable);
-            const currentQuestionDiv =
-            document.getElementById(`question${currentQuestion}`);
-            currentQuestionDiv.style.display = "none";
-
-        }
-
-
-
-
-       function showChart(totalMarks) {
-        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
-        window.feed = function (callback) {
-            var tick = {};
-            tick.plot0 = Math.ceil(350 + (Math.random() * 500));
-            callback(JSON.stringify(tick));
-        };
-
-        var myConfig = {
-            type: "gauge",
-            globals: {
-                fontSize: 15
-            },
-            plotarea: {
-                marginTop: 170
-            },
-             plot: {
-                size: '100%',
-                height: '100',
-                valueBox: {
-                    placement: 'center',
-                    text: '%v',
-                    fontSize: 16,
-                    offsetY: -270,
-                    overflow: 'visible',
-
-                    rules: [{
-                        rule: '%v >= 81 && %v <= 100',
-                        text: 'Your Score = %v/100 <span style="font-size: 18px; ">(EXCELLENT)</span><br><br>Keep excelling: Book a free consultation<br> to review your Existing Investments to Optimise.<br> '
-
-                    },
-                    {
-                        rule: '%v >= 61 && %v <= 80',
-                        text: 'Your Score = %v/100 <span style="font-size: 18px; ">(Good)</span><br><br>Maintain your success: Book a free consultation<br> for advanced financial planning.<br> '
-                    },
-                    {
-                        rule: '%v >= 41 && %v <= 60',
-                        text: 'Your Score = %v/100 <span style="font-size: 18px; ">(Average)</span><br><br>Ready to optimize? Book a free consultation<br> and fine-tune your finances<br> '
-
-                    },
-                    {
-                        rule: '%v >= 21 && %v <= 40',
-                        text: 'Your Score = %v/100 <span style="font-size: 18px; ">(Bad)</span><br><br>Dont wait: Book a free consultation<br> to enhance your financial health.<br> '
-
-                    },
-                    {
-                        rule: '%v <= 20',
-                         text: 'Your Score = %v/100 <span style="font-size: 18px; ">(Worst)</span><br><br>Urgent: Book a free consultation now <br>to improve your financial situation.<br> '
-
-                    }
-                    ]
-                }
-            },
-            tooltip: {
-                borderRadius: 5
-            },
-            scaleR: {
-                aperture: 170,
-                minValue: 0,
-                maxValue: 100,
-                step: 20,
-                center: {
-                    visible: false
-                },
-                tick: {
-                    visible: false
-                },
-                item: {
-                    offsetR: 20,
-                    rules: [{
-                        rule: '%i == 9',
-                        offsetX: 25
-                    }]
-                },
-                labels: ['0', 'WORST:<br> 0-20', 'BAD: <br>21-40', 'AVERAGE:<br> 41-60', 'GOOD:<br> 61-80', 'Excellent:<br> 81-100'],
-                ring: {
-                    size: 30,
-                    rules: [{
-                        rule: '%v < 20',
-                        backgroundColor: '#E53935'
-                    },
-                    {
-                        rule: '%v >= 20 && %v < 40',
-                        backgroundColor: '#FAB733'
-                    },
-                    {
-                        rule: '%v >= 40 && %v < 60',
-                        backgroundColor: '#ACB334'
-                    },
-                    {
-                        rule: '%v >= 60 && %v < 80',
-                        backgroundColor: '#69B34C'
-                    },
-                     {
-                        rule: '%v >= 80 && %v < 100',
-                        backgroundColor: '#548F3D'
-                    }
-                    ]
-                }
-            },
-
-            series: [{
-                values: [totalMarks],
-                backgroundColor: 'black',
-                indicator: [],
-                animation: {
-                    effect: 2,
-                    method: 1,
-                    sequence: 5,
-                    speed: 900
-                },
-            }]
-        };
-
-        zingchart.render({
-            id: 'myChart',
-            data: myConfig,
-        });
-    }
-
- const optionInputs = document.querySelectorAll(".option-input");
-
-
-    optionInputs.forEach(optionInput => {
-        optionInput.addEventListener("click", () => {
-
-            const radioInput = optionInput.querySelector("input[type='radio']");
-            radioInput.checked = true;
-
-document.querySelectorAll('.option-input').forEach(option => {
-            option.classList.remove('active');
-        });
-
-if (radioInput.checked) {
-            optionInput.classList.add('active');
-        }
-
-        });
-    });
-
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-$(document).ready(function() {
+/* =====================================================================
+   CONFIG — change these two lines and nothing else
+   ===================================================================== */
+const MCFHS_CONFIG = {
+  // Where the submission is POSTed. Zoho Flow webhook URL, or your own endpoint.
+  // STILL UNSET — until this is a real URL the page posts nowhere, so no lead and no
+  // scorecard record ever reaches Zoho. Everything else below is live.
+  ENDPOINT_URL : "REPLACE_WITH_YOUR_WEBHOOK_URL",
+  BOOKING_URL  : "https://vipulkhandelwal-moneycompound1.zohobookings.in/#/moneycompound2",
+  WHATSAPP_URL : "https://wa.me/918447496480?text=Hi%2C%20I%20just%20completed%20the%20Financial%20Health%20Scorecard",
+  SITE_URL     : "https://www.moneycompound.com",
+  FIRM_NAME    : "Money Compound",
+  FIRM_EMAIL   : "support@moneycompound.com",
+  FIRM_PHONE   : "+91 84474 96480",
 
-    function updateQuestionText() {
-        name = $("#name").val();
+  // The lead magnet. Host the PDF on the site and put its URL here; until then the
+  // download button stays hidden and the form still collects the lead and the consents.
+  GUIDE_TITLE  : "Your First 10 Moves Towards Financial Health",
+  GUIDE_URL    : "REPLACE_WITH_THE_GUIDE_PDF_URL",
 
-        $('.addName').text(name);
-    }
-
-    updateQuestionText();
-
-
-    $("#name").on("input", function() {
-        updateQuestionText();
-    });
-});
-$(document).ready(function() {
-    $(".btnfinish").click(function() {
-        $(".showChart, mychart").show();
-       $("#quiz-form").hide();
-        $(".main-div").hide();
-
-    });
-});
-$(document).ready(function() {
-    $(".exit-btn").click(function() {
-        $(".leftpanel-registrationform, .left-panel, #registration-form").show();
-        $(" #quiz-form").hide();
-        $(".main-div").hide();
-          location.reload();
-
-    });
-});
-
-function scrollToActiveStep() {
-    var activeStep = document.querySelector('.step.active');
-    if (activeStep) {
-        var stepHide = document.querySelector('.step-hide');
-        var scrollLeft = activeStep.offsetLeft - (stepHide.offsetWidth - activeStep.offsetWidth) / 2;
-        stepHide.scrollLeft = scrollLeft;
-    }
-}
-
-
-$(".step").on('click', function() {
-    scrollToActiveStep();
-});
-
-
-$(".nextQuestion, .prevQuestion").on('click', function() {
-    scrollToActiveStep();
-});
-
-$(document).ready(function () {
-
-
-    $('.form-input').on('input', function() {
-
-        $(this).closest('.input-with-icon').removeClass('error');
-    });
-
-
-});
-
-
+  // DPDP: BUMP THIS whenever the consent wording in the form changes. Consent is only
+  // evidenceable if we can say which notice the person actually agreed to. Same rule as
+  // mf/intake_links.py CONSENT_VERSION on the fact-find.
+  CONSENT_VERSION : "2026-08-09.v1"
+};
 </script>
-
 <script>
+/* =====================================================================
+   MONEY COMPOUND — FINANCIAL HEALTH SCORECARD  v2 (merged)
+   Banded inputs from the FinHealth sheet · weighted-pillar ratio engine
+   ===================================================================== */
 
-
-const selectDrop = document.querySelector('#countries');
-
-    const arr = [
-    {
-"name": "India",
-"dial_code": "+91",
-"code": "IN"
-},
-{
-"name": "United States",
-"dial_code": "+1",
-"code": "US"
-},
-{
-"name": "Canada",
-"dial_code": "+1",
-"code": "CA"
-},
-{
-"name": "United Arab Emirates",
-"dial_code": "+971",
-"code": "AE"
-},
-{
-"name": "United Kingdom",
-"dial_code": "+44",
-"code": "GB"
-},
-{
-"name": "Singapore",
-"dial_code": "+65",
-"code": "SG"
-},
-{
-"name": "Afghanistan",
-"dial_code": "+93",
-"code": "AF"
-},
-{
-"name": "Albania",
-"dial_code": "+355",
-"code": "AL"
-},
-{
-"name": "Australia",
-"dial_code": "+61",
-"code": "AU"
-},
-{
-"name": "Bahrain",
-"dial_code": "+973",
-"code": "BH"
-},
-{
-"name": "Bangladesh",
-"dial_code": "+880",
-"code": "BD"
-},
-{
-"name": "Canada",
-"dial_code": "+1",
-"code": "CA"
-},
-{
-"name": "China",
-"dial_code": "+86",
-"code": "CN"
-},
-{
-"name": "France",
-"dial_code": "+33",
-"code": "FR"
-},
-{
-"name": "Germany",
-"dial_code": "+49",
-"code": "DE"
-},
-{
-"name": "Hong Kong",
-"dial_code": "+852",
-"code": "HK"
-},
-{
-"name": "Indonesia",
-"dial_code": "+62",
-"code": "ID"
-},
-{
-"name": "Italy",
-"dial_code": "+39",
-"code": "IT"
-},
-{
-"name": "Japan",
-"dial_code": "+81",
-"code": "JP"
-},
-{
-"name": "Kuwait",
-"dial_code": "+965",
-"code": "KW"
-},
-{
-"name": "Malaysia",
-"dial_code": "+60",
-"code": "MY"
-},
-{
-"name": "Nepal",
-"dial_code": "+977",
-"code": "NP"
-},
-{
-"name": "Netherlands",
-"dial_code": "+31",
-"code": "NL"
-},
-{
-"name": "New Zealand",
-"dial_code": "+64",
-"code": "NZ"
-},
-{
-"name": "Oman",
-"dial_code": "+968",
-"code": "OM"
-},
-{
-"name": "Pakistan",
-"dial_code": "+92",
-"code": "PK"
-},
-{
-"name": "Philippines",
-"dial_code": "+63",
-"code": "PH"
-},
-{
-"name": "Qatar",
-"dial_code": "+974",
-"code": "QA"
-},
-{
-"name": "Russia",
-"dial_code": "+7",
-"code": "RU"
-},
-{
-"name": "Saudi Arabia",
-"dial_code": "+966",
-"code": "SA"
-},
-{
-"name": "Singapore",
-"dial_code": "+65",
-"code": "SG"
-},
-{
-"name": "South Africa",
-"dial_code": "+27",
-"code": "ZA"
-},
-{
-"name": "Spain",
-"dial_code": "+34",
-"code": "ES"
-},
-{
-"name": "Sri Lanka",
-"dial_code": "+94",
-"code": "LK"
-},
-{
-"name": "Sweden",
-"dial_code": "+46",
-"code": "SE"
-},
-{
-"name": "Switzerland",
-"dial_code": "+41",
-"code": "CH"
-},
-{
-"name": "Thailand",
-"dial_code": "+66",
-"code": "TH"
-},
-{
-"name": "United Arab Emirates",
-"dial_code": "+971",
-"code": "AE"
-},
-{
-"name": "United Kingdom",
-"dial_code": "+44",
-"code": "GB"
-},
-{
-"name": "United States",
-"dial_code": "+1",
-"code": "US"
-}
-]
-    let output = "";
-    arr.forEach(country => {
-     output += `<option value="${country.dial_code}">${`${country.code} (${country.dial_code})`}</option>`;
- })
- selectDrop.innerHTML = output;
-
-
-
-
-
-
-
-</script>
-
-<script>
-// Report content height to the parent page so the iframe can fit exactly (no empty box space).
-(function () {
-    function postHeight() {
-        var card = document.querySelector('.leftpanel-registrationform');
-        var h;
-        if (card) {
-            var rect = card.getBoundingClientRect();
-            var scrollTop = window.scrollY || window.pageYOffset || 0;
-            // End the iframe just past the card's bottom so its 3D shadow isn't clipped.
-            h = Math.ceil(rect.bottom + scrollTop + 44);
-        } else {
-            h = document.body.scrollHeight;
-        }
-        if (window.parent) {
-            window.parent.postMessage({ type: 'fincheckup-height', height: h }, '*');
-        }
-    }
-    window.addEventListener('load', postHeight);
-    window.addEventListener('resize', postHeight);
-    document.addEventListener('click', function () { setTimeout(postHeight, 80); });
-    document.addEventListener('change', function () { setTimeout(postHeight, 80); });
-    if (window.ResizeObserver) {
-        try { new ResizeObserver(postHeight).observe(document.body); } catch (e) {}
-    }
-    setInterval(postHeight, 1000);
+/* ===SCORING_ENGINE_START=== */
+var MCFHS_FMT = (function () {
+  function sign(v){ return v < 0 ? '-' : ''; }
+  return {
+    inr: function (v) { v = Math.round(Number(v) || 0); return sign(v) + '₹' + Math.abs(v).toLocaleString('en-IN'); },
+    short: function (v) {
+      v = Math.round(Number(v) || 0); var s = sign(v), a = Math.abs(v);
+      if (a >= 10000000) return s + '₹' + (a / 10000000).toFixed(2).replace(/\.00$/, '') + ' Cr';
+      if (a >= 100000)   return s + '₹' + (a / 100000).toFixed(1).replace(/\.0$/, '') + ' L';
+      if (a >= 1000)     return s + '₹' + (a / 1000).toFixed(0) + 'k';
+      return s + '₹' + a.toLocaleString('en-IN');
+    },
+    p: function (x) { return (Math.round(x * 1000) / 10).toFixed(1).replace(/\.0$/, '') + '%'; }
+  };
 })();
-</script>
 
+var MCFHS_ENGINE = (function () {
+
+  function r1(x){ return Math.round(x * 10) / 10; }
+  function pct(x){ return Math.round(x * 1000) / 10; }
+
+  /* ---------------------------------------------------------------------
+     BANDS — every scored answer maps to points, a midpoint for ratio
+     display, and a label. Single source of truth for scoring and reporting.
+     --------------------------------------------------------------------- */
+  var B = {
+    dependants: {
+      '0':   { pts:0, n:0, label:'No dependants' },
+      '1-2': { pts:0, n:2, label:'1–2 dependants' },
+      '3-5': { pts:0, n:4, label:'3–5 dependants' },
+      '5+':  { pts:0, n:6, label:'More than 5 dependants' }
+    },
+    /* Cash flow — 20 (invest 12 + expense 8) */
+    investPct: {
+      none:    { pts:0,  mid:0,    label:'Nothing invested' },
+      lt10:    { pts:2,  mid:0.06, label:'Under 10% of income' },
+      p10_20:  { pts:6,  mid:0.15, label:'10–20% of income' },
+      p21_40:  { pts:10, mid:0.30, label:'21–40% of income' },
+      gt40:    { pts:12, mid:0.50, label:'Over 40% of income' }
+    },
+    expensePct: {
+      lt40:    { pts:8,   mid:0.33, label:'Under 40% of income' },
+      p40_50:  { pts:7,   mid:0.45, label:'40–50% of income' },
+      p51_60:  { pts:5.5, mid:0.55, label:'51–60% of income' },
+      p61_75:  { pts:3.5, mid:0.68, label:'61–75% of income' },
+      gt75:    { pts:1.5, mid:0.85, label:'Over 75% of income' },
+      unsure:  { pts:3,   mid:0.60, label:'Not sure' }
+    },
+    /* Emergency — 15 */
+    emergency: {
+      m6:      { pts:15, mid:7,    label:'6 months or more' },
+      m3_5:    { pts:11, mid:4,    label:'3–5 months' },
+      m1_2:    { pts:7,  mid:1.5,  label:'1–2 months' },
+      w1_3:    { pts:3,  mid:0.5,  label:'1–3 weeks' },
+      none:    { pts:0,  mid:0,    label:'No emergency fund' }
+    },
+    /* Debt — 20 (emi 12 + leverage 8) */
+    emiPct: {
+      none:    { pts:12, mid:0,    label:'No loans' },
+      lt20:    { pts:12, mid:0.12, label:'Under 20% of income' },
+      p21_30:  { pts:10, mid:0.25, label:'21–30% of income' },
+      p31_40:  { pts:7.5, mid:0.35, label:'31–40% of income' },
+      p41_60:  { pts:4,  mid:0.50, label:'41–60% of income' },
+      gt60:    { pts:0,  mid:0.70, label:'Over 60% of income' }
+    },
+    leverage: {
+      none:    { pts:8,   mid:0,    label:'No loans' },
+      lt25:    { pts:8,   mid:0.15, label:'Less than a quarter of my assets' },
+      p25_50:  { pts:6,   mid:0.37, label:'A quarter to half of my assets' },
+      p50_100: { pts:3.5, mid:0.75, label:'Half to all of my assets' },
+      gt100:   { pts:0.5, mid:1.4,  label:'More than my assets' },
+      unsure:  { pts:3,   mid:0.5,  label:'Not sure' }
+    },
+    /* Protection — 20 (life 11 + health 9) */
+    lifeMultiple: {
+      none:    { pts:0,  mid:0,  label:'No life cover' },
+      lt5:     { pts:3,  mid:3,  label:'Under 5× annual income' },
+      x5_10:   { pts:6.5, mid:7, label:'5–10× annual income' },
+      x10_15:  { pts:11, mid:12, label:'10–15× annual income' },
+      gt15:    { pts:11, mid:18, label:'Over 15× annual income' },
+      unsure:  { pts:2,  mid:2,  label:'Not sure what my cover is' }
+    },
+    healthCover: {
+      none:    { rupees:0,       label:'No cover of my own' },
+      lt5:     { rupees:300000,  label:'Under ₹5 lakh' },
+      l5_10:   { rupees:750000,  label:'₹5–10 lakh' },
+      l10_20:  { rupees:1500000, label:'₹10–20 lakh' },
+      gt20:    { rupees:2500000, label:'Over ₹20 lakh' }
+    },
+    /* Investments & net worth — 15 (net worth 6 + location 5 + tenure 4) */
+    assetsMultiple: {
+      none:    { mult:0,   label:'Nothing yet' },
+      lt1:     { mult:0.5, label:'Under 1× annual income' },
+      x1_3:    { mult:2,   label:'1–3× annual income' },
+      x3_5:    { mult:4,   label:'3–5× annual income' },
+      x5_10:   { mult:7.5, label:'5–10× annual income' },
+      gt10:    { mult:14,  label:'Over 10× annual income' }
+    },
+    wealthLocation: {
+      nothing: { pts:0,   label:'No savings outside my home' },
+      gold:    { pts:1.5, label:'Gold and silver' },
+      cash:    { pts:2.5, label:'Bank, FDs, PPF, bonds' },
+      realty:  { pts:3.5, label:'Real estate (beyond my own home)' },
+      equity:  { pts:5,   label:'Equity mutual funds, stocks, PMS, AIF' }
+    },
+    tenure: {
+      none:    { pts:0,   label:'Not investing yet' },
+      y1_3:    { pts:1.5, label:'1–3 years' },
+      y3_5:    { pts:2.5, label:'3–5 years' },
+      y5_10:   { pts:3.5, label:'5–10 years' },
+      gt10:    { pts:4,   label:'More than 10 years' }
+    },
+    /* Planning, family & estate — 10 (family 5 + estate 3 + retirement 2) */
+    familyAware: {
+      complete:{ pts:5,   label:'Complete picture' },
+      good:    { pts:4,   label:'Good enough idea' },
+      limited: { pts:2,   label:'Very limited information' },
+      none:    { pts:0,   label:'No idea at all' }
+    },
+    estate: {
+      will_nom:{ pts:3,   label:'Will made, nominations current' },
+      nom:     { pts:1.5, label:'Nominations only' },
+      none:    { pts:0,   label:'Neither' }
+    },
+    retirement: {
+      on_track:{ pts:2,   label:'Systematic, with a target corpus' },
+      started: { pts:1.2, label:'Investing, but no target' },
+      ad_hoc:  { pts:0.6, label:'EPF or ad-hoc only' },
+      none:    { pts:0,   label:'Not started' }
+    },
+    /* Unscored — displayed as a gap against the real score */
+    confidence: {
+      agree_strong: { self:90, label:'Agree strongly' },
+      agree_some:   { self:75, label:'Agree somewhat' },
+      neutral:      { self:55, label:'Neither agree nor disagree' },
+      dis_some:     { self:35, label:'Disagree somewhat' },
+      dis_strong:   { self:15, label:'Disagree strongly' }
+    },
+    /* Profile — unscored, kept for the CRM */
+    income: {
+      lt5:    { mid:350000,   label:'Under ₹5 lakh' },
+      l5_20:  { mid:1200000,  label:'₹5–20 lakh' },
+      l20_50: { mid:3200000,  label:'₹20–50 lakh' },
+      gt50:   { mid:7500000,  label:'Over ₹50 lakh' }
+    },
+    yearsEarning: {
+      y0_5:   { mid:3,  label:'Under 5 years' },
+      y5_10:  { mid:7,  label:'5–10 years' },
+      y10_20: { mid:15, label:'10–20 years' },
+      gt20:   { mid:25, label:'More than 20 years' }
+    }
+  };
+
+  function look(group, key, fallback){
+    var g = B[group];
+    if (g && key && g[key] !== undefined) return g[key];
+    return fallback !== undefined ? fallback : { pts:0, mid:0, label:'Not answered' };
+  }
+  function pts(group, key){ return look(group, key).pts || 0; }
+
+
+  /* ---------------------------------------------------------------------
+     GRADES — single source of truth. The Zoho picklist is generated from
+     this table, so the two can never disagree.
+     --------------------------------------------------------------------- */
+  var GRADES = [
+    { key:'excellent', min:85, label:'Excellent', head:'Financially Fit',
+      msg:'Your finances are in strong shape across the board. The work now is protecting what you have built and optimising it for tax and goal efficiency.',
+      cta:'Keep excelling',
+      ctaLine:'Book a review to make sure your existing investments are still the right ones — and that the structure around them is as strong as the numbers.' },
+    { key:'strong', min:70, label:'Strong', head:'On Track',
+      msg:'Solid foundations with a few clear gaps. Closing two or three of them moves you into the top band.',
+      cta:'Maintain your lead',
+      ctaLine:'Book a review and we will work through the remaining gaps and what advanced planning is now worth doing.' },
+    { key:'fair', min:55, label:'Fair', head:'Needs Tightening',
+      msg:'The basics are partly in place, but there are real gaps that would hurt if something went wrong. All of them are fixable within a few months.',
+      cta:'Ready to optimise?',
+      ctaLine:'Book a free review and we will sequence the fixes — what to do first, what it costs, and what your score should look like in a year.' },
+    { key:'weak', min:40, label:'Needs Attention', head:'Needs Attention',
+      msg:'Several core areas need work, most importantly your safety net and protection. Start with the risks, then build the wealth.',
+      cta:'Do not wait',
+      ctaLine:'Book a free review. The first three fixes below usually take the least money and remove the most risk.' },
+    { key:'critical', min:0, label:'Needs Urgent Action', head:'Needs Urgent Action',
+      msg:'Your finances are carrying real risk right now. The good news is that the first three fixes below usually produce the largest jump in score.',
+      cta:'This needs attention now',
+      ctaLine:'Book a free consultation this week. Nothing here is unfixable, but the protection gaps should not wait.' }
+  ];
+  function gradeFor(total){
+    for (var i = 0; i < GRADES.length; i++) if (total >= GRADES[i].min) return GRADES[i];
+    return GRADES[GRADES.length - 1];
+  }
+
+  var HEALTH_PER_MEMBER = 500000, HEALTH_MIN = 1000000, HEALTH_MAX = 2500000;
+
+  function ageFromDob(dob){
+    if (!dob) return 0;
+    var d = new Date(dob);
+    if (isNaN(d.getTime())) return 0;
+    var t = new Date(), a = t.getFullYear() - d.getFullYear();
+    var m = t.getMonth() - d.getMonth();
+    if (m < 0 || (m === 0 && t.getDate() < d.getDate())) a--;
+    return (a > 0 && a < 110) ? a : 0;
+  }
+
+  /* ------------------------------------------------------------ derive ---- */
+  function derive(a){
+    var age        = a.age ? Number(a.age) : ageFromDob(a.dob);
+    if (!age) age = 35;
+    var deps       = look('dependants', a.dependants, { n:0 }).n || 0;
+    var members    = Math.min(1 + deps, 6);
+    var annualInc  = look('income', a.income, { mid:0 }).mid || 0;
+
+    var savingsRate = look('investPct',  a.investPct).mid;
+    var expenseRate = look('expensePct', a.expensePct).mid;
+    var emiRate     = look('emiPct',     a.emiPct).mid;
+    var efMonths    = look('emergency',  a.emergency).mid;
+    var debtToAsset = look('leverage',   a.leverage).mid;
+    var lifeMult    = look('lifeMultiple', a.lifeMultiple).mid;
+    var healthRup   = look('healthCover', a.healthCover, { rupees:0 }).rupees || 0;
+    var assetMult   = look('assetsMultiple', a.assetsMultiple, { mult:0 }).mult || 0;
+
+    var commitRate  = expenseRate + emiRate;
+    /* A deficit is expenses + EMIs alone eating the income. Investing is
+       discretionary and can be paused, so it must not trip this flag —
+       otherwise picking a better savings band lowers the score. */
+    var deficit      = commitRate >= 0.95;
+    var overcommitted = (commitRate + savingsRate) > 1.05;   // bands do not add up; noted, not scored
+
+    var healthTarget = Math.min(Math.max(HEALTH_PER_MEMBER * members, HEALTH_MIN), HEALTH_MAX);
+    var healthAdeq   = healthTarget > 0 ? healthRup / healthTarget : 0;
+
+    /* Life cover requirement: 10x income plus debt. Not required when there is
+       nobody to protect and nothing to repay, or when assets already cover it. */
+    var lifeRequired = deps > 0 || debtToAsset > 0;
+    var selfInsured  = lifeRequired && assetMult >= 10;
+    if (selfInsured) lifeRequired = false;
+    var lifeTargetMult = 10 + (debtToAsset > 0 ? 2 : 0);
+    var lifeAdequacy   = lifeRequired ? Math.min(lifeMult / lifeTargetMult, 3) : null;
+
+    /* Net worth against the age benchmark (age x annual income / 10),
+       expressed as multiples so it works without rupee inputs. */
+    var expectedMult = age / 10;
+    var nwRatio      = expectedMult > 0 ? assetMult / expectedMult : null;
+
+    /* Retirement: 25x annual outflow, in today's money. */
+    var retireTargetMult = commitRate > 0 ? commitRate * 25 : 0;
+    var retireProgress   = retireTargetMult > 0 ? assetMult / retireTargetMult : 0;
+
+    return {
+      age:age, dependants:deps, members:members, annualIncome:annualInc,
+      savingsRate:savingsRate, expenseRate:expenseRate, emiRate:emiRate,
+      commitRate:commitRate, surplusRate: 1 - commitRate - savingsRate, deficit:deficit, overcommitted:overcommitted,
+      efMonths:efMonths, debtToAsset:debtToAsset,
+      lifeMult:lifeMult, lifeTargetMult:lifeTargetMult, lifeRequired:lifeRequired,
+      selfInsured:selfInsured, lifeAdequacy:lifeAdequacy,
+      healthRupees:healthRup, healthTarget:healthTarget, healthAdequacy:healthAdeq,
+      assetMult:assetMult, expectedMult:expectedMult, nwRatio:nwRatio,
+      retireTargetMult:retireTargetMult, retireProgress:retireProgress,
+      selfRating: look('confidence', a.confidence, { self:null }).self
+    };
+  }
+
+  /* ------------------------------------------------------------- score ---- */
+  function score(a){
+    var R = derive(a), P = {}, notes = {};
+
+    P.cashflow = pts('investPct', a.investPct) + pts('expensePct', a.expensePct);
+    if (R.deficit){ P.cashflow = Math.min(P.cashflow, 6); notes.deficit = true; }
+    if (R.overcommitted) notes.overcommitted = true;
+
+    P.emergency = pts('emergency', a.emergency);
+
+    P.debt = pts('emiPct', a.emiPct) + pts('leverage', a.leverage);
+
+    var lifePts;
+    if (!R.lifeRequired){ lifePts = 11; notes.lifeNA = true; if (R.selfInsured) notes.selfInsured = true; }
+    else lifePts = pts('lifeMultiple', a.lifeMultiple);
+    var healthPts = R.healthAdequacy >= 1   ? 9
+                  : R.healthAdequacy >= 0.7 ? 7
+                  : R.healthAdequacy >= 0.5 ? 5
+                  : R.healthAdequacy >= 0.3 ? 3
+                  : R.healthAdequacy > 0    ? 1.5 : 0;
+    P.protection = lifePts + healthPts;
+
+    var nwPts = R.nwRatio === null ? 3
+              : R.nwRatio >= 1.5 ? 6
+              : R.nwRatio >= 1   ? 5.5
+              : R.nwRatio >= 0.6 ? 4.5
+              : R.nwRatio >= 0.3 ? 3
+              : R.nwRatio > 0    ? 1.5 : 0;
+    P.investments = nwPts + pts('wealthLocation', a.wealthLocation) + pts('tenure', a.tenure);
+
+    P.planning = pts('familyAware', a.familyAware) + pts('estate', a.estate) + pts('retirement', a.retirement);
+
+    var total = P.cashflow + P.emergency + P.debt + P.protection + P.investments + P.planning;
+    total = Math.max(0, Math.min(100, Math.round(total)));
+
+    var grade = gradeFor(total);
+
+    /* confidence vs reality */
+    var gap = null;
+    if (R.selfRating !== null && R.selfRating !== undefined) gap = R.selfRating - total;
+
+    return { ratios:R, pillars:P, total:total, grade:grade, notes:notes, gap:gap, raw:a };
+  }
+
+  var PILLARS = [
+    { key:'cashflow',    name:'Cash flow & savings',           max:20 },
+    { key:'emergency',   name:'Emergency preparedness',        max:15 },
+    { key:'debt',        name:'Debt management',               max:20 },
+    { key:'protection',  name:'Protection (life & health)',    max:20 },
+    { key:'investments', name:'Investments & net worth',       max:15 },
+    { key:'planning',    name:'Planning, family & estate',     max:10 }
+  ];
+
+  /* ----------------------------------------------------------- actions ---- */
+  function actions(S){
+    var R = S.ratios, a = S.raw, out = [];
+    function add(gap, title, detail){ out.push({ gap:gap, title:title, detail:detail }); }
+    var incTxt = R.annualIncome ? ' (roughly ' + MCFHS_FMT.short(R.annualIncome) + ' a year on the band you selected)' : '';
+
+    if (S.notes.deficit){
+      add(40, 'Close the monthly gap before anything else',
+        'Living expenses and EMIs together are consuming almost all of your income, which leaves nothing to absorb a surprise and nothing to invest. Nothing else in this report matters until that is corrected — either expenses come down, or the most expensive loan gets cleared or refinanced. This is the one item worth acting on this month.');
+    }
+    if (R.efMonths < 6){
+      add((6 - R.efMonths) * 2.6,
+        'Build the emergency fund to six months',
+        'You are holding about ' + (R.efMonths >= 1 ? Math.round(R.efMonths) + ' month' + (Math.round(R.efMonths) === 1 ? '' : 's') : 'less than a month') +
+        ' of committed outflow in accessible form. Six months is the target, and it belongs in a liquid or overnight fund — not equity, not a locked FD — so a job change or a medical event never forces you to sell investments at the wrong time.');
+    }
+    if (R.lifeRequired && (R.lifeAdequacy === null || R.lifeAdequacy < 1)){
+      var have = a.lifeMultiple === 'unsure' ? 'You are not sure what your cover is, which is itself worth fixing this week. '
+               : 'Your cover is around ' + R.lifeMult + '× annual income. ';
+      add(11 * (1 - Math.min(R.lifeAdequacy || 0, 1)),
+        'Raise life cover to about ' + R.lifeTargetMult + '× your annual income',
+        have + 'With ' + (R.dependants ? R.dependants + ' people depending on your income' : 'outstanding loans to clear') +
+        ', the requirement is roughly ' + R.lifeTargetMult + '× annual income' + incTxt +
+        '. A pure term plan is the cheapest way to close this — never an endowment or ULIP, which bundle poor returns into the premium.');
+    }
+    if (R.healthAdequacy < 1){
+      add(9 * (1 - Math.min(R.healthAdequacy, 1)),
+        'Take health cover of at least ' + MCFHS_FMT.short(R.healthTarget) + ' of your own',
+        'For a family of ' + R.members + ', ' + MCFHS_FMT.short(R.healthTarget) +
+        ' is the realistic minimum at current hospitalisation costs. Employer cover does not count here because it disappears the day you change jobs or retire — usually the age at which fresh cover becomes expensive or impossible. A super top-up over a modest base policy is normally the cheapest route.');
+    }
+    if (R.emiRate > 0.30){
+      add((R.emiRate - 0.30) * 45,
+        'Bring EMIs under 30% of income',
+        'Your EMIs fall in the ' + look('emiPct', a.emiPct).label.toLowerCase() +
+        ' band, against a safe ceiling of 40% and a comfortable level below 30%. Clear the most expensive debt first — credit cards and personal loans well before the home loan — and avoid new borrowing until this is inside the range.');
+    }
+    if (R.savingsRate < 0.20){
+      add((0.20 - R.savingsRate) * 45,
+        'Push long-term investing towards 20% of income',
+        'You are investing in the ' + look('investPct', a.investPct).label.toLowerCase() +
+        ' band. Twenty per cent is the level at which goals start funding themselves. The reliable way to get there is a SIP dated the day after your salary credits, so it happens before the money is available to spend.');
+    }
+    if (a.familyAware === 'none' || a.familyAware === 'limited'){
+      add(10,
+        'Make sure your family can find everything',
+        'You told us your family has ' + (a.familyAware === 'none' ? 'no idea' : 'very limited information') +
+        ' about your financial affairs. This is the most common and most damaging gap we see, and it costs nothing to fix: one consolidated statement of every account, policy, folio and loan, kept where your spouse can reach it, with nominations current. We build this for clients as a matter of course.');
+    }
+    if (a.estate === 'none'){
+      add(6, 'Write a will and update every nomination',
+        'Nominees are custodians, not owners — a nomination alone does not decide who inherits. Without a will, succession law does, which is rarely what people assume. A simple registered will and a nomination review across all folios, policies and accounts is a single afternoon\'s work.');
+    }
+    if (R.nwRatio !== null && R.nwRatio < 1 && R.assetMult >= 0){
+      add(6 * (1 - Math.max(R.nwRatio, 0)),
+        'Close the net-worth gap for your age',
+        'At ' + R.age + ', the working benchmark is roughly ' + (Math.round(R.expectedMult * 10) / 10) +
+        '× your annual income in investible assets. You are at about ' + R.assetMult +
+        '×. This is almost always a savings-rate problem rather than a returns problem — the fix is the amount invested each month, not chasing a better fund.');
+    }
+    if (a.wealthLocation === 'cash' || a.wealthLocation === 'gold' || a.wealthLocation === 'realty' || a.wealthLocation === 'nothing'){
+      add(5, 'Fix where your money actually sits', allocAdvice(a.wealthLocation));
+    }
+    if (a.retirement === 'none' || a.retirement === 'ad_hoc'){
+      add(4, 'Put a number on retirement',
+        'Retirement is the one goal with no loan available for it. Until there is a target corpus and a monthly figure attached to it, EPF alone will not get most households there. Working out that number takes about twenty minutes.');
+    }
+    if (R.debtToAsset > 0.60){
+      add(4, 'Reduce overall leverage',
+        'Your borrowings sit in the "' + look('leverage', a.leverage).label.toLowerCase() +
+        '" band. Above roughly 60% you have very little cushion if asset values fall or income pauses. Prioritise principal prepayment on the costliest loan.');
+    }
+
+    out.sort(function(x, y){ return y.gap - x.gap; });
+    return out.slice(0, 6);
+  }
+
+  function allocAdvice(where){
+    if (where === 'cash')
+      return 'The bulk of your wealth sits in banks, FDs, PPF and bonds. After tax and 5–6% inflation that is close to zero real return, and over twenty years the difference against equity is not small — it is most of the corpus. Money you will not need for seven years or more belongs in equity mutual funds; keep deposits for the emergency fund and near-term goals only.';
+    if (where === 'gold')
+      return 'Gold and silver dominate your wealth. They hedge currency and crisis well, but they compound nothing and produce no income. A 5–10% allocation is sensible; beyond that it is dead weight against goals that need growth.';
+    if (where === 'realty')
+      return 'Your wealth is concentrated in property — illiquid, impossible to exit partially, expensive to maintain, and hard to value honestly. Build a liquid financial portfolio alongside it so that goals can be funded without having to sell a flat at whatever price the market offers that month.';
+    return 'You have no savings outside your home. That makes the home the entire plan, and a home cannot be partially sold to fund a child\'s education or a medical emergency. Even a small monthly SIP started now changes the trajectory more than any later lump sum.';
+  }
+
+  /* --------------------------------------------------------- strengths ---- */
+  function strengths(S){
+    var R = S.ratios, a = S.raw, out = [];
+    if (R.savingsRate >= 0.20) out.push('Investing 20%+ of income');
+    if (R.efMonths >= 6) out.push('Fully funded emergency fund');
+    if (a.emiPct === 'none' && a.leverage === 'none') out.push('Completely debt-free');
+    else if (R.emiRate > 0 && R.emiRate <= 0.30) out.push('EMIs comfortably under control');
+    if (!R.lifeRequired && R.selfInsured) out.push('Effectively self-insured');
+    else if (R.lifeAdequacy !== null && R.lifeAdequacy >= 1) out.push('Adequate life cover');
+    if (R.healthAdequacy >= 1) out.push('Adequate health cover');
+    if (R.nwRatio !== null && R.nwRatio >= 1) out.push('Net worth ahead of the age benchmark');
+    if (a.wealthLocation === 'equity') out.push('Wealth in growth assets');
+    if (a.tenure === 'gt10') out.push('Over 10 years of investing discipline');
+    else if (a.tenure === 'y5_10') out.push('5+ years of investing discipline');
+    if (a.familyAware === 'complete' || a.familyAware === 'good') out.push('Family knows where everything is');
+    if (a.estate === 'will_nom') out.push('Will and nominations in place');
+    if (a.retirement === 'on_track') out.push('Retirement on track');
+    return out;
+  }
+
+  return { derive:derive, score:score, actions:actions, strengths:strengths,
+           PILLARS:PILLARS, BANDS:B, GRADES:GRADES, gradeFor:gradeFor,
+           look:look, pct:pct, r1:r1, ageFromDob:ageFromDob };
+})();
+/* ===SCORING_ENGINE_END=== */
+
+
+/* =====================================================================
+   QUESTIONS — every scored answer is a tap, no typing
+   ===================================================================== */
+var MCFHS_STEPS = [
+  {
+    label: 'About you',
+    title: 'First, a little context',
+    sub: 'These four shape every benchmark that follows. None of them are scored.',
+    fields: [
+      { id:'dob', type:'date', label:'Date of birth', hint:'Used to benchmark your net worth against your age.', required:true },
+      { id:'dependants', type:'select', label:'How many people depend on your income?', required:true,
+        hint:'Spouse, children, parents — anyone who would face a shortfall if your income stopped. This sets your insurance requirement; it does not cost you points.',
+        options:[ {v:'0',t:'No one'}, {v:'1-2',t:'1–2 people'}, {v:'3-5',t:'3–5 people'}, {v:'5+',t:'More than 5'} ] },
+      { id:'occupation', type:'select', label:'What do you do?', required:true,
+        options:[ {v:'salaried',t:'Salaried'}, {v:'business',t:'Business owner'}, {v:'professional',t:'Professional practice'}, {v:'other',t:'Other'} ] },
+      { id:'yearsEarning', type:'select', label:'How long have you been earning?', required:true,
+        options:[ {v:'y0_5',t:'Under 5 years'}, {v:'y5_10',t:'5–10 years'}, {v:'y10_20',t:'10–20 years'}, {v:'gt20',t:'More than 20 years'} ] },
+      { id:'income', type:'select', label:'Annual household income', required:true,
+        hint:'Bands only, and it is deliberately not scored — earning more is not the same as being financially healthy. It is used to size your insurance and net-worth benchmarks.',
+        options:[ {v:'lt5',t:'Under ₹5 lakh'}, {v:'l5_20',t:'₹5–20 lakh'}, {v:'l20_50',t:'₹20–50 lakh'}, {v:'gt50',t:'Over ₹50 lakh'} ] }
+    ]
+  },
+  {
+    label: 'Money in, money out',
+    title: 'Where your monthly income goes',
+    sub: 'Rough shares are fine — pick the band that feels closest.',
+    fields: [
+      { id:'investPct', type:'options', label:'What share of your monthly income do you invest for long-term goals?',
+        hint:'SIPs, PPF, NPS, your EPF contribution — anything set aside for goals more than three years away. Not insurance premiums, not EMIs.', required:true,
+        options:[
+          { v:'gt40',   t:'Over 40% of income' },
+          { v:'p21_40', t:'21–40% of income' },
+          { v:'p10_20', t:'10–20% of income' },
+          { v:'lt10',   t:'Under 10% of income' },
+          { v:'none',   t:'I am not investing anything' } ] },
+      { id:'expensePct', type:'options', label:'What share goes on household expenses?',
+        hint:'Everything you spend on living — excluding loan EMIs and excluding what you invest.', required:true,
+        options:[
+          { v:'lt40',   t:'Under 40% of income' },
+          { v:'p40_50', t:'40–50% of income' },
+          { v:'p51_60', t:'51–60% of income' },
+          { v:'p61_75', t:'61–75% of income' },
+          { v:'gt75',   t:'Over 75% of income' },
+          { v:'unsure', t:'I have never worked it out' } ] }
+    ]
+  },
+  {
+    label: 'Safety net & debt',
+    title: 'What happens if income stops for six months',
+    sub: 'The two questions that decide whether a bad year is an inconvenience or a crisis.',
+    fields: [
+      { id:'emergency', type:'options', label:'How much of your monthly outgo could your emergency fund cover?',
+        hint:'Only money you can reach within a day or two without penalty — savings account, liquid funds, sweep-in FDs. Not equity, not PPF, not your home.', required:true,
+        options:[
+          { v:'m6',   t:'6 months or more' },
+          { v:'m3_5', t:'3–5 months' },
+          { v:'m1_2', t:'1–2 months' },
+          { v:'w1_3', t:'1–3 weeks' },
+          { v:'none', t:'I have no emergency fund' } ] },
+      { id:'emiPct', type:'options', label:'What share of your monthly income goes on EMIs?',
+        hint:'Home, car, personal, education and credit-card EMIs together.', required:true,
+        options:[
+          { v:'none',   t:'I have no loans' },
+          { v:'lt20',   t:'Under 20% of income' },
+          { v:'p21_30', t:'21–30% of income' },
+          { v:'p31_40', t:'31–40% of income' },
+          { v:'p41_60', t:'41–60% of income' },
+          { v:'gt60',   t:'Over 60% of income' } ] },
+      { id:'leverage', type:'options', label:'How large are your outstanding loans against everything you own?',
+        hint:'Total principal still owed, compared with the total value of your investments and property.', required:true,
+        options:[
+          { v:'none',    t:'No loans at all' },
+          { v:'lt25',    t:'Less than a quarter of my assets' },
+          { v:'p25_50',  t:'A quarter to half of my assets' },
+          { v:'p50_100', t:'Half to all of my assets' },
+          { v:'gt100',   t:'More than everything I own' },
+          { v:'unsure',  t:'Not sure' } ] }
+    ]
+  },
+  {
+    label: 'Protection',
+    title: 'What happens if something goes badly wrong',
+    sub: 'The most common gap we find, and the cheapest one to close.',
+    fields: [
+      { id:'lifeMultiple', type:'options', label:'How large is your life cover, as a multiple of annual income?',
+        hint:'Add up the sum assured across term plans, endowment, ULIP and employer group cover — then divide by your annual income. The payout amount, not the premium.', required:true,
+        options:[
+          { v:'gt15',   t:'Over 15× annual income' },
+          { v:'x10_15', t:'10–15× annual income' },
+          { v:'x5_10',  t:'5–10× annual income' },
+          { v:'lt5',    t:'Under 5× annual income' },
+          { v:'none',   t:'I have no life cover' },
+          { v:'unsure', t:'I am not sure what my cover is' } ] },
+      { id:'healthCover', type:'options', label:'How much health cover do you have of your own, over and above employer insurance?',
+        hint:'Employer cover is excluded on purpose — it ends the day you change jobs or retire, which is exactly when fresh cover gets expensive or impossible.', required:true,
+        options:[
+          { v:'gt20',   t:'Over ₹20 lakh' },
+          { v:'l10_20', t:'₹10–20 lakh' },
+          { v:'l5_10',  t:'₹5–10 lakh' },
+          { v:'lt5',    t:'Under ₹5 lakh' },
+          { v:'none',   t:'None of my own' } ] }
+    ]
+  },
+  {
+    label: 'Your wealth',
+    title: 'What you have built so far',
+    sub: 'Excluding the home you live in.',
+    fields: [
+      { id:'assetsMultiple', type:'options', label:'Roughly how much do you hold in investments, as a multiple of annual income?',
+        hint:'Mutual funds, stocks, EPF, PPF, NPS, FDs, bonds, gold and investment property added together. Exclude the home you live in.', required:true,
+        options:[
+          { v:'gt10',  t:'Over 10× annual income' },
+          { v:'x5_10', t:'5–10× annual income' },
+          { v:'x3_5',  t:'3–5× annual income' },
+          { v:'x1_3',  t:'1–3× annual income' },
+          { v:'lt1',   t:'Under 1× annual income' },
+          { v:'none',  t:'Nothing yet' } ] },
+      { id:'wealthLocation', type:'options', label:'Where does the largest share of that wealth sit?',
+        hint:'Excluding your primary residence.', required:true,
+        options:[
+          { v:'equity',  t:'Equity mutual funds, stocks, PMS or AIF' },
+          { v:'realty',  t:'Real estate beyond my own home' },
+          { v:'cash',    t:'Bank, fixed deposits, PPF, bonds' },
+          { v:'gold',    t:'Gold and silver' },
+          { v:'nothing', t:'I have no savings outside my home' } ] },
+      { id:'tenure', type:'options', label:'How long have you been investing?',
+        hint:'Not counting your home loan or bank deposits. Sitting through a market fall without selling is a skill, and it counts.', required:true,
+        options:[
+          { v:'gt10',  t:'More than 10 years' },
+          { v:'y5_10', t:'5–10 years' },
+          { v:'y3_5',  t:'3–5 years' },
+          { v:'y1_3',  t:'1–3 years' },
+          { v:'none',  t:'I have not started' } ] }
+    ]
+  },
+  {
+    label: 'Family & planning',
+    title: 'The part almost everyone skips',
+    sub: 'Four questions. Then we calculate your score.',
+    fields: [
+      { id:'familyAware', type:'options',
+        label:'If you were no longer here tomorrow, how well could your family handle your financial affairs?',
+        hint:'Would they know which accounts, folios, policies and loans exist, and how to reach them?', required:true,
+        options:[
+          { v:'complete', t:'They have the complete picture', d:'Every account, policy and folio, and how to access them' },
+          { v:'good',     t:'They have a good enough idea', d:'They would find most of it without much difficulty' },
+          { v:'limited',  t:'They have very limited information', d:'They know some of it exists but not where' },
+          { v:'none',     t:'They would have no idea', d:'It is all in my head or my inbox' } ] },
+      { id:'estate', type:'options', label:'Will and nominations', required:true,
+        options:[
+          { v:'will_nom', t:'Will made and nominations current', d:'Both in place and up to date' },
+          { v:'nom',      t:'Nominations only', d:'No will yet' },
+          { v:'none',     t:'Neither', d:'Not done' } ] },
+      { id:'retirement', type:'options', label:'Where are you on retirement planning?', required:true,
+        options:[
+          { v:'on_track', t:'Systematic, with a target corpus', d:'I know the number and invest towards it monthly' },
+          { v:'started',  t:'Investing, but no target',         d:'Regular investing without a corpus figure' },
+          { v:'ad_hoc',   t:'EPF or ad-hoc only',               d:'Whatever happens through work or occasional savings' },
+          { v:'none',     t:'Not started',                      d:'Haven\'t got to it yet' } ] },
+      { id:'confidence', type:'options', label:'"I am financially secure." How much do you agree?', required:true,
+        hint:'Not scored. We show it next to your actual score, because the gap between the two is usually the most useful line in the report.',
+        options:[
+          { v:'agree_strong', t:'Agree strongly' },
+          { v:'agree_some',   t:'Agree somewhat' },
+          { v:'neutral',      t:'Neither agree nor disagree' },
+          { v:'dis_some',     t:'Disagree somewhat' },
+          { v:'dis_strong',   t:'Disagree strongly' } ] }
+    ]
+  }
+];
+
+
+/* =====================================================================
+   UI
+   ===================================================================== */
+(function () {
+  var A = {}, step = 0, LAST = null;
+  var elSteps  = document.getElementById('mcfhs-steps');
+  var elLabel  = document.getElementById('mcfhs-steplabel');
+  var elCount  = document.getElementById('mcfhs-stepcount');
+  var elBar    = document.getElementById('mcfhs-barfill');
+  var elBack   = document.getElementById('mcfhs-back');
+  var elNext   = document.getElementById('mcfhs-next');
+  var elForm   = document.getElementById('mcfhs-form');
+  var elResult = document.getElementById('mcfhs-result');
+  var L = MCFHS_ENGINE.look;
+  document.getElementById('mcfhs-yr').textContent = new Date().getFullYear();
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){
+    return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); }
+
+  /* ---------------- render ---------------- */
+  function fieldHTML(f){
+    var h = '<div class="mcfhs-q" data-q="' + f.id + '">';
+    h += '<div class="mcfhs-qlabel">' + esc(f.label) + '</div>';
+    if (f.hint) h += '<p class="mcfhs-hint">' + esc(f.hint) + '</p>';
+
+    if (f.type === 'date'){
+      h += '<input type="date" id="f_' + f.id + '" max="' + new Date().toISOString().slice(0,10) + '" ' +
+           'value="' + (A[f.id] || '') + '">';
+    } else if (f.type === 'select'){
+      h += '<select id="f_' + f.id + '"><option value="">Select…</option>';
+      f.options.forEach(function(o){
+        h += '<option value="' + o.v + '"' + (A[f.id] === o.v ? ' selected' : '') + '>' + esc(o.t) + '</option>';
+      });
+      h += '</select>';
+    } else if (f.type === 'options'){
+      h += '<div class="mcfhs-opts">';
+      f.options.forEach(function(o){
+        var sel = A[f.id] === o.v;
+        h += '<label class="mcfhs-opt' + (sel ? ' sel' : '') + '" data-opt="' + f.id + '" data-val="' + o.v + '">' +
+             '<input type="radio" name="' + f.id + '" value="' + o.v + '"' + (sel ? ' checked' : '') + '>' +
+             '<span class="mcfhs-dot"></span><span class="mcfhs-opttxt"><b>' + esc(o.t) + '</b>' +
+             (o.d ? '<span>' + esc(o.d) + '</span>' : '') + '</span></label>';
+      });
+      h += '</div>';
+    }
+    h += '<div class="mcfhs-errmsg" id="e_' + f.id + '">Please choose one.</div></div>';
+    return h;
+  }
+
+  function render(){
+    var s = MCFHS_STEPS[step];
+    var h = '<h2 class="mcfhs-steptitle">' + esc(s.title) + '</h2>' +
+            '<p class="mcfhs-stepsub">' + esc(s.sub) + '</p>';
+    var pairable = s.fields.every(function(f){ return f.type === 'date' || f.type === 'select'; });
+    if (pairable && s.fields.length > 1) h += '<div class="mcfhs-grid2">';
+    s.fields.forEach(function(f){ h += fieldHTML(f); });
+    if (pairable && s.fields.length > 1) h += '</div>';
+    elSteps.innerHTML = h;
+
+    elLabel.textContent = s.label;
+    elCount.textContent = 'Step ' + (step + 1) + ' of ' + MCFHS_STEPS.length;
+    elBar.style.width = ((step + 1) / MCFHS_STEPS.length * 100) + '%';
+    elBack.style.visibility = step === 0 ? 'hidden' : 'visible';
+    elNext.innerHTML = step === MCFHS_STEPS.length - 1 ? 'Calculate my score →' : 'Continue →';
+
+    wire();
+    var card = document.getElementById('mcfhs-card');
+    if (card && step > 0) card.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  function clearErr(id){
+    var i = document.getElementById('f_' + id); if (i) i.classList.remove('mcfhs-err');
+    var e = document.getElementById('e_' + id); if (e) e.classList.remove('on');
+  }
+
+  function wire(){
+    Array.prototype.forEach.call(elSteps.querySelectorAll('select, input[type=date]'), function(inp){
+      inp.addEventListener('change', function(){ A[inp.id.slice(2)] = inp.value; clearErr(inp.id.slice(2)); });
+    });
+    Array.prototype.forEach.call(elSteps.querySelectorAll('[data-opt]'), function(lab){
+      lab.addEventListener('click', function(){
+        var id = lab.getAttribute('data-opt');
+        A[id] = lab.getAttribute('data-val');
+        Array.prototype.forEach.call(elSteps.querySelectorAll('[data-opt="' + id + '"]'), function(l){ l.classList.remove('sel'); });
+        lab.classList.add('sel');
+        clearErr(id);
+      });
+    });
+  }
+
+  function validate(){
+    var ok = true, first = null;
+    MCFHS_STEPS[step].fields.forEach(function(f){
+      if (!f.required) return;
+      var v = A[f.id], bad = !v;
+      if (!bad && f.type === 'date'){
+        var age = MCFHS_ENGINE.ageFromDob(v);
+        if (age < 18 || age > 90) bad = true;
+      }
+      if (bad){
+        ok = false;
+        var inp = document.getElementById('f_' + f.id); if (inp) inp.classList.add('mcfhs-err');
+        var e = document.getElementById('e_' + f.id);
+        if (e){
+          e.textContent = f.type === 'date' ? 'Please enter a date of birth between 18 and 90 years ago.' : 'Please choose one.';
+          e.classList.add('on');
+        }
+        if (!first) first = document.querySelector('[data-q="' + f.id + '"]');
+      }
+    });
+    if (first) first.scrollIntoView({ behavior:'smooth', block:'center' });
+    return ok;
+  }
+
+  elNext.addEventListener('click', function(){
+    if (!validate()) return;
+    if (step < MCFHS_STEPS.length - 1){ step++; render(); } else finish();
+  });
+  elBack.addEventListener('click', function(){ if (step > 0){ step--; render(); } });
+
+  /* ---------------- results ---------------- */
+  function finish(){
+    var S = MCFHS_ENGINE.score(A);
+    LAST = S;
+    elForm.classList.add('mcfhs-hidden');
+    elResult.classList.remove('mcfhs-hidden');
+    elResult.innerHTML = resultHTML(S);
+    wireResult(S);
+    document.getElementById('mcfhs-card').scrollIntoView({ behavior:'smooth', block:'start' });
+    setTimeout(function(){ animate(S); }, 120);
+  }
+
+  function tagFor(state){
+    return state === 'good' ? '<span class="mcfhs-tag t-good">On track</span>'
+         : state === 'ok'   ? '<span class="mcfhs-tag t-ok">Improve</span>'
+         : state === 'bad'  ? '<span class="mcfhs-tag t-bad">Act now</span>'
+         : '<span class="mcfhs-tag t-na">Not applicable</span>';
+  }
+
+  function ratioRows(S){
+    var R = S.ratios, a = S.raw, rows = [];
+    function row(name, sub, val, bench, state){ rows.push({ name:name, sub:sub, val:val, bench:bench, state:state }); }
+
+    row('Savings rate', 'Share of income invested for long-term goals', L('investPct', a.investPct).label, '20% or more',
+        R.savingsRate >= .20 ? 'good' : R.savingsRate >= .10 ? 'ok' : 'bad');
+    row('Expense ratio', 'Share of income spent on living', L('expensePct', a.expensePct).label, '50% or less',
+        R.expenseRate <= .50 ? 'good' : R.expenseRate <= .70 ? 'ok' : 'bad');
+    row('EMI to income', 'Share of income going to loan repayment', L('emiPct', a.emiPct).label, '30% or less',
+        R.emiRate <= .30 ? 'good' : R.emiRate <= .40 ? 'ok' : 'bad');
+    row('Committed outflow', 'Expenses and EMIs together', MCFHS_FMT.p(R.commitRate) + ' of income', '70% or less',
+        R.commitRate <= .70 ? 'good' : R.commitRate <= .85 ? 'ok' : 'bad');
+    row('Monthly surplus', 'What is left after living, EMIs and investing',
+        R.surplusRate < 0 ? 'Negative — you are overcommitted' : MCFHS_FMT.p(Math.max(R.surplusRate, 0)) + ' of income', 'Above zero',
+        R.surplusRate >= .05 ? 'good' : R.surplusRate >= 0 ? 'ok' : 'bad');
+    row('Emergency fund', 'Liquid money against monthly commitments', L('emergency', a.emergency).label, '6 months or more',
+        R.efMonths >= 6 ? 'good' : R.efMonths >= 3 ? 'ok' : 'bad');
+    row('Debt to assets', 'Outstanding loans against everything you own', L('leverage', a.leverage).label, 'Under a quarter',
+        R.debtToAsset <= .25 ? 'good' : R.debtToAsset <= .60 ? 'ok' : 'bad');
+    if (!R.lifeRequired)
+      row('Life cover', R.selfInsured ? 'Your assets already exceed what your family would need' : 'No dependants and no loans to repay',
+          R.selfInsured ? 'Self-insured' : 'Not required', '—', 'na');
+    else
+      row('Life cover adequacy', 'Cover as a multiple of annual income',
+          a.lifeMultiple === 'unsure' ? 'Unknown' : L('lifeMultiple', a.lifeMultiple).label,
+          R.lifeTargetMult + '× income',
+          (R.lifeAdequacy || 0) >= 1 ? 'good' : (R.lifeAdequacy || 0) >= .5 ? 'ok' : 'bad');
+    row('Health cover adequacy', 'Your own cover against the floater a family of ' + R.members + ' needs',
+        L('healthCover', a.healthCover).label, MCFHS_FMT.short(R.healthTarget),
+        R.healthAdequacy >= 1 ? 'good' : R.healthAdequacy >= .5 ? 'ok' : 'bad');
+    row('Net worth for your age', 'Investible assets as a multiple of annual income',
+        L('assetsMultiple', a.assetsMultiple).label,
+        (Math.round(R.expectedMult * 10) / 10) + '× at age ' + R.age,
+        R.nwRatio === null ? 'na' : R.nwRatio >= 1 ? 'good' : R.nwRatio >= .5 ? 'ok' : 'bad');
+    row('Retirement readiness', 'Assets against 25× annual outflow, in today\'s money',
+        MCFHS_FMT.p(Math.min(R.retireProgress, 3)), '100% by retirement',
+        R.retireProgress >= .5 ? 'good' : R.retireProgress >= .2 ? 'ok' : 'bad');
+    row('Wealth concentration', 'Where the largest share of your money sits',
+        L('wealthLocation', a.wealthLocation).label, 'Growth assets for long-term money',
+        a.wealthLocation === 'equity' ? 'good' : (a.wealthLocation === 'realty' || a.wealthLocation === 'cash') ? 'ok' : 'bad');
+    row('Investing experience', 'How long you have stayed invested', L('tenure', a.tenure).label, '5 years or more',
+        (a.tenure === 'gt10' || a.tenure === 'y5_10') ? 'good' : (a.tenure === 'y3_5' || a.tenure === 'y1_3') ? 'ok' : 'bad');
+    row('Family preparedness', 'Could your family handle your finances without you',
+        L('familyAware', a.familyAware).label, 'Complete picture',
+        (a.familyAware === 'complete' || a.familyAware === 'good') ? 'good' : a.familyAware === 'limited' ? 'ok' : 'bad');
+    return rows;
+  }
+
+  function gapBlock(S){
+    if (S.gap === null || S.gap === undefined) return '';
+    var g = S.gap, a = S.raw;
+    var big = Math.abs(g) >= 20;
+    var head, body, cls;
+    if (g >= 20){
+      cls = 'bad';
+      head = 'You feel more secure than the numbers support';
+      body = 'You told us you ' + L('confidence', a.confidence).label.toLowerCase() +
+             ' that you are financially secure — a self-rating of about ' + S.ratios.selfRating +
+             ' out of 100 against a measured score of ' + S.total +
+             '. That gap of ' + Math.round(g) + ' points is the single most useful line in this report. It is almost always caused by one or two invisible gaps — usually protection or the emergency fund — that feel fine right up until the day they do not.';
+    } else if (g <= -20){
+      cls = 'good';
+      head = 'You are in better shape than you think';
+      body = 'You rated your own security at about ' + S.ratios.selfRating + ' out of 100, but you measured ' + S.total +
+             '. Being harder on yourself than the numbers warrant is a far better problem than the reverse, though it does have a cost: unnecessary worry, and sometimes over-saving into low-return assets when the money could be working harder.';
+    } else {
+      cls = 'ok';
+      head = 'Your instincts match your numbers';
+      body = 'You rated your own security at about ' + S.ratios.selfRating + ' out of 100 and measured ' + S.total +
+             '. A close match means you have an accurate picture of your own position, which makes every decision from here easier.';
+    }
+    return '<div class="mcfhs-sec"><h3>Confidence against reality</h3>' +
+           '<p class="mcfhs-secsub">The one question we did not score.</p>' +
+           '<div class="mcfhs-gapbox ' + cls + '">' +
+           '<div class="mcfhs-gapnums"><div><b>' + S.ratios.selfRating + '</b><span>How secure you feel</span></div>' +
+           '<div class="mcfhs-gaparrow">' + (big ? '↔' : '≈') + '</div>' +
+           '<div><b>' + S.total + '</b><span>Measured score</span></div></div>' +
+           '<div class="mcfhs-gaptxt"><b>' + esc(head) + '</b><span>' + esc(body) + '</span></div></div></div>';
+  }
+
+  function resultHTML(S){
+    var gColors = { excellent:'var(--mc-green)', strong:'#3BAE7C', fair:'var(--mc-amber)', weak:'#E07B39', critical:'var(--mc-red)' };
+    var gBg = { excellent:'rgba(14,159,110,.18)', strong:'rgba(59,174,124,.18)', fair:'rgba(217,138,0,.20)',
+                weak:'rgba(224,123,57,.22)', critical:'rgba(214,69,69,.20)' };
+    var col = gColors[S.grade.key], bg = gBg[S.grade.key];
+    var h = '';
+
+    h += '<div class="mcfhs-resulthead">' +
+         '<div class="mcfhs-gauge"><svg width="190" height="190" viewBox="0 0 190 190">' +
+         '<circle cx="95" cy="95" r="80" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="14"/>' +
+         '<circle id="mcfhs-arc" cx="95" cy="95" r="80" fill="none" stroke="' + col + '" stroke-width="14" ' +
+         'stroke-linecap="round" stroke-dasharray="' + (2 * Math.PI * 80) + '" stroke-dashoffset="' + (2 * Math.PI * 80) + '" ' +
+         'style="transition:stroke-dashoffset 1.3s cubic-bezier(.2,.7,.3,1)"/></svg>' +
+         '<div class="mcfhs-gauge-c"><div class="mcfhs-gauge-num" id="mcfhs-num">0</div>' +
+         '<div class="mcfhs-gauge-den">out of 100</div></div></div>' +
+         '<div><span class="mcfhs-gradechip" style="background:' + bg + ';color:' + col + '">● ' + esc(S.grade.label) + '</span>' +
+         '<h2>Your Financial Health Score: ' + esc(S.grade.head) + '</h2>' +
+         '<p>' + esc(S.grade.msg) + '</p>' +
+         '<div class="mcfhs-benchmark">Six weighted pillars, 14 personal finance ratios · ' +
+         new Date().toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' }) + '</div></div></div>';
+
+    h += '<div class="mcfhs-sec"><h3>How the score breaks down</h3>' +
+         '<p class="mcfhs-secsub">Each pillar carries a different weight, set by how much damage a gap there can do — not by how interesting it is.</p>';
+    MCFHS_ENGINE.PILLARS.forEach(function(p){
+      var got = S.pillars[p.key], ratio = got / p.max;
+      var c = ratio >= .8 ? 'var(--mc-green)' : ratio >= .55 ? 'var(--mc-amber)' : 'var(--mc-red)';
+      var note = ratio >= .8 ? 'Strong' : ratio >= .55 ? 'Room to improve' : 'Priority area';
+      h += '<div class="mcfhs-pillar"><div class="mcfhs-prow"><span class="mcfhs-pname">' + esc(p.name) + '</span>' +
+           '<span class="mcfhs-pscore">' + MCFHS_ENGINE.r1(got) + ' / ' + p.max + '</span></div>' +
+           '<div class="mcfhs-ptrack"><i data-fill="' + (ratio * 100) + '" style="background:' + c + '"></i></div>' +
+           '<div class="mcfhs-pnote">' + note + '</div></div>';
+    });
+    h += '</div>';
+
+    h += gapBlock(S);
+
+    h += '<div class="mcfhs-sec"><h3>Your personal financial ratios</h3>' +
+         '<p class="mcfhs-secsub">The same checks a planner runs in a first meeting, benchmarked against what each should be.</p>' +
+         '<table class="mcfhs-ratios"><thead><tr><th>Ratio</th><th>Your answer</th><th>Benchmark</th><th>Status</th></tr></thead><tbody>';
+    ratioRows(S).forEach(function(r){
+      h += '<tr><td class="mcfhs-rname">' + esc(r.name) + '<small>' + esc(r.sub) + '</small></td>' +
+           '<td class="mcfhs-rval">' + esc(r.val) + '</td>' +
+           '<td class="mcfhs-rbench">' + esc(r.bench) + '</td>' +
+           '<td class="mcfhs-rstat">' + tagFor(r.state) + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+
+    var str = MCFHS_ENGINE.strengths(S);
+    if (str.length){
+      h += '<div class="mcfhs-sec"><h3>What you are already getting right</h3>' +
+           '<p class="mcfhs-secsub">Worth protecting.</p><div class="mcfhs-str">';
+      str.forEach(function(s){ h += '<span>✓ ' + esc(s) + '</span>'; });
+      h += '</div></div>';
+    }
+
+    var acts = MCFHS_ENGINE.actions(S);
+    h += '<div class="mcfhs-sec"><h3>Your priority actions</h3>' +
+         '<p class="mcfhs-secsub">In order of impact on your score — and on your family\'s security.</p>';
+    if (!acts.length){
+      h += '<div class="mcfhs-action pri-3"><div class="n">✓</div><div><b>Nothing urgent</b>' +
+           '<span>Every core ratio sits inside its benchmark. The next conversation is about tax efficiency, ' +
+           'portfolio quality and estate structuring rather than closing gaps.</span></div></div>';
+    } else {
+      acts.forEach(function(ac, i){
+        var pri = i < 2 ? 'pri-1' : i < 4 ? 'pri-2' : 'pri-3';
+        h += '<div class="mcfhs-action ' + pri + '"><div class="n">' + (i + 1) + '</div><div><b>' + esc(ac.title) + '</b>' +
+             '<span>' + esc(ac.detail) + '</span></div></div>';
+      });
+    }
+    h += '</div>';
+
+    /* The score above is free and stays free — seeing it is what makes someone want the
+       detail. This is the only gate on the page, and it buys TWO things: their own full
+       report, and the guide. One ask, two rewards.
+
+       Two separate consents, deliberately. Under the DPDP Act consent must be specific and
+       unbundled: we cannot make delivery of the thing they asked for conditional on their
+       agreeing to marketing. So the first box is required — it covers sending the report
+       and following up on the score — and the second is genuinely optional and unticked.
+       CONSENT_VERSION is recorded with both, because a boolean alone cannot evidence WHICH
+       notice someone agreed to a year later. */
+    h += '<div class="mcfhs-sec mcfhs-gate" id="mcfhs-gate"><h3>Get your full report and the guide</h3>' +
+         '<p class="mcfhs-secsub">Two things, both free. <b>Your detailed report</b> — every ratio, ' +
+         'benchmark and recommended action, as a document you can keep. And <b>' +
+         esc(MCFHS_CONFIG.GUIDE_TITLE) + '</b>, our short guide to the ten moves that shift a ' +
+         'score like yours the fastest.</p>' +
+         '<div class="mcfhs-gatebox"><div class="mcfhs-grid3">' +
+         '<div><div class="mcfhs-qlabel">Full name</div><input type="text" id="g_name" placeholder="Your name"></div>' +
+         '<div><div class="mcfhs-qlabel">Email</div><input type="email" id="g_email" placeholder="you@example.com"></div>' +
+         '<div><div class="mcfhs-qlabel">Mobile</div><input type="tel" id="g_phone" placeholder="10-digit mobile"></div></div>' +
+         '<label class="mcfhs-consent"><input type="checkbox" id="g_consent">' +
+         '<span>Send me my report and the guide, and contact me about my Financial Health Score ' +
+         'by email, phone or WhatsApp. I understand this scorecard is educational and not ' +
+         'investment advice. <b>(Required)</b></span></label>' +
+         '<label class="mcfhs-consent"><input type="checkbox" id="g_news">' +
+         '<span>Also send me Money Compound\'s educational updates — practical money notes, ' +
+         'no spam, unsubscribe any time. <b>(Optional)</b></span></label>' +
+         '<div style="display:flex;gap:11px;flex-wrap:wrap;margin-top:16px">' +
+         '<button type="button" class="mcfhs-btn mcfhs-green" id="mcfhs-send">Send me both →</button>' +
+         '</div><div class="mcfhs-gatemsg" id="mcfhs-msg"></div>' +
+         '<div class="mcfhs-guide" id="mcfhs-guide" hidden></div></div></div>';
+
+    h += '<div class="mcfhs-cta"><h3>' + esc(S.grade.cta) + '</h3>' +
+         '<p>' + esc(S.grade.ctaLine) + '</p>' +
+         '<div class="mcfhs-ctabtns">' +
+         '<a class="mcfhs-btn mcfhs-gold" href="' + MCFHS_CONFIG.BOOKING_URL + '" target="_blank" rel="noopener">Improve my score — book a free review →</a>' +
+         '<a class="mcfhs-btn mcfhs-ghost" href="' + MCFHS_CONFIG.WHATSAPP_URL + '" target="_blank" rel="noopener" ' +
+         'style="background:transparent;color:#fff;border-color:rgba(255,255,255,.3)">WhatsApp us</a>' +
+         '<button type="button" class="mcfhs-btn mcfhs-ghost" id="mcfhs-restart" ' +
+         'style="background:transparent;color:#fff;border-color:rgba(255,255,255,.3)">↻ Retake</button>' +
+         '</div></div>';
+    return h;
+  }
+
+  function animate(S){
+    var arc = document.getElementById('mcfhs-arc'), C = 2 * Math.PI * 80;
+    if (arc) arc.style.strokeDashoffset = C * (1 - S.total / 100);
+    var num = document.getElementById('mcfhs-num'), t0 = null;
+    function tick(ts){
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / 1200, 1), e = 1 - Math.pow(1 - p, 3);
+      if (num) num.textContent = Math.round(S.total * e);
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+    Array.prototype.forEach.call(document.querySelectorAll('[data-fill]'), function(el, i){
+      setTimeout(function(){ el.style.width = el.getAttribute('data-fill') + '%'; }, 200 + i * 90);
+    });
+  }
+
+  function wireResult(S){
+    document.getElementById('mcfhs-restart').addEventListener('click', function(){
+      A = {}; step = 0;
+      elResult.classList.add('mcfhs-hidden');
+      elForm.classList.remove('mcfhs-hidden');
+      render();
+      document.getElementById('mcfhs-card').scrollIntoView({ behavior:'smooth', block:'start' });
+    });
+    document.getElementById('mcfhs-send').addEventListener('click', function(){ submit(S, this); });
+  }
+
+  function readLead(){
+    return { name : (document.getElementById('g_name')  || {}).value || '',
+             email: (document.getElementById('g_email') || {}).value || '',
+             phone: (document.getElementById('g_phone') || {}).value || '',
+             news : !!(document.getElementById('g_news') || {}).checked };
+  }
+  function msg(text, ok){
+    var m = document.getElementById('mcfhs-msg');
+    m.textContent = text;
+    m.className = 'mcfhs-gatemsg on ' + (ok ? 'ok' : 'bad');
+  }
+
+  /* ---------------- payload ----------------
+     Deliberately small. The PDF is the record; Zoho stores the score, the
+     grade and the contact details, and nothing else is duplicated into
+     columns. Everything detailed lives in the attached report. */
+  function payload(S, lead){
+    return {
+      source        : 'Financial Health Scorecard',
+      source_url    : location.href,
+      submitted_on  : new Date().toISOString(),
+
+      full_name     : lead.name.trim(),
+      email         : lead.email.trim(),
+      mobile        : lead.phone.trim(),
+      date_of_birth : S.raw.dob || '',
+
+      total_score   : S.total,
+      grade         : S.grade.label,
+      self_rating   : S.ratios.selfRating,
+      confidence_gap: S.gap === null ? 0 : Math.round(S.gap),
+
+      /* DPDP evidence. `service_consent` is always true by the time we get here — the
+         submit path refuses without it — and is recorded anyway so the stored record is
+         self-describing. `newsletter_consent` is the separate, optional marketing consent;
+         it is the ONLY thing that may be used to add someone to the mailing list.
+         `consent_version` says which notice text they actually saw, which a boolean on its
+         own can never evidence once the wording changes. */
+      service_consent    : true,
+      newsletter_consent : !!lead.news,
+      consent_version    : MCFHS_CONFIG.CONSENT_VERSION,
+      consent_at         : new Date().toISOString(),
+
+      /* Written into the Lead description and the email body — not stored
+         as a separate field on the scorecard record. */
+      top_actions   : MCFHS_ENGINE.actions(S)
+                        .map(function(x, i){ return (i + 1) + '. ' + x.title + ' — ' + x.detail; })
+                        .join('\n\n')
+    };
+  }
+
+  /* Reveal the guide once the form has been submitted. Deliberately rendered AFTER the
+     POST rather than being a link sitting on the page from the start — a link in the DOM
+     is a link anyone can take without giving anything, which is exactly what made the old
+     ungated "Download PDF now" button collect nothing. */
+  function showGuide(){
+    var el = document.getElementById('mcfhs-guide');
+    if (!el || !MCFHS_CONFIG.GUIDE_URL || MCFHS_CONFIG.GUIDE_URL.indexOf('REPLACE') === 0) return;
+    el.hidden = false;
+    el.innerHTML = '<a class="mcfhs-btn mcfhs-gold" href="' + MCFHS_CONFIG.GUIDE_URL +
+                   '" target="_blank" rel="noopener" download>⬇ Download ' +
+                   esc(MCFHS_CONFIG.GUIDE_TITLE) + '</a>' +
+                   '<p class="mcfhs-secsub" style="margin-top:9px">A copy is in your inbox too.</p>';
+  }
+
+  function submit(S, btn){
+    var lead = readLead();
+    if (!lead.name.trim())                  { msg('Please enter your name.', false); return; }
+    if (!/^\S+@\S+\.\S+$/.test(lead.email)) { msg('Please enter a valid email address.', false); return; }
+    if (!/^[6-9]\d{9}$/.test(lead.phone.replace(/\D/g, '').slice(-10))) { msg('Please enter a valid 10-digit Indian mobile number.', false); return; }
+    if (!document.getElementById('g_consent').checked) { msg('Please tick the first box so we can send your report and the guide.', false); return; }
+
+    btn.disabled = true;
+    var old = btn.innerHTML;
+    btn.innerHTML = '<span class="mcfhs-spin"></span> Sending…';
+    var body = payload(S, lead);
+
+    /* Attach the report itself. Zoho stores this against the record, so the
+       detail lives in the PDF rather than in fifty CRM columns. jsPDF hands us
+       a data URI; we send just the base64 half. */
+    try {
+      var doc = buildPDF(S, lead);
+      if (doc){
+        var b64 = doc.output('datauristring').split(',')[1];
+        /* Guard the endpoint's request-size limit. ~1.4 chars of base64 per
+           byte, so 900k of base64 is roughly a 650 KB PDF — far above what
+           this report ever produces, but a runaway is worse than no PDF. */
+        if (b64 && b64.length < 900000){
+          body.pdf_base64 = b64;
+          body.pdf_name   = pdfName(lead);
+        } else {
+          console.warn('MCFHS: PDF too large to transmit (' + (b64 ? b64.length : 0) + ' chars) — sending without it.');
+        }
+      }
+    } catch (e) {
+      console.warn('MCFHS: could not build the PDF for upload —', e.message);
+    }
+
+    if (!MCFHS_CONFIG.ENDPOINT_URL || MCFHS_CONFIG.ENDPOINT_URL.indexOf('REPLACE') === 0){
+      console.warn('MCFHS: ENDPOINT_URL not configured. Payload below.');
+      console.log(JSON.stringify(body, null, 2));
+      btn.disabled = false; btn.innerHTML = old;
+      msg('Endpoint not configured yet — the payload has been logged to the browser console.', false);
+      makePDF(S, lead); showGuide();
+      return;
+    }
+    function done(){
+      btn.innerHTML = '✓ Sent';
+      msg('Done — your detailed report is on its way to ' + lead.email + '. Check spam if it has not arrived in a few minutes.', true);
+      makePDF(S, lead);
+      showGuide();
+    }
+    fetch(MCFHS_CONFIG.ENDPOINT_URL, { method:'POST', headers:{ 'Content-Type':'application/json' }, body:JSON.stringify(body) })
+      .then(function(res){ if (!res.ok) throw new Error('HTTP ' + res.status); return res.text(); })
+      .then(done)
+      .catch(function(err){
+        console.warn('MCFHS: CORS POST failed (' + err.message + '), retrying without CORS.');
+        fetch(MCFHS_CONFIG.ENDPOINT_URL, { method:'POST', mode:'no-cors',
+              headers:{ 'Content-Type':'text/plain;charset=UTF-8' }, body:JSON.stringify(body) })
+          .then(done)
+          .catch(function(e2){
+            console.error(e2);
+            btn.disabled = false; btn.innerHTML = old;
+            msg('We could not send the email just now. Your PDF is downloading instead — or WhatsApp us on ' + MCFHS_CONFIG.FIRM_PHONE + '.', false);
+            makePDF(S, lead);
+          });
+      });
+  }
+
+  /* ---------------- PDF ---------------- */
+  function buildPDF(S, lead){
+    if (!window.jspdf || !window.jspdf.jsPDF) return null;
+    var doc = new window.jspdf.jsPDF({ unit:'pt', format:'a4' });
+
+    /* jsPDF's built-in Helvetica is WinAnsi-encoded and has no glyph for the
+       rupee sign, which silently renders as blank space. Swap it for "Rs" at
+       the point of drawing, and do the same before measuring, so line breaks
+       are computed against the text that is actually printed. */
+    function pdfSafe(t){
+      return String(t).replace(/\u20B9\s?/g, 'Rs ').replace(/\u2011/g, '-');
+    }
+    var _text = doc.text.bind(doc), _split = doc.splitTextToSize.bind(doc);
+    doc.text = function(txt, x, y, opts){
+      if (Object.prototype.toString.call(txt) === '[object Array]') txt = txt.map(pdfSafe);
+      else txt = pdfSafe(txt);
+      return _text(txt, x, y, opts);
+    };
+    doc.splitTextToSize = function(txt, w, opts){ return _split(pdfSafe(txt), w, opts); };
+
+    var W = 595.28, M = 42, y = 0;
+    var NAVY = [10,26,47], GREEN = [14,159,110], AMBER = [217,138,0], RED = [214,69,69], MUT = [126,141,160];
+    function stateColor(s){ return s === 'good' ? GREEN : s === 'ok' ? AMBER : s === 'bad' ? RED : MUT; }
+    function newPage(){ doc.addPage(); y = 56; }
+    function need(h){ if (y + h > 780) newPage(); }
+
+    doc.setFillColor(NAVY[0], NAVY[1], NAVY[2]); doc.rect(0, 0, W, 130, 'F');
+    doc.setTextColor(255,255,255); doc.setFont('helvetica','bold'); doc.setFontSize(19);
+    doc.text('Financial Health Scorecard', M, 52);
+    doc.setFont('helvetica','normal'); doc.setFontSize(10); doc.setTextColor(200,212,226);
+    doc.text(MCFHS_CONFIG.FIRM_NAME + '  ·  AMFI Registered Mutual Fund Distributor', M, 70);
+    doc.text('Prepared ' + new Date().toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' }), M, 85);
+    if (lead && lead.name) doc.text('For: ' + lead.name + (lead.email ? '  ·  ' + lead.email : ''), M, 100);
+    doc.setFont('helvetica','bold'); doc.setFontSize(46); doc.setTextColor(255,255,255);
+    doc.text(String(S.total), W - M, 62, { align:'right' });
+    doc.setFontSize(9); doc.setTextColor(200,212,226); doc.text('OUT OF 100', W - M, 78, { align:'right' });
+    doc.setFont('helvetica','bold'); doc.setFontSize(11);
+    doc.text(S.grade.label.toUpperCase(), W - M, 96, { align:'right' });
+
+    y = 158;
+    doc.setTextColor(74,90,112); doc.setFont('helvetica','normal'); doc.setFontSize(10);
+    var intro = doc.splitTextToSize(S.grade.head + ' — ' + S.grade.msg, W - 2*M);
+    doc.text(intro, M, y); y += intro.length * 13 + 14;
+
+    if (S.gap !== null && S.gap !== undefined){
+      need(46);
+      doc.setFillColor(245,247,250); doc.roundedRect(M, y - 12, W - 2*M, 40, 8, 8, 'F');
+      doc.setFont('helvetica','bold'); doc.setFontSize(10); doc.setTextColor(NAVY[0],NAVY[1],NAVY[2]);
+      doc.text('Confidence vs reality', M + 14, y + 3);
+      doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(74,90,112);
+      doc.text('You rated your own security at about ' + S.ratios.selfRating + '/100. You measured ' + S.total +
+               '/100 — a gap of ' + Math.round(Math.abs(S.gap)) + ' points.', M + 14, y + 18);
+      y += 46;
+    }
+
+    doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(NAVY[0],NAVY[1],NAVY[2]);
+    doc.text('Score breakdown', M, y); y += 16;
+    MCFHS_ENGINE.PILLARS.forEach(function(p){
+      var got = S.pillars[p.key], ratio = got / p.max;
+      var c = ratio >= .8 ? GREEN : ratio >= .55 ? AMBER : RED;
+      doc.setFont('helvetica','normal'); doc.setFontSize(9.5); doc.setTextColor(40,55,75);
+      doc.text(p.name, M, y);
+      doc.setFont('helvetica','bold'); doc.text(MCFHS_ENGINE.r1(got) + ' / ' + p.max, W - M, y, { align:'right' });
+      doc.setFillColor(233,238,244); doc.roundedRect(M, y + 4, W - 2*M, 5, 2.5, 2.5, 'F');
+      doc.setFillColor(c[0], c[1], c[2]); doc.roundedRect(M, y + 4, Math.max(3, (W - 2*M) * ratio), 5, 2.5, 2.5, 'F');
+      y += 22;
+    });
+    y += 8;
+
+    need(60);
+    doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(NAVY[0],NAVY[1],NAVY[2]);
+    doc.text('Your personal financial ratios', M, y); y += 16;
+    doc.setFontSize(8); doc.setTextColor(126,141,160);
+    doc.text('RATIO', M, y); doc.text('YOUR ANSWER', 285, y); doc.text('BENCHMARK', 425, y); doc.text('STATUS', W - M, y, { align:'right' });
+    y += 5; doc.setDrawColor(220,228,236); doc.line(M, y, W - M, y); y += 13;
+
+    ratioRows(S).forEach(function(r){
+      doc.setFont('helvetica','normal'); doc.setFontSize(8.4);
+      /* Wrap rather than clip: several answers and benchmarks are longer than
+         one column width, and a truncated value reads as a bug. */
+      var valLines = doc.splitTextToSize(String(r.val), 132);
+      var benLines = doc.splitTextToSize(String(r.bench), 108);
+      var subLines = doc.splitTextToSize(r.sub, 235).slice(0, 1);
+      var extra = Math.max(valLines.length, benLines.length) - 1;
+      need(26 + extra * 9);
+
+      doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(30,45,66);
+      doc.text(r.name, M, y);
+      doc.setFont('helvetica','normal'); doc.setFontSize(8.4); doc.setTextColor(30,45,66);
+      doc.text(valLines, 285, y);
+      doc.setTextColor(90,105,125);
+      doc.text(benLines, 425, y);
+      var c = stateColor(r.state);
+      doc.setTextColor(c[0], c[1], c[2]); doc.setFont('helvetica','bold'); doc.setFontSize(8.4);
+      doc.text(r.state === 'good' ? 'On track' : r.state === 'ok' ? 'Improve' : r.state === 'bad' ? 'Act now' : 'N/A', W - M, y, { align:'right' });
+      doc.setFont('helvetica','normal'); doc.setFontSize(7.4); doc.setTextColor(140,152,168);
+      doc.text(subLines, M, y + 10);
+
+      y += 24 + extra * 9;
+      doc.setDrawColor(240,243,247); doc.line(M, y - 8, W - M, y - 8);
+    });
+
+    y += 10; need(70);
+    doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(NAVY[0],NAVY[1],NAVY[2]);
+    doc.text('Your priority actions', M, y); y += 18;
+    var acts = MCFHS_ENGINE.actions(S);
+    if (!acts.length){
+      doc.setFont('helvetica','normal'); doc.setFontSize(9.5); doc.setTextColor(74,90,112);
+      doc.text('Every core ratio sits inside its benchmark. Focus next on tax efficiency and estate structuring.', M, y);
+      y += 20;
+    }
+    acts.forEach(function(ac, i){
+      var lines = doc.splitTextToSize(ac.detail, W - 2*M - 20);
+      need(lines.length * 11 + 30);
+      doc.setFillColor(NAVY[0], NAVY[1], NAVY[2]); doc.circle(M + 6, y - 3, 7.5, 'F');
+      doc.setTextColor(255,255,255); doc.setFont('helvetica','bold'); doc.setFontSize(8);
+      doc.text(String(i + 1), M + 6, y, { align:'center' });
+      doc.setTextColor(20,35,55); doc.setFontSize(10); doc.text(ac.title, M + 20, y);
+      y += 13;
+      doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(80,95,115);
+      doc.text(lines, M + 20, y);
+      y += lines.length * 11 + 12;
+    });
+
+    var pages = doc.getNumberOfPages();
+    for (var pi = 1; pi <= pages; pi++){
+      doc.setPage(pi);
+      doc.setDrawColor(226,232,240); doc.line(M, 800, W - M, 800);
+      doc.setFont('helvetica','normal'); doc.setFontSize(7.4); doc.setTextColor(140,152,168);
+      doc.text('Educational self-assessment based on the bands you selected. Not investment, insurance, tax or legal advice. ' +
+               'Mutual fund investments are subject to market risks; read all scheme related documents carefully.', M, 814, { maxWidth: W - 2*M });
+      doc.text(MCFHS_CONFIG.FIRM_NAME + '  ·  ' + MCFHS_CONFIG.FIRM_EMAIL + '  ·  ' + MCFHS_CONFIG.FIRM_PHONE, M, 832);
+      doc.text('Page ' + pi + ' of ' + pages, W - M, 832, { align:'right' });
+    }
+    return doc;
+  }
+
+  function pdfName(lead){
+    return 'Financial-Health-Scorecard' +
+           (lead && lead.name ? '-' + lead.name.trim().replace(/[^A-Za-z0-9]+/g, '-') : '') + '.pdf';
+  }
+
+  function makePDF(S, lead){
+    var doc = buildPDF(S, lead);
+    if (!doc){ window.print(); return; }
+    doc.save(pdfName(lead));
+  }
+
+  /* Exposed for debugging and for generating the payload reference. */
+  window.MCFHS = {
+    engine: MCFHS_ENGINE,
+    getAnswers: function(){ return A; },
+    last: function(){ return LAST; },
+    payload: function(lead){ return LAST ? payload(LAST, lead || { name:'', email:'', phone:'' }) : null; }
+  };
+
+  function postHeight(){
+    if (window.parent !== window) window.parent.postMessage({ mcfhsHeight: document.documentElement.scrollHeight }, '*');
+  }
+  new MutationObserver(postHeight).observe(document.body, { childList:true, subtree:true, attributes:true });
+  window.addEventListener('load', postHeight);
+  setInterval(postHeight, 1200);
+
+  render();
+})();
+
+</script>
 </body>
 </html>

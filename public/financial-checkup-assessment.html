@@ -45,6 +45,12 @@
    scrollbar sat beside it. This page is embedded edge to edge, so clear it. */
 html,body{margin:0;padding:0;}
 body{background:var(--mc-bg);}
+/* The frame is sized to this document and never scrolls itself, but the browser
+   still reserves a scrollbar the moment the content runs a pixel past that
+   height — which narrows the page and stops the hero short of the right edge.
+   Nothing is lost by hiding it, since scrolling here is the parent's job. */
+html{scrollbar-width:none;overflow-x:hidden;}
+html::-webkit-scrollbar{display:none;}
 
 .mcfhs *,.mcfhs *::before,.mcfhs *::after{box-sizing:border-box;}
 .mcfhs{
@@ -1683,7 +1689,13 @@ var MCFHS_STEPS = [
     heightQueued = true;
     requestAnimationFrame(function(){
       heightQueued = false;
-      var h = document.documentElement.scrollHeight;
+      /* Take the larger of the two and leave a couple of pixels spare. Sizing the
+         frame to the exact height leaves the content one rounding error away from
+         overflowing, which is what put a scrollbar there in the first place. */
+      var h = Math.max(
+        document.documentElement.scrollHeight,
+        document.body ? document.body.scrollHeight : 0
+      ) + 2;
       if (Math.abs(h - lastHeight) < 2) return;
       lastHeight = h;
       window.parent.postMessage({ mcfhsHeight: h }, '*');

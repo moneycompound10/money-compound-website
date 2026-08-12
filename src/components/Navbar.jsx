@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Menu, X, MessageSquare, LogIn, ChevronRight, ChevronDown } from 'lucide-react'
+import { Menu, X, MessageSquare, LogIn, ChevronRight, ChevronDown, Activity } from 'lucide-react'
 import gsap from 'gsap'
 import { track, EVENTS } from '../lib/analytics'
 
@@ -166,13 +166,8 @@ const Navbar = () => {
       ]
     },
     { name: 'CALCULATORS', href: '/calculators' },
-    {
-      name: 'RESOURCES',
-      subItems: [
-        { name: 'EBOOKS & GUIDES', href: '/resources', items: [] },
-        { name: 'FINANCIAL CHECKUP', href: '/financial-checkup', items: [] },
-      ]
-    },
+    // Financial checkup has its own action button, so Resources is a plain link now.
+    { name: 'RESOURCES', href: '/resources' },
     { name: 'BLOG', href: '/blog' },
   ]
 
@@ -331,10 +326,18 @@ const Navbar = () => {
             <LogIn size={15} />
             Login
           </a>
-          <Link href="/contact-us" className="flex items-center gap-1.5 px-5 py-2.5 rounded-full text-[12px] font-bold bg-brand-navy text-white shadow-lg shadow-brand-navy/20 hover:scale-105 transition-all duration-200 tracking-widest uppercase whitespace-nowrap">
-            <MessageSquare size={15} />
-            Contact Us
-          </Link>
+          {/* Contact Us with the checkup CTA stacked underneath. Kept compact so the
+              pair still fits inside the logo's height and the navbar does not grow. */}
+          <div className="flex flex-col gap-2">
+            <Link href="/contact-us" className="flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] font-bold bg-brand-navy text-white shadow-sm hover:scale-105 transition-all duration-200 tracking-wide uppercase whitespace-nowrap">
+              <MessageSquare size={13} />
+              Contact Us
+            </Link>
+            <Link href="/financial-checkup" className="flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] font-bold bg-brand-blue text-white shadow-sm hover:scale-105 transition-all duration-200 tracking-wide uppercase whitespace-nowrap">
+              <Activity size={13} />
+              Financial Checkup
+            </Link>
+          </div>
           <a
             href={WHATSAPP_HREF}
             target="_blank"
@@ -464,6 +467,13 @@ const Navbar = () => {
                   <WhatsAppGlyph size={18} />
                 </a>
               </div>
+              <Link
+                href="/financial-checkup"
+                onClick={() => setIsMenuOpen(false)}
+                className="w-full py-3.5 rounded-xl text-[11px] font-bold bg-brand-blue text-white tracking-widest flex items-center justify-center gap-2 hover:brightness-110 transition-all uppercase"
+              >
+                <Activity size={15} /> Financial Checkup
+              </Link>
             </div>
           </div>
         </div>

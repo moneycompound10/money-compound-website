@@ -75,6 +75,13 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none;}
     radial-gradient(700px 380px at 5% 0%, rgba(14,159,110,.16), transparent 62%),
     linear-gradient(160deg,var(--mc-navy) 0%,#0D2540 55%,#0A1A2F 100%);
   color:#fff;padding:26px 0 84px;position:relative;overflow:hidden;
+  /* Span the frame edge to edge. Whatever narrows the content box — a reserved
+     scrollbar gutter, a parent that measures short — this pulls the panel back
+     out to the full width, so the gap is the same on both sides. vw keeps it
+     responsive; html is overflow:hidden, so nothing scrolls sideways. */
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
 }
 .mcfhs-hero::after{
   content:"";position:absolute;inset:auto 0 -1px 0;height:70px;

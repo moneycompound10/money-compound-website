@@ -49,8 +49,8 @@ body{background:var(--mc-bg);}
    still reserves a scrollbar the moment the content runs a pixel past that
    height — which narrows the page and stops the hero short of the right edge.
    Nothing is lost by hiding it, since scrolling here is the parent's job. */
-html{scrollbar-width:none;overflow-x:hidden;}
-html::-webkit-scrollbar{display:none;}
+html{overflow:hidden;scrollbar-width:none;}
+html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none;}
 
 .mcfhs *,.mcfhs *::before,.mcfhs *::after{box-sizing:border-box;}
 .mcfhs{

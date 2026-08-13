@@ -68,8 +68,18 @@ export default function FinancialCheckupPage() {
         src="/financial-checkup-assessment.html"
         title="Financial Health Scorecard"
         scrolling="no"
-        className="w-full block"
-        style={{ border: 'none', height: `${frameHeight}px` }}
+        className="block"
+        /* The scroll container this page sits in measures a little short of the
+           viewport, which left the frame — and so the hero inside it — stopping
+           before the right edge while the left sat flush. Breaking out to the
+           viewport width sidesteps whatever the container reports. body already
+           carries overflow-x:hidden, so this cannot scroll sideways. */
+        style={{
+          border: 'none',
+          height: `${frameHeight}px`,
+          width: '100vw',
+          marginLeft: 'calc(50% - 50vw)',
+        }}
       />
     </div>
   );

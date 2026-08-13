@@ -7,6 +7,14 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
  * Layout Component
  * Integrates Locomotive Scroll v5 with GSAP ScrollTrigger.
  */
+
+// Locomotive replaces the browser's own scrolling with an animated one, which
+// these pages cannot afford: the scorecard embeds a frame that grows past four
+// thousand pixels, and driving that from JavaScript makes scrolling — upwards
+// especially — visibly lag. Native scrolling is composited, so it stays smooth
+// however tall the page gets.
+const NO_SMOOTH_SCROLL = ['/financial-checkup'];
+
 export default function Layout({ children }) {
   const scrollRef = useRef(null);
   const router = useRouter();
@@ -14,6 +22,12 @@ export default function Layout({ children }) {
   useEffect(() => {
     // Only run on client
     if (typeof window === 'undefined') return;
+    if (NO_SMOOTH_SCROLL.includes(router.pathname)) {
+      // ScrollTrigger still needs its positions even without Locomotive.
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.refresh();
+      return;
+    }
 
     let locoScroll = null;
 
@@ -39,7 +53,7 @@ export default function Layout({ children }) {
         locoScroll.destroy?.();
       }
     };
-  }, [router.asPath]);
+  }, [router.asPath, router.pathname]);
 
   return (
     <div data-scroll-container ref={scrollRef}>

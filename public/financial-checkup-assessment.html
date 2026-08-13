@@ -1724,9 +1724,17 @@ var MCFHS_STEPS = [
     }
   }
 
-  new MutationObserver(postHeight).observe(document.body, { childList:true, subtree:true, attributes:true });
+  /* Height only changes when content is added or removed. Watching attributes as
+     well meant every animated bar and every tick of the score counter asked for
+     a fresh measurement, and reading scrollHeight forces the browser to lay out
+     the whole document — which on a result page four thousand pixels tall is
+     what made scrolling stutter. */
+  new MutationObserver(postHeight).observe(document.body, { childList:true, subtree:true });
   window.addEventListener('load', postHeight);
-  setInterval(postHeight, 1200);
+
+  /* A few late checks instead of a permanent interval, to catch a web font or a
+     slow image settling after the last mutation. Then it stops costing anything. */
+  [300, 1200, 3000].forEach(function (delay) { setTimeout(postHeight, delay); });
 
   render();
 })();

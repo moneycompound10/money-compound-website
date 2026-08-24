@@ -408,6 +408,11 @@ const MCFHS_CONFIG = {
   // webhook URL carries a zapikey and this file is served from public/, so the
   // URL itself must never appear here — it lives in ZOHO_FLOW_WEBHOOK_URL.
   ENDPOINT_URL : "/api/scorecard",
+
+  // Flip to true only once the report is genuinely emailed to the person who
+  // asked for it. It controls the "a copy is in your inbox" line, which must
+  // not appear before that is true.
+  EMAILS_REPORT : false,
   BOOKING_URL  : "https://vipulkhandelwal-moneycompound1.zohobookings.in/#/moneycompound2",
   WHATSAPP_URL : "https://wa.me/918447496480?text=Hi%2C%20I%20just%20completed%20the%20Financial%20Health%20Scorecard",
   SITE_URL     : "https://www.moneycompound.com",
@@ -1453,10 +1458,11 @@ var MCFHS_STEPS = [
     var el = document.getElementById('mcfhs-guide');
     if (!el || !MCFHS_CONFIG.GUIDE_URL || MCFHS_CONFIG.GUIDE_URL.indexOf('REPLACE') === 0) return;
     el.hidden = false;
-    /* Only claim an emailed copy when there is an endpoint to send one. Until
-       ENDPOINT_URL is set nothing is delivered, and promising an inbox copy
-       that never arrives is worse than promising nothing. */
-    var emailed = MCFHS_CONFIG.ENDPOINT_URL && MCFHS_CONFIG.ENDPOINT_URL.indexOf('REPLACE') !== 0;
+    /* MCFHS_EMAILS_REPORT stays false until something downstream actually sends
+       the report. A configured endpoint only means the submission is stored —
+       it does not send mail — and promising an inbox copy that never arrives is
+       worse than promising nothing. */
+    var emailed = MCFHS_CONFIG.EMAILS_REPORT === true;
     el.innerHTML = '<a class="mcfhs-btn mcfhs-gold" href="' + MCFHS_CONFIG.GUIDE_URL +
                    '" target="_blank" rel="noopener" download>⬇ Download ' +
                    esc(MCFHS_CONFIG.GUIDE_TITLE) + '</a>' +

@@ -9,6 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>/* In a frame (the website's /financial-checkup) the page is sized by its parent and never
+   scrolls itself; .mcfhs-embedded switches on the rules for that. Standalone, nothing changes. */
+if (window.parent !== window) document.documentElement.classList.add('mcfhs-embedded');</script>
 <style>
 /* =======================================================================
    MONEY COMPOUND — FINANCIAL HEALTH SCORECARD
@@ -40,18 +43,6 @@
   --mc-font:'Plus Jakarta Sans','Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 }
 
-/* Browsers put 8px of margin on the body by default, which inset the whole
-   scorecard — the hero included — and read as an uneven gap once the page's
-   scrollbar sat beside it. This page is embedded edge to edge, so clear it. */
-html,body{margin:0;padding:0;}
-body{background:var(--mc-bg);}
-/* The frame is sized to this document and never scrolls itself, but the browser
-   still reserves a scrollbar the moment the content runs a pixel past that
-   height — which narrows the page and stops the hero short of the right edge.
-   Nothing is lost by hiding it, since scrolling here is the parent's job. */
-html{overflow:hidden;scrollbar-width:none;}
-html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none;}
-
 .mcfhs *,.mcfhs *::before,.mcfhs *::after{box-sizing:border-box;}
 .mcfhs{
   font-family:var(--mc-font);
@@ -75,13 +66,6 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none;}
     radial-gradient(700px 380px at 5% 0%, rgba(14,159,110,.16), transparent 62%),
     linear-gradient(160deg,var(--mc-navy) 0%,#0D2540 55%,#0A1A2F 100%);
   color:#fff;padding:26px 0 84px;position:relative;overflow:hidden;
-  /* Span the frame edge to edge. Whatever narrows the content box — a reserved
-     scrollbar gutter, a parent that measures short — this pulls the panel back
-     out to the full width, so the gap is the same on both sides. vw keeps it
-     responsive; html is overflow:hidden, so nothing scrolls sideways. */
-  width:100vw;
-  margin-left:calc(50% - 50vw);
-  margin-right:calc(50% - 50vw);
 }
 .mcfhs-hero::after{
   content:"";position:absolute;inset:auto 0 -1px 0;height:70px;
@@ -285,6 +269,17 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none;}
 .mcfhs-gaparrow{font-size:20px;color:var(--mc-muted);}
 .mcfhs-gaptxt b{display:block;font-size:15px;font-weight:700;color:var(--mc-ink);margin-bottom:4px;}
 .mcfhs-gaptxt span{display:block;font-size:13.4px;color:var(--mc-body);line-height:1.55;}
+/* how it feels against what we measured — per pillar, never scored */
+.mcfhs-feel{display:flex;flex-direction:column;gap:8px;}
+.mcfhs-feelrow{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) auto;gap:12px;align-items:center;border:1.5px solid var(--mc-line);border-radius:12px;padding:11px 14px;}
+.mcfhs-feelrow.blind_spot{border-color:#F3CFCF;background:#FDF6F6;}
+.mcfhs-feelrow.better{border-color:#BFE6D6;background:#F4FBF8;}
+.mcfhs-feelname{font-weight:700;color:var(--mc-ink);font-size:14px;}
+.mcfhs-feelnums{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.8px;color:var(--mc-body);}
+.mcfhs-feeltag{font-size:12px;font-weight:700;color:var(--mc-muted);white-space:nowrap;}
+.mcfhs-feelrow.blind_spot .mcfhs-feeltag{color:#B23B3B;}
+.mcfhs-feelrow.better .mcfhs-feeltag{color:#0E7A55;}
+@media(max-width:560px){.mcfhs-feelrow{grid-template-columns:1fr;gap:4px;}}
 
 /* CTA */
 .mcfhs-cta{
@@ -335,6 +330,19 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none;}
   .mcfhs{background:#fff;}
   .mcfhs-card{box-shadow:none;margin-top:0;}
 }
+/* ---------- Page and frame (the website team's fixes, in the source since 31 Oct 2026) ---------- */
+/* Browsers put 8px of margin on the body by default, which inset the whole scorecard — the
+   hero included. The page runs edge to edge, framed or not, so clear it. */
+html,body{margin:0;padding:0;}
+body{background:var(--mc-bg);}
+/* Framed, the document is sized to its content and never scrolls itself, but the browser
+   still reserves a scrollbar the moment the content runs a pixel past that height — which
+   narrows the page and stops the hero short of the right edge. Scrolling is the parent's job. */
+html.mcfhs-embedded{overflow:hidden;scrollbar-width:none;}
+html.mcfhs-embedded::-webkit-scrollbar,html.mcfhs-embedded body::-webkit-scrollbar{width:0;height:0;display:none;}
+/* Span the frame edge to edge, whatever narrows the content box; html is overflow:hidden
+   there, so nothing scrolls sideways. Not standalone: 100vw counts the scrollbar. */
+.mcfhs-embedded .mcfhs-hero{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);}
 </style>
 </head>
 <body>
@@ -369,9 +377,9 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none;}
         <div class="mcfhs-prog">
           <div class="mcfhs-progtop">
             <span class="mcfhs-steplabel" id="mcfhs-steplabel">About you</span>
-            <span class="mcfhs-stepcount" id="mcfhs-stepcount">Step 1 of 6</span>
+            <span class="mcfhs-stepcount" id="mcfhs-stepcount">Step 1 of 5</span>
           </div>
-          <div class="mcfhs-bar"><i id="mcfhs-barfill" style="width:16.6667%"></i></div>
+          <div class="mcfhs-bar"><i id="mcfhs-barfill" style="width:20%"></i></div>
         </div>
 
         <div class="mcfhs-cardpad" id="mcfhs-steps"><!-- steps injected by JS --></div>
@@ -390,7 +398,7 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none;}
     <div class="mcfhs-disc" id="mcfhs-disc">
       <strong>Important:</strong> This Financial Health Scorecard is an educational self-assessment tool. It is
       based only on the figures you enter and uses widely accepted personal-finance rules of thumb. It is not
-      investment, insurance, tax or legal advice, and it is not a substitute for a personalised financial plan.
+      investment, insurance, tax or legal advice, and it is not a substitute for personalised advice from your adviser.
       Money Compound is an AMFI-registered Mutual Fund Distributor — we do not charge advisory fees and we earn
       commission from asset management companies on mutual fund investments made through us.
       Mutual fund investments are subject to market risks; read all scheme related documents carefully.
@@ -404,14 +412,14 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{width:0;height:0;display:none;}
    CONFIG — change these two lines and nothing else
    ===================================================================== */
 const MCFHS_CONFIG = {
-  // Posts to our own API route, which forwards to the Zoho Flow webhook. The
-  // webhook URL carries a zapikey and this file is served from public/, so the
-  // URL itself must never appear here — it lives in ZOHO_FLOW_WEBHOOK_URL.
+  // Where the submission is POSTed. Zoho Flow webhook URL, or your own endpoint.
+  // STILL UNSET — until this is a real URL the page posts nowhere, so no lead and no
+  // scorecard record ever reaches Zoho. Everything else below is live.
   ENDPOINT_URL : "/api/scorecard",
 
-  // Flip to true only once the report is genuinely emailed to the person who
-  // asked for it. It controls the "a copy is in your inbox" line, which must
-  // not appear before that is true.
+  // Flip to true only once the report is genuinely emailed to the person who asked for
+  // it. It controls the "a copy is in your inbox" line and the done message, which must
+  // not promise mail before that is true.
   EMAILS_REPORT : false,
   BOOKING_URL  : "https://vipulkhandelwal-moneycompound1.zohobookings.in/#/moneycompound2",
   WHATSAPP_URL : "https://wa.me/918447496480?text=Hi%2C%20I%20just%20completed%20the%20Financial%20Health%20Scorecard",
@@ -420,10 +428,14 @@ const MCFHS_CONFIG = {
   FIRM_EMAIL   : "support@moneycompound.com",
   FIRM_PHONE   : "+91 84474 96480",
 
+  // Shown in the report header, matching the server-rendered copy.
+  FIRM_ARN     : "ARN-140318",
+
   // The lead magnet. Host the PDF on the site and put its URL here; until then the
   // download button stays hidden and the form still collects the lead and the consents.
   GUIDE_TITLE  : "The Smart Investor's Handbook 2026",
   GUIDE_URL    : "/ebooks/smart-investors-handbook-2026.pdf",
+  GUIDE_BLURB  : "our 20-chapter guide to building wealth in India — compounding, asset classes, mutual funds and SIPs, fixed income and tax-smart investing.",
 
   // DPDP: BUMP THIS whenever the consent wording in the form changes. Consent is only
   // evidenceable if we can say which notice the person actually agreed to. Same rule as
@@ -859,7 +871,34 @@ var MCFHS_ENGINE = (function () {
     return out;
   }
 
-  return { derive:derive, score:score, actions:actions, strengths:strengths,
+  /* ---------------------------------------------------------- feelings ----
+     What you feel against what we measured, pillar by pillar (owner, 31 Oct 2026, after
+     Network FP's MyFP check-up). Each pillar has an optional statement — `feel_<pillar>`,
+     answered on the confidence question's own five-point scale and rated with its own
+     `self` values — set beside the pillar's measured share of its maximum.
+
+     NEVER SCORED, by construction: this reads a finished score() result and adds nothing
+     to it. `score()` does not look at a feel_ answer, so the total, the pillars, the grade
+     and the monotonicity guarantee are exactly what they were. A gap of FEEL_GAP or more
+     either way is the conversation: a blind spot (feels better than it is) or a pillar in
+     better shape than it feels. An unanswered statement is simply not listed. */
+  var FEEL_GAP = 20;
+  function feelings(S){
+    var out = [];
+    PILLARS.forEach(function(p){
+      var v = S.raw ? S.raw['feel_' + p.key] : undefined;
+      var self = look('confidence', v, { self:null }).self;
+      if (self === null || self === undefined) return;
+      var measured = Math.round(S.pillars[p.key] / p.max * 100);
+      var gap = self - measured;
+      out.push({ key:p.key, name:p.name, answer:v, label:look('confidence', v).label,
+                 felt:self, measured:measured, gap:gap,
+                 state: gap >= FEEL_GAP ? 'blind_spot' : gap <= -FEEL_GAP ? 'better' : 'match' });
+    });
+    return out;
+  }
+
+  return { derive:derive, score:score, actions:actions, strengths:strengths, feelings:feelings, FEEL_GAP:FEEL_GAP,
            PILLARS:PILLARS, BANDS:B, GRADES:GRADES, gradeFor:gradeFor,
            look:look, pct:pct, r1:r1, ageFromDob:ageFromDob };
 })();
@@ -893,6 +932,14 @@ var MCFHS_STEPS = [
     title: 'Where your monthly income goes',
     sub: 'Rough shares are fine — pick the band that feels closest.',
     fields: [
+      { id:'feel_cashflow', type:'options', label:'"I spend within my means and save every month." How much do you agree?',
+        hint:'Optional, and not scored. Answer before the numbers below — your report sets how it feels beside what it measures.',
+        options:[
+          { v:'agree_strong', t:'Agree strongly' },
+          { v:'agree_some',   t:'Agree somewhat' },
+          { v:'neutral',      t:'Neither agree nor disagree' },
+          { v:'dis_some',     t:'Disagree somewhat' },
+          { v:'dis_strong',   t:'Disagree strongly' } ] },
       { id:'investPct', type:'options', label:'What share of your monthly income do you invest for long-term goals?',
         hint:'SIPs, PPF, NPS, your EPF contribution — anything set aside for goals more than three years away. Not insurance premiums, not EMIs.', required:true,
         options:[
@@ -915,8 +962,24 @@ var MCFHS_STEPS = [
   {
     label: 'Safety net & debt',
     title: 'What happens if income stops for six months',
-    sub: 'The two questions that decide whether a bad year is an inconvenience or a crisis.',
+    sub: 'The questions that decide whether a bad year is an inconvenience or a crisis.',
     fields: [
+      { id:'feel_emergency', type:'options', label:'"If my income stopped tomorrow, we would manage for six months." How much do you agree?',
+        hint:'Optional, and not scored — set beside what the questions below measure.',
+        options:[
+          { v:'agree_strong', t:'Agree strongly' },
+          { v:'agree_some',   t:'Agree somewhat' },
+          { v:'neutral',      t:'Neither agree nor disagree' },
+          { v:'dis_some',     t:'Disagree somewhat' },
+          { v:'dis_strong',   t:'Disagree strongly' } ] },
+      { id:'feel_debt', type:'options', label:'"My loans and EMIs are comfortable — they do not worry me." How much do you agree?',
+        hint:'Optional, and not scored.',
+        options:[
+          { v:'agree_strong', t:'Agree strongly' },
+          { v:'agree_some',   t:'Agree somewhat' },
+          { v:'neutral',      t:'Neither agree nor disagree' },
+          { v:'dis_some',     t:'Disagree somewhat' },
+          { v:'dis_strong',   t:'Disagree strongly' } ] },
       { id:'emergency', type:'options', label:'How much of your monthly outgo could your emergency fund cover?',
         hint:'Only money you can reach within a day or two without penalty — savings account, liquid funds, sweep-in FDs. Not equity, not PPF, not your home.', required:true,
         options:[
@@ -950,6 +1013,14 @@ var MCFHS_STEPS = [
     title: 'What happens if something goes badly wrong',
     sub: 'The most common gap we find, and the cheapest one to close.',
     fields: [
+      { id:'feel_protection', type:'options', label:'"My family would be financially secure if something happened to me." How much do you agree?',
+        hint:'Optional, and not scored — set beside what the questions below measure.',
+        options:[
+          { v:'agree_strong', t:'Agree strongly' },
+          { v:'agree_some',   t:'Agree somewhat' },
+          { v:'neutral',      t:'Neither agree nor disagree' },
+          { v:'dis_some',     t:'Disagree somewhat' },
+          { v:'dis_strong',   t:'Disagree strongly' } ] },
       { id:'lifeMultiple', type:'options', label:'How large is your life cover, as a multiple of annual income?',
         hint:'Add up the sum assured across term plans, endowment, ULIP and employer group cover — then divide by your annual income. The payout amount, not the premium.', required:true,
         options:[
@@ -974,6 +1045,14 @@ var MCFHS_STEPS = [
     title: 'What you have built so far',
     sub: 'Excluding the home you live in.',
     fields: [
+      { id:'feel_investments', type:'options', label:'"My investments are where they should be for my age." How much do you agree?',
+        hint:'Optional, and not scored — set beside what the questions below measure.',
+        options:[
+          { v:'agree_strong', t:'Agree strongly' },
+          { v:'agree_some',   t:'Agree somewhat' },
+          { v:'neutral',      t:'Neither agree nor disagree' },
+          { v:'dis_some',     t:'Disagree somewhat' },
+          { v:'dis_strong',   t:'Disagree strongly' } ] },
       { id:'assetsMultiple', type:'options', label:'Roughly how much do you hold in investments, as a multiple of annual income?',
         hint:'Mutual funds, stocks, EPF, PPF, NPS, FDs, bonds, gold and investment property added together. Exclude the home you live in.', required:true,
         options:[
@@ -1004,8 +1083,16 @@ var MCFHS_STEPS = [
   {
     label: 'Family & planning',
     title: 'The part almost everyone skips',
-    sub: 'Four questions. Then we calculate your score.',
+    sub: 'A few questions. Then we calculate your score.',
     fields: [
+      { id:'feel_planning', type:'options', label:'"My family knows where everything is, and my retirement is planned." How much do you agree?',
+        hint:'Optional, and not scored — set beside what the questions below measure.',
+        options:[
+          { v:'agree_strong', t:'Agree strongly' },
+          { v:'agree_some',   t:'Agree somewhat' },
+          { v:'neutral',      t:'Neither agree nor disagree' },
+          { v:'dis_some',     t:'Disagree somewhat' },
+          { v:'dis_strong',   t:'Disagree strongly' } ] },
       { id:'familyAware', type:'options',
         label:'If you were no longer here tomorrow, how well could your family handle your financial affairs?',
         hint:'Would they know which accounts, folios, policies and loans exist, and how to reach them?', required:true,
@@ -1221,7 +1308,11 @@ var MCFHS_STEPS = [
         (a.tenure === 'gt10' || a.tenure === 'y5_10') ? 'good' : (a.tenure === 'y3_5' || a.tenure === 'y1_3') ? 'ok' : 'bad');
     row('Family preparedness', 'Could your family handle your finances without you',
         L('familyAware', a.familyAware).label, 'Complete picture',
-        (a.familyAware === 'complete' || a.familyAware === 'good') ? 'good' : a.familyAware === 'limited' ? 'ok' : 'bad');
+        /* Matches the server report exactly. These two disagreed: the browser called
+           "good" fully on track and "limited" merely an improvement, while the server
+           called "good" an improvement and everything below it urgent. A client can
+           receive both documents, so the stricter server reading wins. */
+        a.familyAware === 'complete' ? 'good' : a.familyAware === 'good' ? 'ok' : 'bad');
     return rows;
   }
 
@@ -1255,6 +1346,29 @@ var MCFHS_STEPS = [
            '<div class="mcfhs-gaparrow">' + (big ? '↔' : '≈') + '</div>' +
            '<div><b>' + S.total + '</b><span>Measured score</span></div></div>' +
            '<div class="mcfhs-gaptxt"><b>' + esc(head) + '</b><span>' + esc(body) + '</span></div></div></div>';
+  }
+
+  /* What you feel against what we measured, pillar by pillar — MCFHS_ENGINE.feelings(), never scored.
+     Nothing when no statement was answered. Blind spots first: they are the conversation. */
+  function feelBlock(S){
+    var F = MCFHS_ENGINE.feelings(S);
+    if (!F.length) return '';
+    var order = { blind_spot:0, better:1, match:2 };
+    F = F.slice().sort(function(x, y){ return order[x.state] - order[y.state] || y.gap - x.gap; });
+    var word = { blind_spot:'Feels better than it is', better:'Better than it feels', match:'Feels about right' };
+    var spots = F.filter(function(x){ return x.state === 'blind_spot'; }).length;
+    var h = '<div class="mcfhs-sec"><h3>How it feels against what we measured</h3>' +
+            '<p class="mcfhs-secsub">' + (spots
+              ? 'You feel better about ' + spots + ' area' + (spots === 1 ? '' : 's') + ' than the numbers support — that is where the next conversation starts.'
+              : 'Your feeling and the numbers broadly agree — or the numbers are better than you think.') +
+            ' None of this is scored.</p><div class="mcfhs-feel">';
+    F.forEach(function(x){
+      h += '<div class="mcfhs-feelrow ' + x.state + '"><div class="mcfhs-feelname">' + esc(x.name) + '</div>' +
+           '<div class="mcfhs-feelnums"><span>You: <b>' + esc(x.label) + '</b> (' + x.felt + ')</span>' +
+           '<span>Measured: <b>' + x.measured + '</b> of 100</span></div>' +
+           '<div class="mcfhs-feeltag">' + esc(word[x.state]) + '</div></div>';
+    });
+    return h + '</div></div>';
   }
 
   function resultHTML(S){
@@ -1292,6 +1406,7 @@ var MCFHS_STEPS = [
     h += '</div>';
 
     h += gapBlock(S);
+    h += feelBlock(S);
 
     h += '<div class="mcfhs-sec"><h3>Your personal financial ratios</h3>' +
          '<p class="mcfhs-secsub">The same checks a planner runs in a first meeting, benchmarked against what each should be.</p>' +
@@ -1341,9 +1456,8 @@ var MCFHS_STEPS = [
     h += '<div class="mcfhs-sec mcfhs-gate" id="mcfhs-gate"><h3>Get your full report and the guide</h3>' +
          '<p class="mcfhs-secsub">Two things, both free. <b>Your detailed report</b> — every ratio, ' +
          'benchmark and recommended action, as a document you can keep. And <b>' +
-         esc(MCFHS_CONFIG.GUIDE_TITLE) + '</b>, our 20-chapter guide to building wealth in ' +
-         'India — compounding, asset classes, mutual funds and SIPs, fixed income and ' +
-         'tax-smart investing.</p>' +
+         esc(MCFHS_CONFIG.GUIDE_TITLE) + '</b>, ' + esc(MCFHS_CONFIG.GUIDE_BLURB ||
+         'our short guide to the ten moves that shift a score like yours the fastest.') + '</p>' +
          '<div class="mcfhs-gatebox"><div class="mcfhs-grid3">' +
          '<div><div class="mcfhs-qlabel">Full name</div><input type="text" id="g_name" placeholder="Your name"></div>' +
          '<div><div class="mcfhs-qlabel">Email</div><input type="email" id="g_email" placeholder="you@example.com"></div>' +
@@ -1458,15 +1572,18 @@ var MCFHS_STEPS = [
     var el = document.getElementById('mcfhs-guide');
     if (!el || !MCFHS_CONFIG.GUIDE_URL || MCFHS_CONFIG.GUIDE_URL.indexOf('REPLACE') === 0) return;
     el.hidden = false;
-    /* MCFHS_EMAILS_REPORT stays false until something downstream actually sends
-       the report. A configured endpoint only means the submission is stored —
-       it does not send mail — and promising an inbox copy that never arrives is
-       worse than promising nothing. */
-    var emailed = MCFHS_CONFIG.EMAILS_REPORT === true;
     el.innerHTML = '<a class="mcfhs-btn mcfhs-gold" href="' + MCFHS_CONFIG.GUIDE_URL +
                    '" target="_blank" rel="noopener" download>⬇ Download ' +
                    esc(MCFHS_CONFIG.GUIDE_TITLE) + '</a>' +
-                   (emailed ? '<p class="mcfhs-secsub" style="margin-top:9px">A copy is in your inbox too.</p>' : '');
+                   (emailsReport() ? '<p class="mcfhs-secsub" style="margin-top:9px">A copy is in your inbox too.</p>' : '');
+  }
+
+  /* EMAILS_REPORT stays false until something downstream actually sends the report. A
+     configured endpoint only means the submission is stored — it does not send mail — and
+     promising an inbox copy that never arrives is worse than promising nothing. (The
+     website team's rule, carried into the source on 31 Oct 2026.) */
+  function emailsReport(){
+    return MCFHS_CONFIG.EMAILS_REPORT === true;
   }
 
   function submit(S, btn){
@@ -1510,12 +1627,13 @@ var MCFHS_STEPS = [
       makePDF(S, lead); showGuide();
       return;
     }
-    /* Promise only what actually happened here. The PDF is generated in this
-       browser, so that part is certain; the email is sent further down the
-       chain and claiming it lands before it has is worse than saying nothing. */
     function done(){
       btn.innerHTML = '✓ Sent';
-      msg('Done — your report is downloading now, and we have your details. Our team will be in touch shortly.', true);
+      /* Promise only what actually happened. The PDF is made in this browser, so that
+         part is certain; the email is sent further down the chain, if at all. */
+      msg(emailsReport()
+          ? 'Done — your detailed report is on its way to ' + lead.email + '. Check spam if it has not arrived in a few minutes.'
+          : 'Done — your report is downloading now, and we have your details. Our team will be in touch shortly.', true);
       makePDF(S, lead);
       showGuide();
     }
@@ -1530,7 +1648,7 @@ var MCFHS_STEPS = [
           .catch(function(e2){
             console.error(e2);
             btn.disabled = false; btn.innerHTML = old;
-            msg('We could not send the email just now. Your PDF is downloading instead — or WhatsApp us on ' + MCFHS_CONFIG.FIRM_PHONE + '.', false);
+            msg('We could not send ' + (emailsReport() ? 'the email' : 'your details') + ' just now. Your PDF is downloading instead — or WhatsApp us on ' + MCFHS_CONFIG.FIRM_PHONE + '.', false);
             makePDF(S, lead);
           });
       });
@@ -1557,85 +1675,310 @@ var MCFHS_STEPS = [
     doc.splitTextToSize = function(txt, w, opts){ return _split(pdfSafe(txt), w, opts); };
 
     var W = 595.28, M = 42, y = 0;
-    var NAVY = [10,26,47], GREEN = [14,159,110], AMBER = [217,138,0], RED = [214,69,69], MUT = [126,141,160];
+
+    /* Palette matched to the server-rendered report. A client can receive both
+       documents, so they must not disagree — this used to run its own greens and
+       ambers. Grade colours keyed the same way the engine keys its bands. */
+    var NAVY = [14,42,71], INK = [27,42,58], MUT = [106,122,140], LINE = [220,229,239],
+        SOFT = [243,248,252], WHITE = [255,255,255],
+        GREEN = [46,154,131], AMBER = [201,138,30], RED = [196,69,61];
+    var GRADE_COL = { critical:[196,69,61], weak:[210,118,46], fair:[201,138,30],
+                      strong:[62,180,154], excellent:[46,154,131] };
     function stateColor(s){ return s === 'good' ? GREEN : s === 'ok' ? AMBER : s === 'bad' ? RED : MUT; }
+    function stateLabel(s){ return s === 'good' ? 'On track' : s === 'ok' ? 'Improve' : s === 'bad' ? 'Act now' : 'N/A'; }
     function newPage(){ doc.addPage(); y = 56; }
     function need(h){ if (y + h > 780) newPage(); }
 
-    doc.setFillColor(NAVY[0], NAVY[1], NAVY[2]); doc.rect(0, 0, W, 130, 'F');
-    doc.setTextColor(255,255,255); doc.setFont('helvetica','bold'); doc.setFontSize(19);
-    doc.text('Financial Health Scorecard', M, 52);
-    doc.setFont('helvetica','normal'); doc.setFontSize(10); doc.setTextColor(200,212,226);
-    doc.text(MCFHS_CONFIG.FIRM_NAME + '  ·  AMFI Registered Mutual Fund Distributor', M, 70);
-    doc.text('Prepared ' + new Date().toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' }), M, 85);
-    if (lead && lead.name) doc.text('For: ' + lead.name + (lead.email ? '  ·  ' + lead.email : ''), M, 100);
-    doc.setFont('helvetica','bold'); doc.setFontSize(46); doc.setTextColor(255,255,255);
-    doc.text(String(S.total), W - M, 62, { align:'right' });
-    doc.setFontSize(9); doc.setTextColor(200,212,226); doc.text('OUT OF 100', W - M, 78, { align:'right' });
-    doc.setFont('helvetica','bold'); doc.setFontSize(11);
-    doc.text(S.grade.label.toUpperCase(), W - M, 96, { align:'right' });
+    function mix(a, b, t){
+      return [Math.round(a[0]+(b[0]-a[0])*t), Math.round(a[1]+(b[1]-a[1])*t), Math.round(a[2]+(b[2]-a[2])*t)];
+    }
+    /* jsPDF has no alpha without a graphics state, so a tint toward white stands in
+       for opacity. On a white page the two are indistinguishable, and this ports. */
+    function tint(c, t){ return mix(c, WHITE, t); }
 
-    y = 158;
-    doc.setTextColor(74,90,112); doc.setFont('helvetica','normal'); doc.setFontSize(10);
-    var intro = doc.splitTextToSize(S.grade.head + ' — ' + S.grade.msg, W - 2*M);
-    doc.text(intro, M, y); y += intro.length * 13 + 14;
+    function ramp(v){
+      var st = [[20,GRADE_COL.critical],[47,GRADE_COL.weak],[62,GRADE_COL.fair],
+                [77,GRADE_COL.strong],[93,GRADE_COL.excellent]];
+      if (v <= st[0][0]) return st[0][1];
+      if (v >= st[4][0]) return st[4][1];
+      for (var i = 0; i < 4; i++){
+        if (v >= st[i][0] && v <= st[i+1][0])
+          return mix(st[i][1], st[i+1][1], (v - st[i][0]) / (st[i+1][0] - st[i][0]));
+      }
+      return st[4][1];
+    }
+    function gradeColor(S){ return GRADE_COL[S.grade.key] || AMBER; }
 
-    if (S.gap !== null && S.gap !== undefined){
-      need(46);
-      doc.setFillColor(245,247,250); doc.roundedRect(M, y - 12, W - 2*M, 40, 8, 8, 'F');
-      doc.setFont('helvetica','bold'); doc.setFontSize(10); doc.setTextColor(NAVY[0],NAVY[1],NAVY[2]);
-      doc.text('Confidence vs reality', M + 14, y + 3);
-      doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(74,90,112);
-      doc.text('You rated your own security at about ' + S.ratios.selfRating + '/100. You measured ' + S.total +
-               '/100 — a gap of ' + Math.round(Math.abs(S.gap)) + ' points.', M + 14, y + 18);
-      y += 46;
+    function polar(cx, cy, r, f){
+      var a = Math.PI * (1 + Math.max(0, Math.min(1, f)));
+      return [cx + r*Math.cos(a), cy + r*Math.sin(a)];
+    }
+    function poly(pts, style){
+      var d = [], i;
+      for (i = 1; i < pts.length; i++) d.push([pts[i][0]-pts[i-1][0], pts[i][1]-pts[i-1][1]]);
+      doc.lines(d, pts[0][0], pts[0][1], [1,1], style, true);
     }
 
-    doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(NAVY[0],NAVY[1],NAVY[2]);
-    doc.text('Score breakdown', M, y); y += 16;
+    /* The dial. Fifty segments approximated as thick chords: each spans 3.6 degrees,
+       where the gap between chord and arc is far under a printed point. Everything
+       here is a line, a circle or a polygon, which is all jsPDF offers. */
+    function drawGauge(cx, cy, R, SW, total, selfR){
+      var score = Math.max(0, Math.min(100, total || 0)), f = score/100, i;
+      var N = 50;
+      doc.setLineCap('butt');
+      for (i = 0; i < N; i++){
+        var v0 = i*100/N, v1 = (i+1)*100/N, mid = (v0+v1)/2, lit = mid <= score;
+        var c = lit ? ramp(mid) : tint(ramp(mid), 0.66);
+        var p0 = polar(cx, cy, R, v0/100 + 0.0016), p1 = polar(cx, cy, R, v1/100 - 0.0016);
+        doc.setDrawColor(c[0], c[1], c[2]);
+        doc.setLineWidth(lit ? SW : SW*0.74);
+        doc.line(p0[0], p0[1], p1[0], p1[1]);
+      }
+      doc.setLineWidth(0.8);
+      var GR = MCFHS_ENGINE.GRADES.slice().sort(function(a,b){ return a.min - b.min; });
+      doc.setFontSize(7.4); doc.setFont('helvetica','normal'); doc.setTextColor(143,160,179);
+      for (i = 0; i < GR.length; i++){
+        if (GR[i].min <= 0) continue;
+        var fr = GR[i].min/100;
+        var t0 = polar(cx, cy, R + SW/2 + 2, fr), t1 = polar(cx, cy, R + SW/2 + 6, fr),
+            tl = polar(cx, cy, R + SW/2 + 13, fr);
+        doc.setDrawColor(195,207,220); doc.line(t0[0], t0[1], t1[0], t1[1]);
+        doc.text(String(GR[i].min), tl[0], tl[1] + 2.5, { align:'center' });
+      }
+      var e0 = polar(cx, cy, R + SW/2 + 13, 0), e1 = polar(cx, cy, R + SW/2 + 13, 1);
+      doc.text('0', e0[0] + 3, e0[1] + 2.5, { align:'center' });
+      doc.text('100', e1[0] - 3, e1[1] + 2.5, { align:'center' });
+
+      if (selfR !== null && selfR !== undefined){
+        var sf = Math.max(0, Math.min(1, selfR/100)), a = Math.PI*(1+sf);
+        var tp = polar(cx, cy, R + SW/2 + 2, sf), back = 6.5, wide = 4.4;
+        doc.setFillColor(255,255,255); doc.setDrawColor(NAVY[0], NAVY[1], NAVY[2]);
+        doc.setLineWidth(1.1);
+        doc.triangle(tp[0], tp[1],
+                     tp[0] + wide*Math.cos(a - Math.PI/2) - back*Math.cos(a),
+                     tp[1] + wide*Math.sin(a - Math.PI/2) - back*Math.sin(a),
+                     tp[0] + wide*Math.cos(a + Math.PI/2) - back*Math.cos(a),
+                     tp[1] + wide*Math.sin(a + Math.PI/2) - back*Math.sin(a), 'FD');
+      }
+
+      var an = Math.PI*(1+f), len = R - SW - 6, half = 3.6, tail = 13, taper = 8;
+      var tip = [cx + len*Math.cos(an), cy + len*Math.sin(an)],
+          sh  = [cx + taper*Math.cos(an), cy + taper*Math.sin(an)],
+          lp  = [sh[0] + half*Math.cos(an - Math.PI/2), sh[1] + half*Math.sin(an - Math.PI/2)],
+          rp  = [sh[0] + half*Math.cos(an + Math.PI/2), sh[1] + half*Math.sin(an + Math.PI/2)],
+          bp  = [cx - tail*Math.cos(an), cy - tail*Math.sin(an)];
+      doc.setFillColor(NAVY[0], NAVY[1], NAVY[2]);
+      poly([tip, lp, bp, rp], 'F');
+      doc.circle(cx, cy, 8.5, 'F');
+      doc.setFillColor(255,255,255); doc.circle(cx, cy, 4.5, 'F');
+      doc.setFillColor(NAVY[0], NAVY[1], NAVY[2]); doc.circle(cx, cy, 1.7, 'F');
+
+      var rc = ramp(score);
+      doc.setFont('helvetica','bold'); doc.setFontSize(27); doc.setTextColor(rc[0], rc[1], rc[2]);
+      doc.text(String(MCFHS_ENGINE.r1(total)), cx, cy + 34, { align:'center' });
+      doc.setFont('helvetica','bold'); doc.setFontSize(7.2); doc.setTextColor(MUT[0], MUT[1], MUT[2]);
+      doc.text('OUT OF 100', cx, cy + 45, { align:'center' });
+    }
+
+    /* ---- header ----
+       White with the logo, matching the server-rendered report. The logo is already
+       on the page as a data URI, so it costs no new asset and no network fetch. If it
+       is ever missing the block simply shifts left rather than leaving a hole. */
+    var logoW = 0;
+    try {
+      var limg = document.querySelector('.mcfhs-logo img');
+      if (limg && limg.src && limg.src.indexOf('data:image') === 0){
+        var lh = limg.naturalHeight || 97, lw = limg.naturalWidth || 199;
+        logoW = 100;
+        doc.addImage(limg.src, 'PNG', M, 26, logoW, logoW * lh / lw);
+      }
+    } catch (e) { logoW = 0; }
+
+    var HX = M + (logoW ? logoW + 14 : 0);
+    doc.setFont('helvetica','bold'); doc.setFontSize(16); doc.setTextColor(NAVY[0], NAVY[1], NAVY[2]);
+    doc.text('Financial Health Scorecard', HX, 50);
+    doc.setFont('helvetica','normal'); doc.setFontSize(8); doc.setTextColor(MUT[0], MUT[1], MUT[2]);
+    doc.text(MCFHS_CONFIG.FIRM_NAME + '  ·  AMFI-registered Mutual Fund Distributor' +
+             (MCFHS_CONFIG.FIRM_ARN ? '  ·  ' + MCFHS_CONFIG.FIRM_ARN : ''), HX, 64);
+    doc.setFontSize(8.4);
+    var hy = 40;
+    if (lead && lead.name){
+      doc.text('For: ' + lead.name, W - M, hy, { align:'right' }); hy += 11;
+      if (lead.email){ doc.text(lead.email, W - M, hy, { align:'right' }); hy += 11; }
+    }
+    doc.text('Prepared ' + new Date().toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' }),
+             W - M, hy, { align:'right' });
+    doc.setDrawColor(20,153,214); doc.setLineWidth(1.6); doc.line(M, 86, W - M, 86);
+
+    /* ---- hero: the dial, and what it means ---- */
+    var HT = 102, HH = 200;
+    doc.setFillColor(SOFT[0], SOFT[1], SOFT[2]);
+    doc.setDrawColor(LINE[0], LINE[1], LINE[2]); doc.setLineWidth(0.7);
+    doc.roundedRect(M, HT, W - 2*M, HH, 9, 9, 'FD');
+
+    var gc = gradeColor(S);
+    drawGauge(M + 132, HT + 132, 78, 15, S.total, (S.ratios || {}).selfRating);
+
+    var RX = M + 268, RW = W - M - RX;
+    doc.setFont('helvetica','bold'); doc.setFontSize(15); doc.setTextColor(gc[0], gc[1], gc[2]);
+    doc.text(S.grade.head, RX, HT + 32);
+    doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(INK[0], INK[1], INK[2]);
+    var msg = doc.splitTextToSize(S.grade.msg, RW);
+    doc.text(msg, RX, HT + 48);
+    var ly = HT + 48 + msg.length*11 + 8;
+
+    doc.setFillColor(NAVY[0], NAVY[1], NAVY[2]); doc.circle(RX + 3, ly - 2.5, 3, 'F');
+    doc.setFont('helvetica','normal'); doc.setFontSize(7.6); doc.setTextColor(MUT[0], MUT[1], MUT[2]);
+    doc.text('Measured score', RX + 9, ly);
+    doc.setFillColor(255,255,255); doc.setDrawColor(NAVY[0], NAVY[1], NAVY[2]); doc.setLineWidth(1);
+    doc.circle(RX + 92, ly - 2.5, 3, 'FD');
+    doc.text('How you rated yourself', RX + 98, ly);
+    ly += 12;
+
+    if (S.gap !== null && S.gap !== undefined && S.ratios && S.ratios.selfRating != null){
+      var verdict = S.gap >= 20
+        ? 'You feel considerably more secure than the numbers currently support — that gap is usually the most useful thing on this page.'
+        : S.gap <= -20 ? 'You are harder on yourself than the numbers deserve.'
+        : 'Your sense of where you stand is close to the measured position.';
+      var gtxt = doc.splitTextToSize('You rated yourself ' + Math.round(S.ratios.selfRating) +
+                 ', and measured ' + MCFHS_ENGINE.r1(S.total) + ' — a gap of ' +
+                 Math.round(Math.abs(S.gap)) + ' points. ' + verdict, RW - 16);
+      var gh = gtxt.length*10 + 14;
+      doc.setFillColor(255,255,255); doc.roundedRect(RX, ly - 9, RW, gh, 4, 4, 'F');
+      doc.setFillColor(20,153,214); doc.rect(RX, ly - 9, 2.4, gh, 'F');
+      doc.setFontSize(8.2); doc.setTextColor(INK[0], INK[1], INK[2]);
+      doc.text(gtxt, RX + 10, ly + 1);
+    }
+
+    y = HT + HH + 30;
+
+    /* ---- breakdown: the track is as long as the pillar is worth ---- */
+    doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(NAVY[0], NAVY[1], NAVY[2]);
+    doc.text('Score breakdown', M, y); y += 12;
+    doc.setFont('helvetica','normal'); doc.setFontSize(7.8); doc.setTextColor(MUT[0], MUT[1], MUT[2]);
+    doc.text('Each bar is as long as that area is worth, so a longer bar carries more of your score. ' +
+             'The filled part is what you earned.', M, y); y += 14;
+
+    var widest = 0;
+    MCFHS_ENGINE.PILLARS.forEach(function(p){ if (p.max > widest) widest = p.max; });
+    var TX = M + 130, TW = W - M - 52 - TX;
     MCFHS_ENGINE.PILLARS.forEach(function(p){
-      var got = S.pillars[p.key], ratio = got / p.max;
+      var got = S.pillars[p.key], ratio = p.max ? got / p.max : 0;
       var c = ratio >= .8 ? GREEN : ratio >= .55 ? AMBER : RED;
-      doc.setFont('helvetica','normal'); doc.setFontSize(9.5); doc.setTextColor(40,55,75);
-      doc.text(p.name, M, y);
-      doc.setFont('helvetica','bold'); doc.text(MCFHS_ENGINE.r1(got) + ' / ' + p.max, W - M, y, { align:'right' });
-      doc.setFillColor(233,238,244); doc.roundedRect(M, y + 4, W - 2*M, 5, 2.5, 2.5, 'F');
-      doc.setFillColor(c[0], c[1], c[2]); doc.roundedRect(M, y + 4, Math.max(3, (W - 2*M) * ratio), 5, 2.5, 2.5, 'F');
-      y += 22;
+      var track = TW * (p.max / widest);
+      need(30);
+      doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(INK[0], INK[1], INK[2]);
+      doc.text(p.name, M, y + 7);
+      doc.setFillColor(238,244,250); doc.setDrawColor(LINE[0], LINE[1], LINE[2]); doc.setLineWidth(0.5);
+      doc.roundedRect(TX, y, track, 9, 4.5, 4.5, 'FD');
+      if (ratio > 0){
+        doc.setFillColor(c[0], c[1], c[2]);
+        doc.roundedRect(TX, y, Math.max(5, track * ratio), 9, 4.5, 4.5, 'F');
+      }
+      doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(NAVY[0], NAVY[1], NAVY[2]);
+      doc.text(MCFHS_ENGINE.r1(got) + ' / ' + p.max, W - M, y + 7, { align:'right' });
+      var lost = p.max - got;
+      if (lost >= 0.05){
+        doc.setFont('helvetica','normal'); doc.setFontSize(7); doc.setTextColor(MUT[0], MUT[1], MUT[2]);
+        doc.text(MCFHS_ENGINE.r1(lost) + ' of ' + p.max + ' points still available here', TX, y + 19);
+      }
+      y += 30;
     });
-    y += 8;
+    y += 6;
+
+    /* ---- how it feels against what we measured (per pillar, never scored) ---- */
+    var FEEL = MCFHS_ENGINE.feelings(S);
+    if (FEEL.length){
+      var forder = { blind_spot:0, better:1, match:2 };
+      FEEL = FEEL.slice().sort(function(a, b){ return forder[a.state] - forder[b.state] || b.gap - a.gap; });
+      var fword = { blind_spot:'Feels better than it is', better:'Better than it feels', match:'Feels about right' };
+      need(40 + FEEL.length * 20);
+      doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(NAVY[0], NAVY[1], NAVY[2]);
+      doc.text('How it feels against what we measured', M, y); y += 12;
+      doc.setFont('helvetica','normal'); doc.setFontSize(7.8); doc.setTextColor(MUT[0], MUT[1], MUT[2]);
+      doc.text('Your own view of each area beside its measured share of the points. None of it is scored.', M, y); y += 14;
+      FEEL.forEach(function(x){
+        var fc = x.state === 'blind_spot' ? RED : x.state === 'better' ? GREEN : MUT;
+        doc.setFillColor(fc[0], fc[1], fc[2]); doc.rect(M, y - 7, 2.4, 12, 'F');
+        doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(INK[0], INK[1], INK[2]);
+        doc.text(x.name, M + 8, y + 2);
+        doc.setFont('helvetica','normal'); doc.setFontSize(8.2);
+        doc.text('You: ' + x.label + ' (' + x.felt + ')   ·   Measured: ' + x.measured + ' of 100', M + 160, y + 2);
+        doc.setFont('helvetica','bold'); doc.setTextColor(fc[0], fc[1], fc[2]);
+        doc.text(fword[x.state], W - M, y + 2, { align:'right' });
+        y += 20;
+      });
+      y += 6;
+    }
+
+    /* ---- ratios as grouped cards ---- */
+    var RATIO_PILLAR = {
+      'Savings rate':'cashflow', 'Expense ratio':'cashflow', 'Committed outflow':'cashflow',
+      'Monthly surplus':'cashflow', 'Emergency fund':'emergency', 'EMI to income':'debt',
+      'Debt to assets':'debt', 'Life cover adequacy':'protection',
+      'Health cover adequacy':'protection', 'Net worth for your age':'investments',
+      'Wealth concentration':'investments', 'Investing experience':'investments',
+      'Retirement readiness':'planning', 'Family preparedness':'planning'
+    };
 
     need(60);
-    doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(NAVY[0],NAVY[1],NAVY[2]);
-    doc.text('Your personal financial ratios', M, y); y += 16;
-    doc.setFontSize(8); doc.setTextColor(126,141,160);
-    doc.text('RATIO', M, y); doc.text('YOUR ANSWER', 285, y); doc.text('BENCHMARK', 425, y); doc.text('STATUS', W - M, y, { align:'right' });
-    y += 5; doc.setDrawColor(220,228,236); doc.line(M, y, W - M, y); y += 13;
+    doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(NAVY[0], NAVY[1], NAVY[2]);
+    doc.text('Your personal financial ratios', M, y); y += 12;
+    doc.setFont('helvetica','normal'); doc.setFontSize(7.8); doc.setTextColor(MUT[0], MUT[1], MUT[2]);
+    doc.text('Grouped by the area each one measures, so you can see what moved the scores above.', M, y);
+    y += 16;
 
-    ratioRows(S).forEach(function(r){
-      doc.setFont('helvetica','normal'); doc.setFontSize(8.4);
-      /* Wrap rather than clip: several answers and benchmarks are longer than
-         one column width, and a truncated value reads as a bug. */
-      var valLines = doc.splitTextToSize(String(r.val), 132);
-      var benLines = doc.splitTextToSize(String(r.bench), 108);
-      var subLines = doc.splitTextToSize(r.sub, 235).slice(0, 1);
-      var extra = Math.max(valLines.length, benLines.length) - 1;
-      need(26 + extra * 9);
+    var buckets = {}, rows = ratioRows(S);
+    rows.forEach(function(r){
+      var k = RATIO_PILLAR[r.name] || 'other';
+      (buckets[k] = buckets[k] || []).push(r);
+    });
+    var order = MCFHS_ENGINE.PILLARS.map(function(p){ return [p.key, p.name]; });
+    order.push(['other', 'Other measures']);
 
-      doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(30,45,66);
-      doc.text(r.name, M, y);
-      doc.setFont('helvetica','normal'); doc.setFontSize(8.4); doc.setTextColor(30,45,66);
-      doc.text(valLines, 285, y);
-      doc.setTextColor(90,105,125);
-      doc.text(benLines, 425, y);
-      var c = stateColor(r.state);
-      doc.setTextColor(c[0], c[1], c[2]); doc.setFont('helvetica','bold'); doc.setFontSize(8.4);
-      doc.text(r.state === 'good' ? 'On track' : r.state === 'ok' ? 'Improve' : r.state === 'bad' ? 'Act now' : 'N/A', W - M, y, { align:'right' });
-      doc.setFont('helvetica','normal'); doc.setFontSize(7.4); doc.setTextColor(140,152,168);
-      doc.text(subLines, M, y + 10);
+    var CW = (W - 2*M - 11) / 2;
+    function cardHeight(r){
+      var v = doc.splitTextToSize(String(r.val), CW/2 - 14).length;
+      var b = doc.splitTextToSize(String(r.bench), CW/2 - 14).length;
+      return 52 + (Math.max(v, b) - 1) * 9;
+    }
+    function drawCard(r, x, top){
+      var h = cardHeight(r), c = stateColor(r.state);
+      doc.setFillColor(255,255,255); doc.setDrawColor(LINE[0], LINE[1], LINE[2]); doc.setLineWidth(0.6);
+      doc.roundedRect(x, top, CW, h, 4, 4, 'FD');
+      doc.setFillColor(c[0], c[1], c[2]); doc.rect(x, top + 2, 2.6, h - 4, 'F');
+      doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(NAVY[0], NAVY[1], NAVY[2]);
+      doc.text(r.name, x + 10, top + 14);
+      doc.setFontSize(7.2); doc.setTextColor(c[0], c[1], c[2]);
+      doc.text(stateLabel(r.state), x + CW - 8, top + 14, { align:'right' });
+      doc.setFont('helvetica','normal'); doc.setFontSize(7.2); doc.setTextColor(MUT[0], MUT[1], MUT[2]);
+      doc.text(doc.splitTextToSize(r.sub, CW - 20).slice(0, 1), x + 10, top + 24);
+      doc.setFontSize(6.4); doc.setTextColor(MUT[0], MUT[1], MUT[2]);
+      doc.text('YOURS', x + 10, top + 35);
+      doc.text('BENCHMARK', x + CW/2 + 2, top + 35);
+      doc.setFont('helvetica','bold'); doc.setFontSize(8.2); doc.setTextColor(INK[0], INK[1], INK[2]);
+      doc.text(doc.splitTextToSize(String(r.val), CW/2 - 14), x + 10, top + 45);
+      doc.text(doc.splitTextToSize(String(r.bench), CW/2 - 14), x + CW/2 + 2, top + 45);
+      return h;
+    }
 
-      y += 24 + extra * 9;
-      doc.setDrawColor(240,243,247); doc.line(M, y - 8, W - M, y - 8);
+    order.forEach(function(g){
+      var items = buckets[g[0]];
+      if (!items || !items.length) return;
+      need(74);
+      doc.setFont('helvetica','bold'); doc.setFontSize(7.8); doc.setTextColor(NAVY[0], NAVY[1], NAVY[2]);
+      doc.text(g[1].toUpperCase(), M, y);
+      doc.setDrawColor(LINE[0], LINE[1], LINE[2]); doc.setLineWidth(0.6);
+      doc.line(M, y + 4, W - M, y + 4);
+      y += 14;
+      for (var i = 0; i < items.length; i += 2){
+        var pair = items.slice(i, i + 2);
+        var h = Math.max.apply(null, pair.map(cardHeight));
+        need(h + 8);
+        for (var j = 0; j < pair.length; j++) drawCard(pair[j], M + j*(CW + 11), y);
+        y += h + 8;
+      }
+      y += 4;
     });
 
     y += 10; need(70);
@@ -1659,6 +2002,16 @@ var MCFHS_STEPS = [
       doc.text(lines, M + 20, y);
       y += lines.length * 11 + 12;
     });
+
+    var wins = MCFHS_ENGINE.strengths(S);
+    if (wins && wins.length){
+      need(44);
+      doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(NAVY[0], NAVY[1], NAVY[2]);
+      doc.text('Already doing well', M, y); y += 14;
+      doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(GREEN[0], GREEN[1], GREEN[2]);
+      var wl = doc.splitTextToSize(wins.join('  ·  '), W - 2*M);
+      doc.text(wl, M, y); y += wl.length * 11 + 6;
+    }
 
     var pages = doc.getNumberOfPages();
     for (var pi = 1; pi <= pages; pi++){
@@ -1687,37 +2040,43 @@ var MCFHS_STEPS = [
   /* Exposed for debugging and for generating the payload reference. */
   window.MCFHS = {
     engine: MCFHS_ENGINE,
+    /* Exposed so the report can be rendered and inspected without driving the submit
+       path. Node is not installed on the dev box, but the standalone page plus a
+       headless browser is enough to capture doc.output() and look at the result. */
+    buildPDF: function(S, lead){ return buildPDF(S || LAST, lead || { name:'', email:'' }); },
+    rows: function(S){ return ratioRows(S || LAST); },
     getAnswers: function(){ return A; },
     last: function(){ return LAST; },
     payload: function(lead){ return LAST ? payload(LAST, lead || { name:'', email:'', phone:'' }) : null; }
   };
 
-  /* The observer below fires on every animated style and every counter tick, and
-     each post costs the parent a re-render plus a height transition. Posting all
-     of them made scrolling stutter, so coalesce to one frame and only send real
-     changes. */
+  /* Embedded in a frame (the website's /financial-checkup), the page tells the parent its
+     height and asks it to scroll. Both are the website team's fixes, carried into the
+     source on 31 Oct 2026 so the website's copy is built from here and cannot drift.
+     The observer fires on every animated style and every counter tick, and each post
+     costs the parent a re-render plus a height transition — so coalesce to one frame and
+     send only real changes. */
   var lastHeight = 0, heightQueued = false;
   function postHeight(){
     if (window.parent === window || heightQueued) return;
     heightQueued = true;
     requestAnimationFrame(function(){
       heightQueued = false;
-      /* Take the larger of the two and leave a couple of pixels spare. Sizing the
-         frame to the exact height leaves the content one rounding error away from
-         overflowing, which is what put a scrollbar there in the first place. */
-      var h = Math.max(
-        document.documentElement.scrollHeight,
-        document.body ? document.body.scrollHeight : 0
-      ) + 2;
+      /* The BODY's height, which is the content's, and a couple of pixels spare: sized
+         to the exact height, the content is one rounding error from overflowing. Never
+         the document's: framed, it is never shorter than the frame itself, so the
+         website's first copy (max of the two) grew the frame 2px on every post and
+         could never shrink it — measured in the harness, 31 Oct 2026. */
+      var h = (document.body || document.documentElement).scrollHeight + 2;
       if (Math.abs(h - lastHeight) < 2) return;
       lastHeight = h;
       window.parent.postMessage({ mcfhsHeight: h }, '*');
     });
   }
 
-  /* This document is sized to its full content and never scrolls itself, so
-     scrollIntoView would be a no-op — the window that actually scrolls is the
-     parent. Hand it the offset and let it do the scrolling. */
+  /* A framed document is sized to its full content and never scrolls itself, so
+     scrollIntoView would do nothing — the window that scrolls is the parent's. Hand it
+     the offset; standalone, scroll as before. */
   function scrollToEl(el, block){
     if (!el) return;
     if (window.parent !== window){
@@ -1730,16 +2089,13 @@ var MCFHS_STEPS = [
     }
   }
 
-  /* Height only changes when content is added or removed. Watching attributes as
-     well meant every animated bar and every tick of the score counter asked for
-     a fresh measurement, and reading scrollHeight forces the browser to lay out
-     the whole document — which on a result page four thousand pixels tall is
-     what made scrolling stutter. */
+  /* Height changes only when content is added or removed. Watching attributes too meant
+     every animated bar asked for a measurement, and reading scrollHeight lays out the
+     whole document — on a 4,000-pixel result page that is what made scrolling stutter. */
   new MutationObserver(postHeight).observe(document.body, { childList:true, subtree:true });
   window.addEventListener('load', postHeight);
-
-  /* A few late checks instead of a permanent interval, to catch a web font or a
-     slow image settling after the last mutation. Then it stops costing anything. */
+  /* A few late checks instead of a permanent interval, for a web font or a slow image
+     settling after the last mutation. Then it stops costing anything. */
   [300, 1200, 3000].forEach(function (delay) { setTimeout(postHeight, delay); });
 
   render();

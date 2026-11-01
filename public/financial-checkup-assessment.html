@@ -377,11 +377,11 @@ html.mcfhs-embedded::-webkit-scrollbar,html.mcfhs-embedded body::-webkit-scrollb
         <span class="mcfhs-regbadge">AMFI Registered Mutual Fund Distributor</span>
       </div>
       <h1>How healthy are your <em>finances</em>, really?</h1>
-      <p>Nineteen questions, every one a tap — no bank statements, no calculator — and six optional
-         ones on how each area feels. You get an objective 100-point Financial Health Score, your
-         personal financial ratios benchmarked against what they should be, and a prioritised action plan.</p>
+      <p>Fifteen questions, every one a tap — no bank statements, no calculator. You get an objective
+         100-point Financial Health Score, your personal financial ratios benchmarked against what they
+         should be, and a prioritised action plan.</p>
       <div class="mcfhs-heropills">
-        <span>⏱ About 3 minutes</span>
+        <span>⏱ About 2 minutes</span>
         <span>🔒 Nothing is stored until you ask for the report</span>
         <span>📊 14 personal finance ratios</span>
       </div>
@@ -396,9 +396,9 @@ html.mcfhs-embedded::-webkit-scrollbar,html.mcfhs-embedded body::-webkit-scrollb
         <div class="mcfhs-prog">
           <div class="mcfhs-progtop">
             <span class="mcfhs-steplabel" id="mcfhs-steplabel">About you</span>
-            <span class="mcfhs-stepcount" id="mcfhs-stepcount">Step 1 of 6</span>
+            <span class="mcfhs-stepcount" id="mcfhs-stepcount">Step 1 of 5</span>
           </div>
-          <div class="mcfhs-bar"><i id="mcfhs-barfill" style="width:16.6667%"></i></div>
+          <div class="mcfhs-bar"><i id="mcfhs-barfill" style="width:20%"></i></div>
         </div>
 
         <div class="mcfhs-cardpad" id="mcfhs-steps"><!-- steps injected by JS --></div>
@@ -425,8 +425,7 @@ html.mcfhs-embedded::-webkit-scrollbar,html.mcfhs-embedded body::-webkit-scrollb
     </div>
   </div>
 </div>
-<!-- jsPDF is only needed once the report is made, so it must not hold up the questions. -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
 /* =====================================================================
    CONFIG — change these two lines and nothing else
@@ -932,7 +931,7 @@ var MCFHS_STEPS = [
   {
     label: 'About you',
     title: 'First, a little context',
-    sub: 'These five shape every benchmark that follows. None of them are scored.',
+    sub: 'These four shape every benchmark that follows. None of them are scored.',
     fields: [
       { id:'dob', type:'date', label:'Date of birth', hint:'Used to benchmark your net worth against your age.', required:true },
       { id:'dependants', type:'select', label:'How many people depend on your income?', required:true,

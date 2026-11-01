@@ -54,10 +54,10 @@ export default function FinancialCheckupPage() {
     <div className="min-h-screen bg-[#F5F7FA] pt-24 md:pt-28 lg:pt-32">
       <Head>
         <title>Financial Health Scorecard — Free 100-Point Assessment | Money Compound</title>
-        <meta name="description" content="Check your Financial Health Score in about 3 minutes. Nineteen tap-only questions give you a 100-point score, 14 personal finance ratios benchmarked against what they should be, and a prioritised action plan." />
+        <meta name="description" content="Check your Financial Health Score in about 2 minutes. Fifteen tap-only questions give you a 100-point score, 14 personal finance ratios benchmarked against what they should be, and a prioritised action plan." />
         <link rel="canonical" href="https://moneycompound.com/financial-checkup" />
         <meta property="og:title" content="Financial Health Scorecard — Money Compound" />
-        <meta property="og:description" content="An objective 100-point score, your personal financial ratios and a prioritised action plan — in about 3 minutes." />
+        <meta property="og:description" content="An objective 100-point score, your personal financial ratios and a prioritised action plan — in about 2 minutes." />
         <meta property="og:url" content="https://moneycompound.com/financial-checkup" />
       </Head>
 

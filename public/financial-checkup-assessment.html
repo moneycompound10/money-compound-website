@@ -33,7 +33,7 @@ if (window.parent !== window) document.documentElement.classList.add('mcfhs-embe
   --mc-red-soft:#FBE9E9;
   --mc-ink:#122036;
   --mc-body:#4A5A70;
-  --mc-muted:#7E8DA0;
+  --mc-muted:#667282;         /* 4.5:1 or better on white and on the page grey (WCAG AA) */
   --mc-line:#E4E9F0;
   --mc-bg:#F5F7FA;
   --mc-card:#FFFFFF;
@@ -161,6 +161,8 @@ if (window.parent !== window) document.documentElement.classList.add('mcfhs-embe
 .mcfhs-opt.sel .mcfhs-dot::after{
   content:"";position:absolute;inset:3px;border-radius:50%;background:var(--mc-navy);
 }
+/* The radio itself is invisible, so show keyboard focus on its card instead. */
+.mcfhs-opt:has(input:focus-visible){outline:2px solid var(--mc-navy-500);outline-offset:2px;}
 .mcfhs-opttxt b{display:block;font-size:14.5px;font-weight:650;color:var(--mc-ink);}
 .mcfhs-opttxt span{display:block;font-size:12.6px;color:var(--mc-muted);margin-top:1px;}
 
@@ -234,7 +236,12 @@ if (window.parent !== window) document.documentElement.classList.add('mcfhs-embe
 .t-good{background:var(--mc-green-soft);color:#07714E;}
 .t-ok{background:var(--mc-amber-soft);color:#8A5A00;}
 .t-bad{background:var(--mc-red-soft);color:#9F2B2B;}
-.t-na{background:#EEF1F5;color:#6B7A8C;}
+.t-na{background:#EEF1F5;color:#616F7F;}
+/* Below this width the answer and benchmark cannot stay on one line without the table
+   running wider than the card, whose overflow:hidden then cut off the status column. */
+@media (max-width:900px){
+  .mcfhs-rval,.mcfhs-rbench{white-space:normal;}
+}
 
 /* actions */
 .mcfhs-action{
@@ -319,7 +326,19 @@ if (window.parent !== window) document.documentElement.classList.add('mcfhs-embe
   .mcfhs-gapnums{justify-content:center;}
   .mcfhs-resulthead p{margin-left:auto;margin-right:auto;}
   .mcfhs-gauge{width:168px;height:168px;}
-  .mcfhs-ratios th:nth-child(3),.mcfhs-ratios td:nth-child(3){display:none;}
+  /* Phones: four columns cannot fit, so each ratio stacks — name and status, then the
+     answer, then the benchmark. */
+  .mcfhs-ratios,.mcfhs-ratios tbody{display:block;}
+  .mcfhs-ratios thead{display:none;}
+  .mcfhs-ratios tr{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;row-gap:3px;align-items:start;padding:13px 0;border-bottom:1px solid #F0F3F7;}
+  .mcfhs-ratios tr:last-child{border-bottom:none;}
+  .mcfhs-ratios td{display:block;padding:0;border-bottom:none;text-align:left;}
+  .mcfhs-ratios td.mcfhs-rname{grid-column:1;grid-row:1;}
+  .mcfhs-ratios td.mcfhs-rstat{grid-column:2;grid-row:1;}
+  .mcfhs-ratios td.mcfhs-rval{grid-column:1 / -1;margin-top:5px;}
+  .mcfhs-ratios td.mcfhs-rbench{grid-column:1 / -1;font-size:13px;}
+  .mcfhs-ratios td.mcfhs-rval::before{content:"Your answer: ";font-weight:600;color:var(--mc-muted);}
+  .mcfhs-ratios td.mcfhs-rbench::before{content:"Benchmark: ";color:var(--mc-muted);}
   .mcfhs-regbadge{display:none;}
   .mcfhs-logo img{height:48px;}
   .mcfhs-logo{padding:9px 13px;}
@@ -358,11 +377,11 @@ html.mcfhs-embedded::-webkit-scrollbar,html.mcfhs-embedded body::-webkit-scrollb
         <span class="mcfhs-regbadge">AMFI Registered Mutual Fund Distributor</span>
       </div>
       <h1>How healthy are your <em>finances</em>, really?</h1>
-      <p>Fifteen questions, every one a tap — no bank statements, no calculator. You get an objective
-         100-point Financial Health Score, your personal financial ratios benchmarked against what they
-         should be, and a prioritised action plan.</p>
+      <p>Nineteen questions, every one a tap — no bank statements, no calculator — and six optional
+         ones on how each area feels. You get an objective 100-point Financial Health Score, your
+         personal financial ratios benchmarked against what they should be, and a prioritised action plan.</p>
       <div class="mcfhs-heropills">
-        <span>⏱ About 2 minutes</span>
+        <span>⏱ About 3 minutes</span>
         <span>🔒 Nothing is stored until you ask for the report</span>
         <span>📊 14 personal finance ratios</span>
       </div>
@@ -377,9 +396,9 @@ html.mcfhs-embedded::-webkit-scrollbar,html.mcfhs-embedded body::-webkit-scrollb
         <div class="mcfhs-prog">
           <div class="mcfhs-progtop">
             <span class="mcfhs-steplabel" id="mcfhs-steplabel">About you</span>
-            <span class="mcfhs-stepcount" id="mcfhs-stepcount">Step 1 of 5</span>
+            <span class="mcfhs-stepcount" id="mcfhs-stepcount">Step 1 of 6</span>
           </div>
-          <div class="mcfhs-bar"><i id="mcfhs-barfill" style="width:20%"></i></div>
+          <div class="mcfhs-bar"><i id="mcfhs-barfill" style="width:16.6667%"></i></div>
         </div>
 
         <div class="mcfhs-cardpad" id="mcfhs-steps"><!-- steps injected by JS --></div>
@@ -406,7 +425,8 @@ html.mcfhs-embedded::-webkit-scrollbar,html.mcfhs-embedded body::-webkit-scrollb
     </div>
   </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- jsPDF is only needed once the report is made, so it must not hold up the questions. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 <script>
 /* =====================================================================
    CONFIG — change these two lines and nothing else
@@ -777,7 +797,7 @@ var MCFHS_ENGINE = (function () {
     if (R.efMonths < 6){
       add((6 - R.efMonths) * 2.6,
         'Build the emergency fund to six months',
-        'You are holding about ' + (R.efMonths >= 1 ? Math.round(R.efMonths) + ' month' + (Math.round(R.efMonths) === 1 ? '' : 's') : 'less than a month') +
+        'You are holding ' + (R.efMonths >= 1 ? 'about ' + Math.round(R.efMonths) + ' month' + (Math.round(R.efMonths) === 1 ? '' : 's') : 'less than a month') +
         ' of committed outflow in accessible form. Six months is the target, and it belongs in a liquid or overnight fund — not equity, not a locked FD — so a job change or a medical event never forces you to sell investments at the wrong time.');
     }
     if (R.lifeRequired && (R.lifeAdequacy === null || R.lifeAdequacy < 1)){
@@ -785,7 +805,7 @@ var MCFHS_ENGINE = (function () {
                : 'Your cover is around ' + R.lifeMult + '× annual income. ';
       add(11 * (1 - Math.min(R.lifeAdequacy || 0, 1)),
         'Raise life cover to about ' + R.lifeTargetMult + '× your annual income',
-        have + 'With ' + (R.dependants ? R.dependants + ' people depending on your income' : 'outstanding loans to clear') +
+        have + 'With ' + (R.dependants ? look('dependants', a.dependants).label.toLowerCase() + ' relying on your income' : 'outstanding loans to clear') +
         ', the requirement is roughly ' + R.lifeTargetMult + '× annual income' + incTxt +
         '. A pure term plan is the cheapest way to close this — never an endowment or ULIP, which bundle poor returns into the premium.');
     }
@@ -912,7 +932,7 @@ var MCFHS_STEPS = [
   {
     label: 'About you',
     title: 'First, a little context',
-    sub: 'These four shape every benchmark that follows. None of them are scored.',
+    sub: 'These five shape every benchmark that follows. None of them are scored.',
     fields: [
       { id:'dob', type:'date', label:'Date of birth', hint:'Used to benchmark your net worth against your age.', required:true },
       { id:'dependants', type:'select', label:'How many people depend on your income?', required:true,
@@ -1637,20 +1657,28 @@ var MCFHS_STEPS = [
       makePDF(S, lead);
       showGuide();
     }
+    function failed(err){
+      console.error('MCFHS: submission failed —', err && err.message);
+      btn.disabled = false; btn.innerHTML = old;
+      msg('We could not send ' + (emailsReport() ? 'the email' : 'your details') + ' just now. Your PDF is downloading instead — please try again, or WhatsApp us on ' + MCFHS_CONFIG.FIRM_PHONE + '.', false);
+      makePDF(S, lead);
+    }
+    /* The no-cors retry below exists for an external webhook that cannot answer CORS. Its
+       response cannot be read, so it always "succeeds" — and our own /api/scorecard cannot
+       read its text/plain body, so for a same-origin endpoint it turned every server error
+       into "Done — we have your details" while the lead was lost. Same origin, CORS can
+       never be why a send failed, so report the failure instead. */
+    var sameOrigin = new URL(MCFHS_CONFIG.ENDPOINT_URL, location.href).origin === location.origin;
     fetch(MCFHS_CONFIG.ENDPOINT_URL, { method:'POST', headers:{ 'Content-Type':'application/json' }, body:JSON.stringify(body) })
       .then(function(res){ if (!res.ok) throw new Error('HTTP ' + res.status); return res.text(); })
       .then(done)
       .catch(function(err){
+        if (sameOrigin) return failed(err);
         console.warn('MCFHS: CORS POST failed (' + err.message + '), retrying without CORS.');
         fetch(MCFHS_CONFIG.ENDPOINT_URL, { method:'POST', mode:'no-cors',
               headers:{ 'Content-Type':'text/plain;charset=UTF-8' }, body:JSON.stringify(body) })
           .then(done)
-          .catch(function(e2){
-            console.error(e2);
-            btn.disabled = false; btn.innerHTML = old;
-            msg('We could not send ' + (emailsReport() ? 'the email' : 'your details') + ' just now. Your PDF is downloading instead — or WhatsApp us on ' + MCFHS_CONFIG.FIRM_PHONE + '.', false);
-            makePDF(S, lead);
-          });
+          .catch(failed);
       });
   }
 
@@ -1921,7 +1949,9 @@ var MCFHS_STEPS = [
       'Retirement readiness':'planning', 'Family preparedness':'planning'
     };
 
-    need(60);
+    /* Room for the heading and its line (28) plus the first group's label and first row of
+       cards (96, below) — reserving less left the heading alone at the foot of a page. */
+    need(28 + 96);
     doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(NAVY[0], NAVY[1], NAVY[2]);
     doc.text('Your personal financial ratios', M, y); y += 12;
     doc.setFont('helvetica','normal'); doc.setFontSize(7.8); doc.setTextColor(MUT[0], MUT[1], MUT[2]);
@@ -1965,7 +1995,8 @@ var MCFHS_STEPS = [
     order.forEach(function(g){
       var items = buckets[g[0]];
       if (!items || !items.length) return;
-      need(74);
+      /* The label (14) and the first row of cards: up to three lines of answer (70) + gap (8). */
+      need(96);
       doc.setFont('helvetica','bold'); doc.setFontSize(7.8); doc.setTextColor(NAVY[0], NAVY[1], NAVY[2]);
       doc.text(g[1].toUpperCase(), M, y);
       doc.setDrawColor(LINE[0], LINE[1], LINE[2]); doc.setLineWidth(0.6);
@@ -1981,10 +2012,14 @@ var MCFHS_STEPS = [
       y += 4;
     });
 
-    y += 10; need(70);
+    y += 10;
+    var acts = MCFHS_ENGINE.actions(S);
+    /* Keep the heading with the first action. The loop below measures that action in the
+       heading's font, so measure it the same way here or the two disagree about the fit. */
+    doc.setFont('helvetica','bold'); doc.setFontSize(12);
+    need(18 + (acts.length ? doc.splitTextToSize(acts[0].detail, W - 2*M - 20).length * 11 + 30 : 20));
     doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.setTextColor(NAVY[0],NAVY[1],NAVY[2]);
     doc.text('Your priority actions', M, y); y += 18;
-    var acts = MCFHS_ENGINE.actions(S);
     if (!acts.length){
       doc.setFont('helvetica','normal'); doc.setFontSize(9.5); doc.setTextColor(74,90,112);
       doc.text('Every core ratio sits inside its benchmark. Focus next on tax efficiency and estate structuring.', M, y);
